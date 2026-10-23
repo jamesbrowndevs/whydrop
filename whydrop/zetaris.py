@@ -23,8 +23,28 @@ SCHEMA = {
     "WHYDROP_PG.support_tickets": "ticket_id, order_id, date, category, message  [Postgres]",
 }
 
+# Low-cardinality columns whose real values are profiled from Zetaris, so the SQL lane never guesses filter values.
+PROFILE_COLS = {"WHYDROP_FILES.orders": ["channel", "product_id", "country"], "WHYDROP_FILES.marketing_spend": ["channel", "campaign"],
+                "WHYDROP_FILES.web_traffic": ["source"], "WHYDROP_PG.refunds": ["reason"], "WHYDROP_PG.support_tickets": ["category", "message"]}
+_profile: dict | None = None
+
+def profile() -> dict:
+    """Distinct values per categorical column, fetched live through zetaris_sql (cached per process)."""
+    global _profile
+    if _profile is None:
+        _profile = {}
+        for t, cols in PROFILE_COLS.items():
+            for c in cols:
+                try:
+                    rows = zetaris_sql(f"select {c} v, count(*) n from {t} group by {c} order by n desc limit 15")["rows"]
+                    _profile[f"{t}.{c}"] = [r["v"] for r in rows]
+                except ZetarisError:
+                    pass
+    return _profile
+
 def schema_text() -> str:
-    return "\n".join(f"- {t}: {c}" for t, c in SCHEMA.items()) + (
+    prof = "\n".join(f"  {k} values: {v}" for k, v in profile().items())
+    return "\n".join(f"- {t}: {c}" for t, c in SCHEMA.items()) + "\nKnown categorical values (use these exact strings in filters):\n" + prof + (
         "\nDialect: Spark SQL. All columns may be stored as strings: CAST numerics (CAST(x AS DOUBLE)) and dates (to_date(date)). "
         "Use date_format(to_date(date),'yyyy-MM') for months. Always qualify tables as shown. Data covers 2026-06-01..2026-09-30.")
 

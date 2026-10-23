@@ -22,7 +22,7 @@ Return JSON: {"queries":[{"purpose":"...","sql":"SELECT ..."}]}"""
 SQL_FIX_SYS = """You fix a failing Spark SQL query for Zetaris. Return JSON {"sql":"SELECT ..."} only."""
 
 ANALYST_SYS = """You are the analyst lane of WhyDrop. You receive one hypothesis and the exact query results that test it.
-Decide verdict: "supported", "rejected" or "inconclusive". Make 1-3 claims. Every number in a claim MUST be copied from a cited cell.
+Decide verdict: "supported", "rejected" or "inconclusive". An EMPTY result or all-null cells is NOT evidence against a hypothesis (the filter may be wrong): use "inconclusive" then, and never cite empty results. Make 1-3 claims. Every number in a claim MUST be copied from a cited cell.
 Cite cells as evidence: {"query_id":"Q..","row":<0-based row index>,"column":"<column name>","value":<exact cell value>}.
 estimated_impact_usd: rough monthly net revenue explained by this cause (0 if rejected).
 Return JSON: {"verdict":"...","summary":"one sentence","estimated_impact_usd":0,
@@ -175,6 +175,8 @@ def _same(a, b):
 _NUM = re.compile(r"(?<![\w.])\$?(-?\d[\d,]*\.?\d*)%?")
 def _numbers(text):
     out = []
+    text = re.sub(r"\d{4}-\d{2}(-\d{2})?", " ", text)  # ISO dates / months
+    text = re.sub(r"\b(404s?|H1|H2|Q\d+|v\d+(\.\d+)*)\b", " ", text)  # labels, not quantities
     for m in _NUM.finditer(text):
         s = m.group(1).replace(",", "").rstrip(".")
         try: v = float(s)

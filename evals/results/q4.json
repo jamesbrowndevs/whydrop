@@ -1,0 +1,1684 @@
+{
+ "question": "Why are refunds up in the second half of September?",
+ "run_id": "20261024-004304-099c",
+ "causes": [],
+ "rejected": [
+  {
+   "hypothesis": "A mid-September price increase on key SKUs (e.g., P001 rising from ~$19 to ~$29) caused buyers to purchase at the higher price and then refund due to sticker shock or price mismatch, driving the H2-September refund spike.",
+   "id": "H1",
+   "verdict": "rejected",
+   "summary": "The H2-September refund spike is concentrated in products without mid-Sept price changes, and zero refunds cite price-related reasons, so the price-increase/sticker-shock mechanism is not supported.",
+   "impact_usd": 0.0,
+   "confidence": 0.97,
+   "claims": [
+    {
+     "text": "H2-September refunds are concentrated in products without a mid-Sept price change: 31 refunds on 240 orders (refund_rate 0.12916666666666668) versus only 5 refunds on 58 orders (refund_rate 0.08620689655172414) for price-changed products.",
+     "evidence": [
+      {
+       "query_id": "Q5",
+       "row": 1,
+       "column": "refund_cnt",
+       "value": 31,
+       "actual": 31
+      },
+      {
+       "query_id": "Q5",
+       "row": 1,
+       "column": "order_cnt",
+       "value": 240,
+       "actual": 240
+      },
+      {
+       "query_id": "Q5",
+       "row": 1,
+       "column": "refund_rate",
+       "value": 0.12916666666666668,
+       "actual": 0.12916666666666668
+      },
+      {
+       "query_id": "Q5",
+       "row": 3,
+       "column": "refund_cnt",
+       "value": 5,
+       "actual": 5
+      },
+      {
+       "query_id": "Q5",
+       "row": 3,
+       "column": "order_cnt",
+       "value": 58,
+       "actual": 58
+      },
+      {
+       "query_id": "Q5",
+       "row": 3,
+       "column": "refund_rate",
+       "value": 0.08620689655172414,
+       "actual": 0.08620689655172414
+      }
+     ],
+     "confidence": 0.97,
+     "llm_check": {
+      "supported": true,
+      "reason": "The H2 rows exactly match the claimed refund counts (31 vs 5), order counts (240 vs 58), and refund rates (0.12916666666666668 vs 0.08620689655172414). The higher rate for products without a mid-Sept price change supports the concentration claim."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "No H2-September refund cites a price-related keyword: price-changed products had 0 price-related refunds out of 5 total, and unchanged products had 0 out of 31 total.",
+     "evidence": [
+      {
+       "query_id": "Q14",
+       "row": 1,
+       "column": "price_related_refunds",
+       "value": 0,
+       "actual": 0
+      },
+      {
+       "query_id": "Q14",
+       "row": 1,
+       "column": "total_refunds",
+       "value": 5,
+       "actual": 5
+      },
+      {
+       "query_id": "Q14",
+       "row": 3,
+       "column": "price_related_refunds",
+       "value": 0,
+       "actual": 0
+      },
+      {
+       "query_id": "Q14",
+       "row": 3,
+       "column": "total_refunds",
+       "value": 31,
+       "actual": 31
+      }
+     ],
+     "confidence": 0.97,
+     "llm_check": {
+      "supported": true,
+      "reason": "Rows confirm: MidSepPriceChange H2 had 0 price-related refunds out of 5 total, and NoMidSepPriceChange H2 had 0 out of 31 total."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "Mid-Sept price-changed products are a minority of September refund volume: 6 refunds and $174.00 versus 37 refunds and $533.00 for unchanged products.",
+     "evidence": [
+      {
+       "query_id": "Q4",
+       "row": 0,
+       "column": "refund_count",
+       "value": 6,
+       "actual": 6
+      },
+      {
+       "query_id": "Q4",
+       "row": 0,
+       "column": "total_refund_amount",
+       "value": 174.0,
+       "actual": 174.0
+      },
+      {
+       "query_id": "Q4",
+       "row": 1,
+       "column": "refund_count",
+       "value": 37,
+       "actual": 37
+      },
+      {
+       "query_id": "Q4",
+       "row": 1,
+       "column": "total_refund_amount",
+       "value": 533.0,
+       "actual": 533.0
+      }
+     ],
+     "confidence": 0.97,
+     "llm_check": {
+      "supported": true,
+      "reason": "Data shows 6 price-change refunds and $174 vs 37 unchanged and $533, confirming a minority."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q4",
+    "Q5",
+    "Q14"
+   ],
+   "action": "Stop attributing the H2-September refund spike to the mid-Sept price increase; investigate non-price drivers such as fulfillment delays, product quality, or seasonal demand instead."
+  },
+  {
+   "hypothesis": "Refunds are concentrated in one or two countries in H2 September due to local shipping delays, customs issues, or seasonality, not a global increase.",
+   "id": "H4",
+   "verdict": "rejected",
+   "summary": "Refunds in September H2 are spread across multiple countries and the refund rate is uniformly 1.0, so the increase is not concentrated in one or two countries.",
+   "impact_usd": 0.0,
+   "confidence": 0.93,
+   "claims": [
+    {
+     "text": "In September H2, refund counts are spread across at least six countries: AU (2), CA (3), DE (5), GB (10), IN (6), and US (5), showing no concentration in one or two countries.",
+     "evidence": [
+      {
+       "query_id": "Q6",
+       "row": 1,
+       "column": "refund_cnt",
+       "value": 2,
+       "actual": 2
+      },
+      {
+       "query_id": "Q6",
+       "row": 4,
+       "column": "refund_cnt",
+       "value": 3,
+       "actual": 3
+      },
+      {
+       "query_id": "Q6",
+       "row": 6,
+       "column": "refund_cnt",
+       "value": 5,
+       "actual": 5
+      },
+      {
+       "query_id": "Q6",
+       "row": 9,
+       "column": "refund_cnt",
+       "value": 10,
+       "actual": 10
+      },
+      {
+       "query_id": "Q6",
+       "row": 11,
+       "column": "refund_cnt",
+       "value": 6,
+       "actual": 6
+      },
+      {
+       "query_id": "Q6",
+       "row": 14,
+       "column": "refund_cnt",
+       "value": 5,
+       "actual": 5
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "The 2026-09-H2 period data exactly matches the claim: AU (2), CA (3), DE (5), GB (10), IN (6), and US (5), across six countries with no concentration in one or two."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "The September H2 refund rate is 1.0 for all top countries (AU, CA, GB, DE, US), indicating no elevated rate in any single country.",
+     "evidence": [
+      {
+       "query_id": "Q8",
+       "row": 0,
+       "column": "refund_rate_h2",
+       "value": 1.0,
+       "actual": 1.0
+      },
+      {
+       "query_id": "Q8",
+       "row": 1,
+       "column": "refund_rate_h2",
+       "value": 1.0,
+       "actual": 1.0
+      },
+      {
+       "query_id": "Q8",
+       "row": 2,
+       "column": "refund_rate_h2",
+       "value": 1.0,
+       "actual": 1.0
+      },
+      {
+       "query_id": "Q8",
+       "row": 3,
+       "column": "refund_rate_h2",
+       "value": 1.0,
+       "actual": 1.0
+      },
+      {
+       "query_id": "Q8",
+       "row": 4,
+       "column": "refund_rate_h2",
+       "value": 1.0,
+       "actual": 1.0
+      }
+     ],
+     "confidence": 0.9,
+     "llm_check": {
+      "supported": true,
+      "reason": "Rows confirm refund_rate_h2 = 1.0 for all AU, CA, GB, DE, US, matching the claim exactly."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q6",
+    "Q7",
+    "Q8"
+   ],
+   "action": "Investigate data quality or global policy changes since refund rate is 100% across all countries and periods; the September H2 increase is not country-specific."
+  },
+  {
+   "hypothesis": "The order mix shifted toward SKUs with inherently high refund rates in H2 September, so even with stable order volume, total refunds rose.",
+   "id": "H5",
+   "verdict": "rejected",
+   "summary": "Rejected: the high-refund-rate SKUs had fewer orders in H2 September than in H1 September while their refund dollars rose, indicating a per-order refund-rate increase rather than an order-mix shift toward those SKUs.",
+   "impact_usd": 0.0,
+   "confidence": 0.95,
+   "claims": [
+    {
+     "text": "Order volume for the August high-refund-rate SKUs declined from H1 to H2 September (P001: 62 to 53 orders; P003: 93 to 73 orders), so the mix did not shift toward these high-refund products.",
+     "evidence": [
+      {
+       "query_id": "Q13",
+       "row": 0,
+       "column": "orders_h1",
+       "value": 62,
+       "actual": 62
+      },
+      {
+       "query_id": "Q13",
+       "row": 0,
+       "column": "orders_h2",
+       "value": 53,
+       "actual": 53
+      },
+      {
+       "query_id": "Q13",
+       "row": 2,
+       "column": "orders_h1",
+       "value": 93,
+       "actual": 93
+      },
+      {
+       "query_id": "Q13",
+       "row": 2,
+       "column": "orders_h2",
+       "value": 73,
+       "actual": 73
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": false,
+      "reason": "The rows show absolute order declines for P001 and P003, but do not provide total order volume or product proportions. A decline in absolute orders does not logically imply the mix did not shift toward these SKUs, as their proportion could still have increased if other products declined more. The data does not support the claimed conclusion."
+     },
+     "verified": false,
+     "checks": [
+      "verifier lane: The rows show absolute order declines for P001 and P003, but do not provide total order volume or product proportions. A decline in absolute orders does not logically imply the mix did not shift toward these SKUs, as their proportion could still have increased if other products declined more. The data does not support the claimed conclusion."
+     ]
+    },
+    {
+     "text": "Refund dollars for those same SKUs increased despite lower order counts (P001: $29.0 to $145.0; P003: $75.0 to $405.0), pointing to a per-order refund-rate change rather than an order-mix shift.",
+     "evidence": [
+      {
+       "query_id": "Q15",
+       "row": 0,
+       "column": "refunds_h1",
+       "value": 29.0,
+       "actual": 29.0
+      },
+      {
+       "query_id": "Q15",
+       "row": 0,
+       "column": "refunds_h2",
+       "value": 145.0,
+       "actual": 145.0
+      },
+      {
+       "query_id": "Q15",
+       "row": 2,
+       "column": "refunds_h1",
+       "value": 75.0,
+       "actual": 75.0
+      },
+      {
+       "query_id": "Q15",
+       "row": 2,
+       "column": "refunds_h2",
+       "value": 405.0,
+       "actual": 405.0
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "Rows show P001: orders 62\u219253 (down), refunds 29.0\u2192145.0 (up); P003: orders 93\u219273 (down), refunds 75.0\u2192405.0 (up), matching the claim's description of increased refund dollars despite lower order counts for the same SKUs."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q12",
+    "Q13",
+    "Q15"
+   ],
+   "action": "Investigate why refund amounts per order spiked for P001 and P003 in H2 September (e.g., item condition, shipping, or description issues) instead of focusing on assortment mix."
+  },
+  {
+   "hypothesis": "A surge in shipping/delivery support tickets in H2 September preceded and drove the refund increase, as customers cancelled after delays.",
+   "id": "H7",
+   "verdict": "rejected",
+   "summary": "The September ticket data contains no shipping/delivery ticket surge split by H1/H2 (all periods are null, with only download and refund categories), and Q20 has only a without_shipping_ticket group, so there is no evidence that shipping tickets preceded or drove refunds.",
+   "impact_usd": 0.0,
+   "confidence": 0.95,
+   "claims": [
+    {
+     "text": "Q19 returns no H1/H2 September split for shipping/delivery tickets; both rows have period null and show only download (ticket_count 26) and refund (ticket_count 4) categories.",
+     "evidence": [
+      {
+       "query_id": "Q19",
+       "row": 0,
+       "column": "period",
+       "value": null,
+       "actual": null
+      },
+      {
+       "query_id": "Q19",
+       "row": 0,
+       "column": "category",
+       "value": "download",
+       "actual": "download"
+      },
+      {
+       "query_id": "Q19",
+       "row": 0,
+       "column": "ticket_count",
+       "value": 26,
+       "actual": 26
+      },
+      {
+       "query_id": "Q19",
+       "row": 1,
+       "column": "period",
+       "value": null,
+       "actual": null
+      },
+      {
+       "query_id": "Q19",
+       "row": 1,
+       "column": "category",
+       "value": "refund",
+       "actual": "refund"
+      },
+      {
+       "query_id": "Q19",
+       "row": 1,
+       "column": "ticket_count",
+       "value": 4,
+       "actual": 4
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": false,
+      "reason": "The rows only show period=null with download/refund categories; they contain no H1/H2, September, or shipping/delivery ticket data, so they do not support the claim."
+     },
+     "verified": false,
+     "checks": [
+      "verifier lane: The rows only show period=null with download/refund categories; they contain no H1/H2, September, or shipping/delivery ticket data, so they do not support the claim."
+     ]
+    },
+    {
+     "text": "Q20 contains only the without_shipping_ticket group (period null, orders 30, refunds 30, refund_rate 1.0) and no with_shipping_ticket rows, so it cannot show shipping tickets driving refunds.",
+     "evidence": [
+      {
+       "query_id": "Q20",
+       "row": 0,
+       "column": "period",
+       "value": null,
+       "actual": null
+      },
+      {
+       "query_id": "Q20",
+       "row": 0,
+       "column": "ticket_group",
+       "value": "without_shipping_ticket",
+       "actual": "without_shipping_ticket"
+      },
+      {
+       "query_id": "Q20",
+       "row": 0,
+       "column": "orders",
+       "value": 30,
+       "actual": 30
+      },
+      {
+       "query_id": "Q20",
+       "row": 0,
+       "column": "refunds",
+       "value": 30,
+       "actual": 30
+      },
+      {
+       "query_id": "Q20",
+       "row": 0,
+       "column": "refund_rate",
+       "value": 1.0,
+       "actual": 1.0
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "Rows confirm Q20 contains only without_shipping_ticket with no with_shipping_ticket rows, supporting the claim."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q19",
+    "Q20",
+    "Q21"
+   ],
+   "action": "Fix the date filtering logic (the CASE compares yyyy-MM strings to full-date strings, producing null periods) and re-run the shipping/delivery ticket versus refund analysis; in parallel, investigate other refund drivers for late September."
+  }
+ ],
+ "unverified_or_inconclusive": [
+  {
+   "hypothesis": "A product file release in mid-September introduced a defective version (wrong files or bugs), causing quality-related refunds for the affected product_ids.",
+   "id": "H2",
+   "verdict": "rejected",
+   "summary": "The mid-September release affected only product P003, but no quality-related refunds or defect/damage tickets were recorded for it in July\u2013September 2026, so the defective release does not explain the refund increase.",
+   "impact_usd": 0.0,
+   "confidence": 0.0,
+   "claims": [
+    {
+     "text": "The only product released between 2026-09-10 and 2026-09-20 was P003.",
+     "evidence": [
+      {
+       "query_id": "Q1",
+       "row": 0,
+       "column": "product_id",
+       "value": "P003",
+       "actual": "P003"
+      }
+     ],
+     "confidence": 1.0,
+     "verified": false,
+     "checks": [
+      "ungrounded numbers in text: [20.0]"
+     ]
+    },
+    {
+     "text": "No quality-related refund records exist for P003 in July, August, or September 2026; Q2 returned an empty result set.",
+     "evidence": [],
+     "confidence": 1.0,
+     "verified": false,
+     "checks": [
+      "no evidence cited"
+     ]
+    },
+    {
+     "text": "No defect- or damage-related support tickets exist for P003 in July, August, or September 2026; Q3 returned an empty result set.",
+     "evidence": [],
+     "confidence": 1.0,
+     "verified": false,
+     "checks": [
+      "no evidence cited"
+     ]
+    }
+   ],
+   "queries": [
+    "Q1",
+    "Q2",
+    "Q3"
+   ],
+   "action": "Investigate other causes for the second-half September refund increase, such as non-quality refund reasons, product IDs outside the release window, or changes in order volume; also verify refund and ticket data completeness."
+  },
+  {
+   "hypothesis": "Paid social (Meta) traffic quality deteriorated in H2 September: spend and clicks rose but sessions or landing_404s increased and conversion to orders fell, bringing low-intent visitors who refund at higher rates.",
+   "id": "H3",
+   "verdict": "inconclusive",
+   "summary": "Meta spend and clicks rose slightly in H2 and paid_social landing_404s increased, but paid_social sessions collapsed (2,545 \u2192 121) and Q11 contains no H2 paid_social refund-rate row while refund rates rose across every reported channel, so the Meta-specific refund mechanism cannot be confirmed.",
+   "impact_usd": 0.0,
+   "confidence": 0.93,
+   "claims": [
+    {
+     "text": "Meta spend and clicks rose from H1 to H2 (spend $2,270.06 \u2192 $2,360.34; clicks 5,525 \u2192 5,638), supporting only the spend/clicks portion of H3.",
+     "evidence": [
+      {
+       "query_id": "Q9",
+       "row": 0,
+       "column": "total_spend_usd",
+       "value": 2270.06,
+       "actual": 2270.06
+      },
+      {
+       "query_id": "Q9",
+       "row": 0,
+       "column": "total_clicks",
+       "value": 5525,
+       "actual": 5525
+      },
+      {
+       "query_id": "Q9",
+       "row": 1,
+       "column": "total_spend_usd",
+       "value": 2360.34,
+       "actual": 2360.34
+      },
+      {
+       "query_id": "Q9",
+       "row": 1,
+       "column": "total_clicks",
+       "value": 5638,
+       "actual": 5638
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "Rows show exact H1-to-H2 increase in spend ($2,270.06 \u2192 $2,360.34) and clicks (5,525 \u2192 5,638), fully matching the claim."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "Paid_social sessions did not increase; they collapsed from 2,545 in H1 to 121 in H2 while landing_404s rose from 2,891 to 5,517, indicating clicks were not turning into measurable sessions.",
+     "evidence": [
+      {
+       "query_id": "Q10",
+       "row": 0,
+       "column": "total_sessions",
+       "value": 2545,
+       "actual": 2545
+      },
+      {
+       "query_id": "Q10",
+       "row": 0,
+       "column": "total_landing_404s",
+       "value": 2891,
+       "actual": 2891
+      },
+      {
+       "query_id": "Q10",
+       "row": 1,
+       "column": "total_sessions",
+       "value": 121,
+       "actual": 121
+      },
+      {
+       "query_id": "Q10",
+       "row": 1,
+       "column": "total_landing_404s",
+       "value": 5517,
+       "actual": 5517
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": false,
+      "reason": "Rows show total sessions and 404s without channel attribution or click-to-session context; claim's Paid_social label and causal interpretation are unsupported."
+     },
+     "verified": false,
+     "checks": [
+      "verifier lane: Rows show total sessions and 404s without channel attribution or click-to-session context; claim's Paid_social label and causal interpretation are unsupported."
+     ]
+    },
+    {
+     "text": "Q11 has no H2 paid_social refund-rate row (H1 paid_social was 0.027777777777777776), and H2 refund rates rose for email (0.06813342796309439), organic (0.11663732394366197), and referral (0.2119487908961593), so a Meta-specific higher refund rate cannot be verified and may be a September-wide issue.",
+     "evidence": [
+      {
+       "query_id": "Q11",
+       "row": 2,
+       "column": "refund_rate",
+       "value": 0.027777777777777776,
+       "actual": 0.027777777777777776
+      },
+      {
+       "query_id": "Q11",
+       "row": 4,
+       "column": "refund_rate",
+       "value": 0.06813342796309439,
+       "actual": 0.06813342796309439
+      },
+      {
+       "query_id": "Q11",
+       "row": 5,
+       "column": "refund_rate",
+       "value": 0.11663732394366197,
+       "actual": 0.11663732394366197
+      },
+      {
+       "query_id": "Q11",
+       "row": 6,
+       "column": "refund_rate",
+       "value": 0.2119487908961593,
+       "actual": 0.2119487908961593
+      }
+     ],
+     "confidence": 0.9,
+     "llm_check": {
+      "supported": true,
+      "reason": "All cited H1/H2 refund rates match the rows exactly; H2 paid_social is absent, so a Meta-specific higher refund rate cannot be verified from this data."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q9",
+    "Q10",
+    "Q11"
+   ],
+   "action": "Retrieve the missing H2 paid_social refund rate and paid_social orders/sessions conversion; investigate the paid_social session collapse (tracking or landing-page failure) and the broad H2 refund-rate increase across all channels before attributing September refunds to Meta traffic quality."
+  },
+  {
+   "hypothesis": "Broken landing pages (404s) in H2 September caused customers to order the wrong item or re-order, generating wrong-item or cancellation refunds.",
+   "id": "H6",
+   "verdict": "rejected",
+   "summary": "H6 is rejected because while paid-social landing 404s rose sharply from H1 to H2 September, wrong-item/cancellation refund amounts are null in both periods and no daily 404\u2013refund overlap exists, so the proposed causal link is unsupported.",
+   "impact_usd": 0.0,
+   "confidence": 0.0,
+   "claims": [
+    {
+     "text": "Paid social landing 404s increased from 2901 in H1 September to 5534 in H2 September, and organic 404s increased from 10 to 17, confirming more broken-page traffic in the second half.",
+     "evidence": [
+      {
+       "query_id": "Q16",
+       "row": 0,
+       "column": "h1_paid_social_404s",
+       "value": 2901,
+       "actual": 2901
+      },
+      {
+       "query_id": "Q16",
+       "row": 0,
+       "column": "h2_paid_social_404s",
+       "value": 5534,
+       "actual": 5534
+      },
+      {
+       "query_id": "Q16",
+       "row": 0,
+       "column": "h1_organic_404s",
+       "value": 10,
+       "actual": 10
+      },
+      {
+       "query_id": "Q16",
+       "row": 0,
+       "column": "h2_organic_404s",
+       "value": 17,
+       "actual": 17
+      }
+     ],
+     "confidence": 0.95,
+     "verified": false,
+     "checks": [
+      "ungrounded numbers in text: [404.0, 404.0]"
+     ]
+    },
+    {
+     "text": "Wrong-item/order_error and cancellation refund amounts are null in both H1 and H2 September, so there is no measurable refund increase to attribute to 404s.",
+     "evidence": [
+      {
+       "query_id": "Q17",
+       "row": 0,
+       "column": "h1_wrong_item_refunds",
+       "value": null,
+       "actual": null
+      },
+      {
+       "query_id": "Q17",
+       "row": 0,
+       "column": "h2_wrong_item_refunds",
+       "value": null,
+       "actual": null
+      },
+      {
+       "query_id": "Q17",
+       "row": 0,
+       "column": "h1_cancellation_refunds",
+       "value": null,
+       "actual": null
+      },
+      {
+       "query_id": "Q17",
+       "row": 0,
+       "column": "h2_cancellation_refunds",
+       "value": null,
+       "actual": null
+      }
+     ],
+     "confidence": 0.9,
+     "verified": false,
+     "checks": [
+      "ungrounded numbers in text: [404.0]"
+     ]
+    }
+   ],
+   "queries": [
+    "Q16",
+    "Q17",
+    "Q18"
+   ],
+   "action": "Investigate alternative causes for the September H2 refund rise and audit refund reason-code data completeness; do not attribute refunds to 404s without refund data."
+  }
+ ],
+ "queries": {
+  "Q1": {
+   "id": "Q1",
+   "hypothesis": "H2",
+   "purpose": "Identify product IDs released during the suspected defective release window (mid\u2011September 2026).",
+   "sql": "SELECT DISTINCT product_id\nFROM WHYDROP_FILES.release_log\nWHERE to_date(date, 'yyyy-MM-dd') BETWEEN '2026-09-10' AND '2026-09-20';",
+   "rows": [
+    {
+     "product_id": "P003"
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.19,
+   "result_hash": "41c565f04c1c",
+   "ok": true
+  },
+  "Q2": {
+   "id": "Q2",
+   "hypothesis": "H2",
+   "purpose": "Compare total quality\u2011related refunds for the affected products in H2 September versus H1 September and August.",
+   "sql": "WITH affected_products AS (\n  SELECT DISTINCT product_id\n  FROM WHYDROP_FILES.release_log\n  WHERE to_date(date, 'yyyy-MM-dd') BETWEEN '2026-09-10' AND '2026-09-20'\n),\nrefunds_by_month AS (\n  SELECT\n    date_format(to_date(r.date), 'yyyy-MM') AS month,\n    SUM(r.amount_usd) AS total_refund_usd\n  FROM WHYDROP_PG.refunds r\n  JOIN WHYDROP_FILES.orders o\n    ON r.order_id = o.order_id\n  WHERE o.product_id IN (SELECT product_id FROM affected_products)\n    AND LOWER(r.reason) LIKE '%quality%'\n  GROUP BY month\n)\nSELECT month, total_refund_usd\nFROM refunds_by_month\nWHERE month IN ('2026-09', '2026-08', '2026-07');",
+   "rows": [],
+   "row_count": 0,
+   "truncated": false,
+   "elapsed_s": 0.33,
+   "result_hash": "97d170e1550e",
+   "ok": true
+  },
+  "Q3": {
+   "id": "Q3",
+   "hypothesis": "H2",
+   "purpose": "Compare the number of support tickets with defect\u2011related categories for the affected products in H2 September versus H1 September and August.",
+   "sql": "WITH affected_products AS (\n  SELECT DISTINCT product_id\n  FROM WHYDROP_FILES.release_log\n  WHERE to_date(date, 'yyyy-MM-dd') BETWEEN '2026-09-10' AND '2026-09-20'\n),\ntickets_by_month AS (\n  SELECT\n    date_format(to_date(t.date), 'yyyy-MM') AS month,\n    COUNT(*) AS ticket_count\n  FROM WHYDROP_PG.support_tickets t\n  JOIN WHYDROP_FILES.orders o\n    ON t.order_id = o.order_id\n  WHERE o.product_id IN (SELECT product_id FROM affected_products)\n    AND LOWER(t.category) LIKE ANY ('%defect%', '%damaged%')\n  GROUP BY month\n)\nSELECT month, ticket_count\nFROM tickets_by_month\nWHERE month IN ('2026-09', '2026-08', '2026-07');",
+   "rows": [],
+   "row_count": 0,
+   "truncated": false,
+   "elapsed_s": 0.29,
+   "result_hash": "97d170e1550e",
+   "ok": true
+  },
+  "Q4": {
+   "id": "Q4",
+   "hypothesis": "H1",
+   "purpose": "Refund count and total amount for September, split by whether the product had a mid\u2011September price change.",
+   "sql": "WITH price_change_products AS (\n  SELECT product_id\n  FROM WHYDROP_FILES.pricing_changes\n  WHERE date BETWEEN '2026-09-01' AND '2026-09-14'\n),\nrefunds_enriched AS (\n  SELECT r.refund_id,\n         r.date AS refund_date,\n         r.amount_usd,\n         r.reason,\n         o.date AS order_date,\n         o.product_id,\n         CASE WHEN p.product_id IS NOT NULL THEN 1 ELSE 0 END AS has_mid_sept_price_change\n  FROM WHYDROP_PG.refunds r\n  JOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\n  LEFT JOIN price_change_products p ON o.product_id = p.product_id\n  WHERE o.date BETWEEN '2026-06-01' AND '2026-09-30'\n)\nSELECT\n  CASE WHEN has_mid_sept_price_change = 1 THEN 'MidSepPriceChange' ELSE 'NoMidSepPriceChange' END AS price_change_flag,\n  DATE_FORMAT(TO_DATE(refund_date), 'yyyy-MM') AS month,\n  COUNT(*) AS refund_count,\n  SUM(amount_usd) AS total_refund_amount\nFROM refunds_enriched\nWHERE refund_date BETWEEN '2026-09-01' AND '2026-09-30'\nGROUP BY price_change_flag, month\nORDER BY price_change_flag, month;",
+   "rows": [
+    {
+     "price_change_flag": "MidSepPriceChange",
+     "month": "2026-09",
+     "refund_count": 6,
+     "total_refund_amount": 174.0
+    },
+    {
+     "price_change_flag": "NoMidSepPriceChange",
+     "month": "2026-09",
+     "refund_count": 37,
+     "total_refund_amount": 533.0
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.34,
+   "result_hash": "29aab3b94486",
+   "ok": true
+  },
+  "Q6": {
+   "id": "Q6",
+   "hypothesis": "H4",
+   "purpose": "Compute monthly refund rate per country for August and September (split into H1 and H2).",
+   "sql": "SELECT country,\n       CASE \n         WHEN month = '2026-08' THEN '2026-08'\n         WHEN month = '2026-09' AND day <= 15 THEN '2026-09-H1'\n         WHEN month = '2026-09' AND day > 15 THEN '2026-09-H2'\n       END AS period,\n       COUNT(DISTINCT refund_id) AS refund_cnt,\n       COUNT(DISTINCT order_id) AS order_cnt,\n       COUNT(DISTINCT refund_id) * 1.0 / COUNT(DISTINCT order_id) AS refund_rate\nFROM (\n  SELECT r.refund_id,\n         r.order_id,\n         o.country,\n         o.date AS order_date,\n         EXTRACT(DAY FROM o.date) AS day,\n         DATE_FORMAT(TO_DATE(o.date), 'yyyy-MM') AS month\n  FROM WHYDROP_PG.refunds r\n  JOIN WHYDROP_FILES.orders o\n    ON r.order_id = o.order_id\n  WHERE o.date BETWEEN '2026-08-01' AND '2026-09-30'\n) t\nGROUP BY country,\n       CASE \n         WHEN month = '2026-08' THEN '2026-08'\n         WHEN month = '2026-09' AND day <= 15 THEN '2026-09-H1'\n         WHEN month = '2026-09' AND day > 15 THEN '2026-09-H2'\n       END\nORDER BY country, period;",
+   "rows": [
+    {
+     "refund_cnt": 1,
+     "order_cnt": 1,
+     "country": "AU",
+     "refund_rate": 1.0,
+     "period": "2026-09-H1"
+    },
+    {
+     "refund_cnt": 2,
+     "order_cnt": 2,
+     "country": "AU",
+     "refund_rate": 1.0,
+     "period": "2026-09-H2"
+    },
+    {
+     "refund_cnt": 3,
+     "order_cnt": 3,
+     "country": "CA",
+     "refund_rate": 1.0,
+     "period": "2026-08"
+    },
+    {
+     "refund_cnt": 2,
+     "order_cnt": 2,
+     "country": "CA",
+     "refund_rate": 1.0,
+     "period": "2026-09-H1"
+    },
+    {
+     "refund_cnt": 3,
+     "order_cnt": 3,
+     "country": "CA",
+     "refund_rate": 1.0,
+     "period": "2026-09-H2"
+    },
+    {
+     "refund_cnt": 1,
+     "order_cnt": 1,
+     "country": "DE",
+     "refund_rate": 1.0,
+     "period": "2026-09-H1"
+    },
+    {
+     "refund_cnt": 5,
+     "order_cnt": 5,
+     "country": "DE",
+     "refund_rate": 1.0,
+     "period": "2026-09-H2"
+    },
+    {
+     "refund_cnt": 9,
+     "order_cnt": 9,
+     "country": "GB",
+     "refund_rate": 1.0,
+     "period": "2026-08"
+    },
+    {
+     "refund_cnt": 4,
+     "order_cnt": 4,
+     "country": "GB",
+     "refund_rate": 1.0,
+     "period": "2026-09-H1"
+    },
+    {
+     "refund_cnt": 10,
+     "order_cnt": 10,
+     "country": "GB",
+     "refund_rate": 1.0,
+     "period": "2026-09-H2"
+    },
+    {
+     "refund_cnt": 3,
+     "order_cnt": 3,
+     "country": "IN",
+     "refund_rate": 1.0,
+     "period": "2026-08"
+    },
+    {
+     "refund_cnt": 6,
+     "order_cnt": 6,
+     "country": "IN",
+     "refund_rate": 1.0,
+     "period": "2026-09-H2"
+    },
+    {
+     "refund_cnt": 15,
+     "order_cnt": 15,
+     "country": "US",
+     "refund_rate": 1.0,
+     "period": "2026-08"
+    },
+    {
+     "refund_cnt": 4,
+     "order_cnt": 4,
+     "country": "US",
+     "refund_rate": 1.0,
+     "period": "2026-09-H1"
+    },
+    {
+     "refund_cnt": 5,
+     "order_cnt": 5,
+     "country": "US",
+     "refund_rate": 1.0,
+     "period": "2026-09-H2"
+    }
+   ],
+   "row_count": 15,
+   "truncated": false,
+   "elapsed_s": 0.47,
+   "result_hash": "53aa271aa8aa",
+   "ok": true
+  },
+  "Q7": {
+   "id": "Q7",
+   "hypothesis": "H4",
+   "purpose": "Identify countries where the September\u2011H2 refund rate exceeds the August rate by more than 150% (ratio > 1.5).",
+   "sql": "SELECT country,\n       aug_rate,\n       sep_h2_rate,\n       rate_ratio\nFROM (\n  SELECT country,\n         SUM(CASE WHEN period = '2026-08' THEN refund_cnt ELSE 0 END) * 1.0 / NULLIF(SUM(CASE WHEN period = '2026-08' THEN order_cnt ELSE 0 END),0) AS aug_rate,\n         SUM(CASE WHEN period = '2026-09-H2' THEN refund_cnt ELSE 0 END) * 1.0 / NULLIF(SUM(CASE WHEN period = '2026-09-H2' THEN order_cnt ELSE 0 END),0) AS sep_h2_rate,\n         (SUM(CASE WHEN period = '2026-09-H2' THEN refund_cnt ELSE 0 END) * 1.0 / NULLIF(SUM(CASE WHEN period = '2026-09-H2' THEN order_cnt ELSE 0 END),0)) /\n         (SUM(CASE WHEN period = '2026-08' THEN refund_cnt ELSE 0 END) * 1.0 / NULLIF(SUM(CASE WHEN period = '2026-08' THEN order_cnt ELSE 0 END),0)) AS rate_ratio\n  FROM (\n    SELECT country,\n           CASE \n             WHEN month = '2026-08' THEN '2026-08'\n             WHEN month = '2026-09' AND day <= 15 THEN '2026-09-H1'\n             WHEN month = '2026-09' AND day > 15 THEN '2026-09-H2'\n           END AS period,\n           COUNT(DISTINCT refund_id) AS refund_cnt,\n           COUNT(DISTINCT order_id) AS order_cnt\n    FROM (\n      SELECT r.refund_id,\n             r.order_id,\n             o.country,\n             o.date AS order_date,\n             EXTRACT(DAY FROM o.date) AS day,\n             DATE_FORMAT(TO_DATE(o.date), 'yyyy-MM') AS month\n      FROM WHYDROP_PG.refunds r\n      JOIN WHYDROP_FILES.orders o\n        ON r.order_id = o.order_id\n      WHERE o.date BETWEEN '2026-08-01' AND '2026-09-30'\n    ) sub\n    GROUP BY country,\n           CASE \n             WHEN month = '2026-08' THEN '2026-08'\n             WHEN month = '2026-09' AND day <= 15 THEN '2026-09-H1'\n             WHEN month = '2026-09' AND day > 15 THEN '2026-09-H2'\n           END\n  ) t\n  GROUP BY country\n) sub2\nWHERE rate_ratio > 1.5\nORDER BY rate_ratio DESC;",
+   "rows": [],
+   "row_count": 0,
+   "truncated": false,
+   "elapsed_s": 0.34,
+   "result_hash": "97d170e1550e",
+   "ok": true
+  },
+  "Q8": {
+   "id": "Q8",
+   "hypothesis": "H4",
+   "purpose": "List top 5 countries by refund rate in September\u2011H2 to see concentration.",
+   "sql": "SELECT country,\n       SUM(CASE WHEN period = '2026-09-H2' THEN refund_cnt ELSE 0 END) AS refunds_h2,\n       SUM(CASE WHEN period = '2026-09-H2' THEN order_cnt ELSE 0 END) AS orders_h2,\n       SUM(CASE WHEN period = '2026-09-H2' THEN refund_cnt ELSE 0 END) * 1.0 / NULLIF(SUM(CASE WHEN period = '2026-09-H2' THEN order_cnt ELSE 0 END),0) AS refund_rate_h2\nFROM (\n  SELECT country,\n         CASE \n           WHEN month = '2026-08' THEN '2026-08'\n           WHEN month = '2026-09' AND day <= 15 THEN '2026-09-H1'\n           WHEN month = '2026-09' AND day > 15 THEN '2026-09-H2'\n         END AS period,\n         COUNT(DISTINCT refund_id) AS refund_cnt,\n         COUNT(DISTINCT order_id) AS order_cnt\n  FROM (\n    SELECT r.refund_id,\n           r.order_id,\n           o.country,\n           o.date AS order_date,\n           EXTRACT(DAY FROM o.date) AS day,\n           DATE_FORMAT(TO_DATE(o.date), 'yyyy-MM') AS month\n    FROM WHYDROP_PG.refunds r\n    JOIN WHYDROP_FILES.orders o\n      ON r.order_id = o.order_id\n    WHERE o.date BETWEEN '2026-08-01' AND '2026-09-30'\n  ) sub\n  GROUP BY country,\n         CASE \n           WHEN month = '2026-08' THEN '2026-08'\n           WHEN month = '2026-09' AND day <= 15 THEN '2026-09-H1'\n           WHEN month = '2026-09' AND day > 15 THEN '2026-09-H2'\n         END\n) t\nWHERE period = '2026-09-H2'\nGROUP BY country\nORDER BY refund_rate_h2 DESC\nLIMIT 5",
+   "rows": [
+    {
+     "country": "AU",
+     "refunds_h2": 2,
+     "orders_h2": 2,
+     "refund_rate_h2": 1.0
+    },
+    {
+     "country": "CA",
+     "refunds_h2": 3,
+     "orders_h2": 3,
+     "refund_rate_h2": 1.0
+    },
+    {
+     "country": "GB",
+     "refunds_h2": 10,
+     "orders_h2": 10,
+     "refund_rate_h2": 1.0
+    },
+    {
+     "country": "DE",
+     "refunds_h2": 5,
+     "orders_h2": 5,
+     "refund_rate_h2": 1.0
+    },
+    {
+     "country": "US",
+     "refunds_h2": 5,
+     "orders_h2": 5,
+     "refund_rate_h2": 1.0
+    }
+   ],
+   "row_count": 5,
+   "truncated": false,
+   "elapsed_s": 0.39,
+   "result_hash": "fbe596c6db93",
+   "ok": true
+  },
+  "Q9": {
+   "id": "Q9",
+   "hypothesis": "H3",
+   "purpose": "Compare Meta ad spend and clicks between the first half (H1) and second half (H2) of September 2026",
+   "sql": "SELECT CASE WHEN day(to_date(date)) <= 15 THEN 'H1' ELSE 'H2' END AS period,\n       SUM(spend_usd) AS total_spend_usd,\n       SUM(clicks) AS total_clicks,\n       SUM(impressions) AS total_impressions\nFROM WHYDROP_FILES.marketing_spend\nWHERE channel = 'meta'\n  AND to_date(date) >= '2026-09-01'\n  AND to_date(date) <= '2026-09-30'\nGROUP BY period\nORDER BY period",
+   "rows": [
+    {
+     "period": "H1",
+     "total_spend_usd": 2270.06,
+     "total_clicks": 5525,
+     "total_impressions": 342161
+    },
+    {
+     "period": "H2",
+     "total_spend_usd": 2360.34,
+     "total_clicks": 5638,
+     "total_impressions": 334024
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.21,
+   "result_hash": "07b68450a428",
+   "ok": true
+  },
+  "Q10": {
+   "id": "Q10",
+   "hypothesis": "H3",
+   "purpose": "Compare paid_social traffic quality (sessions and landing_404s) between H1 and H2 September 2026",
+   "sql": "SELECT CASE WHEN day(to_date(date)) <= 15 THEN 'H1' ELSE 'H2' END AS period,\n       SUM(sessions) AS total_sessions,\n       SUM(landing_404s) AS total_landing_404s\nFROM WHYDROP_FILES.web_traffic\nWHERE source = 'paid_social'\n  AND to_date(date) >= '2026-09-01'\n  AND to_date(date) <= '2026-09-30'\nGROUP BY period\nORDER BY period",
+   "rows": [
+    {
+     "period": "H1",
+     "total_sessions": 2545,
+     "total_landing_404s": 2891
+    },
+    {
+     "period": "H2",
+     "total_sessions": 121,
+     "total_landing_404s": 5517
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.19,
+   "result_hash": "adb069a34586",
+   "ok": true
+  },
+  "Q11": {
+   "id": "Q11",
+   "hypothesis": "H3",
+   "purpose": "Compute refund rate by channel (paid_social vs other channels) for H1 vs H2 September 2026",
+   "sql": "SELECT period,\n       channel,\n       SUM(refunds_usd) / SUM(revenue_usd) AS refund_rate\nFROM (\n  SELECT\n    o.date,\n    CASE WHEN day(to_date(o.date)) <= 15 THEN 'H1' ELSE 'H2' END AS period,\n    o.channel,\n    SUM(o.unit_price_usd * o.quantity) AS revenue_usd,\n    SUM(r.amount_usd) AS refunds_usd\n  FROM WHYDROP_FILES.orders o\n  LEFT JOIN WHYDROP_PG.refunds r\n    ON o.order_id = r.order_id\n   AND to_date(r.date) >= '2026-09-01'\n   AND to_date(r.date) <= '2026-09-30'\n  WHERE to_date(o.date) >= '2026-09-01'\n    AND to_date(o.date) <= '2026-09-30'\n  GROUP BY o.date, o.channel, period\n) t\nGROUP BY period, channel\nORDER BY period, channel",
+   "rows": [
+    {
+     "period": "H1",
+     "channel": "email",
+     "refund_rate": 0.02359249329758713
+    },
+    {
+     "period": "H1",
+     "channel": "organic",
+     "refund_rate": 0.036935704514363885
+    },
+    {
+     "period": "H1",
+     "channel": "paid_social",
+     "refund_rate": 0.027777777777777776
+    },
+    {
+     "period": "H1",
+     "channel": "referral",
+     "refund_rate": 0.08450704225352113
+    },
+    {
+     "period": "H2",
+     "channel": "email",
+     "refund_rate": 0.06813342796309439
+    },
+    {
+     "period": "H2",
+     "channel": "organic",
+     "refund_rate": 0.11663732394366197
+    },
+    {
+     "period": "H2",
+     "channel": "referral",
+     "refund_rate": 0.2119487908961593
+    }
+   ],
+   "row_count": 7,
+   "truncated": false,
+   "elapsed_s": 0.39,
+   "result_hash": "6dd5f49e8b43",
+   "ok": true
+  },
+  "Q12": {
+   "id": "Q12",
+   "hypothesis": "H5",
+   "purpose": "Identify the top 10 product IDs with the highest refund rate in August (baseline) to spot SKUs that historically generate many refunds.",
+   "sql": "SELECT product_id,\n       t.order_count_aug,\n       t.refund_count_aug,\n       CASE WHEN t.order_count_aug = 0 THEN 0 ELSE CAST(t.refund_count_aug AS DOUBLE) / CAST(t.order_count_aug AS DOUBLE) END AS refund_rate_aug\nFROM (\n    SELECT p.product_id,\n           o.order_count_aug,\n           r.refund_count_aug\n    FROM WHYDROP_FILES.products p\n    LEFT JOIN (\n        SELECT product_id, COUNT(*) AS order_count_aug\n        FROM WHYDROP_FILES.orders\n        WHERE to_date(date) >= '2026-08-01' AND to_date(date) < '2026-09-01'\n        GROUP BY product_id\n    ) o ON p.product_id = o.product_id\n    LEFT JOIN (\n        SELECT o.product_id, COUNT(*) AS refund_count_aug\n        FROM WHYDROP_PG.refunds r\n        JOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\n        WHERE to_date(o.date) >= '2026-08-01' AND to_date(o.date) < '2026-09-01'\n        GROUP BY o.product_id\n    ) r ON p.product_id = r.product_id\n) t\nORDER BY refund_rate_aug DESC\nLIMIT 10",
+   "ok": true,
+   "error": "[UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `o`.`order_count_aug` cannot be resolved. Did you mean one of the following? [`t`.`order_count_aug`, `t`.`refund_count_aug`, `t`.`product_id`].; line 2 pos 7;\n'GlobalLimit 10\n+- 'LocalLimit 10\n   +- 'Sort ['refund_rate_aug DESC NULLS LAST], true\n      +- 'Project [product_id#10342, 'o.order_count_aug, 'r.refund_count_aug,",
+   "sql_original": "SELECT product_id,\n       o.order_count_aug,\n       r.refund_count_aug,\n       CASE WHEN o.order_count_aug = 0 THEN 0 ELSE r.refund_count_aug * 1.0 / o.order_count_aug END AS refund_rate_aug\nFROM (\n    SELECT p.product_id,\n           o.order_count_aug,\n           r.refund_count_aug\n    FROM WHYDROP_FILES.products p\n    LEFT JOIN (\n        SELECT product_id, COUNT(*) AS order_count_aug\n        FROM WHYDROP_FILES.orders\n        WHERE to_date(date) >= '2026-08-01' AND to_date(date) < '2026-09-01'\n        GROUP BY product_id\n    ) o ON p.product_id = o.product_id\n    LEFT JOIN (\n        SELECT o.product_id, COUNT(*) AS refund_count_aug\n        FROM WHYDROP_PG.refunds r\n        JOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\n        WHERE to_date(o.date) >= '2026-08-01' AND to_date(o.date) < '2026-09-01'\n        GROUP BY o.product_id\n    ) r ON p.product_id = r.product_id\n) t\nORDER BY refund_rate_aug DESC\nLIMIT 10",
+   "rows": [
+    {
+     "product_id": "P005",
+     "order_count_aug": 102,
+     "refund_count_aug": 7,
+     "refund_rate_aug": 0.06862745098039216
+    },
+    {
+     "product_id": "P001",
+     "order_count_aug": 269,
+     "refund_count_aug": 11,
+     "refund_rate_aug": 0.040892193308550186
+    },
+    {
+     "product_id": "P002",
+     "order_count_aug": 165,
+     "refund_count_aug": 5,
+     "refund_rate_aug": 0.030303030303030304
+    },
+    {
+     "product_id": "P004",
+     "order_count_aug": 148,
+     "refund_count_aug": 4,
+     "refund_rate_aug": 0.02702702702702703
+    },
+    {
+     "product_id": "P003",
+     "order_count_aug": 254,
+     "refund_count_aug": 3,
+     "refund_rate_aug": 0.011811023622047244
+    }
+   ],
+   "row_count": 5,
+   "truncated": false,
+   "elapsed_s": 0.35,
+   "result_hash": "a2b23ae2b5b4"
+  },
+  "Q5": {
+   "id": "Q5",
+   "hypothesis": "H1",
+   "purpose": "Refund rate (refunds divided by orders) for September, split by mid\u2011September price\u2011change status and half\u2011month (H1 vs H2).",
+   "sql": "WITH price_change_products AS (\n  SELECT product_id\n  FROM WHYDROP_FILES.pricing_changes\n  WHERE to_date(date) BETWEEN '2026-09-01' AND '2026-09-14'\n),\norders_enriched AS (\n  SELECT\n    o.order_id,\n    to_date(o.date) AS order_date,\n    o.product_id,\n    CASE WHEN p.product_id IS NOT NULL THEN 1 ELSE 0 END AS has_mid_sept_price_change\n  FROM WHYDROP_FILES.orders o\n  LEFT JOIN price_change_products p\n    ON o.product_id = p.product_id\n  WHERE to_date(o.date) BETWEEN '2026-06-01' AND '2026-09-30'\n),\norder_counts AS (\n  SELECT\n    has_mid_sept_price_change,\n    CASE WHEN to_date(order_date) BETWEEN '2026-09-01' AND '2026-09-14' THEN 'H1' ELSE 'H2' END AS period,\n    COUNT(*) AS order_cnt\n  FROM orders_enriched\n  WHERE to_date(order_date) BETWEEN '2026-09-01' AND '2026-09-30'\n  GROUP BY has_mid_sept_price_change, period\n),\nrefund_counts AS (\n  SELECT\n    o.has_mid_sept_price_change,\n    CASE WHEN to_date(r.date) BETWEEN '2026-09-01' AND '2026-09-14' THEN 'H1' ELSE 'H2' END AS period,\n    COUNT(*) AS refund_cnt\n  FROM WHYDROP_PG.refunds r\n  JOIN orders_enriched o\n    ON r.order_id = o.order_id\n  WHERE to_date(r.date) BETWEEN '2026-09-01' AND '2026-09-30'\n  GROUP BY o.has_mid_sept_price_change, period\n)\nSELECT\n  o.has_mid_sept_price_change,\n  o.period,\n  o.order_cnt,\n  COALESCE(r.refund_cnt, 0) AS refund_cnt,\n  CASE WHEN o.order_cnt = 0 THEN 0 ELSE COALESCE(r.refund_cnt, 0) / o.order_cnt END AS refund_rate\nFROM order_counts o\nLEFT JOIN refund_counts r\n  ON o.has_mid_sept_price_change = r.has_mid_sept_price_change\n AND o.period = r.period\nORDER BY o.has_mid_sept_price_change, o.period;",
+   "ok": true,
+   "error": "[UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `r`.`refund_date` cannot be resolved. Did you mean one of the following? [`r`.`refund_id`, `r`.`date`, `o`.`order_date`, `r`.`amount_usd`, `r`.`order_id`].; line 31 pos 8;\n'WithCTE\n:- CTERelationDef 46, false\n:  +- SubqueryAlias price_change_products\n:     +- Project [product_id#8122]\n:        +- Filter ((date#8118 >= 202",
+   "sql_original": "WITH price_change_products AS (\n  SELECT product_id\n  FROM WHYDROP_FILES.pricing_changes\n  WHERE date BETWEEN '2026-09-01' AND '2026-09-14'\n),\norders_enriched AS (\n  SELECT o.order_id,\n         o.date AS order_date,\n         o.product_id,\n         CASE WHEN p.product_id IS NOT NULL THEN 1 ELSE 0 END AS has_mid_sept_price_change\n  FROM WHYDROP_FILES.orders o\n  LEFT JOIN price_change_products p ON o.product_id = p.product_id\n  WHERE o.date BETWEEN '2026-06-01' AND '2026-09-30'\n),\norder_counts AS (\n  SELECT\n    has_mid_sept_price_change,\n    CASE WHEN order_date BETWEEN '2026-09-01' AND '2026-09-14' THEN 'H1' ELSE 'H2' END AS period,\n    COUNT(*) AS order_cnt\n  FROM orders_enriched\n  WHERE order_date BETWEEN '2026-09-01' AND '2026-09-30'\n  GROUP BY has_mid_sept_price_change, period\n),\nrefund_counts AS (\n  SELECT\n    o.has_mid_sept_price_change,\n    CASE WHEN r.refund_date BETWEEN '2026-09-01' AND '2026-09-14' THEN 'H1' ELSE 'H2' END AS period,\n    COUNT(*) AS refund_cnt\n  FROM WHYDROP_PG.refunds r\n  JOIN orders_enriched o ON r.order_id = o.order_id\n  WHERE r.refund_date BETWEEN '2026-09-01' AND '2026-09-30'\n  GROUP BY o.has_mid_sept_price_change, period\n)\nSELECT\n  o.has_mid_sept_price_change,\n  o.period,\n  o.order_cnt,\n  COALESCE(r.refund_cnt, 0) AS refund_cnt,\n  CASE WHEN o.order_cnt = 0 THEN 0 ELSE COALESCE(r.refund_cnt, 0) / o.order_cnt END AS refund_rate\nFROM order_counts o\nLEFT JOIN refund_counts r\n  ON o.has_mid_sept_price_change = r.has_mid_sept_price_change\n AND o.period = r.period\nORDER BY o.has_mid_sept_price_change, o.period;",
+   "rows": [
+    {
+     "refund_cnt": 6,
+     "order_cnt": 242,
+     "has_mid_sept_price_change": 0,
+     "refund_rate": 0.024793388429752067,
+     "period": "H1"
+    },
+    {
+     "refund_cnt": 31,
+     "order_cnt": 240,
+     "has_mid_sept_price_change": 0,
+     "refund_rate": 0.12916666666666668,
+     "period": "H2"
+    },
+    {
+     "refund_cnt": 1,
+     "order_cnt": 57,
+     "has_mid_sept_price_change": 1,
+     "refund_rate": 0.017543859649122806,
+     "period": "H1"
+    },
+    {
+     "refund_cnt": 5,
+     "order_cnt": 58,
+     "has_mid_sept_price_change": 1,
+     "refund_rate": 0.08620689655172414,
+     "period": "H2"
+    }
+   ],
+   "row_count": 4,
+   "truncated": false,
+   "elapsed_s": 0.58,
+   "result_hash": "dead7bff72eb"
+  },
+  "Q13": {
+   "id": "Q13",
+   "hypothesis": "H5",
+   "purpose": "Compare the order share of those high\u2011refund\u2011rate products in H1 September (1\u201115) versus H2 September (16\u201130).",
+   "sql": "WITH top_products AS (\n    SELECT product_id\n    FROM (\n        SELECT p.product_id,\n               o.order_count_aug,\n               r.refund_count_aug,\n               CASE WHEN o.order_count_aug = 0 THEN 0 ELSE r.refund_count_aug * 1.0 / o.order_count_aug END AS refund_rate_aug\n        FROM WHYDROP_FILES.products p\n        LEFT JOIN (\n            SELECT product_id, COUNT(*) AS order_count_aug\n            FROM WHYDROP_FILES.orders\n            WHERE to_date(date) >= '2026-08-01' AND to_date(date) < '2026-09-01'\n            GROUP BY product_id\n        ) o ON p.product_id = o.product_id\n        LEFT JOIN (\n            SELECT o.product_id, COUNT(*) AS refund_count_aug\n            FROM WHYDROP_PG.refunds r\n            JOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\n            WHERE to_date(o.date) >= '2026-08-01' AND to_date(o.date) < '2026-09-01'\n            GROUP BY o.product_id\n        ) r ON p.product_id = r.product_id\n    ) sub\n    ORDER BY refund_rate_aug DESC\n    LIMIT 10\n)\nSELECT tp.product_id,\n       SUM(CASE WHEN to_date(o.date) >= '2026-09-01' AND to_date(o.date) < '2026-09-16' THEN 1 ELSE 0 END) AS orders_h1,\n       SUM(CASE WHEN to_date(o.date) >= '2026-09-16' AND to_date(o.date) <= '2026-09-30' THEN 1 ELSE 0 END) AS orders_h2\nFROM top_products tp\nJOIN WHYDROP_FILES.orders o ON tp.product_id = o.product_id\nWHERE to_date(o.date) >= '2026-09-01' AND to_date(o.date) <= '2026-09-30'\nGROUP BY tp.product_id\nORDER BY tp.product_id",
+   "rows": [
+    {
+     "product_id": "P001",
+     "orders_h1": 62,
+     "orders_h2": 53
+    },
+    {
+     "product_id": "P002",
+     "orders_h1": 67,
+     "orders_h2": 60
+    },
+    {
+     "product_id": "P003",
+     "orders_h1": 93,
+     "orders_h2": 73
+    },
+    {
+     "product_id": "P004",
+     "orders_h1": 62,
+     "orders_h2": 52
+    },
+    {
+     "product_id": "P005",
+     "orders_h1": 39,
+     "orders_h2": 36
+    }
+   ],
+   "row_count": 5,
+   "truncated": false,
+   "elapsed_s": 0.55,
+   "result_hash": "0c55f47c14f1",
+   "ok": true
+  },
+  "Q14": {
+   "id": "Q14",
+   "hypothesis": "H1",
+   "purpose": "Distribution of refund reasons containing price\u2011related keywords, split by half\u2011month (H1 vs H2) and price\u2011change status.",
+   "sql": "WITH price_change_products AS (\n  SELECT product_id\n  FROM WHYDROP_FILES.pricing_changes\n  WHERE date BETWEEN '2026-09-01' AND '2026-09-14'\n),\nrefunds_enriched AS (\n  SELECT r.refund_id,\n         r.date AS refund_date,\n         r.reason,\n         o.date AS order_date,\n         CASE WHEN p.product_id IS NOT NULL THEN 1 ELSE 0 END AS has_mid_sept_price_change\n  FROM WHYDROP_PG.refunds r\n  JOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\n  LEFT JOIN price_change_products p ON o.product_id = p.product_id\n  WHERE r.date BETWEEN '2026-09-01' AND '2026-09-30'\n)\nSELECT\n  CASE WHEN has_mid_sept_price_change = 1 THEN 'MidSepPriceChange' ELSE 'NoMidSepPriceChange' END AS price_change_flag,\n  CASE WHEN refund_date BETWEEN '2026-09-01' AND '2026-09-14' THEN 'H1' ELSE 'H2' END AS period,\n  SUM(CASE WHEN LOWER(reason) LIKE '%price%' OR LOWER(reason) LIKE '%sticker%' OR LOWER(reason) LIKE '%mismatch%' OR LOWER(reason) LIKE '%cost%' THEN 1 ELSE 0 END) AS price_related_refunds,\n  COUNT(*) AS total_refunds\nFROM refunds_enriched\nGROUP BY price_change_flag, period\nORDER BY price_change_flag, period;",
+   "rows": [
+    {
+     "price_change_flag": "MidSepPriceChange",
+     "period": "H1",
+     "price_related_refunds": 0,
+     "total_refunds": 1
+    },
+    {
+     "price_change_flag": "MidSepPriceChange",
+     "period": "H2",
+     "price_related_refunds": 0,
+     "total_refunds": 5
+    },
+    {
+     "price_change_flag": "NoMidSepPriceChange",
+     "period": "H1",
+     "price_related_refunds": 0,
+     "total_refunds": 6
+    },
+    {
+     "price_change_flag": "NoMidSepPriceChange",
+     "period": "H2",
+     "price_related_refunds": 0,
+     "total_refunds": 31
+    }
+   ],
+   "row_count": 4,
+   "truncated": false,
+   "elapsed_s": 0.48,
+   "result_hash": "796068b9d565",
+   "ok": true
+  },
+  "Q15": {
+   "id": "Q15",
+   "hypothesis": "H5",
+   "purpose": "Compare total refund amounts and order counts for the same high\u2011refund\u2011rate products in H1 vs H2 September.",
+   "sql": "WITH top_products AS (\n    SELECT product_id\n    FROM (\n        SELECT p.product_id,\n               o.order_count_aug,\n               r.refund_count_aug,\n               CASE WHEN o.order_count_aug = 0 THEN 0 ELSE r.refund_count_aug * 1.0 / o.order_count_aug END AS refund_rate_aug\n        FROM WHYDROP_FILES.products p\n        LEFT JOIN (\n            SELECT product_id, COUNT(*) AS order_count_aug\n            FROM WHYDROP_FILES.orders\n            WHERE to_date(date) >= '2026-08-01' AND to_date(date) < '2026-09-01'\n            GROUP BY product_id\n        ) o ON p.product_id = o.product_id\n        LEFT JOIN (\n            SELECT o.product_id, COUNT(*) AS refund_count_aug\n            FROM WHYDROP_PG.refunds r\n            JOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\n            WHERE to_date(o.date) >= '2026-08-01' AND to_date(o.date) < '2026-09-01'\n            GROUP BY o.product_id\n        ) r ON p.product_id = r.product_id\n    ) sub\n    ORDER BY refund_rate_aug DESC\n    LIMIT 10\n)\nSELECT tp.product_id,\n       SUM(CASE WHEN to_date(r.date) >= '2026-09-01' AND to_date(r.date) < '2026-09-16' THEN r.amount_usd ELSE 0 END) AS refunds_h1,\n       SUM(CASE WHEN to_date(r.date) >= '2026-09-16' AND to_date(r.date) <= '2026-09-30' THEN r.amount_usd ELSE 0 END) AS refunds_h2,\n       SUM(CASE WHEN to_date(o.date) >= '2026-09-01' AND to_date(o.date) < '2026-09-16' THEN 1 ELSE 0 END) AS orders_h1,\n       SUM(CASE WHEN to_date(o.date) >= '2026-09-16' AND to_date(o.date) <= '2026-09-30' THEN 1 ELSE 0 END) AS orders_h2\nFROM top_products tp\nJOIN WHYDROP_FILES.orders o ON tp.product_id = o.product_id\nLEFT JOIN WHYDROP_PG.refunds r ON r.order_id = o.order_id\n     AND to_date(r.date) >= '2026-09-01' AND to_date(r.date) <= '2026-09-30'\nWHERE to_date(o.date) >= '2026-09-01' AND to_date(o.date) <= '2026-09-30'\nGROUP BY tp.product_id\nORDER BY tp.product_id",
+   "rows": [
+    {
+     "orders_h1": 62,
+     "refunds_h2": 145.0,
+     "orders_h2": 53,
+     "product_id": "P001",
+     "refunds_h1": 29.0
+    },
+    {
+     "orders_h1": 67,
+     "refunds_h2": 12.0,
+     "orders_h2": 60,
+     "product_id": "P002",
+     "refunds_h1": 12.0
+    },
+    {
+     "orders_h1": 93,
+     "refunds_h2": 405.0,
+     "orders_h2": 73,
+     "product_id": "P003",
+     "refunds_h1": 75.0
+    },
+    {
+     "orders_h1": 62,
+     "refunds_h2": 0.0,
+     "orders_h2": 52,
+     "product_id": "P004",
+     "refunds_h1": 15.0
+    },
+    {
+     "orders_h1": 39,
+     "refunds_h2": 7.0,
+     "orders_h2": 36,
+     "product_id": "P005",
+     "refunds_h1": 7.0
+    }
+   ],
+   "row_count": 5,
+   "truncated": false,
+   "elapsed_s": 0.62,
+   "result_hash": "536d9722772b",
+   "ok": true
+  },
+  "Q16": {
+   "id": "Q16",
+   "hypothesis": "H6",
+   "purpose": "Compare total landing_404s by source (paid_social vs organic) between H1 and H2 September",
+   "sql": "SELECT \n   SUM(CASE WHEN date BETWEEN '2026-09-01' AND '2026-09-15' THEN landing_404s ELSE 0 END) AS h1_paid_social_404s,\n   SUM(CASE WHEN date BETWEEN '2026-09-16' AND '2026-09-30' THEN landing_404s ELSE 0 END) AS h2_paid_social_404s,\n   SUM(CASE WHEN source='organic' AND date BETWEEN '2026-09-01' AND '2026-09-15' THEN landing_404s ELSE 0 END) AS h1_organic_404s,\n   SUM(CASE WHEN source='organic' AND date BETWEEN '2026-09-16' AND '2026-09-30' THEN landing_404s ELSE 0 END) AS h2_organic_404s\nFROM WHYDROP_FILES.web_traffic\nWHERE date BETWEEN '2026-09-01' AND '2026-09-30'\n  AND source IN ('paid_social','organic');",
+   "rows": [
+    {
+     "h1_paid_social_404s": 2901,
+     "h2_paid_social_404s": 5534,
+     "h1_organic_404s": 10,
+     "h2_organic_404s": 17
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.13,
+   "result_hash": "266581301d3b",
+   "ok": true
+  },
+  "Q17": {
+   "id": "Q17",
+   "hypothesis": "H6",
+   "purpose": "Compare total refund amounts for wrong_item/order_error vs cancellation between H1 and H2 September",
+   "sql": "SELECT \n   SUM(CASE WHEN date BETWEEN '2026-09-01' AND '2026-09-15' THEN amount_usd ELSE 0 END) AS h1_wrong_item_refunds,\n   SUM(CASE WHEN date BETWEEN '2026-09-16' AND '2026-09-30' THEN amount_usd ELSE 0 END) AS h2_wrong_item_refunds,\n   SUM(CASE WHEN date BETWEEN '2026-09-01' AND '2026-09-15' THEN amount_usd ELSE 0 END) AS h1_cancellation_refunds,\n   SUM(CASE WHEN date BETWEEN '2026-09-16' AND '2026-09-30' THEN amount_usd ELSE 0 END) AS h2_cancellation_refunds\nFROM WHYDROP_PG.refunds\nWHERE date BETWEEN '2026-09-01' AND '2026-09-30'\n  AND reason IN ('wrong_item','order_error','cancellation');",
+   "rows": [
+    {
+     "h1_wrong_item_refunds": null,
+     "h2_wrong_item_refunds": null,
+     "h1_cancellation_refunds": null,
+     "h2_cancellation_refunds": null
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.12,
+   "result_hash": "ae7e35958814",
+   "ok": true
+  },
+  "Q18": {
+   "id": "Q18",
+   "hypothesis": "H6",
+   "purpose": "Correlate daily spikes in landing_404s (paid_social+organic) with daily wrong_item refund amounts in September",
+   "sql": "SELECT \n   w.date,\n   SUM(w.landing_404s) AS daily_404s,\n   SUM(r.amount_usd) AS daily_wrong_item_refund_amount\nFROM (\n   SELECT date, SUM(landing_404s) AS landing_404s\n   FROM WHYDROP_FILES.web_traffic\n   WHERE date BETWEEN '2026-09-01' AND '2026-09-30'\n     AND source IN ('paid_social','organic')\n   GROUP BY date\n) w\nJOIN (\n   SELECT date, SUM(amount_usd) AS amount_usd\n   FROM WHYDROP_PG.refunds\n   WHERE date BETWEEN '2026-09-01' AND '2026-09-30'\n     AND reason IN ('wrong_item','order_error')\n   GROUP BY date\n) r\nON w.date = r.date\nGROUP BY w.date\nORDER BY w.date;",
+   "rows": [],
+   "row_count": 0,
+   "truncated": false,
+   "elapsed_s": 0.26,
+   "result_hash": "97d170e1550e",
+   "ok": true
+  },
+  "Q19": {
+   "id": "Q19",
+   "hypothesis": "H7",
+   "purpose": "Compare shipping/delivery ticket volume between H1 and H2 September",
+   "sql": "SELECT\n  CASE\n      WHEN date_format(to_date(date), 'yyyy-MM') BETWEEN '2026-09-01' AND '2026-09-15' THEN 'H1_Sept'\n      WHEN date_format(to_date(date), 'yyyy-MM') BETWEEN '2026-09-16' AND '2026-09-30' THEN 'H2_Sept'\n  END AS period,\n  category,\n  COUNT(*) AS ticket_count\nFROM WHYDROP_PG.support_tickets\nWHERE date_format(to_date(date), 'yyyy-MM') = '2026-09'\nGROUP BY period, category\nORDER BY period, ticket_count DESC",
+   "rows": [
+    {
+     "period": null,
+     "category": "download",
+     "ticket_count": 26
+    },
+    {
+     "period": null,
+     "category": "refund",
+     "ticket_count": 4
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.2,
+   "result_hash": "8e6f3dbfafd8",
+   "ok": true
+  },
+  "Q20": {
+   "id": "Q20",
+   "hypothesis": "H7",
+   "purpose": "Assess refund conversion rate for orders with shipping-related tickets in H2 versus those without, by period",
+   "sql": "SELECT\n  CASE\n      WHEN date_format(to_date(t.date), 'yyyy-MM') BETWEEN '2026-09-01' AND '2026-09-15' THEN 'H1_Sept'\n      WHEN date_format(to_date(t.date), 'yyyy-MM') BETWEEN '2026-09-16' AND '2026-09-30' THEN 'H2_Sept'\n  END AS period,\n  CASE WHEN t.category IN ('shipping','delivery','late') THEN 'with_shipping_ticket'\n       ELSE 'without_shipping_ticket'\n  END AS ticket_group,\n  COUNT(DISTINCT o.order_id) AS orders,\n  COUNT(DISTINCT r.refund_id) AS refunds,\n  ROUND(COUNT(DISTINCT r.refund_id) * 1.0 / COUNT(DISTINCT o.order_id), 4) AS refund_rate\nFROM WHYDROP_PG.support_tickets t\nJOIN WHYDROP_FILES.orders o\n  ON t.order_id = o.order_id\nLEFT JOIN WHYDROP_PG.refunds r\n  ON o.order_id = r.order_id\nWHERE date_format(to_date(t.date), 'yyyy-MM') = '2026-09'\nGROUP BY period, ticket_group\nORDER BY period, ticket_group",
+   "rows": [
+    {
+     "refunds": 30,
+     "ticket_group": "without_shipping_ticket",
+     "orders": 30,
+     "refund_rate": 1.0,
+     "period": null
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.35,
+   "result_hash": "133acdeecaef",
+   "ok": true
+  },
+  "Q21": {
+   "id": "Q21",
+   "hypothesis": "H7",
+   "purpose": "Examine daily ticket volume versus daily refund volume in H2 September to test lead\u2011time hypothesis",
+   "sql": "SELECT\n  date_format(to_date(date), 'yyyy-MM-dd') AS day,\n  COUNT(*) AS ticket_count\nFROM WHYDROP_PG.support_tickets\nWHERE date_format(to_date(date), 'yyyy-MM') = '2026-09'\n  AND date_format(to_date(date), 'yyyy-MM') BETWEEN '2026-09-16' AND '2026-09-30'\n  AND category IN ('shipping','delivery','late')\nGROUP BY day\nORDER BY day",
+   "rows": [],
+   "row_count": 0,
+   "truncated": false,
+   "elapsed_s": 0.12,
+   "result_hash": "97d170e1550e",
+   "ok": true
+  }
+ },
+ "routing": [
+  {
+   "lane": "planner",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 19.4,
+   "tokens": 5045
+  },
+  {
+   "lane": "planner",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 16.4,
+   "tokens": 4569
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 18.6,
+   "tokens": 2975
+  },
+  {
+   "lane": "analyst",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 10.9,
+   "tokens": 3300
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 83.9,
+   "tokens": 4382
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 87.0,
+   "tokens": 8120
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 108.7,
+   "tokens": 5308
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 37.1,
+   "tokens": 3041
+  },
+  {
+   "lane": "analyst",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 14.6,
+   "tokens": 4434
+  },
+  {
+   "lane": "analyst",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 44.3,
+   "tokens": 7859
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 102.7,
+   "tokens": 8018
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 23.7,
+   "tokens": 2486
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 35.4,
+   "tokens": 3592
+  },
+  {
+   "lane": "analyst",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 12.5,
+   "tokens": 5127
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 51.7,
+   "tokens": 4221
+  },
+  {
+   "lane": "analyst",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 47.7,
+   "tokens": 7859
+  },
+  {
+   "lane": "analyst",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 17.0,
+   "tokens": 4235
+  },
+  {
+   "lane": "analyst",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 17.1,
+   "tokens": 6166
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 56.8,
+   "tokens": 4988
+  },
+  {
+   "lane": "analyst",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 10.9,
+   "tokens": 3323
+  },
+  {
+   "lane": "analyst",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 16.0,
+   "tokens": 5701
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 5.3,
+   "tokens": 1011
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 5.7,
+   "tokens": 1279
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 5.6,
+   "tokens": 1196
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 6.0,
+   "tokens": 1114
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 5.5,
+   "tokens": 1130
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 12.6,
+   "tokens": 1848
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 4.6,
+   "tokens": 940
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 12.5,
+   "tokens": 2068
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 6.3,
+   "tokens": 1371
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 9.0,
+   "tokens": 1908
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 11.0,
+   "tokens": 1632
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 6.5,
+   "tokens": 1076
+  }
+ ],
+ "memory_backend": "meterless-hmem",
+ "memory_recalled": [
+  {
+   "id": "mem-9",
+   "relevance": 0.2994208326679454,
+   "content": "[Why did revenue drop in September 2026?] VERIFIED CAUSE: September unit price changes on key SKUs (e.g., P001 rising from ~$19 to ~$29) suppressed purchase volume or shifted mix, lowering total revenue. - P001's average unit price rose from $19.00 in August to $29.00 in September while its quantity fell from 269 to 115 units, cutting its revenue from $5111.00 to $3335.00; this $1776.00 decline explains roughly 42% of the overall September revenue drop ($13835.00 to $9584.00), consistent with the price increase suppressing volume. (conf 0.9, queries Q10,Q11,Q12)",
+   "source": "whydrop:20261024-003004-de41"
+  },
+  {
+   "id": "mem-12",
+   "relevance": 0.28637851487010185,
+   "content": "[Why did revenue drop in September 2026?] REJECTED: The September revenue drop was concentrated in specific countries due to local seasonality or supply issues rather than a global decline. - All six countries recorded lower revenue in September 2026 than in August 2026, with broadly similar percentage declines, indicating a global drop rather than one concentrated in specific countries.",
+   "source": "whydrop:20261024-003004-de41"
+  },
+  {
+   "id": "mem-11",
+   "relevance": 0.27713163360831383,
+   "content": "[Why did revenue drop in September 2026?] REJECTED: Order mix shifted toward lower-priced products in September 2026, lowering average order value and total revenue even if order count was stable. - H5 is rejected because order count fell from 938 to 597, average order value rose from 14.749466950959489 to 16.053601340033502, and the low-price tier held 100% revenue share in both months.",
+   "source": "whydrop:20261024-003004-de41"
+  },
+  {
+   "id": "mem-6",
+   "relevance": 0.2767613394887154,
+   "content": "[Why did revenue drop in September 2026?] REJECTED: The revenue drop was concentrated in specific countries due to local seasonality or supply issues, not a global decline. - Revenue fell in every country from August to September 2026, indicating a global decline rather than a drop concentrated in specific markets.",
+   "source": "whydrop:20261024-002610-59c6"
+  },
+  {
+   "id": "mem-10",
+   "relevance": 0.2698749354554483,
+   "content": "[Why did revenue drop in September 2026?] REJECTED: Refund volume spiked in September 2026 due to product quality issues, reducing net revenue (gross order revenue minus refunds) and increasing support tickets. - Refunds rose in September 2026, but the net revenue drop was driven by a much larger gross-order revenue decline, and refund-related support tickets fell rather than rose, so the product-quality refund spike hypothesis is not supported.",
+   "source": "whydrop:20261024-003004-de41"
+  }
+ ],
+ "elapsed_s": 508.8,
+ "memory_ids": [
+  "mem-31",
+  "mem-32",
+  "mem-33",
+  "mem-34"
+ ]
+}
