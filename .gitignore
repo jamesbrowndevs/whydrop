@@ -1,0 +1,17 @@
+# secrets / keys - never commit
+secrets/
+*.key
+*key*.txt
+*.pem
+.env
+.env.*
+**/nvidia_api_key*
+# runtime state
+.whydrop-state/
+meterless/.whydrop-hmem/
+meterless/.notebook/
+meterless/node_modules/
+meterless/vendor/
+__pycache__/
+*.pyc
+reports/

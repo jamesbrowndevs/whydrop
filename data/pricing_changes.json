@@ -1,0 +1,9 @@
+[
+ {
+  "date": "2026-09-01",
+  "product_id": "P001",
+  "old_price_usd": 19.0,
+  "new_price_usd": 29.0,
+  "note": "repositioned as premium"
+ }
+]

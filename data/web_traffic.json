@@ -1,0 +1,3418 @@
+[
+ {
+  "date": "2026-06-01",
+  "source": "organic",
+  "sessions": 582,
+  "product_page_views": 1181,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-01",
+  "source": "email",
+  "sessions": 197,
+  "product_page_views": 318,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-01",
+  "source": "paid_social",
+  "sessions": 381,
+  "product_page_views": 660,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-06-01",
+  "source": "referral",
+  "sessions": 151,
+  "product_page_views": 312,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-02",
+  "source": "organic",
+  "sessions": 574,
+  "product_page_views": 1107,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-02",
+  "source": "email",
+  "sessions": 176,
+  "product_page_views": 363,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-02",
+  "source": "paid_social",
+  "sessions": 395,
+  "product_page_views": 760,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-02",
+  "source": "referral",
+  "sessions": 142,
+  "product_page_views": 256,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-03",
+  "source": "organic",
+  "sessions": 584,
+  "product_page_views": 1122,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-03",
+  "source": "email",
+  "sessions": 208,
+  "product_page_views": 414,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-03",
+  "source": "paid_social",
+  "sessions": 402,
+  "product_page_views": 739,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-03",
+  "source": "referral",
+  "sessions": 157,
+  "product_page_views": 251,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-04",
+  "source": "organic",
+  "sessions": 590,
+  "product_page_views": 1160,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-04",
+  "source": "email",
+  "sessions": 200,
+  "product_page_views": 360,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-04",
+  "source": "paid_social",
+  "sessions": 376,
+  "product_page_views": 741,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-04",
+  "source": "referral",
+  "sessions": 137,
+  "product_page_views": 281,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-05",
+  "source": "organic",
+  "sessions": 573,
+  "product_page_views": 933,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-05",
+  "source": "email",
+  "sessions": 192,
+  "product_page_views": 369,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-05",
+  "source": "paid_social",
+  "sessions": 399,
+  "product_page_views": 772,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-05",
+  "source": "referral",
+  "sessions": 153,
+  "product_page_views": 313,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-06",
+  "source": "organic",
+  "sessions": 477,
+  "product_page_views": 867,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-06",
+  "source": "email",
+  "sessions": 148,
+  "product_page_views": 287,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-06",
+  "source": "paid_social",
+  "sessions": 338,
+  "product_page_views": 568,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-06",
+  "source": "referral",
+  "sessions": 110,
+  "product_page_views": 185,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-07",
+  "source": "organic",
+  "sessions": 429,
+  "product_page_views": 875,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-07",
+  "source": "email",
+  "sessions": 176,
+  "product_page_views": 341,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-07",
+  "source": "paid_social",
+  "sessions": 326,
+  "product_page_views": 537,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-07",
+  "source": "referral",
+  "sessions": 117,
+  "product_page_views": 192,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-08",
+  "source": "organic",
+  "sessions": 553,
+  "product_page_views": 1094,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-08",
+  "source": "email",
+  "sessions": 205,
+  "product_page_views": 349,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-08",
+  "source": "paid_social",
+  "sessions": 396,
+  "product_page_views": 777,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-08",
+  "source": "referral",
+  "sessions": 148,
+  "product_page_views": 262,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-09",
+  "source": "organic",
+  "sessions": 539,
+  "product_page_views": 1094,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-09",
+  "source": "email",
+  "sessions": 185,
+  "product_page_views": 350,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-09",
+  "source": "paid_social",
+  "sessions": 358,
+  "product_page_views": 582,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-09",
+  "source": "referral",
+  "sessions": 160,
+  "product_page_views": 316,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-10",
+  "source": "organic",
+  "sessions": 558,
+  "product_page_views": 1136,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-10",
+  "source": "email",
+  "sessions": 221,
+  "product_page_views": 377,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-10",
+  "source": "paid_social",
+  "sessions": 388,
+  "product_page_views": 734,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-10",
+  "source": "referral",
+  "sessions": 150,
+  "product_page_views": 281,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-11",
+  "source": "organic",
+  "sessions": 573,
+  "product_page_views": 1187,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-11",
+  "source": "email",
+  "sessions": 185,
+  "product_page_views": 376,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-11",
+  "source": "paid_social",
+  "sessions": 377,
+  "product_page_views": 614,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-11",
+  "source": "referral",
+  "sessions": 162,
+  "product_page_views": 334,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-12",
+  "source": "organic",
+  "sessions": 515,
+  "product_page_views": 970,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-12",
+  "source": "email",
+  "sessions": 193,
+  "product_page_views": 315,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-12",
+  "source": "paid_social",
+  "sessions": 375,
+  "product_page_views": 637,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-12",
+  "source": "referral",
+  "sessions": 144,
+  "product_page_views": 239,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-13",
+  "source": "organic",
+  "sessions": 492,
+  "product_page_views": 900,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-13",
+  "source": "email",
+  "sessions": 176,
+  "product_page_views": 316,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-13",
+  "source": "paid_social",
+  "sessions": 332,
+  "product_page_views": 531,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-13",
+  "source": "referral",
+  "sessions": 132,
+  "product_page_views": 242,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-14",
+  "source": "organic",
+  "sessions": 443,
+  "product_page_views": 738,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-14",
+  "source": "email",
+  "sessions": 163,
+  "product_page_views": 341,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-14",
+  "source": "paid_social",
+  "sessions": 311,
+  "product_page_views": 613,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-14",
+  "source": "referral",
+  "sessions": 134,
+  "product_page_views": 253,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-15",
+  "source": "organic",
+  "sessions": 544,
+  "product_page_views": 937,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-15",
+  "source": "email",
+  "sessions": 194,
+  "product_page_views": 358,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-15",
+  "source": "paid_social",
+  "sessions": 404,
+  "product_page_views": 699,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-06-15",
+  "source": "referral",
+  "sessions": 137,
+  "product_page_views": 249,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-16",
+  "source": "organic",
+  "sessions": 577,
+  "product_page_views": 1049,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-16",
+  "source": "email",
+  "sessions": 199,
+  "product_page_views": 344,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-16",
+  "source": "paid_social",
+  "sessions": 388,
+  "product_page_views": 629,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-16",
+  "source": "referral",
+  "sessions": 161,
+  "product_page_views": 320,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-06-17",
+  "source": "organic",
+  "sessions": 545,
+  "product_page_views": 896,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-17",
+  "source": "email",
+  "sessions": 190,
+  "product_page_views": 335,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-17",
+  "source": "paid_social",
+  "sessions": 385,
+  "product_page_views": 794,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-17",
+  "source": "referral",
+  "sessions": 147,
+  "product_page_views": 299,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-18",
+  "source": "organic",
+  "sessions": 545,
+  "product_page_views": 903,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-18",
+  "source": "email",
+  "sessions": 205,
+  "product_page_views": 341,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-18",
+  "source": "paid_social",
+  "sessions": 357,
+  "product_page_views": 661,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-06-18",
+  "source": "referral",
+  "sessions": 161,
+  "product_page_views": 296,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-19",
+  "source": "organic",
+  "sessions": 555,
+  "product_page_views": 960,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-19",
+  "source": "email",
+  "sessions": 207,
+  "product_page_views": 383,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-19",
+  "source": "paid_social",
+  "sessions": 392,
+  "product_page_views": 685,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-19",
+  "source": "referral",
+  "sessions": 181,
+  "product_page_views": 349,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-20",
+  "source": "organic",
+  "sessions": 458,
+  "product_page_views": 757,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-20",
+  "source": "email",
+  "sessions": 179,
+  "product_page_views": 368,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-06-20",
+  "source": "paid_social",
+  "sessions": 326,
+  "product_page_views": 586,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-20",
+  "source": "referral",
+  "sessions": 139,
+  "product_page_views": 256,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-21",
+  "source": "organic",
+  "sessions": 444,
+  "product_page_views": 728,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-21",
+  "source": "email",
+  "sessions": 135,
+  "product_page_views": 247,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-21",
+  "source": "paid_social",
+  "sessions": 303,
+  "product_page_views": 617,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-21",
+  "source": "referral",
+  "sessions": 137,
+  "product_page_views": 253,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-22",
+  "source": "organic",
+  "sessions": 565,
+  "product_page_views": 980,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-22",
+  "source": "email",
+  "sessions": 195,
+  "product_page_views": 325,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-22",
+  "source": "paid_social",
+  "sessions": 380,
+  "product_page_views": 721,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-22",
+  "source": "referral",
+  "sessions": 160,
+  "product_page_views": 273,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-23",
+  "source": "organic",
+  "sessions": 540,
+  "product_page_views": 926,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-23",
+  "source": "email",
+  "sessions": 199,
+  "product_page_views": 356,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-23",
+  "source": "paid_social",
+  "sessions": 359,
+  "product_page_views": 631,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-23",
+  "source": "referral",
+  "sessions": 132,
+  "product_page_views": 215,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-24",
+  "source": "organic",
+  "sessions": 583,
+  "product_page_views": 1023,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-24",
+  "source": "email",
+  "sessions": 184,
+  "product_page_views": 385,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-24",
+  "source": "paid_social",
+  "sessions": 366,
+  "product_page_views": 666,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-24",
+  "source": "referral",
+  "sessions": 161,
+  "product_page_views": 274,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-25",
+  "source": "organic",
+  "sessions": 558,
+  "product_page_views": 937,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-25",
+  "source": "email",
+  "sessions": 188,
+  "product_page_views": 318,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-25",
+  "source": "paid_social",
+  "sessions": 399,
+  "product_page_views": 739,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-25",
+  "source": "referral",
+  "sessions": 174,
+  "product_page_views": 358,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-06-26",
+  "source": "organic",
+  "sessions": 515,
+  "product_page_views": 848,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-26",
+  "source": "email",
+  "sessions": 194,
+  "product_page_views": 388,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-26",
+  "source": "paid_social",
+  "sessions": 360,
+  "product_page_views": 690,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-26",
+  "source": "referral",
+  "sessions": 153,
+  "product_page_views": 267,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-27",
+  "source": "organic",
+  "sessions": 448,
+  "product_page_views": 914,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-27",
+  "source": "email",
+  "sessions": 177,
+  "product_page_views": 358,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-27",
+  "source": "paid_social",
+  "sessions": 324,
+  "product_page_views": 665,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-06-27",
+  "source": "referral",
+  "sessions": 136,
+  "product_page_views": 240,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-28",
+  "source": "organic",
+  "sessions": 461,
+  "product_page_views": 794,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-28",
+  "source": "email",
+  "sessions": 156,
+  "product_page_views": 281,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-28",
+  "source": "paid_social",
+  "sessions": 320,
+  "product_page_views": 556,
+  "landing_404s": 6
+ },
+ {
+  "date": "2026-06-28",
+  "source": "referral",
+  "sessions": 139,
+  "product_page_views": 245,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-29",
+  "source": "organic",
+  "sessions": 583,
+  "product_page_views": 1143,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-29",
+  "source": "email",
+  "sessions": 180,
+  "product_page_views": 374,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-29",
+  "source": "paid_social",
+  "sessions": 417,
+  "product_page_views": 711,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-29",
+  "source": "referral",
+  "sessions": 161,
+  "product_page_views": 281,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-30",
+  "source": "organic",
+  "sessions": 567,
+  "product_page_views": 924,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-06-30",
+  "source": "email",
+  "sessions": 182,
+  "product_page_views": 369,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-06-30",
+  "source": "paid_social",
+  "sessions": 401,
+  "product_page_views": 746,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-06-30",
+  "source": "referral",
+  "sessions": 157,
+  "product_page_views": 324,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-01",
+  "source": "organic",
+  "sessions": 608,
+  "product_page_views": 1117,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-01",
+  "source": "email",
+  "sessions": 191,
+  "product_page_views": 396,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-01",
+  "source": "paid_social",
+  "sessions": 382,
+  "product_page_views": 708,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-01",
+  "source": "referral",
+  "sessions": 154,
+  "product_page_views": 249,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-02",
+  "source": "organic",
+  "sessions": 547,
+  "product_page_views": 1137,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-02",
+  "source": "email",
+  "sessions": 192,
+  "product_page_views": 324,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-02",
+  "source": "paid_social",
+  "sessions": 409,
+  "product_page_views": 843,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-02",
+  "source": "referral",
+  "sessions": 158,
+  "product_page_views": 267,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-03",
+  "source": "organic",
+  "sessions": 603,
+  "product_page_views": 1150,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-03",
+  "source": "email",
+  "sessions": 214,
+  "product_page_views": 449,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-03",
+  "source": "paid_social",
+  "sessions": 386,
+  "product_page_views": 783,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-03",
+  "source": "referral",
+  "sessions": 133,
+  "product_page_views": 217,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-04",
+  "source": "organic",
+  "sessions": 415,
+  "product_page_views": 706,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-04",
+  "source": "email",
+  "sessions": 172,
+  "product_page_views": 318,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-04",
+  "source": "paid_social",
+  "sessions": 323,
+  "product_page_views": 663,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-04",
+  "source": "referral",
+  "sessions": 122,
+  "product_page_views": 256,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-05",
+  "source": "organic",
+  "sessions": 429,
+  "product_page_views": 760,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-05",
+  "source": "email",
+  "sessions": 135,
+  "product_page_views": 219,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-07-05",
+  "source": "paid_social",
+  "sessions": 307,
+  "product_page_views": 631,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-05",
+  "source": "referral",
+  "sessions": 119,
+  "product_page_views": 234,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-06",
+  "source": "organic",
+  "sessions": 542,
+  "product_page_views": 969,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-06",
+  "source": "email",
+  "sessions": 201,
+  "product_page_views": 374,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-06",
+  "source": "paid_social",
+  "sessions": 398,
+  "product_page_views": 829,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-06",
+  "source": "referral",
+  "sessions": 162,
+  "product_page_views": 296,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-07",
+  "source": "organic",
+  "sessions": 563,
+  "product_page_views": 935,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-07",
+  "source": "email",
+  "sessions": 204,
+  "product_page_views": 333,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-07",
+  "source": "paid_social",
+  "sessions": 399,
+  "product_page_views": 766,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-07",
+  "source": "referral",
+  "sessions": 144,
+  "product_page_views": 264,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-08",
+  "source": "organic",
+  "sessions": 570,
+  "product_page_views": 1006,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-08",
+  "source": "email",
+  "sessions": 218,
+  "product_page_views": 357,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-08",
+  "source": "paid_social",
+  "sessions": 381,
+  "product_page_views": 691,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-08",
+  "source": "referral",
+  "sessions": 142,
+  "product_page_views": 256,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-09",
+  "source": "organic",
+  "sessions": 560,
+  "product_page_views": 1048,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-09",
+  "source": "email",
+  "sessions": 194,
+  "product_page_views": 363,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-09",
+  "source": "paid_social",
+  "sessions": 433,
+  "product_page_views": 753,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-09",
+  "source": "referral",
+  "sessions": 149,
+  "product_page_views": 289,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-10",
+  "source": "organic",
+  "sessions": 529,
+  "product_page_views": 948,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-10",
+  "source": "email",
+  "sessions": 178,
+  "product_page_views": 306,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-10",
+  "source": "paid_social",
+  "sessions": 378,
+  "product_page_views": 692,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-10",
+  "source": "referral",
+  "sessions": 152,
+  "product_page_views": 298,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-11",
+  "source": "organic",
+  "sessions": 464,
+  "product_page_views": 817,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-11",
+  "source": "email",
+  "sessions": 148,
+  "product_page_views": 260,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-11",
+  "source": "paid_social",
+  "sessions": 331,
+  "product_page_views": 636,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-07-11",
+  "source": "referral",
+  "sessions": 111,
+  "product_page_views": 204,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-12",
+  "source": "organic",
+  "sessions": 461,
+  "product_page_views": 951,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-12",
+  "source": "email",
+  "sessions": 174,
+  "product_page_views": 324,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-12",
+  "source": "paid_social",
+  "sessions": 293,
+  "product_page_views": 483,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-12",
+  "source": "referral",
+  "sessions": 121,
+  "product_page_views": 201,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-13",
+  "source": "organic",
+  "sessions": 544,
+  "product_page_views": 1074,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-13",
+  "source": "email",
+  "sessions": 212,
+  "product_page_views": 420,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-13",
+  "source": "paid_social",
+  "sessions": 365,
+  "product_page_views": 723,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-13",
+  "source": "referral",
+  "sessions": 156,
+  "product_page_views": 260,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-07-14",
+  "source": "organic",
+  "sessions": 522,
+  "product_page_views": 954,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-14",
+  "source": "email",
+  "sessions": 205,
+  "product_page_views": 423,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-14",
+  "source": "paid_social",
+  "sessions": 404,
+  "product_page_views": 711,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-14",
+  "source": "referral",
+  "sessions": 162,
+  "product_page_views": 267,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-15",
+  "source": "organic",
+  "sessions": 548,
+  "product_page_views": 1138,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-15",
+  "source": "email",
+  "sessions": 202,
+  "product_page_views": 399,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-15",
+  "source": "paid_social",
+  "sessions": 394,
+  "product_page_views": 770,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-15",
+  "source": "referral",
+  "sessions": 153,
+  "product_page_views": 305,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-16",
+  "source": "organic",
+  "sessions": 556,
+  "product_page_views": 1036,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-16",
+  "source": "email",
+  "sessions": 205,
+  "product_page_views": 340,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-16",
+  "source": "paid_social",
+  "sessions": 398,
+  "product_page_views": 764,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-07-16",
+  "source": "referral",
+  "sessions": 141,
+  "product_page_views": 287,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-17",
+  "source": "organic",
+  "sessions": 580,
+  "product_page_views": 949,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-17",
+  "source": "email",
+  "sessions": 201,
+  "product_page_views": 404,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-17",
+  "source": "paid_social",
+  "sessions": 411,
+  "product_page_views": 663,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-17",
+  "source": "referral",
+  "sessions": 133,
+  "product_page_views": 230,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-18",
+  "source": "organic",
+  "sessions": 441,
+  "product_page_views": 760,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-18",
+  "source": "email",
+  "sessions": 169,
+  "product_page_views": 322,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-18",
+  "source": "paid_social",
+  "sessions": 319,
+  "product_page_views": 568,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-18",
+  "source": "referral",
+  "sessions": 123,
+  "product_page_views": 249,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-07-19",
+  "source": "organic",
+  "sessions": 465,
+  "product_page_views": 757,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-19",
+  "source": "email",
+  "sessions": 163,
+  "product_page_views": 273,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-19",
+  "source": "paid_social",
+  "sessions": 282,
+  "product_page_views": 529,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-19",
+  "source": "referral",
+  "sessions": 117,
+  "product_page_views": 187,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-20",
+  "source": "organic",
+  "sessions": 538,
+  "product_page_views": 980,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-20",
+  "source": "email",
+  "sessions": 198,
+  "product_page_views": 351,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-20",
+  "source": "paid_social",
+  "sessions": 365,
+  "product_page_views": 617,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-20",
+  "source": "referral",
+  "sessions": 136,
+  "product_page_views": 225,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-21",
+  "source": "organic",
+  "sessions": 537,
+  "product_page_views": 1071,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-21",
+  "source": "email",
+  "sessions": 208,
+  "product_page_views": 335,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-21",
+  "source": "paid_social",
+  "sessions": 367,
+  "product_page_views": 742,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-21",
+  "source": "referral",
+  "sessions": 133,
+  "product_page_views": 225,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-22",
+  "source": "organic",
+  "sessions": 577,
+  "product_page_views": 1184,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-22",
+  "source": "email",
+  "sessions": 177,
+  "product_page_views": 311,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-22",
+  "source": "paid_social",
+  "sessions": 399,
+  "product_page_views": 661,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-22",
+  "source": "referral",
+  "sessions": 143,
+  "product_page_views": 282,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-23",
+  "source": "organic",
+  "sessions": 566,
+  "product_page_views": 918,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-23",
+  "source": "email",
+  "sessions": 197,
+  "product_page_views": 329,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-23",
+  "source": "paid_social",
+  "sessions": 392,
+  "product_page_views": 674,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-23",
+  "source": "referral",
+  "sessions": 149,
+  "product_page_views": 271,
+  "landing_404s": 4
+ },
+ {
+  "date": "2026-07-24",
+  "source": "organic",
+  "sessions": 535,
+  "product_page_views": 884,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-24",
+  "source": "email",
+  "sessions": 198,
+  "product_page_views": 342,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-24",
+  "source": "paid_social",
+  "sessions": 378,
+  "product_page_views": 630,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-24",
+  "source": "referral",
+  "sessions": 151,
+  "product_page_views": 281,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-25",
+  "source": "organic",
+  "sessions": 482,
+  "product_page_views": 879,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-25",
+  "source": "email",
+  "sessions": 137,
+  "product_page_views": 279,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-25",
+  "source": "paid_social",
+  "sessions": 316,
+  "product_page_views": 597,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-25",
+  "source": "referral",
+  "sessions": 130,
+  "product_page_views": 249,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-26",
+  "source": "organic",
+  "sessions": 444,
+  "product_page_views": 733,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-26",
+  "source": "email",
+  "sessions": 166,
+  "product_page_views": 277,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-26",
+  "source": "paid_social",
+  "sessions": 314,
+  "product_page_views": 506,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-26",
+  "source": "referral",
+  "sessions": 115,
+  "product_page_views": 220,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-27",
+  "source": "organic",
+  "sessions": 604,
+  "product_page_views": 1148,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-27",
+  "source": "email",
+  "sessions": 194,
+  "product_page_views": 368,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-27",
+  "source": "paid_social",
+  "sessions": 370,
+  "product_page_views": 733,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-27",
+  "source": "referral",
+  "sessions": 147,
+  "product_page_views": 237,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-07-28",
+  "source": "organic",
+  "sessions": 526,
+  "product_page_views": 1074,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-28",
+  "source": "email",
+  "sessions": 189,
+  "product_page_views": 370,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-28",
+  "source": "paid_social",
+  "sessions": 374,
+  "product_page_views": 606,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-28",
+  "source": "referral",
+  "sessions": 166,
+  "product_page_views": 293,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-29",
+  "source": "organic",
+  "sessions": 577,
+  "product_page_views": 1077,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-29",
+  "source": "email",
+  "sessions": 195,
+  "product_page_views": 376,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-29",
+  "source": "paid_social",
+  "sessions": 370,
+  "product_page_views": 687,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-29",
+  "source": "referral",
+  "sessions": 161,
+  "product_page_views": 310,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-07-30",
+  "source": "organic",
+  "sessions": 567,
+  "product_page_views": 1011,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-30",
+  "source": "email",
+  "sessions": 185,
+  "product_page_views": 301,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-30",
+  "source": "paid_social",
+  "sessions": 377,
+  "product_page_views": 706,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-30",
+  "source": "referral",
+  "sessions": 161,
+  "product_page_views": 278,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-31",
+  "source": "organic",
+  "sessions": 525,
+  "product_page_views": 891,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-07-31",
+  "source": "email",
+  "sessions": 208,
+  "product_page_views": 400,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-07-31",
+  "source": "paid_social",
+  "sessions": 388,
+  "product_page_views": 718,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-07-31",
+  "source": "referral",
+  "sessions": 170,
+  "product_page_views": 300,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-01",
+  "source": "organic",
+  "sessions": 454,
+  "product_page_views": 893,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-08-01",
+  "source": "email",
+  "sessions": 151,
+  "product_page_views": 245,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-01",
+  "source": "paid_social",
+  "sessions": 301,
+  "product_page_views": 529,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-08-01",
+  "source": "referral",
+  "sessions": 87,
+  "product_page_views": 155,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-02",
+  "source": "organic",
+  "sessions": 465,
+  "product_page_views": 813,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-02",
+  "source": "email",
+  "sessions": 161,
+  "product_page_views": 257,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-02",
+  "source": "paid_social",
+  "sessions": 295,
+  "product_page_views": 585,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-02",
+  "source": "referral",
+  "sessions": 129,
+  "product_page_views": 230,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-03",
+  "source": "organic",
+  "sessions": 563,
+  "product_page_views": 1081,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-03",
+  "source": "email",
+  "sessions": 209,
+  "product_page_views": 411,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-03",
+  "source": "paid_social",
+  "sessions": 345,
+  "product_page_views": 586,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-03",
+  "source": "referral",
+  "sessions": 168,
+  "product_page_views": 291,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-04",
+  "source": "organic",
+  "sessions": 540,
+  "product_page_views": 903,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-04",
+  "source": "email",
+  "sessions": 186,
+  "product_page_views": 363,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-04",
+  "source": "paid_social",
+  "sessions": 377,
+  "product_page_views": 720,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-04",
+  "source": "referral",
+  "sessions": 165,
+  "product_page_views": 293,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-05",
+  "source": "organic",
+  "sessions": 586,
+  "product_page_views": 1186,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-05",
+  "source": "email",
+  "sessions": 224,
+  "product_page_views": 455,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-05",
+  "source": "paid_social",
+  "sessions": 384,
+  "product_page_views": 754,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-05",
+  "source": "referral",
+  "sessions": 175,
+  "product_page_views": 330,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-06",
+  "source": "organic",
+  "sessions": 569,
+  "product_page_views": 1074,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-06",
+  "source": "email",
+  "sessions": 184,
+  "product_page_views": 345,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-06",
+  "source": "paid_social",
+  "sessions": 383,
+  "product_page_views": 716,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-06",
+  "source": "referral",
+  "sessions": 154,
+  "product_page_views": 274,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-07",
+  "source": "organic",
+  "sessions": 545,
+  "product_page_views": 1062,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-07",
+  "source": "email",
+  "sessions": 194,
+  "product_page_views": 326,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-07",
+  "source": "paid_social",
+  "sessions": 418,
+  "product_page_views": 860,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-07",
+  "source": "referral",
+  "sessions": 139,
+  "product_page_views": 227,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-08",
+  "source": "organic",
+  "sessions": 487,
+  "product_page_views": 827,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-08",
+  "source": "email",
+  "sessions": 156,
+  "product_page_views": 293,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-08",
+  "source": "paid_social",
+  "sessions": 321,
+  "product_page_views": 543,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-08-08",
+  "source": "referral",
+  "sessions": 133,
+  "product_page_views": 276,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-09",
+  "source": "organic",
+  "sessions": 477,
+  "product_page_views": 953,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-09",
+  "source": "email",
+  "sessions": 160,
+  "product_page_views": 323,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-09",
+  "source": "paid_social",
+  "sessions": 297,
+  "product_page_views": 529,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-09",
+  "source": "referral",
+  "sessions": 132,
+  "product_page_views": 260,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-10",
+  "source": "organic",
+  "sessions": 611,
+  "product_page_views": 1099,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-10",
+  "source": "email",
+  "sessions": 200,
+  "product_page_views": 331,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-10",
+  "source": "paid_social",
+  "sessions": 378,
+  "product_page_views": 640,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-10",
+  "source": "referral",
+  "sessions": 162,
+  "product_page_views": 322,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-11",
+  "source": "organic",
+  "sessions": 552,
+  "product_page_views": 914,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-11",
+  "source": "email",
+  "sessions": 207,
+  "product_page_views": 332,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-11",
+  "source": "paid_social",
+  "sessions": 407,
+  "product_page_views": 683,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-11",
+  "source": "referral",
+  "sessions": 144,
+  "product_page_views": 287,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-12",
+  "source": "organic",
+  "sessions": 554,
+  "product_page_views": 1065,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-12",
+  "source": "email",
+  "sessions": 178,
+  "product_page_views": 338,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-12",
+  "source": "paid_social",
+  "sessions": 404,
+  "product_page_views": 741,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-12",
+  "source": "referral",
+  "sessions": 151,
+  "product_page_views": 314,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-13",
+  "source": "organic",
+  "sessions": 587,
+  "product_page_views": 1026,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-13",
+  "source": "email",
+  "sessions": 213,
+  "product_page_views": 392,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-13",
+  "source": "paid_social",
+  "sessions": 397,
+  "product_page_views": 695,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-08-13",
+  "source": "referral",
+  "sessions": 150,
+  "product_page_views": 254,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-14",
+  "source": "organic",
+  "sessions": 540,
+  "product_page_views": 889,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-14",
+  "source": "email",
+  "sessions": 198,
+  "product_page_views": 385,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-14",
+  "source": "paid_social",
+  "sessions": 379,
+  "product_page_views": 699,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-14",
+  "source": "referral",
+  "sessions": 132,
+  "product_page_views": 276,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-08-15",
+  "source": "organic",
+  "sessions": 465,
+  "product_page_views": 801,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-15",
+  "source": "email",
+  "sessions": 141,
+  "product_page_views": 251,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-08-15",
+  "source": "paid_social",
+  "sessions": 328,
+  "product_page_views": 601,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-08-15",
+  "source": "referral",
+  "sessions": 130,
+  "product_page_views": 218,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-16",
+  "source": "organic",
+  "sessions": 424,
+  "product_page_views": 738,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-16",
+  "source": "email",
+  "sessions": 162,
+  "product_page_views": 281,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-16",
+  "source": "paid_social",
+  "sessions": 317,
+  "product_page_views": 509,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-16",
+  "source": "referral",
+  "sessions": 131,
+  "product_page_views": 273,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-17",
+  "source": "organic",
+  "sessions": 582,
+  "product_page_views": 1059,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-17",
+  "source": "email",
+  "sessions": 183,
+  "product_page_views": 349,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-17",
+  "source": "paid_social",
+  "sessions": 400,
+  "product_page_views": 755,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-17",
+  "source": "referral",
+  "sessions": 131,
+  "product_page_views": 242,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-18",
+  "source": "organic",
+  "sessions": 576,
+  "product_page_views": 964,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-18",
+  "source": "email",
+  "sessions": 180,
+  "product_page_views": 353,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-18",
+  "source": "paid_social",
+  "sessions": 433,
+  "product_page_views": 898,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-08-18",
+  "source": "referral",
+  "sessions": 142,
+  "product_page_views": 232,
+  "landing_404s": 5
+ },
+ {
+  "date": "2026-08-19",
+  "source": "organic",
+  "sessions": 559,
+  "product_page_views": 937,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-19",
+  "source": "email",
+  "sessions": 194,
+  "product_page_views": 369,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-19",
+  "source": "paid_social",
+  "sessions": 417,
+  "product_page_views": 776,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-19",
+  "source": "referral",
+  "sessions": 139,
+  "product_page_views": 223,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-20",
+  "source": "organic",
+  "sessions": 575,
+  "product_page_views": 984,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-20",
+  "source": "email",
+  "sessions": 190,
+  "product_page_views": 307,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-20",
+  "source": "paid_social",
+  "sessions": 380,
+  "product_page_views": 781,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-20",
+  "source": "referral",
+  "sessions": 153,
+  "product_page_views": 253,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-21",
+  "source": "organic",
+  "sessions": 545,
+  "product_page_views": 1064,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-21",
+  "source": "email",
+  "sessions": 188,
+  "product_page_views": 333,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-21",
+  "source": "paid_social",
+  "sessions": 396,
+  "product_page_views": 667,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-21",
+  "source": "referral",
+  "sessions": 156,
+  "product_page_views": 275,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-22",
+  "source": "organic",
+  "sessions": 457,
+  "product_page_views": 747,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-22",
+  "source": "email",
+  "sessions": 185,
+  "product_page_views": 337,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-22",
+  "source": "paid_social",
+  "sessions": 300,
+  "product_page_views": 486,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-22",
+  "source": "referral",
+  "sessions": 118,
+  "product_page_views": 235,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-23",
+  "source": "organic",
+  "sessions": 469,
+  "product_page_views": 922,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-23",
+  "source": "email",
+  "sessions": 161,
+  "product_page_views": 257,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-23",
+  "source": "paid_social",
+  "sessions": 307,
+  "product_page_views": 496,
+  "landing_404s": 4
+ },
+ {
+  "date": "2026-08-23",
+  "source": "referral",
+  "sessions": 133,
+  "product_page_views": 259,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-24",
+  "source": "organic",
+  "sessions": 589,
+  "product_page_views": 1223,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-24",
+  "source": "email",
+  "sessions": 188,
+  "product_page_views": 392,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-24",
+  "source": "paid_social",
+  "sessions": 381,
+  "product_page_views": 716,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-24",
+  "source": "referral",
+  "sessions": 155,
+  "product_page_views": 311,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-25",
+  "source": "organic",
+  "sessions": 562,
+  "product_page_views": 958,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-25",
+  "source": "email",
+  "sessions": 189,
+  "product_page_views": 352,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-25",
+  "source": "paid_social",
+  "sessions": 397,
+  "product_page_views": 648,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-25",
+  "source": "referral",
+  "sessions": 127,
+  "product_page_views": 248,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-26",
+  "source": "organic",
+  "sessions": 589,
+  "product_page_views": 1058,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-26",
+  "source": "email",
+  "sessions": 175,
+  "product_page_views": 361,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-26",
+  "source": "paid_social",
+  "sessions": 350,
+  "product_page_views": 612,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-08-26",
+  "source": "referral",
+  "sessions": 156,
+  "product_page_views": 251,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-27",
+  "source": "organic",
+  "sessions": 561,
+  "product_page_views": 924,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-27",
+  "source": "email",
+  "sessions": 195,
+  "product_page_views": 381,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-27",
+  "source": "paid_social",
+  "sessions": 369,
+  "product_page_views": 636,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-27",
+  "source": "referral",
+  "sessions": 136,
+  "product_page_views": 229,
+  "landing_404s": 4
+ },
+ {
+  "date": "2026-08-28",
+  "source": "organic",
+  "sessions": 542,
+  "product_page_views": 972,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-28",
+  "source": "email",
+  "sessions": 200,
+  "product_page_views": 387,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-28",
+  "source": "paid_social",
+  "sessions": 442,
+  "product_page_views": 730,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-28",
+  "source": "referral",
+  "sessions": 144,
+  "product_page_views": 270,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-29",
+  "source": "organic",
+  "sessions": 468,
+  "product_page_views": 859,
+  "landing_404s": 4
+ },
+ {
+  "date": "2026-08-29",
+  "source": "email",
+  "sessions": 161,
+  "product_page_views": 279,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-29",
+  "source": "paid_social",
+  "sessions": 309,
+  "product_page_views": 618,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-29",
+  "source": "referral",
+  "sessions": 123,
+  "product_page_views": 220,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-30",
+  "source": "organic",
+  "sessions": 452,
+  "product_page_views": 775,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-30",
+  "source": "email",
+  "sessions": 167,
+  "product_page_views": 339,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-30",
+  "source": "paid_social",
+  "sessions": 311,
+  "product_page_views": 598,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-30",
+  "source": "referral",
+  "sessions": 122,
+  "product_page_views": 215,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-08-31",
+  "source": "organic",
+  "sessions": 537,
+  "product_page_views": 909,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-31",
+  "source": "email",
+  "sessions": 189,
+  "product_page_views": 375,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-08-31",
+  "source": "paid_social",
+  "sessions": 403,
+  "product_page_views": 745,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-08-31",
+  "source": "referral",
+  "sessions": 139,
+  "product_page_views": 244,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-01",
+  "source": "organic",
+  "sessions": 538,
+  "product_page_views": 885,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-01",
+  "source": "email",
+  "sessions": 192,
+  "product_page_views": 391,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-01",
+  "source": "paid_social",
+  "sessions": 388,
+  "product_page_views": 641,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-01",
+  "source": "referral",
+  "sessions": 160,
+  "product_page_views": 326,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-02",
+  "source": "organic",
+  "sessions": 530,
+  "product_page_views": 899,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-02",
+  "source": "email",
+  "sessions": 203,
+  "product_page_views": 420,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-02",
+  "source": "paid_social",
+  "sessions": 373,
+  "product_page_views": 663,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-02",
+  "source": "referral",
+  "sessions": 151,
+  "product_page_views": 250,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-03",
+  "source": "organic",
+  "sessions": 546,
+  "product_page_views": 1040,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-03",
+  "source": "email",
+  "sessions": 186,
+  "product_page_views": 331,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-03",
+  "source": "paid_social",
+  "sessions": 382,
+  "product_page_views": 653,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-03",
+  "source": "referral",
+  "sessions": 161,
+  "product_page_views": 278,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-04",
+  "source": "organic",
+  "sessions": 546,
+  "product_page_views": 1085,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-04",
+  "source": "email",
+  "sessions": 192,
+  "product_page_views": 339,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-04",
+  "source": "paid_social",
+  "sessions": 372,
+  "product_page_views": 706,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-04",
+  "source": "referral",
+  "sessions": 130,
+  "product_page_views": 241,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-05",
+  "source": "organic",
+  "sessions": 411,
+  "product_page_views": 779,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-05",
+  "source": "email",
+  "sessions": 166,
+  "product_page_views": 324,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-05",
+  "source": "paid_social",
+  "sessions": 314,
+  "product_page_views": 618,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-05",
+  "source": "referral",
+  "sessions": 119,
+  "product_page_views": 228,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-06",
+  "source": "organic",
+  "sessions": 463,
+  "product_page_views": 901,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-06",
+  "source": "email",
+  "sessions": 147,
+  "product_page_views": 275,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-06",
+  "source": "paid_social",
+  "sessions": 294,
+  "product_page_views": 532,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-06",
+  "source": "referral",
+  "sessions": 108,
+  "product_page_views": 193,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-09-07",
+  "source": "organic",
+  "sessions": 521,
+  "product_page_views": 870,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-07",
+  "source": "email",
+  "sessions": 175,
+  "product_page_views": 306,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-07",
+  "source": "paid_social",
+  "sessions": 356,
+  "product_page_views": 705,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-07",
+  "source": "referral",
+  "sessions": 140,
+  "product_page_views": 259,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-08",
+  "source": "organic",
+  "sessions": 513,
+  "product_page_views": 975,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-08",
+  "source": "email",
+  "sessions": 193,
+  "product_page_views": 331,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-08",
+  "source": "paid_social",
+  "sessions": 10,
+  "product_page_views": 17,
+  "landing_404s": 393
+ },
+ {
+  "date": "2026-09-08",
+  "source": "referral",
+  "sessions": 146,
+  "product_page_views": 293,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-09",
+  "source": "organic",
+  "sessions": 560,
+  "product_page_views": 1170,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-09",
+  "source": "email",
+  "sessions": 199,
+  "product_page_views": 408,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-09",
+  "source": "paid_social",
+  "sessions": 15,
+  "product_page_views": 24,
+  "landing_404s": 373
+ },
+ {
+  "date": "2026-09-09",
+  "source": "referral",
+  "sessions": 166,
+  "product_page_views": 265,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-10",
+  "source": "organic",
+  "sessions": 602,
+  "product_page_views": 1152,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-10",
+  "source": "email",
+  "sessions": 172,
+  "product_page_views": 323,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-10",
+  "source": "paid_social",
+  "sessions": 4,
+  "product_page_views": 6,
+  "landing_404s": 386
+ },
+ {
+  "date": "2026-09-10",
+  "source": "referral",
+  "sessions": 157,
+  "product_page_views": 312,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-11",
+  "source": "organic",
+  "sessions": 536,
+  "product_page_views": 958,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-11",
+  "source": "email",
+  "sessions": 167,
+  "product_page_views": 312,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-11",
+  "source": "paid_social",
+  "sessions": 6,
+  "product_page_views": 12,
+  "landing_404s": 355
+ },
+ {
+  "date": "2026-09-11",
+  "source": "referral",
+  "sessions": 126,
+  "product_page_views": 238,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-12",
+  "source": "organic",
+  "sessions": 426,
+  "product_page_views": 838,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-12",
+  "source": "email",
+  "sessions": 160,
+  "product_page_views": 313,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-12",
+  "source": "paid_social",
+  "sessions": 6,
+  "product_page_views": 12,
+  "landing_404s": 330
+ },
+ {
+  "date": "2026-09-12",
+  "source": "referral",
+  "sessions": 118,
+  "product_page_views": 242,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-13",
+  "source": "organic",
+  "sessions": 433,
+  "product_page_views": 794,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-13",
+  "source": "email",
+  "sessions": 160,
+  "product_page_views": 318,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-13",
+  "source": "paid_social",
+  "sessions": 6,
+  "product_page_views": 11,
+  "landing_404s": 282
+ },
+ {
+  "date": "2026-09-13",
+  "source": "referral",
+  "sessions": 89,
+  "product_page_views": 147,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-14",
+  "source": "organic",
+  "sessions": 568,
+  "product_page_views": 1122,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-14",
+  "source": "email",
+  "sessions": 205,
+  "product_page_views": 369,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-14",
+  "source": "paid_social",
+  "sessions": 9,
+  "product_page_views": 15,
+  "landing_404s": 393
+ },
+ {
+  "date": "2026-09-14",
+  "source": "referral",
+  "sessions": 135,
+  "product_page_views": 220,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-15",
+  "source": "organic",
+  "sessions": 547,
+  "product_page_views": 1093,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-15",
+  "source": "email",
+  "sessions": 182,
+  "product_page_views": 357,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-15",
+  "source": "paid_social",
+  "sessions": 10,
+  "product_page_views": 17,
+  "landing_404s": 370
+ },
+ {
+  "date": "2026-09-15",
+  "source": "referral",
+  "sessions": 143,
+  "product_page_views": 289,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-16",
+  "source": "organic",
+  "sessions": 568,
+  "product_page_views": 930,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-16",
+  "source": "email",
+  "sessions": 187,
+  "product_page_views": 331,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-16",
+  "source": "paid_social",
+  "sessions": 5,
+  "product_page_views": 9,
+  "landing_404s": 373
+ },
+ {
+  "date": "2026-09-16",
+  "source": "referral",
+  "sessions": 151,
+  "product_page_views": 252,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-17",
+  "source": "organic",
+  "sessions": 541,
+  "product_page_views": 941,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-17",
+  "source": "email",
+  "sessions": 170,
+  "product_page_views": 339,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-17",
+  "source": "paid_social",
+  "sessions": 8,
+  "product_page_views": 13,
+  "landing_404s": 361
+ },
+ {
+  "date": "2026-09-17",
+  "source": "referral",
+  "sessions": 141,
+  "product_page_views": 293,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-18",
+  "source": "organic",
+  "sessions": 521,
+  "product_page_views": 931,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-18",
+  "source": "email",
+  "sessions": 182,
+  "product_page_views": 326,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-18",
+  "source": "paid_social",
+  "sessions": 7,
+  "product_page_views": 13,
+  "landing_404s": 402
+ },
+ {
+  "date": "2026-09-18",
+  "source": "referral",
+  "sessions": 164,
+  "product_page_views": 313,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-09-19",
+  "source": "organic",
+  "sessions": 440,
+  "product_page_views": 817,
+  "landing_404s": 4
+ },
+ {
+  "date": "2026-09-19",
+  "source": "email",
+  "sessions": 161,
+  "product_page_views": 266,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-19",
+  "source": "paid_social",
+  "sessions": 4,
+  "product_page_views": 7,
+  "landing_404s": 344
+ },
+ {
+  "date": "2026-09-19",
+  "source": "referral",
+  "sessions": 111,
+  "product_page_views": 194,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-20",
+  "source": "organic",
+  "sessions": 425,
+  "product_page_views": 820,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-20",
+  "source": "email",
+  "sessions": 186,
+  "product_page_views": 329,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-20",
+  "source": "paid_social",
+  "sessions": 6,
+  "product_page_views": 10,
+  "landing_404s": 312
+ },
+ {
+  "date": "2026-09-20",
+  "source": "referral",
+  "sessions": 95,
+  "product_page_views": 173,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-21",
+  "source": "organic",
+  "sessions": 575,
+  "product_page_views": 962,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-21",
+  "source": "email",
+  "sessions": 167,
+  "product_page_views": 349,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-21",
+  "source": "paid_social",
+  "sessions": 11,
+  "product_page_views": 19,
+  "landing_404s": 390
+ },
+ {
+  "date": "2026-09-21",
+  "source": "referral",
+  "sessions": 147,
+  "product_page_views": 269,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-22",
+  "source": "organic",
+  "sessions": 533,
+  "product_page_views": 944,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-22",
+  "source": "email",
+  "sessions": 176,
+  "product_page_views": 304,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-22",
+  "source": "paid_social",
+  "sessions": 13,
+  "product_page_views": 24,
+  "landing_404s": 426
+ },
+ {
+  "date": "2026-09-22",
+  "source": "referral",
+  "sessions": 148,
+  "product_page_views": 249,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-23",
+  "source": "organic",
+  "sessions": 533,
+  "product_page_views": 936,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-23",
+  "source": "email",
+  "sessions": 193,
+  "product_page_views": 350,
+  "landing_404s": 3
+ },
+ {
+  "date": "2026-09-23",
+  "source": "paid_social",
+  "sessions": 12,
+  "product_page_views": 24,
+  "landing_404s": 375
+ },
+ {
+  "date": "2026-09-23",
+  "source": "referral",
+  "sessions": 143,
+  "product_page_views": 280,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-24",
+  "source": "organic",
+  "sessions": 531,
+  "product_page_views": 1105,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-24",
+  "source": "email",
+  "sessions": 188,
+  "product_page_views": 334,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-24",
+  "source": "paid_social",
+  "sessions": 10,
+  "product_page_views": 17,
+  "landing_404s": 380
+ },
+ {
+  "date": "2026-09-24",
+  "source": "referral",
+  "sessions": 143,
+  "product_page_views": 261,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-25",
+  "source": "organic",
+  "sessions": 559,
+  "product_page_views": 1131,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-25",
+  "source": "email",
+  "sessions": 174,
+  "product_page_views": 301,
+  "landing_404s": 4
+ },
+ {
+  "date": "2026-09-25",
+  "source": "paid_social",
+  "sessions": 10,
+  "product_page_views": 19,
+  "landing_404s": 378
+ },
+ {
+  "date": "2026-09-25",
+  "source": "referral",
+  "sessions": 137,
+  "product_page_views": 259,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-26",
+  "source": "organic",
+  "sessions": 436,
+  "product_page_views": 720,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-26",
+  "source": "email",
+  "sessions": 149,
+  "product_page_views": 263,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-26",
+  "source": "paid_social",
+  "sessions": 9,
+  "product_page_views": 18,
+  "landing_404s": 337
+ },
+ {
+  "date": "2026-09-26",
+  "source": "referral",
+  "sessions": 110,
+  "product_page_views": 179,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-27",
+  "source": "organic",
+  "sessions": 469,
+  "product_page_views": 919,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-27",
+  "source": "email",
+  "sessions": 172,
+  "product_page_views": 291,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-27",
+  "source": "paid_social",
+  "sessions": 6,
+  "product_page_views": 10,
+  "landing_404s": 315
+ },
+ {
+  "date": "2026-09-27",
+  "source": "referral",
+  "sessions": 144,
+  "product_page_views": 263,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-28",
+  "source": "organic",
+  "sessions": 538,
+  "product_page_views": 1045,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-28",
+  "source": "email",
+  "sessions": 206,
+  "product_page_views": 376,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-28",
+  "source": "paid_social",
+  "sessions": 5,
+  "product_page_views": 10,
+  "landing_404s": 398
+ },
+ {
+  "date": "2026-09-28",
+  "source": "referral",
+  "sessions": 152,
+  "product_page_views": 313,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-29",
+  "source": "organic",
+  "sessions": 491,
+  "product_page_views": 916,
+  "landing_404s": 1
+ },
+ {
+  "date": "2026-09-29",
+  "source": "email",
+  "sessions": 184,
+  "product_page_views": 326,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-29",
+  "source": "paid_social",
+  "sessions": 8,
+  "product_page_views": 15,
+  "landing_404s": 376
+ },
+ {
+  "date": "2026-09-29",
+  "source": "referral",
+  "sessions": 141,
+  "product_page_views": 273,
+  "landing_404s": 2
+ },
+ {
+  "date": "2026-09-30",
+  "source": "organic",
+  "sessions": 567,
+  "product_page_views": 1145,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-30",
+  "source": "email",
+  "sessions": 193,
+  "product_page_views": 312,
+  "landing_404s": 0
+ },
+ {
+  "date": "2026-09-30",
+  "source": "paid_social",
+  "sessions": 7,
+  "product_page_views": 13,
+  "landing_404s": 350
+ },
+ {
+  "date": "2026-09-30",
+  "source": "referral",
+  "sessions": 155,
+  "product_page_views": 299,
+  "landing_404s": 0
+ }
+]
