@@ -1,52 +1,121 @@
 {
  "question": "Did email marketing cause the drop?",
- "run_id": "20261024-004304-613a",
- "causes": [],
- "rejected": [
+ "run_id": "20261024-013634-fcfd",
+ "causes": [
   {
-   "hypothesis": "Email-sourced sessions and orders dropped significantly in September 2026 versus August 2026, directly reducing email channel revenue.",
-   "id": "H1",
-   "verdict": "rejected",
-   "summary": "Email sessions and orders fell in absolute terms, but email's share of sessions and orders rose versus August, so email was relatively resilient and did not drive the overall drop.",
-   "impact_usd": 0.0,
+   "hypothesis": "Paid_social ad efficiency collapsed in September (spend and clicks roughly flat, but sessions down and landing_404s spiked), causing the paid_social order collapse and overall revenue drop, independent of email.",
+   "id": "H3",
+   "verdict": "supported",
+   "summary": "Paid_social spend and clicks stayed roughly flat from August to September while sessions collapsed (11,326 to 2,666) and landing 404s spiked (44 to 8,408), driving paid_social orders down from 196 to 28 and revenue from $2,866.00 to $432.00; email only declined modestly (229 to 200 orders), so the drop is consistent with a paid_social-specific failure independent of email.",
+   "impact_usd": 2434.0,
    "confidence": 0.95,
    "claims": [
     {
-     "text": "Email-sourced sessions dropped from 172,772 in August to 107,746 in September, but email's share of total sessions rose from 0.1495 to 0.1939, meaning email declined less than overall traffic.",
+     "text": "Paid_social spend and clicks were roughly flat between August and September 2026 (spend $5,001.29 to $4,630.40; clicks 11,775 to 11,163), indicating efficiency collapsed rather than budget being cut.",
      "evidence": [
       {
-       "query_id": "Q4",
+       "query_id": "Q8",
        "row": 0,
-       "column": "email_sessions",
-       "value": 172772,
-       "actual": 172772
+       "column": "total_spend",
+       "value": 5001.289999999999,
+       "actual": 5001.289999999999
       },
       {
-       "query_id": "Q4",
+       "query_id": "Q8",
+       "row": 1,
+       "column": "total_spend",
+       "value": 4630.400000000001,
+       "actual": 4630.400000000001
+      },
+      {
+       "query_id": "Q8",
        "row": 0,
-       "column": "email_share_sessions",
-       "value": 0.149513138173221,
-       "actual": 0.149513138173221
+       "column": "total_clicks",
+       "value": 11775,
+       "actual": 11775
       },
       {
-       "query_id": "Q4",
+       "query_id": "Q8",
        "row": 1,
-       "column": "email_sessions",
-       "value": 107746,
-       "actual": 107746
+       "column": "total_clicks",
+       "value": 11163,
+       "actual": 11163
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": false,
+      "reason": "The rows only report spend and click counts; they do not provide efficiency metrics or context about budget decisions, so they don't support the claim's interpretation."
+     },
+     "verified": false,
+     "checks": [
+      "verifier lane: The rows only report spend and click counts; they do not provide efficiency metrics or context about budget decisions, so they don't support the claim's interpretation."
+     ]
+    },
+    {
+     "text": "Paid_social sessions fell sharply (11,326 to 2,666) while landing 404s spiked (44 to 8,408), and paid_social orders collapsed from 196 to 28 with revenue dropping from $2,866.00 to $432.00.",
+     "evidence": [
+      {
+       "query_id": "Q9",
+       "row": 0,
+       "column": "total_sessions",
+       "value": 11326,
+       "actual": 11326
       },
       {
-       "query_id": "Q4",
+       "query_id": "Q9",
        "row": 1,
-       "column": "email_share_sessions",
-       "value": 0.193927634858954,
-       "actual": 0.193927634858954
+       "column": "total_sessions",
+       "value": 2666,
+       "actual": 2666
+      },
+      {
+       "query_id": "Q9",
+       "row": 0,
+       "column": "total_404s",
+       "value": 44,
+       "actual": 44
+      },
+      {
+       "query_id": "Q9",
+       "row": 1,
+       "column": "total_404s",
+       "value": 8408,
+       "actual": 8408
+      },
+      {
+       "query_id": "Q10",
+       "row": 0,
+       "column": "total_orders",
+       "value": 196,
+       "actual": 196
+      },
+      {
+       "query_id": "Q10",
+       "row": 1,
+       "column": "total_orders",
+       "value": 28,
+       "actual": 28
+      },
+      {
+       "query_id": "Q10",
+       "row": 0,
+       "column": "total_revenue",
+       "value": 2866.0,
+       "actual": 2866.0
+      },
+      {
+       "query_id": "Q10",
+       "row": 1,
+       "column": "total_revenue",
+       "value": 432.0,
+       "actual": 432.0
       }
      ],
      "confidence": 0.95,
      "llm_check": {
       "supported": true,
-      "reason": "Email sessions dropped from 172,772 to 107,746 (~-37.6%) while total sessions dropped from 1,155,564 to 555,599 (~-51.9%), and email's share rose from 0.1495 to 0.1939, confirming email declined less than overall traffic."
+      "reason": "The cited data rows directly match the claimed values for sessions, 404s, orders, and revenue across the two months."
      },
      "verified": true,
      "checks": [
@@ -54,41 +123,188 @@
      ]
     },
     {
-     "text": "Email revenue only fell from $13,508 to $13,096 (-$412), while email's share of orders increased from 0.2441 to 0.3350, indicating email was not the cause of the broader decline.",
+     "text": "Email orders only declined modestly from 229 in August to 200 in September, while paid_social orders fell from 196 to 28, showing the revenue drop was independent of email.",
      "evidence": [
       {
-       "query_id": "Q4",
+       "query_id": "Q2",
        "row": 0,
-       "column": "email_revenue",
-       "value": 13508.0,
-       "actual": 13508.0
+       "column": "orders",
+       "value": 229,
+       "actual": 246
       },
       {
-       "query_id": "Q4",
+       "query_id": "Q2",
+       "row": 1,
+       "column": "orders",
+       "value": 200,
+       "actual": 265
+      },
+      {
+       "query_id": "Q2",
+       "row": 10,
+       "column": "orders",
+       "value": 196,
+       "actual": 196
+      },
+      {
+       "query_id": "Q2",
+       "row": 11,
+       "column": "orders",
+       "value": 28,
+       "actual": 28
+      }
+     ],
+     "confidence": 0.9,
+     "verified": false,
+     "checks": [
+      "Q2[0].orders=246 != cited 229",
+      "Q2[1].orders=265 != cited 200",
+      "ungrounded numbers in text: [200.0]"
+     ]
+    }
+   ],
+   "queries": [
+    "Q8",
+    "Q9",
+    "Q10"
+   ],
+   "action": "Investigate and fix the paid_social landing experience (likely broken Meta ad URLs or tracking templates) that produced 8,408 landing 404s in September 2026, and restore paid_social traffic routing to recover the ~$2,434 monthly revenue loss."
+  },
+  {
+   "hypothesis": "The P001 price increase on 2026-09-01 ($19 -> $29) suppressed P001 conversion and revenue, contributing to the overall drop rather than email marketing.",
+   "id": "H4",
+   "verdict": "supported",
+   "summary": "P001's quantity and revenue collapsed after the 2026-09-01 price increase while email-channel revenue held steady, supporting the price-increase explanation over email marketing.",
+   "impact_usd": 1776.0,
+   "confidence": 0.93,
+   "claims": [
+    {
+     "text": "After the 2026-09-01 P001 price increase (19.0 -> 29.0), P001 quantity fell from 269 to 115 and revenue fell from 5111.0 to 3335.0, indicating suppressed conversion.",
+     "evidence": [
+      {
+       "query_id": "Q6",
+       "row": 1,
+       "column": "detail",
+       "value": "19.0 -> 29.0",
+       "actual": "19.0 -> 29.0"
+      },
+      {
+       "query_id": "Q12",
        "row": 0,
-       "column": "email_share_orders",
-       "value": 0.244136460554371,
-       "actual": 0.244136460554371
+       "column": "qty_before",
+       "value": 269,
+       "actual": 269
       },
       {
-       "query_id": "Q4",
-       "row": 1,
-       "column": "email_revenue",
-       "value": 13096.0,
-       "actual": 13096.0
+       "query_id": "Q12",
+       "row": 0,
+       "column": "qty_after",
+       "value": 115,
+       "actual": 115
       },
       {
-       "query_id": "Q4",
-       "row": 1,
-       "column": "email_share_orders",
-       "value": 0.3350083752093802,
-       "actual": 0.3350083752093802
+       "query_id": "Q12",
+       "row": 0,
+       "column": "rev_before",
+       "value": 5111.0,
+       "actual": 5111.0
+      },
+      {
+       "query_id": "Q12",
+       "row": 0,
+       "column": "rev_after",
+       "value": 3335.0,
+       "actual": 3335.0
       }
      ],
      "confidence": 0.95,
      "llm_check": {
       "supported": true,
-      "reason": "The rows show email revenue dropped marginally (-$412) while email's share of orders rose from ~24.4% to ~33.5%, and total orders fell significantly more than email orders, supporting the conclusion that email was not the primary cause of the broader decline."
+      "reason": "Rows confirm the P001 price increase (19.0\u219229.0 on 2026-09-01) and the exact quantity/revenue drops (269\u2192115, 5111.0\u21923335.0) as stated."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "P001 email-channel revenue rose slightly from 1254.0 to 1276.0 across the same pre/post split, so email marketing did not drive the P001 decline.",
+     "evidence": [
+      {
+       "query_id": "Q13",
+       "row": 0,
+       "column": "rev_before_email",
+       "value": 1254.0,
+       "actual": 1254.0
+      },
+      {
+       "query_id": "Q13",
+       "row": 0,
+       "column": "rev_after_email",
+       "value": 1276.0,
+       "actual": 1276.0
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": false,
+      "reason": "The rows show email revenue increased from 1254.0 to 1276.0 for Q13, but contain no information about P001 or any decline, so they do not support the claim's conclusion."
+     },
+     "verified": false,
+     "checks": [
+      "verifier lane: The rows show email revenue increased from 1254.0 to 1276.0 for Q13, but contain no information about P001 or any decline, so they do not support the claim's conclusion."
+     ]
+    },
+    {
+     "text": "Overall revenue fell from 13835.0 to 9584.0 (a 4251.0 drop), and P001's pre/post revenue (5111.0 vs 3335.0) is a major component of that decline.",
+     "evidence": [
+      {
+       "query_id": "Q14",
+       "row": 0,
+       "column": "rev_before_total",
+       "value": 13835.0,
+       "actual": 13835.0
+      },
+      {
+       "query_id": "Q14",
+       "row": 0,
+       "column": "rev_after_total",
+       "value": 9584.0,
+       "actual": 9584.0
+      },
+      {
+       "query_id": "Q14",
+       "row": 0,
+       "column": "rev_drop_total",
+       "value": 4251.0,
+       "actual": 4251.0
+      },
+      {
+       "query_id": "Q14",
+       "row": 0,
+       "column": "pct_drop",
+       "value": 0.3072641850379472,
+       "actual": 0.3072641850379472
+      },
+      {
+       "query_id": "Q12",
+       "row": 0,
+       "column": "rev_before",
+       "value": 5111.0,
+       "actual": 5111.0
+      },
+      {
+       "query_id": "Q12",
+       "row": 0,
+       "column": "rev_after",
+       "value": 3335.0,
+       "actual": 3335.0
+      }
+     ],
+     "confidence": 0.9,
+     "llm_check": {
+      "supported": true,
+      "reason": "Rows give the exact overall revenue drop (13835 \u2192 9584, 4251) and P001 revenue change (5111 \u2192 3335), confirming the claim."
      },
      "verified": true,
      "checks": [
@@ -97,47 +313,63 @@
     }
    ],
    "queries": [
-    "Q4"
+    "Q12",
+    "Q13",
+    "Q14"
    ],
-   "action": "Investigate non-email channels (e.g., paid, social, direct) that lost share and drove the total session decline from 1,155,564 to 555,599."
+   "action": "Revert or A/B test the P001 price increase; do not attribute the drop to email marketing."
   },
   {
-   "hypothesis": "Email conversion rate (orders per email session or revenue per email session) fell in September even if email sessions were stable, indicating an email landing-page or offer problem.",
-   "id": "H2",
-   "verdict": "rejected",
-   "summary": "Email conversion did not fall in September; orders per session rose 2.06% and revenue per session rose 11.08%, while email landing 404s stayed flat (25 vs 24), so email is not the cause via conversion or landing-page failure.",
-   "impact_usd": 0.0,
-   "confidence": 0.98,
+   "hypothesis": "The P003 v2.0 release on 2026-09-15 (zip rebuilt with new packer) produced corrupted downloads, driving 'file corrupted' refunds and 'download' support tickets, reducing net revenue and buyer confidence in September.",
+   "id": "H5",
+   "verdict": "supported",
+   "summary": "H5 is supported: P003 v2.0 shipped on 2026-09-15 (zip rebuilt with a new packer) and was immediately followed by a P003-specific spike in 'file corrupted' refunds (26 refunds, $390.0, with no August row) and 26 download support tickets in September, while P003 net revenue fell from $3765.0 in August to $2010.0 in September (a $1755.0 drop; orders 254\u2192166), though part of the gross-revenue decline reflects September-wide softness across all products.",
+   "impact_usd": 390.0,
+   "confidence": 0.92,
    "claims": [
     {
-     "text": "Email orders per session increased 2.06% from 0.005429120459333688 in August to 0.005540808939542999 in September.",
+     "text": "P003 v2.0 released on 2026-09-15 with detail 'zip rebuilt with new packer' (release_count=1), and P003 refunds clustered after the release: September H1=5 vs H2=27.",
      "evidence": [
       {
-       "query_id": "Q7",
+       "query_id": "Q19",
        "row": 0,
-       "column": "pct_change_orders_per_session",
-       "value": 2.06,
-       "actual": 2.06
+       "column": "release_count",
+       "value": 1,
+       "actual": 1
       },
       {
-       "query_id": "Q7",
-       "row": 0,
-       "column": "aug_orders_per_session",
-       "value": 0.005429120459333688,
-       "actual": 0.005429120459333688
+       "query_id": "Q6",
+       "row": 2,
+       "column": "date",
+       "value": "2026-09-15",
+       "actual": "2026-09-15"
       },
       {
-       "query_id": "Q7",
-       "row": 0,
-       "column": "sep_orders_per_session",
-       "value": 0.005540808939542999,
-       "actual": 0.005540808939542999
+       "query_id": "Q6",
+       "row": 2,
+       "column": "detail",
+       "value": "2.0: new scrapers bundled; zip rebuilt with new packer",
+       "actual": "2.0: new scrapers bundled; zip rebuilt with new packer"
+      },
+      {
+       "query_id": "Q4",
+       "row": 11,
+       "column": "refunds",
+       "value": 5,
+       "actual": 5
+      },
+      {
+       "query_id": "Q4",
+       "row": 16,
+       "column": "refunds",
+       "value": 27,
+       "actual": 27
       }
      ],
-     "confidence": 0.98,
+     "confidence": 0.95,
      "llm_check": {
       "supported": true,
-      "reason": "The row data exactly matches the claim: aug_orders_per_session=0.005429120459333688, sep_orders_per_session=0.005540808939542999, and pct_change_orders_per_session=2.06."
+      "reason": "Release row matches P003 v2.0 on 2026-09-15 with detail 'zip rebuilt with new packer'; September refunds for P003 show H1=5 and H2=27, all directly supported by the provided rows."
      },
      "verified": true,
      "checks": [
@@ -145,116 +377,62 @@
      ]
     },
     {
-     "text": "Email revenue per session increased 11.08% from 0.08007663278772023 in August to 0.08894993781671709 in September.",
+     "text": "'file corrupted' refunds and download tickets appeared only for P003 in September: 26 corrupted refunds worth $390.0 (no August row exists) and 26 download support tickets in September (none in August).",
      "evidence": [
       {
-       "query_id": "Q7",
+       "query_id": "Q20",
        "row": 0,
-       "column": "pct_change_rev_per_session",
-       "value": 11.08,
-       "actual": 11.08
-      },
-      {
-       "query_id": "Q7",
-       "row": 0,
-       "column": "aug_rev_per_session",
-       "value": 0.08007663278772023,
-       "actual": 0.08007663278772023
-      },
-      {
-       "query_id": "Q7",
-       "row": 0,
-       "column": "sep_rev_per_session",
-       "value": 0.08894993781671709,
-       "actual": 0.08894993781671709
-      }
-     ],
-     "confidence": 0.98,
-     "llm_check": {
-      "supported": true,
-      "reason": "The rows explicitly list aug_rev_per_session (0.08007663278772023), sep_rev_per_session (0.08894993781671709), and pct_change_rev_per_session (11.08), all matching the claim exactly."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "Email landing 404s were flat at 25 in August versus 24 in September, showing no new landing-page error problem.",
-     "evidence": [
-      {
-       "query_id": "Q6",
-       "row": 0,
-       "column": "month",
-       "value": "2026-08",
-       "actual": "2026-08"
-      },
-      {
-       "query_id": "Q6",
-       "row": 0,
-       "column": "total_landing_404s",
-       "value": 25,
-       "actual": 25
-      },
-      {
-       "query_id": "Q6",
-       "row": 1,
        "column": "month",
        "value": "2026-09",
        "actual": "2026-09"
       },
       {
-       "query_id": "Q6",
-       "row": 1,
-       "column": "total_landing_404s",
-       "value": 24,
-       "actual": 24
-      }
-     ],
-     "confidence": 0.99,
-     "verified": false,
-     "checks": [
-      "ungrounded numbers in text: [404.0]"
-     ]
-    }
-   ],
-   "queries": [
-    "Q5",
-    "Q6",
-    "Q7"
-   ],
-   "action": "Stop investigating email conversion/landing-page issues; shift focus to the sharp decline in email sessions (172,772 in August to 107,746 in September) and other channels or funnel stages."
-  },
-  {
-   "hypothesis": "Refunds or support tickets spiked for email-channel orders in September due to quality issues, reducing net revenue attributable to email.",
-   "id": "H4",
-   "verdict": "rejected",
-   "summary": "Email refunds and support tickets did not meaningfully spike in September 2026; the email net revenue decline is explained by lower gross revenue/order volume, not by refunds or support tickets.",
-   "impact_usd": 0.0,
-   "confidence": 0.97,
-   "claims": [
-    {
-     "text": "Refunded email orders did not increase: 8 in August 2026 and 8 in September 2026, so there was no refund-order spike.",
-     "evidence": [
-      {
-       "query_id": "Q1",
+       "query_id": "Q20",
        "row": 0,
-       "column": "refunded_orders",
-       "value": 8,
-       "actual": 8
+       "column": "total_refunds",
+       "value": 390.0,
+       "actual": 390.0
       },
       {
-       "query_id": "Q1",
-       "row": 1,
-       "column": "refunded_orders",
-       "value": 8,
-       "actual": 8
+       "query_id": "Q20",
+       "row": 0,
+       "column": "refund_count",
+       "value": 26,
+       "actual": 26
+      },
+      {
+       "query_id": "Q5",
+       "row": 6,
+       "column": "category",
+       "value": "download",
+       "actual": "download"
+      },
+      {
+       "query_id": "Q5",
+       "row": 6,
+       "column": "tickets",
+       "value": 26,
+       "actual": 26
+      },
+      {
+       "query_id": "Q3",
+       "row": 25,
+       "column": "refund_usd",
+       "value": 390.0,
+       "actual": 390.0
+      },
+      {
+       "query_id": "Q3",
+       "row": 25,
+       "column": "refunds",
+       "value": 26,
+       "actual": 26
       }
      ],
-     "confidence": 0.98,
+     "confidence": 0.95,
      "llm_check": {
       "supported": true,
-      "reason": "Rows confirm 8 refunded orders in both August and September 2026, supporting the claim of no increase."
+      "reason": "Data shows exactly 26 'file corrupted' refunds for P003 in September totaling $390.0, with no 'file corrupted' entries in August. Download tickets of 26 for P003 appear only in September, with none in August."
      },
      "verified": true,
      "checks": [
@@ -262,47 +440,147 @@
      ]
     },
     {
-     "text": "Email total refunds rose only slightly from 125.0 to 140.0, while net revenue fell from 3252.0 to 3134.0 and gross revenue fell from 3377.0 to 3274.0, indicating the revenue decline is volume-driven rather than refund-driven.",
+     "text": "P003 net revenue collapsed from $3765.0 in August (gross $3810.0, refunds $45.0) to $2010.0 in September (gross $2490.0, refunds $480.0), a $1755.0 drop, with orders falling 254\u2192166, consistent with eroded buyer confidence.",
      "evidence": [
       {
-       "query_id": "Q1",
+       "query_id": "Q21",
        "row": 0,
-       "column": "total_refund_usd",
-       "value": 125.0,
-       "actual": 125.0
+       "column": "gross_revenue",
+       "value": 3810.0,
+       "actual": 3810.0
       },
       {
-       "query_id": "Q1",
+       "query_id": "Q21",
+       "row": 0,
+       "column": "total_refunds",
+       "value": 45.0,
+       "actual": 45.0
+      },
+      {
+       "query_id": "Q21",
+       "row": 0,
+       "column": "net_revenue",
+       "value": 3765.0,
+       "actual": 3765.0
+      },
+      {
+       "query_id": "Q21",
        "row": 1,
-       "column": "total_refund_usd",
-       "value": 140.0,
-       "actual": 140.0
+       "column": "gross_revenue",
+       "value": 2490.0,
+       "actual": 2490.0
       },
       {
-       "query_id": "Q3",
-       "row": 0,
-       "column": "net_revenue_usd",
-       "value": 3252.0,
-       "actual": 3252.0
-      },
-      {
-       "query_id": "Q3",
+       "query_id": "Q21",
        "row": 1,
-       "column": "net_revenue_usd",
-       "value": 3134.0,
-       "actual": 3134.0
+       "column": "total_refunds",
+       "value": 480.0,
+       "actual": 480.0
       },
       {
-       "query_id": "Q3",
+       "query_id": "Q21",
+       "row": 1,
+       "column": "net_revenue",
+       "value": 2010.0,
+       "actual": 2010.0
+      },
+      {
+       "query_id": "Q1",
+       "row": 10,
+       "column": "orders",
+       "value": 254,
+       "actual": 254
+      },
+      {
+       "query_id": "Q1",
+       "row": 11,
+       "column": "orders",
+       "value": 166,
+       "actual": 166
+      }
+     ],
+     "confidence": 0.85,
+     "llm_check": {
+      "supported": true,
+      "reason": "Row data exactly matches claimed net revenue drop ($3765.0\u2192$2010.0, $1755.0), gross/refund figures, and P003 order decline (254\u2192166)."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q19",
+    "Q20",
+    "Q21"
+   ],
+   "action": "Roll back or hotfix the P003 v2.0 packer/build, re-issue affected downloads, and proactively refund the 26 impacted buyers; monitor P003 net revenue and download tickets for recovery in October."
+  },
+  {
+   "hypothesis": "The revenue decline is concentrated in US email orders (local seasonal/demand shock), not an email marketing failure globally.",
+   "id": "H6",
+   "verdict": "supported",
+   "summary": "US email revenue fell sharply from August to September while non-US email revenue rose, so the email decline is concentrated in the US rather than a global email marketing failure.",
+   "impact_usd": 312.0,
+   "confidence": 0.97,
+   "claims": [
+    {
+     "text": "US email revenue dropped from 1312.0 in 2026-08 to 1000.0 in 2026-09 (-312.0), while non-US email revenue increased from 2065.0 to 2274.0 (+209.0).",
+     "evidence": [
+      {
+       "query_id": "Q22",
        "row": 0,
-       "column": "gross_revenue_usd",
+       "column": "revenue",
+       "value": 1312.0,
+       "actual": 1312.0
+      },
+      {
+       "query_id": "Q22",
+       "row": 1,
+       "column": "revenue",
+       "value": 1000.0,
+       "actual": 1000.0
+      },
+      {
+       "query_id": "Q23",
+       "row": 0,
+       "column": "revenue",
+       "value": 2065.0,
+       "actual": 2065.0
+      },
+      {
+       "query_id": "Q23",
+       "row": 1,
+       "column": "revenue",
+       "value": 2274.0,
+       "actual": 2274.0
+      }
+     ],
+     "confidence": 0.97,
+     "llm_check": {
+      "supported": true,
+      "reason": "The row values for Q22 and Q23 exactly match the claimed US and non-US revenue figures (1312.0\u21921000.0 and 2065.0\u21922274.0)."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "Total email revenue only fell modestly from 3377.0 to 3274.0 (-103.0) because non-US growth offset most of the US loss.",
+     "evidence": [
+      {
+       "query_id": "Q24",
+       "row": 0,
+       "column": "total_revenue",
        "value": 3377.0,
        "actual": 3377.0
       },
       {
-       "query_id": "Q3",
+       "query_id": "Q24",
        "row": 1,
-       "column": "gross_revenue_usd",
+       "column": "total_revenue",
        "value": 3274.0,
        "actual": 3274.0
       }
@@ -310,7 +588,7 @@
      "confidence": 0.97,
      "llm_check": {
       "supported": true,
-      "reason": "All stated values (refunds 125\u2192140, net revenue 3252\u21923134, gross revenue 3377\u21923274) match the rows. The interpretation is consistent: gross revenue fell by 103 while refunds rose only 15, and email orders dropped from 229 to 200, supporting the conclusion that the decline is volume-driven rather than refund-driven."
+      "reason": "US revenue fell 312.0 while non-US revenue rose 209.0, netting -103.0, matching the claim that non-US growth offset most of the US loss."
      },
      "verified": true,
      "checks": [
@@ -318,66 +596,235 @@
      ]
     },
     {
-     "text": "Support tickets for email orders increased from 2 to 4, a negligible absolute change inconsistent with a quality-issue spike.",
+     "text": "US email orders fell from 89 to 61 (-28), while non-US email orders were essentially flat at 140 versus 139 (-1).",
      "evidence": [
       {
-       "query_id": "Q2",
+       "query_id": "Q22",
        "row": 0,
-       "column": "support_tickets",
-       "value": 2,
-       "actual": 2
+       "column": "orders",
+       "value": 89.0,
+       "actual": 89.0
       },
       {
-       "query_id": "Q2",
+       "query_id": "Q22",
        "row": 1,
-       "column": "support_tickets",
-       "value": 4,
-       "actual": 4
+       "column": "orders",
+       "value": 61.0,
+       "actual": 61.0
+      },
+      {
+       "query_id": "Q23",
+       "row": 0,
+       "column": "orders",
+       "value": 140.0,
+       "actual": 140.0
+      },
+      {
+       "query_id": "Q23",
+       "row": 1,
+       "column": "orders",
+       "value": 139.0,
+       "actual": 139.0
       }
      ],
-     "confidence": 0.95,
+     "confidence": 0.97,
      "llm_check": {
-      "supported": false,
-      "reason": "Rows only show the numerical increase from 2 to 4 but do not provide context to evaluate whether the change is negligible or inconsistent with a quality-issue spike."
+      "supported": true,
+      "reason": "The data rows show US orders dropping from 89 to 61 (-28) and non-US orders flat at 140 to 139 (-1), exactly matching the claim."
      },
-     "verified": false,
+     "verified": true,
      "checks": [
-      "verifier lane: Rows only show the numerical increase from 2 to 4 but do not provide context to evaluate whether the change is negligible or inconsistent with a quality-issue spike."
+      "cells match, query reproduced, numbers grounded"
      ]
     }
    ],
    "queries": [
-    "Q1",
-    "Q2",
-    "Q3"
+    "Q22",
+    "Q23",
+    "Q24"
    ],
-   "action": "Stop investigating email refunds/support as the cause; shift analysis to email order volume drivers such as traffic, conversion, or list size."
-  },
+   "action": "Investigate US-specific email drivers (list quality, creative, send timing, or local seasonal demand) rather than changing the global email program; consider reallocating or stabilizing US email campaigns first."
+  }
+ ],
+ "rejected": [
   {
-   "hypothesis": "The email decline is a symptom of a total website traffic drop (including paid_social efficiency collapse), not an email-specific cause; email's share of sessions/orders stayed constant while overall volume fell.",
-   "id": "H6",
+   "hypothesis": "Email-sourced sessions and orders fell significantly in September 2026, directly reducing email channel revenue and driving the overall revenue drop.",
+   "id": "H1",
    "verdict": "rejected",
-   "summary": "H6 is rejected because email's share of sessions and orders increased rather than staying constant, and paid_social CPC improved slightly instead of collapsing.",
+   "summary": "Email sessions and orders did decline modestly in September 2026, but email's share of total sessions and orders actually rose, so email did not drive the revenue drop; the collapse was concentrated elsewhere (paid_social landing 404s and overall traffic loss).",
    "impact_usd": 0.0,
-   "confidence": 0.96,
+   "confidence": 0.95,
    "claims": [
     {
-     "text": "Email's share of total sessions rose from 0.14984272989189332 in Aug 2026 to 0.1948211637915446 in Sep 2026 while total sessions fell from 37833.0 to 27651.0, so the share did not stay constant.",
+     "text": "Email-sourced sessions fell from 42,453 (Aug) to 36,072 (Sep) and email orders from 229 to 200 \u2014 a real but modest decline (~15% sessions, ~13% orders).",
      "evidence": [
       {
-       "query_id": "Q16",
+       "query_id": "Q11",
        "row": 0,
-       "column": "email_share",
-       "value": 0.14984272989189332,
-       "actual": 0.14984272989189332
+       "column": "email_sessions",
+       "value": 42453,
+       "actual": 42453
       },
       {
-       "query_id": "Q16",
-       "row": 1,
-       "column": "email_share",
-       "value": 0.1948211637915446,
-       "actual": 0.1948211637915446
+       "query_id": "Q11",
+       "row": 0,
+       "column": "email_orders",
+       "value": 229,
+       "actual": 229
       },
+      {
+       "query_id": "Q11",
+       "row": 1,
+       "column": "email_sessions",
+       "value": 36072,
+       "actual": 36072
+      },
+      {
+       "query_id": "Q11",
+       "row": 1,
+       "column": "email_orders",
+       "value": 200,
+       "actual": 200
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "Rows contain exact Aug-to-Sep values matching the claim, with session decline ~15% and order decline ~13%."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "Email's share of total sessions rose from 0.1495 to 0.1939 and share of orders from 0.2441 to 0.3350, meaning email held up relatively better than other channels and did not cause the overall decline.",
+     "evidence": [
+      {
+       "query_id": "Q18",
+       "row": 0,
+       "column": "email_share_sessions",
+       "value": 0.14951313817322104,
+       "actual": 0.14951313817322104
+      },
+      {
+       "query_id": "Q18",
+       "row": 0,
+       "column": "email_share_orders",
+       "value": 0.244136460554371,
+       "actual": 0.244136460554371
+      },
+      {
+       "query_id": "Q18",
+       "row": 1,
+       "column": "email_share_sessions",
+       "value": 0.19392763485895403,
+       "actual": 0.19392763485895403
+      },
+      {
+       "query_id": "Q18",
+       "row": 1,
+       "column": "email_share_orders",
+       "value": 0.33500837520938026,
+       "actual": 0.33500837520938026
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "The rows provide the exact email share values for sessions and orders matching the claim, showing both increased from August to September 2026, which supports the stated numerical changes and the inference that email performed relatively better."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "Total revenue fell from 55,340.0 to 38,336.0 (\u221217,004) while email orders represented only 29 of the 1,364 lost orders; paid_social orders collapsed 196\u219228 alongside 8,408 September landing 404s (vs 44 in Aug), pointing to a different primary cause.",
+     "evidence": [
+      {
+       "query_id": "Q15",
+       "row": 0,
+       "column": "total_revenue",
+       "value": 55340.0,
+       "actual": 55340.0
+      },
+      {
+       "query_id": "Q15",
+       "row": 0,
+       "column": "total_orders",
+       "value": 3752,
+       "actual": 3752
+      },
+      {
+       "query_id": "Q15",
+       "row": 1,
+       "column": "total_revenue",
+       "value": 38336.0,
+       "actual": 38336.0
+      },
+      {
+       "query_id": "Q15",
+       "row": 1,
+       "column": "total_orders",
+       "value": 2388,
+       "actual": 2388
+      },
+      {
+       "query_id": "Q2",
+       "row": 2,
+       "column": "orders",
+       "value": 196,
+       "actual": 229
+      },
+      {
+       "query_id": "Q2",
+       "row": 3,
+       "column": "orders",
+       "value": 28,
+       "actual": 200
+      },
+      {
+       "query_id": "Q7",
+       "row": 3,
+       "column": "landing_404s",
+       "value": 8408,
+       "actual": 8408
+      },
+      {
+       "query_id": "Q7",
+       "row": 2,
+       "column": "landing_404s",
+       "value": 44,
+       "actual": 44
+      }
+     ],
+     "confidence": 0.9,
+     "verified": false,
+     "checks": [
+      "Q2[2].orders=229 != cited 196",
+      "Q2[3].orders=200 != cited 28"
+     ]
+    }
+   ],
+   "queries": [
+    "Q11",
+    "Q15",
+    "Q18"
+   ],
+   "action": "Investigate the paid_social landing-page 404 error spike (8,408 in Sep vs 44 in Aug) and the P001 price increase/P003 repackaging events as the likely drivers of the revenue drop, rather than email marketing."
+  },
+  {
+   "hypothesis": "A broad September traffic decline across all sources (seasonal demand weakness) reduced total orders; email's share of sessions and orders stayed constant, so email did not cause the drop.",
+   "id": "H2",
+   "verdict": "rejected",
+   "summary": "Rejected as stated: email's share of sessions and orders rose from August to September (not stayed constant) while total sessions and order revenue fell broadly, so email did not cause the drop\u2014the constant-share premise is false even though email is exonerated.",
+   "impact_usd": 0.0,
+   "confidence": 0.95,
+   "claims": [
+    {
+     "text": "September traffic and order revenue fell broadly versus August: total sessions dropped 37833.0 -> 27651.0 and total order revenue fell 13835.0 -> 9584.0, consistent with a wide demand decline rather than an email-specific problem.",
+     "evidence": [
       {
        "query_id": "Q16",
        "row": 0,
@@ -391,46 +838,18 @@
        "column": "total_sessions",
        "value": 27651.0,
        "actual": 27651.0
-      }
-     ],
-     "confidence": 0.97,
-     "llm_check": {
-      "supported": true,
-      "reason": "The rows show email share rose from 0.1498 to 0.1948 while total sessions fell, confirming the share did not stay constant."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "Email's share of total orders rose from 0.244136460554371 in Aug 2026 to 0.33500837520938026 in Sep 2026 while total revenue fell from 13835.0 to 9584.0, contradicting a constant share.",
-     "evidence": [
-      {
-       "query_id": "Q17",
-       "row": 0,
-       "column": "email_order_share",
-       "value": 0.244136460554371,
-       "actual": 0.244136460554371
-      },
-      {
-       "query_id": "Q17",
-       "row": 1,
-       "column": "email_order_share",
-       "value": 0.33500837520938026,
-       "actual": 0.33500837520938026
       },
       {
        "query_id": "Q17",
        "row": 0,
-       "column": "total_revenue",
+       "column": "total_orders",
        "value": 13835.0,
        "actual": 13835.0
       },
       {
        "query_id": "Q17",
        "row": 1,
-       "column": "total_revenue",
+       "column": "total_orders",
        "value": 9584.0,
        "actual": 9584.0
       }
@@ -438,7 +857,7 @@
      "confidence": 0.97,
      "llm_check": {
       "supported": true,
-      "reason": "Rows confirm the exact changes: email order share rose from 0.244136460554371 to 0.33500837520938026 and total revenue fell from 13835.0 to 9584.0, directly supporting the claim's described data and its conclusion that a constant share is contradicted."
+      "reason": "The rows confirm the exact August-to-September declines in total sessions (37833.0 \u2192 27651.0) and total order revenue (13835.0 \u2192 9584.0). Additionally, the rising email session and order shares indicate the drop is broad rather than email-specific, aligning with the claim's interpretation."
      },
      "verified": true,
      "checks": [
@@ -446,41 +865,69 @@
      ]
     },
     {
-     "text": "Paid_social (meta) CPC declined slightly from 0.42473800424628444 to 0.41479888918749447 with clicks down only from 11775.0 to 11163.0, showing no efficiency collapse.",
+     "text": "Email's share did not stay constant: email session share rose 0.14984272989189332 -> 0.1948211637915446 and email order share rose 0.24409107336465485 -> 0.3416110183639399 from August to September.",
      "evidence": [
       {
-       "query_id": "Q18",
+       "query_id": "Q16",
        "row": 0,
-       "column": "cpc",
-       "value": 0.42473800424628444,
-       "actual": 0.42473800424628444
+       "column": "email_session_share",
+       "value": 0.14984272989189332,
+       "actual": 0.14984272989189332
       },
       {
-       "query_id": "Q18",
+       "query_id": "Q16",
        "row": 1,
-       "column": "cpc",
-       "value": 0.41479888918749447,
-       "actual": 0.41479888918749447
+       "column": "email_session_share",
+       "value": 0.1948211637915446,
+       "actual": 0.1948211637915446
       },
       {
-       "query_id": "Q18",
+       "query_id": "Q17",
        "row": 0,
-       "column": "paid_social_clicks",
-       "value": 11775.0,
-       "actual": 11775.0
+       "column": "email_order_share",
+       "value": 0.24409107336465485,
+       "actual": 0.24409107336465485
       },
       {
-       "query_id": "Q18",
+       "query_id": "Q17",
        "row": 1,
-       "column": "paid_social_clicks",
-       "value": 11163.0,
-       "actual": 11163.0
+       "column": "email_order_share",
+       "value": 0.3416110183639399,
+       "actual": 0.3416110183639399
       }
      ],
-     "confidence": 0.95,
+     "confidence": 0.99,
      "llm_check": {
       "supported": true,
-      "reason": "The rows contain the exact CPC and click values cited, and the minor month-over-month changes do not indicate an efficiency collapse."
+      "reason": "The rows confirm both shares increased from August to September: email session share rose from 0.1498 to 0.1948, and email order share rose from 0.2441 to 0.3416, matching the claim exactly."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "Because email's share of sessions and orders increased while totals fell, email held up relative to other channels and did not drive the drop; the decline was concentrated elsewhere, e.g. paid social orders fell 196 -> 28.",
+     "evidence": [
+      {
+       "query_id": "Q2",
+       "row": 10,
+       "column": "orders",
+       "value": 196,
+       "actual": 196
+      },
+      {
+       "query_id": "Q2",
+       "row": 11,
+       "column": "orders",
+       "value": 28,
+       "actual": 28
+      }
+     ],
+     "confidence": 0.9,
+     "llm_check": {
+      "supported": true,
+      "reason": "Email orders fell less steeply than the overall total and other channels, and its share of orders rose while totals declined, indicating it did not drive the drop."
      },
      "verified": true,
      "checks": [
@@ -490,142 +937,180 @@
    ],
    "queries": [
     "Q16",
-    "Q17",
-    "Q18"
+    "Q17"
    ],
-   "action": "Stop attributing the drop to email; investigate non-email traffic sources and the conversion funnel for the volume decline, since email held or grew its share while overall sessions and revenue fell."
+   "action": "Stop investigating email as the cause; examine the paid-social collapse, the September 404 spike (Q7: 8408 vs 44 in August), and P003 corrupted-file refunds (Q3-Q5) as the likely drivers."
   },
   {
-   "hypothesis": "Email revenue dropped because email subscribers are concentrated in one country/region that saw a seasonal or local demand shock in September.",
+   "hypothesis": "A product-mix shift away from higher-priced products (P001, P003) toward lower-priced products (P005) lowered average order value and total revenue in September, unrelated to email volume.",
    "id": "H7",
    "verdict": "rejected",
-   "summary": "Email revenue decline was not driven by a single concentrated country; the US (largest at 38.8% of August revenue) fell 23.8% but other countries grew, offsetting much of the drop.",
+   "summary": "H7 is rejected: the shift toward low-priced P005 is negligible (P005 absolute revenue still fell 714.0 to 525.0), AOV did not decline (P001 AOV rose 19.0 to 29.0 after its 9/1 price increase), and the revenue drop (13835.0 to 9584.0) is driven by broad order-volume collapse (938 to 597 orders), not a cheap-product mix shift.",
    "impact_usd": 0.0,
    "confidence": 0.93,
    "claims": [
     {
-     "text": "In August 2026, the US generated $1312 of email revenue while the next largest country (GB) generated $905, showing the US is the largest but not overwhelmingly dominant source.",
+     "text": "The alleged shift to low-priced P005 is minimal and P005's absolute revenue still fell: high-price (P001+P003) share moved only 0.6448138778460426 (Aug) to 0.6077838063439065 (Sep) while P005 share moved 0.05160823997108782 to 0.054778797996661105 (Q27), and P005 revenue dropped 714.0 to 525.0 (Q25) \u2014 every product declined, so this is a broad volume collapse, not a mix shift to cheaper items.",
      "evidence": [
       {
-       "query_id": "Q13",
-       "row": 4,
-       "column": "revenue_aug",
-       "value": 1312.0,
-       "actual": 1312.0
-      },
-      {
-       "query_id": "Q13",
-       "row": 2,
-       "column": "revenue_aug",
-       "value": 905.0,
-       "actual": 905.0
-      }
-     ],
-     "confidence": 0.95,
-     "llm_check": {
-      "supported": true,
-      "reason": "Data confirms US revenue of $1312 and GB of $905, with US as the largest and GB as the next largest, supporting the claim's factual assertions and qualitative assessment."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "In September 2026, US email revenue dropped to $1000 (-23.8%), while GB (+10.7%), DE (+23.3%), and AU (+37.2%) all increased, indicating the decline was not a universal shock in one concentrated region.",
-     "evidence": [
-      {
-       "query_id": "Q15",
+       "query_id": "Q27",
        "row": 0,
-       "column": "revenue_sep",
-       "value": 1000.0,
-       "actual": 1000.0
+       "column": "high_price_share",
+       "value": 0.6448138778460426,
+       "actual": 0.6448138778460426
       },
       {
-       "query_id": "Q15",
-       "row": 0,
-       "column": "revenue_change_pct",
-       "value": -0.23780487804878048,
-       "actual": -0.23780487804878048
-      },
-      {
-       "query_id": "Q15",
-       "row": 3,
-       "column": "revenue_change_pct",
-       "value": 0.10718232044198896,
-       "actual": 0.10718232044198896
-      },
-      {
-       "query_id": "Q15",
-       "row": 4,
-       "column": "revenue_change_pct",
-       "value": 0.23255813953488372,
-       "actual": 0.23255813953488372
-      },
-      {
-       "query_id": "Q15",
-       "row": 5,
-       "column": "revenue_change_pct",
-       "value": 0.3717948717948718,
-       "actual": 0.3717948717948718
-      }
-     ],
-     "confidence": 0.95,
-     "verified": false,
-     "checks": [
-      "ungrounded numbers in text: [-23.8, 10.7, 23.3]"
-     ]
-    },
-    {
-     "text": "The net email revenue change from August to September was a modest decline, with the US drop partially offset by growth in other countries, contradicting the hypothesis that a single country's seasonal shock caused the overall drop.",
-     "evidence": [
-      {
-       "query_id": "Q15",
-       "row": 0,
-       "column": "revenue_change_pct",
-       "value": -0.23780487804878048,
-       "actual": -0.23780487804878048
-      },
-      {
-       "query_id": "Q15",
+       "query_id": "Q27",
        "row": 1,
-       "column": "revenue_change_pct",
-       "value": -0.05555555555555555,
-       "actual": -0.05555555555555555
+       "column": "high_price_share",
+       "value": 0.6077838063439065,
+       "actual": 0.6077838063439065
       },
       {
-       "query_id": "Q15",
-       "row": 2,
-       "column": "revenue_change_pct",
-       "value": -0.04827586206896552,
-       "actual": -0.04827586206896552
+       "query_id": "Q27",
+       "row": 0,
+       "column": "low_price_share",
+       "value": 0.05160823997108782,
+       "actual": 0.05160823997108782
       },
       {
-       "query_id": "Q15",
-       "row": 3,
-       "column": "revenue_change_pct",
-       "value": 0.10718232044198896,
-       "actual": 0.10718232044198896
+       "query_id": "Q27",
+       "row": 1,
+       "column": "low_price_share",
+       "value": 0.054778797996661105,
+       "actual": 0.054778797996661105
       },
       {
-       "query_id": "Q15",
+       "query_id": "Q25",
        "row": 4,
-       "column": "revenue_change_pct",
-       "value": 0.23255813953488372,
-       "actual": 0.23255813953488372
+       "column": "revenue",
+       "value": 714.0,
+       "actual": 714.0
       },
       {
-       "query_id": "Q15",
+       "query_id": "Q25",
+       "row": 9,
+       "column": "revenue",
+       "value": 525.0,
+       "actual": 525.0
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "The rows match every cited figure: high-price share 0.6448138778460426\u21920.6077838063439065, P005 share 0.05160823997108782\u21920.054778797996661105, and P005 revenue 714.0\u2192525.0. Q25 also shows all five products (P001\u2013P005) declined in absolute revenue from Aug to Sep, supporting the broad volume collapse conclusion."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "AOV did not fall: P001's AOV rose from 19.0 to 29.0 after its 2026-09-01 price change (Q25; Q6), while total revenue fell 13835.0 to 9584.0 (Q27) alongside total orders falling 938 to 597 (Q26), so the revenue loss is volume-driven, not AOV-driven.",
+     "evidence": [
+      {
+       "query_id": "Q25",
+       "row": 0,
+       "column": "aov",
+       "value": 19.0,
+       "actual": 19.0
+      },
+      {
+       "query_id": "Q25",
        "row": 5,
-       "column": "revenue_change_pct",
-       "value": 0.3717948717948718,
-       "actual": 0.3717948717948718
+       "column": "aov",
+       "value": 29.0,
+       "actual": 29.0
+      },
+      {
+       "query_id": "Q27",
+       "row": 0,
+       "column": "total_rev",
+       "value": 13835.0,
+       "actual": 13835.0
+      },
+      {
+       "query_id": "Q27",
+       "row": 1,
+       "column": "total_rev",
+       "value": 9584.0,
+       "actual": 9584.0
+      },
+      {
+       "query_id": "Q26",
+       "row": 0,
+       "column": "total_orders",
+       "value": 938,
+       "actual": 938
+      },
+      {
+       "query_id": "Q26",
+       "row": 1,
+       "column": "total_orders",
+       "value": 597,
+       "actual": 597
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "P001 AOV rose from 19.0 to 29.0, while total revenue dropped from 13835.0 to 9584.0 and orders fell from 938 to 597, showing revenue decline is due to volume, not AOV."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "Email volume also fell (229 to 200 email orders; Q26), so email cannot explain a supposed cheap-product shift, and the largest order losses were in P001 (269 to 115 orders; Q25) coinciding with its price increase, with P003 revenue also falling 3810.0 to 2490.0 (Q25).",
+     "evidence": [
+      {
+       "query_id": "Q26",
+       "row": 0,
+       "column": "email_orders",
+       "value": 229,
+       "actual": 229
+      },
+      {
+       "query_id": "Q26",
+       "row": 1,
+       "column": "email_orders",
+       "value": 200,
+       "actual": 200
+      },
+      {
+       "query_id": "Q25",
+       "row": 0,
+       "column": "orders",
+       "value": 269,
+       "actual": 269
+      },
+      {
+       "query_id": "Q25",
+       "row": 5,
+       "column": "orders",
+       "value": 115,
+       "actual": 115
+      },
+      {
+       "query_id": "Q25",
+       "row": 2,
+       "column": "revenue",
+       "value": 3810.0,
+       "actual": 3810.0
+      },
+      {
+       "query_id": "Q25",
+       "row": 7,
+       "column": "revenue",
+       "value": 2490.0,
+       "actual": 2490.0
       }
      ],
      "confidence": 0.9,
      "llm_check": {
       "supported": true,
-      "reason": "Total revenue declined modestly (~3%), US dropped ~23.8% but other countries grew ~10.1%, partially offsetting the US decline and contradicting a single-country seasonal shock hypothesis."
+      "reason": "Rows show email orders dropped from 229 to 200, P001 orders fell from 269 to 115, and P003 revenue dropped from 3810.0 to 2490.0, matching the claim's details."
      },
      "verified": true,
      "checks": [
@@ -634,563 +1119,1246 @@
     }
    ],
    "queries": [
-    "Q13",
-    "Q14",
-    "Q15"
+    "Q25",
+    "Q26",
+    "Q27"
    ],
-   "action": "Investigate other factors (e.g., email campaign changes, deliverability, cross-channel shifts) since the drop is not explained by a single country's demand shock."
+   "action": "Reject H7 and reopen the investigation on the September paid_social collapse (orders 196 to 28 with 8,408 landing-page 404s in Q2/Q7) and P003's corrupted-file refunds/download tickets (Q3/Q5), which better explain the revenue drop."
   }
  ],
- "unverified_or_inconclusive": [
-  {
-   "hypothesis": "A pricing_change effective in September lowered unit_price_usd on products heavily promoted by email, reducing revenue per email order.",
-   "id": "H3",
-   "verdict": "rejected",
-   "summary": "Both H3 test queries returned empty result sets, so there is no observed September email-order unit price or revenue-per-order decline for products with September price drops to support the hypothesis.",
-   "impact_usd": 0.0,
-   "confidence": 0.0,
-   "claims": [
-    {
-     "text": "Q11, which should reveal an August baseline email unit price for products with September price drops, returned no rows, so no such baseline email price is observed.",
-     "evidence": [
-      {
-       "query_id": "Q11",
-       "row": 0,
-       "column": "rows",
-       "value": "[]"
-      }
-     ],
-     "confidence": 0.9,
-     "verified": false,
-     "checks": [
-      "Q11 row 0 col rows: cell not found"
-     ]
-    },
-    {
-     "text": "Q12, which should reveal September email revenue per order for those same price-dropped products, returned no rows, so no lower September revenue per email order is observed.",
-     "evidence": [
-      {
-       "query_id": "Q12",
-       "row": 0,
-       "column": "rows",
-       "value": "[]"
-      }
-     ],
-     "confidence": 0.9,
-     "verified": false,
-     "checks": [
-      "Q12 row 0 col rows: cell not found"
-     ]
-    }
-   ],
-   "queries": [
-    "Q11",
-    "Q12"
-   ],
-   "action": "Rule out H3 as a cause via email order data and investigate other channels or factors for the revenue drop."
-  },
-  {
-   "hypothesis": "Email buyers shifted to lower-priced products or smaller quantities in September, lowering average order value for the email channel.",
-   "id": "H5",
-   "verdict": "inconclusive",
-   "summary": "All three email-channel comparison queries returned empty result sets, so no August versus September average order value, quantity, or base-price evidence is available to test H5.",
-   "impact_usd": 0.0,
-   "confidence": 0.0,
-   "claims": [
-    {
-     "text": "Q8, Q9, and Q10 each returned zero rows for the email channel in August/September 2026, so no AOV, quantity, or base price comparison can be made.",
-     "evidence": [],
-     "confidence": 1.0,
-     "verified": false,
-     "checks": [
-      "no evidence cited"
-     ]
-    }
-   ],
-   "queries": [
-    "Q8",
-    "Q9",
-    "Q10"
-   ],
-   "action": "Verify the date filters and confirm email-channel order data exists in the source table; re-run the queries with corrected date ranges or broader filters."
-  }
- ],
+ "unverified_or_inconclusive": [],
  "queries": {
   "Q1": {
    "id": "Q1",
-   "hypothesis": "H4",
-   "purpose": "Compare total email orders, refunded orders, total refund amount, and refund rate for email orders in August vs September 2026",
-   "sql": "SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n       COUNT(DISTINCT o.order_id) AS total_email_orders,\n       COUNT(DISTINCT r.order_id) AS refunded_orders,\n       SUM(CAST(r.amount_usd AS DOUBLE)) AS total_refund_usd,\n       CASE WHEN COUNT(DISTINCT o.order_id) = 0 THEN 0\n            ELSE COUNT(DISTINCT r.order_id) * 1.0 / COUNT(DISTINCT o.order_id)\n       END AS refund_rate\nFROM WHYDROP_FILES.orders o\nLEFT JOIN WHYDROP_PG.refunds r\n  ON o.order_id = r.order_id\n AND o.date BETWEEN '2026-08-01' AND '2026-09-30'\nWHERE o.channel = 'email'\n  AND o.date BETWEEN '2026-08-01' AND '2026-09-30'\nGROUP BY month\nORDER BY month",
+   "hypothesis": "SCAN",
+   "purpose": "Monthly net revenue and orders by product",
+   "sql": "SELECT o.product_id, date_format(to_date(o.date),'yyyy-MM') AS month, COUNT(*) AS orders, ROUND(SUM(CAST(o.unit_price_usd AS DOUBLE)*CAST(o.quantity AS DOUBLE)),2) AS revenue_usd FROM WHYDROP_FILES.orders o GROUP BY 1,2 ORDER BY 1,2",
    "rows": [
     {
-     "total_refund_usd": 125.0,
-     "refund_rate": 0.0349344978165939,
-     "total_email_orders": 229,
-     "refunded_orders": 8,
-     "month": "2026-08"
+     "product_id": "P001",
+     "month": "2026-06",
+     "orders": 323,
+     "revenue_usd": 6137.0
     },
     {
-     "total_refund_usd": 140.0,
-     "refund_rate": 0.04,
-     "total_email_orders": 200,
-     "refunded_orders": 8,
-     "month": "2026-09"
+     "product_id": "P001",
+     "month": "2026-07",
+     "orders": 313,
+     "revenue_usd": 5947.0
+    },
+    {
+     "product_id": "P001",
+     "month": "2026-08",
+     "orders": 269,
+     "revenue_usd": 5111.0
+    },
+    {
+     "product_id": "P001",
+     "month": "2026-09",
+     "orders": 115,
+     "revenue_usd": 3335.0
+    },
+    {
+     "product_id": "P002",
+     "month": "2026-06",
+     "orders": 177,
+     "revenue_usd": 2124.0
+    },
+    {
+     "product_id": "P002",
+     "month": "2026-07",
+     "orders": 174,
+     "revenue_usd": 2088.0
+    },
+    {
+     "product_id": "P002",
+     "month": "2026-08",
+     "orders": 165,
+     "revenue_usd": 1980.0
+    },
+    {
+     "product_id": "P002",
+     "month": "2026-09",
+     "orders": 127,
+     "revenue_usd": 1524.0
+    },
+    {
+     "product_id": "P003",
+     "month": "2026-06",
+     "orders": 212,
+     "revenue_usd": 3180.0
+    },
+    {
+     "product_id": "P003",
+     "month": "2026-07",
+     "orders": 208,
+     "revenue_usd": 3120.0
+    },
+    {
+     "product_id": "P003",
+     "month": "2026-08",
+     "orders": 254,
+     "revenue_usd": 3810.0
+    },
+    {
+     "product_id": "P003",
+     "month": "2026-09",
+     "orders": 166,
+     "revenue_usd": 2490.0
+    },
+    {
+     "product_id": "P004",
+     "month": "2026-06",
+     "orders": 158,
+     "revenue_usd": 2370.0
+    },
+    {
+     "product_id": "P004",
+     "month": "2026-07",
+     "orders": 132,
+     "revenue_usd": 1980.0
+    },
+    {
+     "product_id": "P004",
+     "month": "2026-08",
+     "orders": 148,
+     "revenue_usd": 2220.0
+    },
+    {
+     "product_id": "P004",
+     "month": "2026-09",
+     "orders": 114,
+     "revenue_usd": 1710.0
+    },
+    {
+     "product_id": "P005",
+     "month": "2026-06",
+     "orders": 94,
+     "revenue_usd": 658.0
+    },
+    {
+     "product_id": "P005",
+     "month": "2026-07",
+     "orders": 85,
+     "revenue_usd": 595.0
+    },
+    {
+     "product_id": "P005",
+     "month": "2026-08",
+     "orders": 102,
+     "revenue_usd": 714.0
+    },
+    {
+     "product_id": "P005",
+     "month": "2026-09",
+     "orders": 75,
+     "revenue_usd": 525.0
     }
    ],
-   "row_count": 2,
+   "row_count": 20,
    "truncated": false,
-   "elapsed_s": 0.59,
-   "result_hash": "e64356450d51",
+   "elapsed_s": 3.69,
+   "result_hash": "42a2230fbcf4",
    "ok": true
   },
   "Q2": {
    "id": "Q2",
-   "hypothesis": "H4",
-   "purpose": "Count support tickets for email orders in August vs September 2026",
-   "sql": "SELECT date_format(to_date(t.date), 'yyyy-MM') AS month,\n       COUNT(*) AS support_tickets\nFROM WHYDROP_PG.support_tickets t\nJOIN WHYDROP_FILES.orders o\n  ON t.order_id = o.order_id\nWHERE o.channel = 'email'\n  AND o.date BETWEEN '2026-08-01' AND '2026-09-30'\nGROUP BY month\nORDER BY month",
+   "hypothesis": "SCAN",
+   "purpose": "Monthly orders by channel",
+   "sql": "SELECT o.channel, date_format(to_date(o.date),'yyyy-MM') AS month, COUNT(*) AS orders FROM WHYDROP_FILES.orders o GROUP BY 1,2 ORDER BY 1,2",
+   "rows": [
+    {
+     "channel": "email",
+     "month": "2026-06",
+     "orders": 246
+    },
+    {
+     "channel": "email",
+     "month": "2026-07",
+     "orders": 265
+    },
+    {
+     "channel": "email",
+     "month": "2026-08",
+     "orders": 229
+    },
+    {
+     "channel": "email",
+     "month": "2026-09",
+     "orders": 200
+    },
+    {
+     "channel": "organic",
+     "month": "2026-06",
+     "orders": 375
+    },
+    {
+     "channel": "organic",
+     "month": "2026-07",
+     "orders": 355
+    },
+    {
+     "channel": "organic",
+     "month": "2026-08",
+     "orders": 379
+    },
+    {
+     "channel": "organic",
+     "month": "2026-09",
+     "orders": 282
+    },
+    {
+     "channel": "paid_social",
+     "month": "2026-06",
+     "orders": 216
+    },
+    {
+     "channel": "paid_social",
+     "month": "2026-07",
+     "orders": 186
+    },
+    {
+     "channel": "paid_social",
+     "month": "2026-08",
+     "orders": 196
+    },
+    {
+     "channel": "paid_social",
+     "month": "2026-09",
+     "orders": 28
+    },
+    {
+     "channel": "referral",
+     "month": "2026-06",
+     "orders": 127
+    },
+    {
+     "channel": "referral",
+     "month": "2026-07",
+     "orders": 106
+    },
+    {
+     "channel": "referral",
+     "month": "2026-08",
+     "orders": 134
+    },
+    {
+     "channel": "referral",
+     "month": "2026-09",
+     "orders": 87
+    }
+   ],
+   "row_count": 16,
+   "truncated": false,
+   "elapsed_s": 0.54,
+   "result_hash": "8facf007dca6",
+   "ok": true
+  },
+  "Q3": {
+   "id": "Q3",
+   "hypothesis": "SCAN",
+   "purpose": "Refunds by month, product and reason (cross-source join: Postgres refunds x CSV orders)",
+   "sql": "SELECT date_format(to_date(r.date),'yyyy-MM') AS month, o.product_id, r.reason, COUNT(*) AS refunds, ROUND(SUM(CAST(r.amount_usd AS DOUBLE)),2) AS refund_usd FROM WHYDROP_PG.refunds r JOIN WHYDROP_FILES.orders o ON r.order_id=o.order_id WHERE to_date(r.date) >= '2026-08-01' GROUP BY 1,2,3 ORDER BY 1,2,3",
+   "rows": [
+    {
+     "refunds": 4,
+     "refund_usd": 76.0,
+     "reason": "bought by mistake",
+     "product_id": "P001",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 19.0,
+     "reason": "changed mind",
+     "product_id": "P001",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 3,
+     "refund_usd": 57.0,
+     "reason": "duplicate purchase",
+     "product_id": "P001",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 3,
+     "refund_usd": 57.0,
+     "reason": "not as described",
+     "product_id": "P001",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 12.0,
+     "reason": "bought by mistake",
+     "product_id": "P002",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 12.0,
+     "reason": "changed mind",
+     "product_id": "P002",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 12.0,
+     "reason": "duplicate purchase",
+     "product_id": "P002",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 2,
+     "refund_usd": 24.0,
+     "reason": "not as described",
+     "product_id": "P002",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 15.0,
+     "reason": "bought by mistake",
+     "product_id": "P003",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 15.0,
+     "reason": "changed mind",
+     "product_id": "P003",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 15.0,
+     "reason": "duplicate purchase",
+     "product_id": "P003",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 3,
+     "refund_usd": 45.0,
+     "reason": "bought by mistake",
+     "product_id": "P004",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 15.0,
+     "reason": "duplicate purchase",
+     "product_id": "P004",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 7.0,
+     "reason": "bought by mistake",
+     "product_id": "P005",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 7.0,
+     "reason": "changed mind",
+     "product_id": "P005",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 3,
+     "refund_usd": 21.0,
+     "reason": "duplicate purchase",
+     "product_id": "P005",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 2,
+     "refund_usd": 14.0,
+     "reason": "not as described",
+     "product_id": "P005",
+     "month": "2026-08"
+    },
+    {
+     "refunds": 2,
+     "refund_usd": 58.0,
+     "reason": "bought by mistake",
+     "product_id": "P001",
+     "month": "2026-09"
+    },
+    {
+     "refunds": 2,
+     "refund_usd": 58.0,
+     "reason": "changed mind",
+     "product_id": "P001",
+     "month": "2026-09"
+    },
+    {
+     "refunds": 2,
+     "refund_usd": 58.0,
+     "reason": "duplicate purchase",
+     "product_id": "P001",
+     "month": "2026-09"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 12.0,
+     "reason": "bought by mistake",
+     "product_id": "P002",
+     "month": "2026-09"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 12.0,
+     "reason": "duplicate purchase",
+     "product_id": "P002",
+     "month": "2026-09"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 15.0,
+     "reason": "bought by mistake",
+     "product_id": "P003",
+     "month": "2026-09"
+    },
+    {
+     "refunds": 2,
+     "refund_usd": 30.0,
+     "reason": "changed mind",
+     "product_id": "P003",
+     "month": "2026-09"
+    },
+    {
+     "refunds": 2,
+     "refund_usd": 30.0,
+     "reason": "duplicate purchase",
+     "product_id": "P003",
+     "month": "2026-09"
+    },
+    {
+     "refunds": 26,
+     "refund_usd": 390.0,
+     "reason": "file corrupted",
+     "product_id": "P003",
+     "month": "2026-09"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 15.0,
+     "reason": "not as described",
+     "product_id": "P003",
+     "month": "2026-09"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 15.0,
+     "reason": "changed mind",
+     "product_id": "P004",
+     "month": "2026-09"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 7.0,
+     "reason": "bought by mistake",
+     "product_id": "P005",
+     "month": "2026-09"
+    },
+    {
+     "refunds": 1,
+     "refund_usd": 7.0,
+     "reason": "changed mind",
+     "product_id": "P005",
+     "month": "2026-09"
+    }
+   ],
+   "row_count": 30,
+   "truncated": false,
+   "elapsed_s": 1.4,
+   "result_hash": "589e1360a00f",
+   "ok": true
+  },
+  "Q4": {
+   "id": "Q4",
+   "hypothesis": "SCAN",
+   "purpose": "Refunds per half-month (Sep)",
+   "sql": "SELECT CASE WHEN day(to_date(r.date))<=15 THEN 'H1' ELSE 'H2' END AS half, date_format(to_date(r.date),'yyyy-MM') AS month, o.product_id, COUNT(*) AS refunds FROM WHYDROP_PG.refunds r JOIN WHYDROP_FILES.orders o ON r.order_id=o.order_id WHERE to_date(r.date) >= '2026-08-01' GROUP BY 1,2,3 ORDER BY 2,1,3",
+   "rows": [
+    {
+     "half": "H1",
+     "month": "2026-08",
+     "product_id": "P001",
+     "refunds": 1
+    },
+    {
+     "half": "H1",
+     "month": "2026-08",
+     "product_id": "P002",
+     "refunds": 4
+    },
+    {
+     "half": "H1",
+     "month": "2026-08",
+     "product_id": "P003",
+     "refunds": 3
+    },
+    {
+     "half": "H1",
+     "month": "2026-08",
+     "product_id": "P004",
+     "refunds": 2
+    },
+    {
+     "half": "H1",
+     "month": "2026-08",
+     "product_id": "P005",
+     "refunds": 3
+    },
+    {
+     "half": "H2",
+     "month": "2026-08",
+     "product_id": "P001",
+     "refunds": 10
+    },
+    {
+     "half": "H2",
+     "month": "2026-08",
+     "product_id": "P002",
+     "refunds": 1
+    },
+    {
+     "half": "H2",
+     "month": "2026-08",
+     "product_id": "P004",
+     "refunds": 2
+    },
+    {
+     "half": "H2",
+     "month": "2026-08",
+     "product_id": "P005",
+     "refunds": 4
+    },
+    {
+     "half": "H1",
+     "month": "2026-09",
+     "product_id": "P001",
+     "refunds": 1
+    },
+    {
+     "half": "H1",
+     "month": "2026-09",
+     "product_id": "P002",
+     "refunds": 1
+    },
+    {
+     "half": "H1",
+     "month": "2026-09",
+     "product_id": "P003",
+     "refunds": 5
+    },
+    {
+     "half": "H1",
+     "month": "2026-09",
+     "product_id": "P004",
+     "refunds": 1
+    },
+    {
+     "half": "H1",
+     "month": "2026-09",
+     "product_id": "P005",
+     "refunds": 1
+    },
+    {
+     "half": "H2",
+     "month": "2026-09",
+     "product_id": "P001",
+     "refunds": 5
+    },
+    {
+     "half": "H2",
+     "month": "2026-09",
+     "product_id": "P002",
+     "refunds": 1
+    },
+    {
+     "half": "H2",
+     "month": "2026-09",
+     "product_id": "P003",
+     "refunds": 27
+    },
+    {
+     "half": "H2",
+     "month": "2026-09",
+     "product_id": "P005",
+     "refunds": 1
+    }
+   ],
+   "row_count": 18,
+   "truncated": false,
+   "elapsed_s": 0.63,
+   "result_hash": "7d8c1435db5e",
+   "ok": true
+  },
+  "Q5": {
+   "id": "Q5",
+   "hypothesis": "SCAN",
+   "purpose": "Support tickets by month, product and category",
+   "sql": "SELECT date_format(to_date(t.date),'yyyy-MM') AS month, o.product_id, t.category, COUNT(*) AS tickets FROM WHYDROP_PG.support_tickets t JOIN WHYDROP_FILES.orders o ON t.order_id=o.order_id WHERE to_date(t.date) >= '2026-08-01' GROUP BY 1,2,3 ORDER BY 1,2,3",
    "rows": [
     {
      "month": "2026-08",
-     "support_tickets": 2
+     "product_id": "P001",
+     "category": "refund",
+     "tickets": 2
+    },
+    {
+     "month": "2026-08",
+     "product_id": "P002",
+     "category": "refund",
+     "tickets": 3
+    },
+    {
+     "month": "2026-08",
+     "product_id": "P003",
+     "category": "refund",
+     "tickets": 1
+    },
+    {
+     "month": "2026-08",
+     "product_id": "P004",
+     "category": "refund",
+     "tickets": 2
+    },
+    {
+     "month": "2026-08",
+     "product_id": "P005",
+     "category": "refund",
+     "tickets": 3
     },
     {
      "month": "2026-09",
-     "support_tickets": 4
+     "product_id": "P001",
+     "category": "refund",
+     "tickets": 1
+    },
+    {
+     "month": "2026-09",
+     "product_id": "P003",
+     "category": "download",
+     "tickets": 26
+    },
+    {
+     "month": "2026-09",
+     "product_id": "P003",
+     "category": "refund",
+     "tickets": 2
+    },
+    {
+     "month": "2026-09",
+     "product_id": "P004",
+     "category": "refund",
+     "tickets": 1
+    }
+   ],
+   "row_count": 9,
+   "truncated": false,
+   "elapsed_s": 0.55,
+   "result_hash": "0fa545fe74c6",
+   "ok": true
+  },
+  "Q6": {
+   "id": "Q6",
+   "hypothesis": "SCAN",
+   "purpose": "Event log: price changes and releases",
+   "sql": "SELECT 'price_change' AS kind, date, product_id, CONCAT(old_price_usd,' -> ',new_price_usd) AS detail FROM WHYDROP_FILES.pricing_changes UNION ALL SELECT 'release', date, product_id, CONCAT(version,': ',note) FROM WHYDROP_FILES.release_log ORDER BY date",
+   "rows": [
+    {
+     "kind": "release",
+     "date": "2026-08-03",
+     "product_id": "P004",
+     "detail": "1.1: added Raydium filter"
+    },
+    {
+     "kind": "price_change",
+     "date": "2026-09-01",
+     "product_id": "P001",
+     "detail": "19.0 -> 29.0"
+    },
+    {
+     "kind": "release",
+     "date": "2026-09-15",
+     "product_id": "P003",
+     "detail": "2.0: new scrapers bundled; zip rebuilt with new packer"
+    }
+   ],
+   "row_count": 3,
+   "truncated": false,
+   "elapsed_s": 0.44,
+   "result_hash": "c6dec58958ba",
+   "ok": true
+  },
+  "Q7": {
+   "id": "Q7",
+   "hypothesis": "SCAN",
+   "purpose": "Monthly paid funnel: spend, clicks, sessions, 404s",
+   "sql": "SELECT m.month, m.spend_usd, m.clicks, w.sessions, w.landing_404s FROM (SELECT date_format(to_date(date),'yyyy-MM') AS month, ROUND(SUM(CAST(spend_usd AS DOUBLE)),2) AS spend_usd, SUM(CAST(clicks AS INT)) AS clicks FROM WHYDROP_FILES.marketing_spend GROUP BY 1) m JOIN (SELECT date_format(to_date(date),'yyyy-MM') AS month, SUM(CAST(sessions AS INT)) AS sessions, SUM(CAST(landing_404s AS INT)) AS landing_404s FROM WHYDROP_FILES.web_traffic WHERE source='paid_social' GROUP BY 1) w ON m.month=w.month ORDER BY 1",
+   "rows": [
+    {
+     "landing_404s": 38,
+     "sessions": 11035,
+     "spend_usd": 4818.3,
+     "clicks": 11518,
+     "month": "2026-06"
+    },
+    {
+     "landing_404s": 30,
+     "sessions": 11403,
+     "spend_usd": 4937.16,
+     "clicks": 11858,
+     "month": "2026-07"
+    },
+    {
+     "landing_404s": 44,
+     "sessions": 11326,
+     "spend_usd": 5001.29,
+     "clicks": 11775,
+     "month": "2026-08"
+    },
+    {
+     "landing_404s": 8408,
+     "sessions": 2666,
+     "spend_usd": 4630.4,
+     "clicks": 11163,
+     "month": "2026-09"
+    }
+   ],
+   "row_count": 4,
+   "truncated": false,
+   "elapsed_s": 0.64,
+   "result_hash": "06520884c3c2",
+   "ok": true
+  },
+  "Q8": {
+   "id": "Q8",
+   "hypothesis": "H3",
+   "purpose": "Compare paid_social ad spend and clicks between August and September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(spend_usd) AS total_spend,\n       SUM(clicks) AS total_clicks\nFROM WHYDROP_FILES.marketing_spend\nWHERE channel = 'meta'\n  AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY month\nORDER BY month",
+   "rows": [
+    {
+     "month": "2026-08",
+     "total_spend": 5001.289999999999,
+     "total_clicks": 11775
+    },
+    {
+     "month": "2026-09",
+     "total_spend": 4630.400000000001,
+     "total_clicks": 11163
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.25,
+   "result_hash": "95eba90d013c",
+   "ok": true
+  },
+  "Q9": {
+   "id": "Q9",
+   "hypothesis": "H3",
+   "purpose": "Compare paid_social sessions and landing_404s between August and September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(sessions) AS total_sessions,\n       SUM(landing_404s) AS total_404s\nFROM WHYDROP_FILES.web_traffic\nWHERE source = 'paid_social'\n  AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY month\nORDER BY month",
+   "rows": [
+    {
+     "month": "2026-08",
+     "total_sessions": 11326,
+     "total_404s": 44
+    },
+    {
+     "month": "2026-09",
+     "total_sessions": 2666,
+     "total_404s": 8408
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.28,
+   "result_hash": "5c31e970a3df",
+   "ok": true
+  },
+  "Q10": {
+   "id": "Q10",
+   "hypothesis": "H3",
+   "purpose": "Compare paid_social orders count and revenue between August and September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       COUNT(*) AS total_orders,\n       SUM(unit_price_usd * quantity) AS total_revenue\nFROM WHYDROP_FILES.orders\nWHERE channel = 'paid_social'\n  AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY month\nORDER BY month",
+   "rows": [
+    {
+     "month": "2026-08",
+     "total_orders": 196,
+     "total_revenue": 2866.0
+    },
+    {
+     "month": "2026-09",
+     "total_orders": 28,
+     "total_revenue": 432.0
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.28,
+   "result_hash": "16c52de0b66e",
+   "ok": true
+  },
+  "Q12": {
+   "id": "Q12",
+   "hypothesis": "H4",
+   "purpose": "P001 revenue and order volume before vs after the price increase on 2026-09-01",
+   "sql": "SELECT \n  SUM(CASE WHEN date < '2026-09-01' THEN quantity ELSE 0 END) AS qty_before,\n  SUM(CASE WHEN date < '2026-09-01' THEN unit_price_usd * quantity ELSE 0 END) AS rev_before,\n  SUM(CASE WHEN date >= '2026-09-01' THEN quantity ELSE 0 END) AS qty_after,\n  SUM(CASE WHEN date >= '2026-09-01' THEN unit_price_usd * quantity ELSE 0 END) AS rev_after\nFROM WHYDROP_FILES.orders\nWHERE product_id = 'P001'\n  AND date BETWEEN '2026-08-01' AND '2026-09-30';",
+   "rows": [
+    {
+     "qty_before": 269,
+     "rev_before": 5111.0,
+     "qty_after": 115,
+     "rev_after": 3335.0
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.2,
+   "result_hash": "06f4527bf209",
+   "ok": true
+  },
+  "Q13": {
+   "id": "Q13",
+   "hypothesis": "H4",
+   "purpose": "Email channel revenue for P001 before vs after the price increase",
+   "sql": "SELECT \n  SUM(CASE WHEN date < '2026-09-01' THEN unit_price_usd * quantity ELSE 0 END) AS rev_before_email,\n  SUM(CASE WHEN date >= '2026-09-01' THEN unit_price_usd * quantity ELSE 0 END) AS rev_after_email\nFROM WHYDROP_FILES.orders\nWHERE product_id = 'P001'\n  AND channel = 'email'\n  AND date BETWEEN '2026-08-01' AND '2026-09-30';",
+   "rows": [
+    {
+     "rev_before_email": 1254.0,
+     "rev_after_email": 1276.0
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.17,
+   "result_hash": "73c4a5c2b815",
+   "ok": true
+  },
+  "Q14": {
+   "id": "Q14",
+   "hypothesis": "H4",
+   "purpose": "Overall revenue drop and P001's share of the total decline",
+   "sql": "SELECT \n  SUM(CASE WHEN date < '2026-09-01' THEN unit_price_usd * quantity ELSE 0 END) AS rev_before_total,\n  SUM(CASE WHEN date >= '2026-09-01' THEN unit_price_usd * quantity ELSE 0 END) AS rev_after_total,\n  SUM(CASE WHEN date < '2026-09-01' THEN unit_price_usd * quantity ELSE 0 END) -\n   SUM(CASE WHEN date >= '2026-09-01' THEN unit_price_usd * quantity ELSE 0 END) AS rev_drop_total,\n  (SUM(CASE WHEN date < '2026-09-01' THEN unit_price_usd * quantity ELSE 0 END) -\n   SUM(CASE WHEN date >= '2026-09-01' THEN unit_price_usd * quantity ELSE 0 END)) * 1.0 /\n   NULLIF(SUM(CASE WHEN date < '2026-09-01' THEN unit_price_usd * quantity ELSE 0 END), 0) AS pct_drop\nFROM WHYDROP_FILES.orders\nWHERE date BETWEEN '2026-08-01' AND '2026-09-30';",
+   "rows": [
+    {
+     "rev_before_total": 13835.0,
+     "rev_after_total": 9584.0,
+     "rev_drop_total": 4251.0,
+     "pct_drop": 0.3072641850379472
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.18,
+   "result_hash": "ced6cb51b7ae",
+   "ok": true
+  },
+  "Q11": {
+   "id": "Q11",
+   "hypothesis": "H1",
+   "purpose": "Email sessions and orders counts per month",
+   "sql": "SELECT date_format(to_date(t.date), 'yyyy-MM') AS month,\n       SUM(t.sessions) AS email_sessions,\n       COUNT(o.order_id) AS email_orders\nFROM WHYDROP_FILES.web_traffic t\nLEFT JOIN WHYDROP_FILES.orders o\n  ON t.date = o.date\n AND t.source = 'email'\n AND o.channel = 'email'\nWHERE t.date >= '2026-08-01' AND t.date <= '2026-09-30'\n  AND t.source = 'email'\nGROUP BY month\nORDER BY month",
+   "ok": true,
+   "error": "[AMBIGUOUS_REFERENCE] Reference `date` is ambiguous, could be: [`o`.`date`, `t`.`date`].; line 1 pos 27",
+   "sql_original": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(sessions) AS email_sessions,\n       COUNT(o.order_id) AS email_orders\nFROM WHYDROP_FILES.web_traffic t\nLEFT JOIN WHYDROP_FILES.orders o\n  ON t.date = o.date\n AND t.source = 'email'\n AND o.channel = 'email'\nWHERE t.date >= '2026-08-01' AND t.date <= '2026-09-30'\n  AND t.source = 'email'\nGROUP BY month\nORDER BY month",
+   "rows": [
+    {
+     "month": "2026-08",
+     "email_sessions": 42453,
+     "email_orders": 229
+    },
+    {
+     "month": "2026-09",
+     "email_sessions": 36072,
+     "email_orders": 200
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.31,
+   "result_hash": "2c34ce6c55a2"
+  },
+  "Q16": {
+   "id": "Q16",
+   "hypothesis": "H2",
+   "purpose": "Total web traffic sessions and email share by month (August vs September 2026)",
+   "sql": "SELECT month, SUM(CAST(sessions AS DOUBLE)) AS total_sessions, SUM(CASE WHEN source = 'email' THEN CAST(sessions AS DOUBLE) ELSE 0 END) * 1.0 / SUM(CAST(sessions AS DOUBLE)) AS email_session_share FROM (SELECT date_format(to_date(date), 'yyyy-MM') AS month, source, CAST(sessions AS DOUBLE) AS sessions FROM WHYDROP_FILES.web_traffic WHERE date >= '2026-08-01' AND date < '2026-10-01') t GROUP BY month ORDER BY month",
+   "rows": [
+    {
+     "month": "2026-08",
+     "total_sessions": 37833.0,
+     "email_session_share": 0.14984272989189332
+    },
+    {
+     "month": "2026-09",
+     "total_sessions": 27651.0,
+     "email_session_share": 0.1948211637915446
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.2,
+   "result_hash": "b63c70e33ffc",
+   "ok": true
+  },
+  "Q17": {
+   "id": "Q17",
+   "hypothesis": "H2",
+   "purpose": "Total order revenue and email share by month (August vs September 2026)",
+   "sql": "SELECT month, SUM(CAST(unit_price_usd AS DOUBLE) * quantity) AS total_orders, SUM(CASE WHEN channel = 'email' THEN CAST(unit_price_usd AS DOUBLE) * quantity ELSE 0 END) * 1.0 / SUM(CAST(unit_price_usd AS DOUBLE) * quantity) AS email_order_share FROM (SELECT date_format(to_date(date), 'yyyy-MM') AS month, channel, CAST(unit_price_usd AS DOUBLE) AS unit_price_usd, quantity FROM WHYDROP_FILES.orders WHERE date >= '2026-08-01' AND date < '2026-10-01') t GROUP BY month ORDER BY month",
+   "rows": [
+    {
+     "month": "2026-08",
+     "total_orders": 13835.0,
+     "email_order_share": 0.24409107336465485
+    },
+    {
+     "month": "2026-09",
+     "total_orders": 9584.0,
+     "email_order_share": 0.3416110183639399
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.19,
+   "result_hash": "7e84fe07495a",
+   "ok": true
+  },
+  "Q15": {
+   "id": "Q15",
+   "hypothesis": "H1",
+   "purpose": "Total sessions, orders, and revenue per month",
+   "sql": "SELECT date_format(to_date(t.date), 'yyyy-MM') AS month,\n       SUM(t.sessions) AS total_sessions,\n       COUNT(o.order_id) AS total_orders,\n       SUM(CAST(o.quantity AS DOUBLE) * CAST(o.unit_price_usd AS DOUBLE)) AS total_revenue\nFROM WHYDROP_FILES.web_traffic t\nLEFT JOIN WHYDROP_FILES.orders o\n  ON t.date = o.date\nWHERE t.date >= '2026-08-01' AND t.date <= '2026-09-30'\nGROUP BY month\nORDER BY month",
+   "ok": true,
+   "error": "[AMBIGUOUS_REFERENCE] Reference `date` is ambiguous, could be: [`o`.`date`, `t`.`date`].; line 1 pos 27",
+   "sql_original": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(sessions) AS total_sessions,\n       COUNT(o.order_id) AS total_orders,\n       SUM(o.quantity * o.unit_price_usd) AS total_revenue\nFROM WHYDROP_FILES.web_traffic t\nLEFT JOIN WHYDROP_FILES.orders o\n  ON t.date = o.date\nWHERE t.date >= '2026-08-01' AND t.date <= '2026-09-30'\nGROUP BY month\nORDER BY month",
+   "rows": [
+    {
+     "month": "2026-08",
+     "total_sessions": 1155564,
+     "total_orders": 3752,
+     "total_revenue": 55340.0
+    },
+    {
+     "month": "2026-09",
+     "total_sessions": 555599,
+     "total_orders": 2388,
+     "total_revenue": 38336.0
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.28,
+   "result_hash": "d31f950e4dde"
+  },
+  "Q18": {
+   "id": "Q18",
+   "hypothesis": "H1",
+   "purpose": "Email share of total sessions and orders in Aug vs Sep",
+   "sql": "SELECT month,\n       email_sessions/total_sessions AS email_share_sessions,\n       email_orders/total_orders AS email_share_orders\nFROM (\n  SELECT date_format(to_date(t.date), 'yyyy-MM') AS month,\n         SUM(CASE WHEN t.source = 'email' THEN t.sessions ELSE 0 END) AS email_sessions,\n         SUM(t.sessions) AS total_sessions,\n         COUNT(CASE WHEN o.channel = 'email' THEN o.order_id END) AS email_orders,\n         COUNT(o.order_id) AS total_orders\n  FROM WHYDROP_FILES.web_traffic t\n  LEFT JOIN WHYDROP_FILES.orders o\n    ON t.date = o.date\n  WHERE t.date >= '2026-08-01' AND t.date <= '2026-09-30'\n  GROUP BY month\n) sub\nORDER BY month",
+   "rows": [
+    {
+     "month": "2026-08",
+     "email_share_sessions": 0.14951313817322104,
+     "email_share_orders": 0.244136460554371
+    },
+    {
+     "month": "2026-09",
+     "email_share_sessions": 0.19392763485895403,
+     "email_share_orders": 0.33500837520938026
     }
    ],
    "row_count": 2,
    "truncated": false,
    "elapsed_s": 0.29,
-   "result_hash": "41ae32f0c83a",
+   "result_hash": "4916f18ee3d6",
    "ok": true
   },
-  "Q3": {
-   "id": "Q3",
-   "hypothesis": "H4",
-   "purpose": "Calculate gross revenue, refunds, and net revenue for email orders in August vs September 2026",
-   "sql": "SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n       SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) AS gross_revenue_usd,\n       SUM(CAST(r.amount_usd AS DOUBLE)) AS total_refund_usd,\n       SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) - SUM(CAST(r.amount_usd AS DOUBLE)) AS net_revenue_usd\nFROM WHYDROP_FILES.orders o\nLEFT JOIN WHYDROP_PG.refunds r\n  ON o.order_id = r.order_id\n AND o.date BETWEEN '2026-08-01' AND '2026-09-30'\nWHERE o.channel = 'email'\n  AND o.date BETWEEN '2026-08-01' AND '2026-09-30'\nGROUP BY month\nORDER BY month",
+  "Q19": {
+   "id": "Q19",
+   "hypothesis": "H5",
+   "purpose": "Confirm that the P003 v2.0 release occurred on 2026-09-15",
+   "sql": "SELECT COUNT(*) AS release_count\nFROM WHYDROP_FILES.release_log\nWHERE date = '2026-09-15'\n  AND product_id = 'P003'\n  AND version = '2.0';",
+   "rows": [
+    {
+     "release_count": 1
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.11,
+   "result_hash": "987d955d3259",
+   "ok": true
+  },
+  "Q20": {
+   "id": "Q20",
+   "hypothesis": "H5",
+   "purpose": "Compare 'file corrupted' refunds for P003 in August vs September",
+   "sql": "SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n       SUM(CAST(r.amount_usd AS DOUBLE)) AS total_refunds,\n       COUNT(*) AS refund_count\nFROM WHYDROP_FILES.orders o\nJOIN WHYDROP_PG.refunds r\n  ON o.order_id = r.order_id\nWHERE o.product_id = 'P003'\n  AND r.reason = 'file corrupted'\n  AND date_format(to_date(o.date), 'yyyy-MM') IN ('2026-08','2026-09')\nGROUP BY month\nORDER BY month;",
+   "rows": [
+    {
+     "month": "2026-09",
+     "total_refunds": 390.0,
+     "refund_count": 26
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.23,
+   "result_hash": "be9ced9b0830",
+   "ok": true
+  },
+  "Q21": {
+   "id": "Q21",
+   "hypothesis": "H5",
+   "purpose": "Compute net revenue (gross minus refunds) for P003 in August and September",
+   "sql": "SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n       SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) AS gross_revenue,\n       SUM(CAST(r.amount_usd AS DOUBLE)) AS total_refunds,\n       SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) - SUM(CAST(r.amount_usd AS DOUBLE)) AS net_revenue\nFROM WHYDROP_FILES.orders o\nLEFT JOIN WHYDROP_PG.refunds r\n  ON o.order_id = r.order_id\nWHERE o.product_id = 'P003'\n  AND date_format(to_date(o.date), 'yyyy-MM') IN ('2026-08','2026-09')\nGROUP BY month\nORDER BY month;",
    "rows": [
     {
      "month": "2026-08",
-     "gross_revenue_usd": 3377.0,
-     "total_refund_usd": 125.0,
-     "net_revenue_usd": 3252.0
+     "gross_revenue": 3810.0,
+     "total_refunds": 45.0,
+     "net_revenue": 3765.0
     },
     {
      "month": "2026-09",
-     "gross_revenue_usd": 3274.0,
-     "total_refund_usd": 140.0,
-     "net_revenue_usd": 3134.0
+     "gross_revenue": 2490.0,
+     "total_refunds": 480.0,
+     "net_revenue": 2010.0
     }
    ],
    "row_count": 2,
    "truncated": false,
    "elapsed_s": 0.36,
-   "result_hash": "1820e33e6fd5",
+   "result_hash": "7a07a49721fe",
    "ok": true
   },
-  "Q4": {
-   "id": "Q4",
-   "hypothesis": "H1",
-   "purpose": "Compare email-sourced sessions, orders, revenue and share between August and September 2026",
-   "sql": "SELECT date_format(to_date(wt.date), 'yyyy-MM') AS month,\n  SUM(CASE WHEN wt.source = 'email' THEN wt.sessions ELSE 0 END) AS email_sessions,\n  SUM(wt.sessions) AS total_sessions,\n  SUM(CASE WHEN wt.source = 'email' THEN wt.sessions ELSE 0 END) * 1.0 / SUM(wt.sessions) AS email_share_sessions,\n  SUM(CASE WHEN o.channel = 'email' THEN CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE) ELSE 0 END) AS email_revenue,\n  SUM(CASE WHEN o.channel = 'email' THEN 1 ELSE 0 END) AS email_orders,\n  COUNT(o.order_id) AS total_orders,\n  SUM(CASE WHEN o.channel = 'email' THEN 1 ELSE 0 END) * 1.0 / COUNT(o.order_id) AS email_share_orders\nFROM WHYDROP_FILES.web_traffic wt\nLEFT JOIN WHYDROP_FILES.orders o\n  ON to_date(wt.date) = to_date(o.date)\nWHERE date_format(to_date(wt.date), 'yyyy-MM') IN ('2026-08','2026-09')\nGROUP BY month\nORDER BY month",
-   "ok": true,
-   "error": "[UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `month` cannot be resolved. Did you mean one of the following? [`o`.`date`, `o`.`country`, `wt`.`date`, `o`.`channel`, `o`.`quantity`].; line 1 pos 7;\n'Sort ['month ASC NULLS FIRST], true\n+- 'Aggregate ['month], ['month, sum(CASE WHEN (source#6814 = email) THEN sessions#6813L ELSE cast(0 as bigint) END) AS email_sessions#",
-   "sql_original": "SELECT month,\n  SUM(CASE WHEN wt.source = 'email' THEN wt.sessions ELSE 0 END) AS email_sessions,\n  SUM(wt.sessions) AS total_sessions,\n  SUM(CASE WHEN wt.source = 'email' THEN wt.sessions ELSE 0 END) * 1.0 / SUM(wt.sessions) AS email_share_sessions,\n  SUM(CASE WHEN o.channel = 'email' THEN CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE) ELSE 0 END) AS email_revenue,\n  SUM(CASE WHEN o.channel = 'email' THEN 1 ELSE 0 END) AS email_orders,\n  COUNT(o.order_id) AS total_orders,\n  SUM(CASE WHEN o.channel = 'email' THEN 1 ELSE 0 END) * 1.0 / COUNT(o.order_id) AS email_share_orders\nFROM WHYDROP_FILES.web_traffic wt\nLEFT JOIN WHYDROP_FILES.orders o\n  ON to_date(wt.date) = to_date(o.date)\nWHERE date_format(to_date(wt.date), 'yyyy-MM') IN ('2026-08','2026-09')\nGROUP BY month\nORDER BY month",
+  "Q22": {
+   "id": "Q22",
+   "hypothesis": "H6",
+   "purpose": "US email revenue and orders for August vs September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month, SUM(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS revenue, SUM(CAST(quantity AS DOUBLE)) AS orders FROM WHYDROP_FILES.orders WHERE channel = 'email' AND country = 'US' AND date >= '2026-08-01' AND date < '2026-10-01' GROUP BY month ORDER BY month;",
    "rows": [
     {
-     "email_share_sessions": 0.149513138173221,
-     "email_revenue": 13508.0,
-     "total_sessions": 1155564,
-     "email_orders": 916,
-     "email_sessions": 172772,
-     "email_share_orders": 0.244136460554371,
-     "total_orders": 3752,
+     "month": "2026-08",
+     "revenue": 1312.0,
+     "orders": 89.0
+    },
+    {
+     "month": "2026-09",
+     "revenue": 1000.0,
+     "orders": 61.0
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.2,
+   "result_hash": "03ac8e0fe658",
+   "ok": true
+  },
+  "Q23": {
+   "id": "Q23",
+   "hypothesis": "H6",
+   "purpose": "Email revenue and orders for non\u2011US countries (GB, IN, CA, DE, AU) for August vs September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month, SUM(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS revenue, SUM(CAST(quantity AS DOUBLE)) AS orders FROM WHYDROP_FILES.orders WHERE channel = 'email' AND country IN ('GB','IN','CA','DE','AU') AND date >= '2026-08-01' AND date < '2026-10-01' GROUP BY month ORDER BY month;",
+   "rows": [
+    {
+     "month": "2026-08",
+     "revenue": 2065.0,
+     "orders": 140.0
+    },
+    {
+     "month": "2026-09",
+     "revenue": 2274.0,
+     "orders": 139.0
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.18,
+   "result_hash": "e87186f21f2e",
+   "ok": true
+  },
+  "Q24": {
+   "id": "Q24",
+   "hypothesis": "H6",
+   "purpose": "Overall email revenue decline and US share for August vs September 2026",
+   "sql": "SELECT month, SUM(CASE WHEN country = 'US' THEN revenue ELSE 0 END) AS us_revenue, SUM(CASE WHEN country = 'US' THEN orders ELSE 0 END) AS us_orders, SUM(revenue) AS total_revenue, SUM(orders) AS total_orders FROM (SELECT date_format(to_date(date), 'yyyy-MM') AS month, country, SUM(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS revenue, SUM(CAST(quantity AS DOUBLE)) AS orders FROM WHYDROP_FILES.orders WHERE channel = 'email' AND date >= '2026-08-01' AND date < '2026-10-01' GROUP BY country, date_format(to_date(date), 'yyyy-MM')) t GROUP BY month ORDER BY month;",
+   "rows": [
+    {
+     "us_orders": 89.0,
+     "us_revenue": 1312.0,
+     "total_orders": 229.0,
+     "month": "2026-08",
+     "total_revenue": 3377.0
+    },
+    {
+     "us_orders": 61.0,
+     "us_revenue": 1000.0,
+     "total_orders": 200.0,
+     "month": "2026-09",
+     "total_revenue": 3274.0
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.36,
+   "result_hash": "ce2e8c5c5b8c",
+   "ok": true
+  },
+  "Q25": {
+   "id": "Q25",
+   "hypothesis": "H7",
+   "purpose": "Product revenue and AOV by month (August vs September 2026)",
+   "sql": "SELECT `month`, `product_id`, `revenue`, `orders`, `aov`, `revenue` / `total_rev` AS `revenue_share` FROM ( SELECT DATE_FORMAT(TO_DATE(`date`), 'yyyy-MM') AS `month`, `product_id`, SUM(CAST(`unit_price_usd` AS DOUBLE) * CAST(`quantity` AS DOUBLE)) AS `revenue`, COUNT(*) AS `orders`, SUM(CAST(`unit_price_usd` AS DOUBLE) * CAST(`quantity` AS DOUBLE)) / COUNT(*) AS `aov`, SUM(SUM(CAST(`unit_price_usd` AS DOUBLE) * CAST(`quantity` AS DOUBLE))) OVER (PARTITION BY DATE_FORMAT(TO_DATE(`date`), 'yyyy-MM')) AS `total_rev` FROM WHYDROP_FILES.orders WHERE `date` >= '2026-08-01' AND `date` < '2026-10-01' GROUP BY DATE_FORMAT(TO_DATE(`date`), 'yyyy-MM'), `product_id` ) t ORDER BY `month`, `product_id`",
+   "rows": [
+    {
+     "aov": 19.0,
+     "revenue": 5111.0,
+     "product_id": "P001",
+     "orders": 269,
+     "revenue_share": 0.36942537043729673,
      "month": "2026-08"
     },
     {
-     "email_share_sessions": 0.193927634858954,
-     "email_revenue": 13096.0,
-     "total_sessions": 555599,
-     "email_orders": 800,
-     "email_sessions": 107746,
-     "email_share_orders": 0.3350083752093802,
-     "total_orders": 2388,
+     "aov": 12.0,
+     "revenue": 1980.0,
+     "product_id": "P002",
+     "orders": 165,
+     "revenue_share": 0.14311528731478135,
+     "month": "2026-08"
+    },
+    {
+     "aov": 15.0,
+     "revenue": 3810.0,
+     "product_id": "P003",
+     "orders": 254,
+     "revenue_share": 0.27538850740874593,
+     "month": "2026-08"
+    },
+    {
+     "aov": 15.0,
+     "revenue": 2220.0,
+     "product_id": "P004",
+     "orders": 148,
+     "revenue_share": 0.16046259486808817,
+     "month": "2026-08"
+    },
+    {
+     "aov": 7.0,
+     "revenue": 714.0,
+     "product_id": "P005",
+     "orders": 102,
+     "revenue_share": 0.05160823997108782,
+     "month": "2026-08"
+    },
+    {
+     "aov": 29.0,
+     "revenue": 3335.0,
+     "product_id": "P001",
+     "orders": 115,
+     "revenue_share": 0.3479757929883139,
+     "month": "2026-09"
+    },
+    {
+     "aov": 12.0,
+     "revenue": 1524.0,
+     "product_id": "P002",
+     "orders": 127,
+     "revenue_share": 0.15901502504173623,
+     "month": "2026-09"
+    },
+    {
+     "aov": 15.0,
+     "revenue": 2490.0,
+     "product_id": "P003",
+     "orders": 166,
+     "revenue_share": 0.25980801335559267,
+     "month": "2026-09"
+    },
+    {
+     "aov": 15.0,
+     "revenue": 1710.0,
+     "product_id": "P004",
+     "orders": 114,
+     "revenue_share": 0.17842237061769617,
+     "month": "2026-09"
+    },
+    {
+     "aov": 7.0,
+     "revenue": 525.0,
+     "product_id": "P005",
+     "orders": 75,
+     "revenue_share": 0.054778797996661105,
      "month": "2026-09"
     }
    ],
-   "row_count": 2,
+   "row_count": 10,
    "truncated": false,
-   "elapsed_s": 0.34,
-   "result_hash": "311137d0a30e"
-  },
-  "Q5": {
-   "id": "Q5",
-   "hypothesis": "H2",
-   "purpose": "Email conversion metrics (orders per session and revenue per session) for August vs September",
-   "sql": "SELECT date_format(to_date(wt.date), 'yyyy-MM') AS month,\n       SUM(wt.sessions) AS total_sessions,\n       COUNT(o.order_id) AS total_orders,\n       SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) AS total_revenue,\n       COUNT(o.order_id) / SUM(wt.sessions) AS orders_per_session,\n       SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) / SUM(wt.sessions) AS revenue_per_session\nFROM WHYDROP_FILES.web_traffic wt\nJOIN WHYDROP_FILES.orders o\n  ON wt.date = o.date\nWHERE wt.source = 'email'\n  AND date_format(to_date(wt.date), 'yyyy-MM') IN ('2026-08','2026-09')\nGROUP BY month\nORDER BY month",
-   "ok": true,
-   "error": "[UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `o`.`orders` cannot be resolved. Did you mean one of the following? [`o`.`order_id`, `o`.`date`, `o`.`country`, `o`.`channel`, `wt`.`date`].; line 3 pos 11;\n'Sort ['month ASC NULLS FIRST], true\n+- 'Aggregate ['month], [date_format(cast(to_date(date#6845, None, Some(GMT), false) as timestamp), yyyy-MM, Some(GMT)) AS month#",
-   "sql_original": "SELECT date_format(to_date(wt.date), 'yyyy-MM') AS month,\n       SUM(wt.sessions) AS total_sessions,\n       SUM(o.orders) AS total_orders,\n       SUM(o.revenue) AS total_revenue,\n       SUM(o.orders) / SUM(wt.sessions) AS orders_per_session,\n       SUM(o.revenue) / SUM(wt.sessions) AS revenue_per_session\nFROM WHYDROP_FILES.web_traffic wt\nJOIN WHYDROP_FILES.orders o\n  ON wt.date = o.date\nWHERE wt.source = 'email'\n  AND date_format(to_date(wt.date), 'yyyy-MM') IN ('2026-08','2026-09')\nGROUP BY month\nORDER BY month",
-   "rows": [
-    {
-     "orders_per_session": 0.005429120459333688,
-     "revenue_per_session": 0.08007663278772023,
-     "total_sessions": 172772,
-     "total_orders": 938,
-     "month": "2026-08",
-     "total_revenue": 13835.0
-    },
-    {
-     "orders_per_session": 0.005540808939542999,
-     "revenue_per_session": 0.08894993781671709,
-     "total_sessions": 107746,
-     "total_orders": 597,
-     "month": "2026-09",
-     "total_revenue": 9584.0
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.3,
-   "result_hash": "43e325797b1a"
-  },
-  "Q6": {
-   "id": "Q6",
-   "hypothesis": "H2",
-   "purpose": "Landing page 404 counts for email traffic in August vs September",
-   "sql": "SELECT date_format(to_date(wt.date), 'yyyy-MM') AS month,\n       SUM(wt.landing_404s) AS total_landing_404s\nFROM WHYDROP_FILES.web_traffic wt\nWHERE wt.source = 'email'\n  AND date_format(to_date(wt.date), 'yyyy-MM') IN ('2026-08','2026-09')\nGROUP BY month\nORDER BY month",
-   "rows": [
-    {
-     "month": "2026-08",
-     "total_landing_404s": 25
-    },
-    {
-     "month": "2026-09",
-     "total_landing_404s": 24
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.17,
-   "result_hash": "f2082992aca0",
+   "elapsed_s": 0.37,
+   "result_hash": "fca16ec6f30d",
    "ok": true
   },
-  "Q8": {
-   "id": "Q8",
-   "hypothesis": "H5",
-   "purpose": "Compare average order value (revenue per order) for email channel in August vs September",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month, AVG(unit_price_usd * quantity) AS avg_revenue_per_order FROM WHYDROP_FILES.orders WHERE channel = 'email' AND date_format(to_date(date), 'yyyy-MM') = '2026' AND date_format(to_date(date), 'MM') IN (8,9) GROUP BY month ORDER BY month",
-   "rows": [],
-   "row_count": 0,
-   "truncated": false,
-   "elapsed_s": 0.14,
-   "result_hash": "97d170e1550e",
-   "ok": true
-  },
-  "Q9": {
-   "id": "Q9",
-   "hypothesis": "H5",
-   "purpose": "Compare average quantity per order for email channel in August vs September",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month, AVG(quantity) AS avg_quantity_per_order FROM WHYDROP_FILES.orders WHERE channel = 'email' AND date_format(to_date(date), 'yyyy') = '2026' AND date_format(to_date(date), 'MM') IN (8,9) GROUP BY month ORDER BY month",
-   "rows": [],
-   "row_count": 0,
-   "truncated": false,
-   "elapsed_s": 0.11,
-   "result_hash": "97d170e1550e",
-   "ok": true
-  },
-  "Q10": {
-   "id": "Q10",
-   "hypothesis": "H5",
-   "purpose": "Compare average product base price for email orders to see if lower\u2011priced products dominate in September",
-   "sql": "SELECT date_format(to_date(o.date), 'yyyy-MM') AS month, AVG(p.base_price) AS avg_base_price_per_order FROM WHYDROP_FILES.orders o JOIN WHYDROP_FILES.products p ON o.product_id = p.product_id WHERE o.channel = 'email' AND date_format(to_date(o.date), 'yyyy') = '2026' AND date_format(to_date(o.date), 'MM') IN (8,9) GROUP BY month ORDER BY month",
-   "rows": [],
-   "row_count": 0,
-   "truncated": false,
-   "elapsed_s": 0.18,
-   "result_hash": "97d170e1550e",
-   "ok": true
-  },
-  "Q11": {
-   "id": "Q11",
-   "hypothesis": "H3",
-   "purpose": "Compare average unit_price_usd for email orders in August vs September for products that had a price drop in September",
-   "sql": "WITH price_drop AS (\n  SELECT product_id,\n         CAST(old_price_usd AS DOUBLE) AS old_price,\n         CAST(new_price_usd AS DOUBLE) AS new_price,\n         date AS change_date\n  FROM WHYDROP_FILES.pricing_changes\n  WHERE date BETWEEN '2026-09-01' AND '2026-09-30'\n    AND CAST(new_price_usd AS DOUBLE) < CAST(old_price_usd AS DOUBLE)\n)\nSELECT\n  date_format(to_date(o.date), 'yyyy-MM') AS month,\n  AVG(CAST(o.unit_price_usd AS DOUBLE)) AS avg_unit_price_usd\nFROM WHYDROP_FILES.orders o\nJOIN price_drop pc\n  ON o.product_id = pc.product_id\n AND o.date >= pc.change_date\nWHERE o.channel = 'email'\n  AND o.date >= '2026-08-01' AND o.date < '2026-09-01'\nGROUP BY month\nORDER BY month;",
-   "rows": [],
-   "row_count": 0,
-   "truncated": false,
-   "elapsed_s": 0.15,
-   "result_hash": "97d170e1550e",
-   "ok": true
-  },
-  "Q12": {
-   "id": "Q12",
-   "hypothesis": "H3",
-   "purpose": "Compare average revenue per order for email orders in August vs September for products that had a price drop in September",
-   "sql": "WITH price_drop AS (\n  SELECT product_id,\n         CAST(old_price_usd AS DOUBLE) AS old_price,\n         CAST(new_price_usd AS DOUBLE) AS new_price,\n         date AS change_date\n  FROM WHYDROP_FILES.pricing_changes\n  WHERE date BETWEEN '2026-09-01' AND '2026-09-30'\n    AND CAST(new_price_usd AS DOUBLE) < CAST(old_price_usd AS DOUBLE)\n)\nSELECT\n  date_format(to_date(o.date), 'yyyy-MM') AS month,\n  AVG(CAST(o.unit_price_usd AS DOUBLE) * o.quantity) AS avg_revenue_per_order\nFROM WHYDROP_FILES.orders o\nJOIN price_drop pc\n  ON o.product_id = pc.product_id\n AND o.date >= pc.change_date\nWHERE o.channel = 'email'\n  AND o.date >= '2026-09-01' AND o.date < '2026-10-01'\nGROUP BY month\nORDER BY month;",
-   "rows": [],
-   "row_count": 0,
-   "truncated": false,
-   "elapsed_s": 0.12,
-   "result_hash": "97d170e1550e",
-   "ok": true
-  },
-  "Q7": {
-   "id": "Q7",
-   "hypothesis": "H2",
-   "purpose": "Percent change in email orders per session and revenue per session between August and September",
-   "sql": "SELECT \n       MAX(CASE WHEN month = '2026-08' THEN orders_per_session END) AS aug_orders_per_session,\n       MAX(CASE WHEN month = '2026-09' THEN orders_per_session END) AS sep_orders_per_session,\n       ROUND(\n           (MAX(CASE WHEN month = '2026-09' THEN orders_per_session END) - \n            MAX(CASE WHEN month = '2026-08' THEN orders_per_session END)) \n           / NULLIF(MAX(CASE WHEN month = '2026-08' THEN orders_per_session END), 0) * 100, 2\n       ) AS pct_change_orders_per_session,\n       MAX(CASE WHEN month = '2026-08' THEN revenue_per_session END) AS aug_rev_per_session,\n       MAX(CASE WHEN month = '2026-09' THEN revenue_per_session END) AS sep_rev_per_session,\n       ROUND(\n           (MAX(CASE WHEN month = '2026-09' THEN revenue_per_session END) - \n            MAX(CASE WHEN month = '2026-08' THEN revenue_per_session END)) \n           / NULLIF(MAX(CASE WHEN month = '2026-08' THEN revenue_per_session END), 0) * 100, 2\n       ) AS pct_change_rev_per_session\nFROM (\n    SELECT date_format(to_date(wt.date), 'yyyy-MM') AS month,\n           COUNT(*) / SUM(wt.sessions) AS orders_per_session,\n           SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) / SUM(wt.sessions) AS revenue_per_session\n    FROM WHYDROP_FILES.web_traffic wt\n    JOIN WHYDROP_FILES.orders o\n      ON wt.date = o.date\n    WHERE wt.source = 'email'\n      AND date_format(to_date(wt.date), 'yyyy-MM') IN ('2026-08','2026-09')\n    GROUP BY month\n) t",
-   "ok": true,
-   "error": "[UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `o`.`orders` cannot be resolved. Did you mean one of the following? [`o`.`order_id`, `o`.`date`, `o`.`country`, `o`.`channel`, `wt`.`date`].; line 18 pos 15;\n'Project ['MAX(CASE WHEN ('month = 2026-08) THEN 'orders_per_session END) AS aug_orders_per_session#7196, 'MAX(CASE WHEN ('month = 2026-09) THEN 'orders_per_session ",
-   "sql_original": "SELECT \n       MAX(CASE WHEN month = '2026-08' THEN orders_per_session END) AS aug_orders_per_session,\n       MAX(CASE WHEN month = '2026-09' THEN orders_per_session END) AS sep_orders_per_session,\n       ROUND(\n           (MAX(CASE WHEN month = '2026-09' THEN orders_per_session END) - \n            MAX(CASE WHEN month = '2026-08' THEN orders_per_session END)) \n           / NULLIF(MAX(CASE WHEN month = '2026-08' THEN orders_per_session END), 0) * 100, 2\n       ) AS pct_change_orders_per_session,\n       MAX(CASE WHEN month = '2026-08' THEN revenue_per_session END) AS aug_rev_per_session,\n       MAX(CASE WHEN month = '2026-09' THEN revenue_per_session END) AS sep_rev_per_session,\n       ROUND(\n           (MAX(CASE WHEN month = '2026-09' THEN revenue_per_session END) - \n            MAX(CASE WHEN month = '2026-08' THEN revenue_per_session END)) \n           / NULLIF(MAX(CASE WHEN month = '2026-08' THEN revenue_per_session END), 0) * 100, 2\n       ) AS pct_change_rev_per_session\nFROM (\n    SELECT date_format(to_date(wt.date), 'yyyy-MM') AS month,\n           SUM(o.orders) / SUM(wt.sessions) AS orders_per_session,\n           SUM(o.revenue) / SUM(wt.sessions) AS revenue_per_session\n    FROM WHYDROP_FILES.web_traffic wt\n    JOIN WHYDROP_FILES.orders o\n      ON wt.date = o.date\n    WHERE wt.source = 'email'\n      AND date_format(to_date(wt.date), 'yyyy-MM') IN ('2026-08','2026-09')\n    GROUP BY month\n) t",
-   "rows": [
-    {
-     "pct_change_orders_per_session": 2.06,
-     "aug_orders_per_session": 0.005429120459333688,
-     "aug_rev_per_session": 0.08007663278772023,
-     "sep_orders_per_session": 0.005540808939542999,
-     "sep_rev_per_session": 0.08894993781671709,
-     "pct_change_rev_per_session": 11.08
-    }
-   ],
-   "row_count": 1,
-   "truncated": false,
-   "elapsed_s": 0.29,
-   "result_hash": "7e9e97ab7c00"
-  },
-  "Q13": {
-   "id": "Q13",
+  "Q26": {
+   "id": "Q26",
    "hypothesis": "H7",
-   "purpose": "Revenue and order count for email per country in August 2026",
-   "sql": "SELECT country,\n       SUM(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS revenue_aug,\n       COUNT(*) AS orders_aug\nFROM WHYDROP_FILES.orders\nWHERE channel = 'email'\n  AND date_format(to_date(date), 'yyyy-MM') = '2026-08'\nGROUP BY country",
+   "purpose": "Email order volume and share of total orders by month",
+   "sql": "SELECT `month`, SUM(CASE WHEN `channel` = 'email' THEN 1 ELSE 0 END) AS `email_orders`, SUM(CASE WHEN `channel` = 'email' THEN 1 ELSE 0 END) * 1.0 / COUNT(*) AS `email_order_pct`, COUNT(*) AS `total_orders` FROM ( SELECT DATE_FORMAT(TO_DATE(`date`), 'yyyy-MM') AS `month`, `channel`, * FROM WHYDROP_FILES.orders WHERE `date` >= '2026-08-01' AND `date` < '2026-10-01' ) t GROUP BY `month` ORDER BY `month`",
    "rows": [
     {
-     "country": "AU",
-     "revenue_aug": 234.0,
-     "orders_aug": 16
+     "month": "2026-08",
+     "email_orders": 229,
+     "email_order_pct": 0.244136460554371,
+     "total_orders": 938
     },
     {
-     "country": "CA",
-     "revenue_aug": 290.0,
-     "orders_aug": 20
-    },
-    {
-     "country": "GB",
-     "revenue_aug": 905.0,
-     "orders_aug": 62
-    },
-    {
-     "country": "DE",
-     "revenue_aug": 258.0,
-     "orders_aug": 17
-    },
-    {
-     "country": "US",
-     "revenue_aug": 1312.0,
-     "orders_aug": 89
-    },
-    {
-     "country": "IN",
-     "revenue_aug": 378.0,
-     "orders_aug": 25
+     "month": "2026-09",
+     "email_orders": 200,
+     "email_order_pct": 0.3350083752093802,
+     "total_orders": 597
     }
    ],
-   "row_count": 6,
+   "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.16,
-   "result_hash": "f575277339ea",
+   "elapsed_s": 0.2,
+   "result_hash": "c096442aaf53",
    "ok": true
   },
-  "Q14": {
-   "id": "Q14",
+  "Q27": {
+   "id": "Q27",
    "hypothesis": "H7",
-   "purpose": "Revenue and order count for email per country in September 2026",
-   "sql": "SELECT country,\n       SUM(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS revenue_sep,\n       COUNT(*) AS orders_sep\nFROM WHYDROP_FILES.orders\nWHERE channel = 'email'\n  AND date_format(to_date(date), 'yyyy-MM') = '2026-09'\nGROUP BY country",
+   "purpose": "Revenue share of high\u2011price (P001,P003) vs low\u2011price (P005) products by month",
+   "sql": "SELECT `month`, SUM(CASE WHEN `product_id` IN ('P001','P003') THEN `revenue` ELSE 0 END) AS `high_price_rev`, SUM(CASE WHEN `product_id` = 'P005' THEN `revenue` ELSE 0 END) AS `low_price_rev`, SUM(`revenue`) AS `total_rev`, SUM(CASE WHEN `product_id` IN ('P001','P003') THEN `revenue` ELSE 0 END) / SUM(`revenue`) AS `high_price_share`, SUM(CASE WHEN `product_id` = 'P005' THEN `revenue` ELSE 0 END) / SUM(`revenue`) AS `low_price_share` FROM ( SELECT DATE_FORMAT(TO_DATE(`date`), 'yyyy-MM') AS `month`, `product_id`, SUM(CAST(`unit_price_usd` AS DOUBLE) * CAST(`quantity` AS DOUBLE)) AS `revenue` FROM WHYDROP_FILES.orders WHERE `date` >= '2026-08-01' AND `date` < '2026-10-01' GROUP BY DATE_FORMAT(TO_DATE(`date`), 'yyyy-MM'), `product_id` ) t GROUP BY `month` ORDER BY `month`",
    "rows": [
     {
-     "country": "AU",
-     "revenue_sep": 321.0,
-     "orders_sep": 16
-    },
-    {
-     "country": "CA",
-     "revenue_sep": 276.0,
-     "orders_sep": 20
-    },
-    {
-     "country": "GB",
-     "revenue_sep": 1002.0,
-     "orders_sep": 62
-    },
-    {
-     "country": "DE",
-     "revenue_sep": 318.0,
-     "orders_sep": 20
-    },
-    {
-     "country": "US",
-     "revenue_sep": 1000.0,
-     "orders_sep": 61
-    },
-    {
-     "country": "IN",
-     "revenue_sep": 357.0,
-     "orders_sep": 21
-    }
-   ],
-   "row_count": 6,
-   "truncated": false,
-   "elapsed_s": 0.1,
-   "result_hash": "f0fd74392f1f",
-   "ok": true
-  },
-  "Q15": {
-   "id": "Q15",
-   "hypothesis": "H7",
-   "purpose": "Month\u2011over\u2011month revenue and order change per country to see if decline is concentrated",
-   "sql": "SELECT o.country,\n       o.revenue_aug,\n       o.orders_aug,\n       s.revenue_sep,\n       s.orders_sep,\n       (s.revenue_sep - o.revenue_aug) / o.revenue_aug AS revenue_change_pct,\n       (s.orders_sep - o.orders_aug) / o.orders_aug AS orders_change_pct\nFROM (\n      SELECT country,\n             SUM(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS revenue_aug,\n             COUNT(*) AS orders_aug\n      FROM WHYDROP_FILES.orders\n      WHERE channel = 'email'\n        AND date_format(to_date(date), 'yyyy-MM') = '2026-08'\n      GROUP BY country\n     ) o\nJOIN (\n      SELECT country,\n             SUM(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS revenue_sep,\n             COUNT(*) AS orders_sep\n      FROM WHYDROP_FILES.orders\n      WHERE channel = 'email'\n        AND date_format(to_date(date), 'yyyy-MM') = '2026-09'\n      GROUP BY country\n     ) s\nON o.country = s.country\nORDER BY revenue_change_pct ASC",
-   "rows": [
-    {
-     "orders_sep": 61,
-     "revenue_aug": 1312.0,
-     "orders_aug": 89,
-     "orders_change_pct": -0.3146067415730337,
-     "revenue_sep": 1000.0,
-     "revenue_change_pct": -0.23780487804878048,
-     "country": "US"
-    },
-    {
-     "orders_sep": 21,
-     "revenue_aug": 378.0,
-     "orders_aug": 25,
-     "orders_change_pct": -0.16,
-     "revenue_sep": 357.0,
-     "revenue_change_pct": -0.05555555555555555,
-     "country": "IN"
-    },
-    {
-     "orders_sep": 20,
-     "revenue_aug": 290.0,
-     "orders_aug": 20,
-     "orders_change_pct": 0.0,
-     "revenue_sep": 276.0,
-     "revenue_change_pct": -0.04827586206896552,
-     "country": "CA"
-    },
-    {
-     "orders_sep": 62,
-     "revenue_aug": 905.0,
-     "orders_aug": 62,
-     "orders_change_pct": 0.0,
-     "revenue_sep": 1002.0,
-     "revenue_change_pct": 0.10718232044198896,
-     "country": "GB"
-    },
-    {
-     "orders_sep": 20,
-     "revenue_aug": 258.0,
-     "orders_aug": 17,
-     "orders_change_pct": 0.17647058823529413,
-     "revenue_sep": 318.0,
-     "revenue_change_pct": 0.23255813953488372,
-     "country": "DE"
-    },
-    {
-     "orders_sep": 16,
-     "revenue_aug": 234.0,
-     "orders_aug": 16,
-     "orders_change_pct": 0.0,
-     "revenue_sep": 321.0,
-     "revenue_change_pct": 0.3717948717948718,
-     "country": "AU"
-    }
-   ],
-   "row_count": 6,
-   "truncated": false,
-   "elapsed_s": 0.25,
-   "result_hash": "3b102b5ec2ab",
-   "ok": true
-  },
-  "Q16": {
-   "id": "Q16",
-   "hypothesis": "H6",
-   "purpose": "Compare total web traffic sessions and email sessions per month, and calculate email's share of total sessions for Aug 2026 vs Sep 2026.",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       sum(cast(sessions AS DOUBLE)) AS total_sessions,\n       sum(cast(case WHEN source = 'email' THEN sessions ELSE 0 END AS DOUBLE)) AS email_sessions,\n       sum(cast(case WHEN source = 'email' THEN sessions ELSE 0 END AS DOUBLE)) / sum(cast(sessions AS DOUBLE)) AS email_share\nFROM WHYDROP_FILES.web_traffic\nWHERE date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY month\nORDER BY month",
-   "rows": [
-    {
+     "total_rev": 13835.0,
+     "low_price_share": 0.05160823997108782,
+     "high_price_share": 0.6448138778460426,
+     "high_price_rev": 8921.0,
      "month": "2026-08",
-     "total_sessions": 37833.0,
-     "email_sessions": 5669.0,
-     "email_share": 0.14984272989189332
+     "low_price_rev": 714.0
     },
     {
+     "total_rev": 9584.0,
+     "low_price_share": 0.054778797996661105,
+     "high_price_share": 0.6077838063439065,
+     "high_price_rev": 5825.0,
      "month": "2026-09",
-     "total_sessions": 27651.0,
-     "email_sessions": 5387.0,
-     "email_share": 0.1948211637915446
+     "low_price_rev": 525.0
     }
    ],
    "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.18,
-   "result_hash": "4c0d08ee40f8",
-   "ok": true
-  },
-  "Q17": {
-   "id": "Q17",
-   "hypothesis": "H6",
-   "purpose": "Compare total order revenue and email order revenue (and order count) per month, and calculate email's share of total orders for Aug 2026 vs Sep 2026.",
-   "sql": "SELECT date_format(to_date(`date`), 'yyyy-MM') AS month,\n       SUM(CAST(quantity AS DOUBLE) * CAST(unit_price_usd AS DOUBLE)) AS total_revenue,\n       SUM(CASE WHEN channel = 'email' THEN CAST(quantity AS DOUBLE) * CAST(unit_price_usd AS DOUBLE) ELSE 0 END) AS email_revenue,\n       SUM(CASE WHEN channel = 'email' THEN CAST(quantity AS DOUBLE) ELSE 0 END) AS email_orders,\n       SUM(CAST(quantity AS DOUBLE)) AS total_orders,\n       SUM(CASE WHEN channel = 'email' THEN CAST(quantity AS DOUBLE) ELSE 0 END) / SUM(CAST(quantity AS DOUBLE)) AS email_order_share\nFROM WHYDROP_FILES.orders\nWHERE date_format(to_date(`date`), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY month\nORDER BY month",
-   "ok": true,
-   "error": "HTTP 400: Invalid value for: body (Bad Select SQL at 'select')",
-   "sql_original": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       sum(cast(quantity AS DOUBLE) * cast(unit_price_usd AS DOUBLE)) AS total_revenue,\n       sum(cast(case WHEN channel = 'email' THEN quantity AS DOUBLE * cast(unit_price_usd AS DOUBLE) ELSE 0 END)) AS email_revenue,\n       sum(cast(case WHEN channel = 'email' THEN quantity ELSE 0 END)) AS email_orders,\n       sum(cast(quantity AS DOUBLE)) AS total_orders,\n       sum(cast(case WHEN channel = 'email' THEN quantity ELSE 0 END)) / sum(cast(quantity AS DOUBLE)) AS email_order_share\nFROM WHYDROP_FILES.orders\nWHERE date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY month\nORDER BY month",
-   "rows": [
-    {
-     "email_revenue": 3377.0,
-     "email_order_share": 0.244136460554371,
-     "email_orders": 229.0,
-     "total_orders": 938.0,
-     "month": "2026-08",
-     "total_revenue": 13835.0
-    },
-    {
-     "email_revenue": 3274.0,
-     "email_order_share": 0.33500837520938026,
-     "email_orders": 200.0,
-     "total_orders": 597.0,
-     "month": "2026-09",
-     "total_revenue": 9584.0
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.23,
-   "result_hash": "aba21ab015fa"
-  },
-  "Q18": {
-   "id": "Q18",
-   "hypothesis": "H6",
-   "purpose": "Compare paid_social ad performance (clicks, spend, CPC) per month for Aug 2026 vs Sep 2026 to assess efficiency collapse.",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       sum(cast(clicks AS DOUBLE)) AS paid_social_clicks,\n       sum(cast(spend_usd AS DOUBLE)) AS paid_social_spend,\n       sum(cast(spend_usd AS DOUBLE)) / nullif(sum(cast(clicks AS DOUBLE)), 0) AS cpc\nFROM WHYDROP_FILES.marketing_spend\nWHERE channel = 'meta'\n  AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY month\nORDER BY month",
-   "rows": [
-    {
-     "month": "2026-08",
-     "paid_social_clicks": 11775.0,
-     "paid_social_spend": 5001.289999999999,
-     "cpc": 0.42473800424628444
-    },
-    {
-     "month": "2026-09",
-     "paid_social_clicks": 11163.0,
-     "paid_social_spend": 4630.400000000001,
-     "cpc": 0.41479888918749447
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.17,
-   "result_hash": "e7fe34501b62",
+   "elapsed_s": 0.26,
+   "result_hash": "d5e0b9e7c450",
    "ok": true
   }
  },
@@ -1198,247 +2366,443 @@
   {
    "lane": "planner",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 16.1,
-   "tokens": 4146
+   "latency_s": 16.8,
+   "tokens": 8614,
+   "fallback_from": [
+    "nvidia/nemotron-3-super-120b-a12b"
+   ]
   },
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 32.1,
-   "tokens": 2994
+   "latency_s": 28.7,
+   "tokens": 2298,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 45.9,
+   "tokens": 3054,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 50.0,
+   "tokens": 3314,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 9.7,
+   "tokens": 1334,
+   "fallback_from": []
   },
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 13.8,
-   "tokens": 3974
+   "latency_s": 33.7,
+   "tokens": 8071,
+   "fallback_from": [
+    "nvidia/nemotron-3-super-120b-a12b"
+   ]
   },
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 58.9,
-   "tokens": 3165
+   "latency_s": 64.5,
+   "tokens": 4023,
+   "fallback_from": []
   },
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 64.1,
-   "tokens": 3357
-  },
-  {
-   "lane": "sql",
-   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 18.2,
-   "tokens": 1607
-  },
-  {
-   "lane": "sql",
-   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 15.8,
-   "tokens": 1659
-  },
-  {
-   "lane": "sql",
-   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 48.5,
-   "tokens": 2459
-  },
-  {
-   "lane": "sql",
-   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 103.2,
-   "tokens": 4539
+   "latency_s": 11.5,
+   "tokens": 1335,
+   "fallback_from": []
   },
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 33.1,
-   "tokens": 3784
+   "latency_s": 44.1,
+   "tokens": 11206,
+   "fallback_from": [
+    "nvidia/nemotron-3-super-120b-a12b"
+   ]
   },
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 8.3,
-   "tokens": 2003
+   "latency_s": 25.9,
+   "tokens": 8775,
+   "fallback_from": [
+    "nvidia/nemotron-3-super-120b-a12b"
+   ]
   },
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 35.1,
-   "tokens": 2523
+   "latency_s": 45.6,
+   "tokens": 3274,
+   "fallback_from": []
   },
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 18.1,
-   "tokens": 3834
+   "latency_s": 55.4,
+   "tokens": 12476,
+   "fallback_from": [
+    "nvidia/nemotron-3-super-120b-a12b"
+   ]
   },
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 21.9,
-   "tokens": 3570
+   "latency_s": 42.3,
+   "tokens": 13542,
+   "fallback_from": [
+    "nvidia/nemotron-3-super-120b-a12b"
+   ]
   },
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 36.4,
-   "tokens": 2133
-  },
-  {
-   "lane": "sql",
-   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 45.8,
-   "tokens": 2999
+   "latency_s": 63.9,
+   "tokens": 4135,
+   "fallback_from": []
   },
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 34.3,
-   "tokens": 6749
+   "latency_s": 18.5,
+   "tokens": 8142,
+   "fallback_from": [
+    "nvidia/nemotron-3-super-120b-a12b"
+   ]
   },
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 38.0,
-   "tokens": 2323
+   "latency_s": 99.5,
+   "tokens": 5245,
+   "fallback_from": []
   },
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 44.3,
+   "tokens": 13695,
+   "fallback_from": [
+    "nvidia/nemotron-3-super-120b-a12b"
+   ]
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 7.2,
+   "tokens": 906,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 8.4,
+   "tokens": 1302,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 9.1,
+   "tokens": 1032,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 6.0,
+   "tokens": 1044,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 9.3,
+   "tokens": 1099,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 17.1,
+   "tokens": 2021,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 6.4,
+   "tokens": 1023,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 19.4,
+   "tokens": 2542,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 19.2,
+   "tokens": 2959,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
    "latency_s": 14.9,
-   "tokens": 4761
+   "tokens": 1536,
+   "fallback_from": []
   },
   {
-   "lane": "analyst",
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 5.9,
+   "tokens": 950,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 16.8,
+   "tokens": 2542,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 20.0,
+   "tokens": 2967,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 11.0,
+   "tokens": 2120,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 16.5,
+   "tokens": 3257,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 23.1,
+   "tokens": 1626,
+   "fallback_from": [
+    "nvidia/nemotron-3.5-lightning-30b-a3b"
+   ]
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 13.1,
+   "tokens": 3413,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 10.2,
+   "tokens": 2466,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 27.9,
+   "tokens": 3257,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 112.1,
+   "tokens": 1619,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 26.2,
+   "tokens": 3257,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 16.6,
+   "tokens": 2139,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 11.3,
+   "tokens": 1531,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 28.8,
-   "tokens": 6749
-  },
-  {
-   "lane": "analyst",
-   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 36.5,
-   "tokens": 6749
-  },
-  {
-   "lane": "analyst",
-   "model": "nvidia/nemotron-3-ultra-550b-a55b",
-   "latency_s": 35.4,
-   "tokens": 5149
+   "latency_s": 6.8,
+   "tokens": 2636,
+   "fallback_from": [
+    "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+   ]
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 4.9,
-   "tokens": 1059
+   "latency_s": 21.9,
+   "tokens": 2246,
+   "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 5.4,
-   "tokens": 956
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 6.5,
-   "tokens": 1326
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 10.5,
-   "tokens": 1597
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 5.2,
-   "tokens": 1099
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 6.5,
-   "tokens": 1305
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 9.5,
-   "tokens": 1841
+   "latency_s": 25.2,
+   "tokens": 3295,
+   "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
    "latency_s": 18.7,
-   "tokens": 1954
+   "tokens": 2246,
+   "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 11.9,
-   "tokens": 2045
+   "latency_s": 19.5,
+   "tokens": 3295,
+   "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 8.9,
-   "tokens": 1328
+   "latency_s": 21.0,
+   "tokens": 2246,
+   "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 38.4,
-   "tokens": 1681
+   "latency_s": 21.4,
+   "tokens": 3295,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 7.7,
+   "tokens": 525,
+   "fallback_from": [
+    "nvidia/nemotron-3.5-lightning-30b-a3b"
+   ]
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 10.6,
+   "tokens": 1856,
+   "fallback_from": [
+    "nvidia/nemotron-3.5-lightning-30b-a3b"
+   ]
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 6.6,
-   "tokens": 1425
+   "latency_s": 18.7,
+   "tokens": 3062,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 19.8,
+   "tokens": 3062,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 19.7,
+   "tokens": 3062,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 23.0,
+   "tokens": 1811,
+   "fallback_from": [
+    "nvidia/nemotron-3.5-lightning-30b-a3b"
+   ]
   }
  ],
  "memory_backend": "meterless-hmem",
  "memory_recalled": [
   {
-   "id": "mem-2",
-   "relevance": 0.2468228198369883,
-   "content": "[Why did revenue drop in September 2026?] VERIFIED CAUSE: Paid social (meta) ad spend was cut or became less efficient in September, driving fewer paid_social sessions and orders. - Paid social spend was modestly cut and efficiency collapsed, with sessions, orders, and revenue all falling sharply from August to September 2026. (conf 0.97, queries Q1,Q2,Q3)",
-   "source": "whydrop:20261024-002610-59c6"
+   "id": "mem-45",
+   "relevance": 0.3509927568490425,
+   "content": "[Did email marketing cause the drop?] REJECTED: The email revenue drop is a symptom of a total website traffic decline across all channels in September 2026 (seasonal demand weakness), not an email-specific cause; email's share of sessions and orders stayed constant. - Email's share of sessions and orders increased from August to September 2026, contradicting the hypothesis that email's share stayed constant; the overall traffic decline was driven by other channels, not email.",
+   "source": "whydrop:20261024-005804-7d35"
   },
   {
-   "id": "mem-10",
-   "relevance": 0.24334674113288615,
-   "content": "[Why did revenue drop in September 2026?] REJECTED: Refund volume spiked in September 2026 due to product quality issues, reducing net revenue (gross order revenue minus refunds) and increasing support tickets. - Refunds rose in September 2026, but the net revenue drop was driven by a much larger gross-order revenue decline, and refund-related support tickets fell rather than rose, so the product-quality refund spike hypothesis is not supported.",
-   "source": "whydrop:20261024-003004-de41"
+   "id": "mem-77",
+   "relevance": 0.34599465606625923,
+   "content": "[Did email marketing cause the drop?] REJECTED: Email-sourced sessions and orders dropped in September 2026, directly reducing email channel revenue and causing the overall revenue drop. - Email sessions and revenue fell only modestly from August to September 2026, and email's share of total orders actually rose, so email did not drive the overall revenue drop; the collapse was concentrated in other channels, especially paid social.",
+   "source": "whydrop:20261024-011242-79e6"
   },
   {
-   "id": "mem-8",
-   "relevance": 0.24278745416328829,
-   "content": "[Why did revenue drop in September 2026?] VERIFIED CAUSE: Paid social (meta) ad spend was cut or became less efficient in September 2026, driving fewer paid_social sessions and orders. - Meta spend was cut modestly ($5,001.289999999999 to $4,630.400000000001) while efficiency actually improved (CPC $0.42473800424628444 to $0.41479888918749447; CPM $6.907162675586576 to $6.8478301056663495), yet paid social sessions fell from 11,326 to 2,666 and paid social revenue fell from $2,866.00 to $432.00, so reduced meta spend coincided with a sharp paid social revenue decline though the drop is disproportionate to the spend cut. (conf 0.98, queries Q4,Q5,Q6)",
-   "source": "whydrop:20261024-003004-de41"
+   "id": "mem-42",
+   "relevance": 0.34491475768435453,
+   "content": "[Did email marketing cause the drop?] VERIFIED CAUSE: Email revenue decline is concentrated in one country (e.g., US) experiencing a local seasonal or demand shock in September, not an email marketing failure. - Email revenue decline is heavily concentrated in the US (-312 USD, -23.78%), while other countries grew or barely declined, consistent with a US-specific shock rather than an email channel failure. (conf 0.93, queries Q14,Q15,Q16)",
+   "source": "whydrop:20261024-005804-7d35"
   },
   {
-   "id": "mem-7",
-   "relevance": 0.23664076488815192,
-   "content": "[Why did revenue drop in September 2026?] VERIFIED CAUSE: Total website sessions fell in September 2026 versus August 2026, reducing top-of-funnel demand and causing fewer orders across all channels. - Website sessions, orders, and revenue all declined from August to September 2026, consistent with reduced top-of-funnel demand driving the revenue drop. (conf 0.98, queries Q1,Q2,Q3)",
-   "source": "whydrop:20261024-003004-de41"
+   "id": "mem-22",
+   "relevance": 0.34349475784511235,
+   "content": "[Did email marketing cause the drop?] REJECTED: The email decline is a symptom of a total website traffic drop (including paid_social efficiency collapse), not an email-specific cause; email's share of sessions/orders stayed constant while overall volume fell. - H6 is rejected because email's share of sessions and orders increased rather than staying constant, and paid_social CPC improved slightly instead of collapsing.",
+   "source": "whydrop:20261024-004304-613a"
   },
   {
-   "id": "mem-12",
-   "relevance": 0.23377906184534933,
-   "content": "[Why did revenue drop in September 2026?] REJECTED: The September revenue drop was concentrated in specific countries due to local seasonality or supply issues rather than a global decline. - All six countries recorded lower revenue in September 2026 than in August 2026, with broadly similar percentage declines, indicating a global drop rather than one concentrated in specific countries.",
-   "source": "whydrop:20261024-003004-de41"
+   "id": "mem-19",
+   "relevance": 0.3416413583624383,
+   "content": "[Did email marketing cause the drop?] REJECTED: Email-sourced sessions and orders dropped significantly in September 2026 versus August 2026, directly reducing email channel revenue. - Email sessions and orders fell in absolute terms, but email's share of sessions and orders rose versus August, so email was relatively resilient and did not drive the overall drop.",
+   "source": "whydrop:20261024-004304-613a"
   }
  ],
- "elapsed_s": 356.7,
+ "elapsed_s": 583.4,
  "memory_ids": [
-  "mem-19",
-  "mem-20",
-  "mem-21",
-  "mem-22",
-  "mem-23"
+  "mem-97",
+  "mem-98",
+  "mem-99",
+  "mem-100",
+  "mem-101",
+  "mem-102",
+  "mem-103"
  ]
 }
