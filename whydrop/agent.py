@@ -29,18 +29,33 @@ Return JSON: {"verdict":"...","summary":"one sentence","estimated_impact_usd":0,
  "claims":[{"text":"...","evidence":[{"query_id":"Q1","row":0,"column":"n","value":123}],"confidence":0.0}],
  "recommended_action":"..."}"""
 
+# Deterministic "signal scan": generic, question-independent change detection run on Zetaris before planning.
+# Results are real, citable queries (hypothesis id SCAN) shared with the planner and every analyst.
+SCAN_QUERIES = [
+    ("Monthly net revenue and orders by product", "SELECT o.product_id, date_format(to_date(o.date),'yyyy-MM') AS month, COUNT(*) AS orders, ROUND(SUM(CAST(o.unit_price_usd AS DOUBLE)*CAST(o.quantity AS DOUBLE)),2) AS revenue_usd FROM WHYDROP_FILES.orders o GROUP BY 1,2 ORDER BY 1,2"),
+    ("Monthly orders by channel", "SELECT o.channel, date_format(to_date(o.date),'yyyy-MM') AS month, COUNT(*) AS orders FROM WHYDROP_FILES.orders o GROUP BY 1,2 ORDER BY 1,2"),
+    ("Refunds by month, product and reason (cross-source join: Postgres refunds x CSV orders)", "SELECT date_format(to_date(r.date),'yyyy-MM') AS month, o.product_id, r.reason, COUNT(*) AS refunds, ROUND(SUM(CAST(r.amount_usd AS DOUBLE)),2) AS refund_usd FROM WHYDROP_PG.refunds r JOIN WHYDROP_FILES.orders o ON r.order_id=o.order_id WHERE to_date(r.date) >= '2026-08-01' GROUP BY 1,2,3 ORDER BY 1,2,3"),
+    ("Refunds per half-month (Sep)", "SELECT CASE WHEN day(to_date(r.date))<=15 THEN 'H1' ELSE 'H2' END AS half, date_format(to_date(r.date),'yyyy-MM') AS month, o.product_id, COUNT(*) AS refunds FROM WHYDROP_PG.refunds r JOIN WHYDROP_FILES.orders o ON r.order_id=o.order_id WHERE to_date(r.date) >= '2026-08-01' GROUP BY 1,2,3 ORDER BY 2,1,3"),
+    ("Support tickets by month, product and category", "SELECT date_format(to_date(t.date),'yyyy-MM') AS month, o.product_id, t.category, COUNT(*) AS tickets FROM WHYDROP_PG.support_tickets t JOIN WHYDROP_FILES.orders o ON t.order_id=o.order_id WHERE to_date(t.date) >= '2026-08-01' GROUP BY 1,2,3 ORDER BY 1,2,3"),
+    ("Event log: price changes and releases", "SELECT 'price_change' AS kind, date, product_id, CONCAT(old_price_usd,' -> ',new_price_usd) AS detail FROM WHYDROP_FILES.pricing_changes UNION ALL SELECT 'release', date, product_id, CONCAT(version,': ',note) FROM WHYDROP_FILES.release_log ORDER BY date"),
+    ("Monthly paid funnel: spend, clicks, sessions, 404s", "SELECT m.month, m.spend_usd, m.clicks, w.sessions, w.landing_404s FROM (SELECT date_format(to_date(date),'yyyy-MM') AS month, ROUND(SUM(CAST(spend_usd AS DOUBLE)),2) AS spend_usd, SUM(CAST(clicks AS INT)) AS clicks FROM WHYDROP_FILES.marketing_spend GROUP BY 1) m JOIN (SELECT date_format(to_date(date),'yyyy-MM') AS month, SUM(CAST(sessions AS INT)) AS sessions, SUM(CAST(landing_404s AS INT)) AS landing_404s FROM WHYDROP_FILES.web_traffic WHERE source='paid_social' GROUP BY 1) w ON m.month=w.month ORDER BY 1"),
+]
+
 VERIFIER_SYS = """You are the verifier lane of WhyDrop. Given a claim and the cited result rows, answer whether the rows support the claim.
 Return JSON {"supported": true|false, "reason":"short"}"""
 
 
 class Investigation:
-    def __init__(self, question: str, workers: int = 4, verbose: bool = True):
-        self.q = question; self.workers = workers; self.verbose = verbose
+    def __init__(self, question: str, workers: int = 4, verbose: bool = True, on_event=None):
+        self.q = question; self.workers = workers; self.verbose = verbose; self.on_event = on_event; self.scan = []
         self.state = TaskState(question, time.strftime("%Y%m%d-%H%M%S-") + uuid.uuid4().hex[:4])
         self.mem = get_store(); self._qn = 0
 
-    def log(self, *a):
+    def log(self, *a, kind="step", data=None):
         if self.verbose: print("[whydrop]", *a, flush=True)
+        if self.on_event:
+            try: self.on_event({"kind": kind, "text": " ".join(map(str, a)), "data": data})
+            except Exception: pass
 
     # ---- tools -----------------------------------------------------------------------
     def run_sql(self, sql: str, purpose: str, hyp_id: str) -> dict:
@@ -58,18 +73,26 @@ class Investigation:
                     except Exception:
                         break
         self.state.queries[qid] = rec
-        self.log(f"{qid} [{hyp_id}] {'ok' if rec.get('ok') else 'ERR'} {rec.get('row_count','')} rows - {purpose[:70]}")
+        self.log(f"{qid} [{hyp_id}] {'ok' if rec.get('ok') else 'ERR'} {rec.get('row_count','')} rows - {purpose[:70]}", kind="query", data=rec)
         return rec
 
     # ---- stages ----------------------------------------------------------------------
+    def signal_scan(self):
+        self.scan = [self.run_sql(sql, purpose, "SCAN") for purpose, sql in SCAN_QUERIES]
+        self.log(f"signal scan: {sum(r.get('ok', False) for r in self.scan)}/{len(self.scan)} queries ok")
+
+    def scan_payload(self):
+        return [{"query_id": r["id"], "purpose": r["purpose"], "rows": r["rows"][:MAX_ROWS_TO_MODEL]} for r in self.scan if r.get("ok")]
+
     def plan(self):
         past = self.mem.recall(self.q, k=6)
         past_txt = "\n".join(f"- ({m.get('id')}) {m['content'][:300]}" for m in past) or "(none)"
         out = llm.chat_json("planner", PLANNER_SYS, f"Question: {self.q}\n\nData catalogue (Zetaris):\n{schema_text()}\n\n"
-                            f"Memory from past investigations (Meterless H-MEM; use as priors, re-test anyway):\n{past_txt}")
+                            f"Signal scan (real Zetaris results; look for anything that changes in or near the period, by product, reason, channel):\n{json.dumps(self.scan_payload(), default=str)}\n\n"
+                            f"Memory from past investigations (Meterless H-MEM; use as priors, re-test anyway):\n{past_txt}", max_tokens=8000)
         self.state.hypotheses = [dict(h, status="queued") for h in out["hypotheses"][:7]]
         self.state.memory_recalled = past
-        self.log(f"planned {len(self.state.hypotheses)} hypotheses (recalled {len(past)} memories)")
+        self.log(f"planned {len(self.state.hypotheses)} hypotheses (recalled {len(past)} memories)", kind="plan", data=self.state.hypotheses)
 
     def test(self, h: dict) -> dict:
         h["status"] = "testing"
@@ -85,9 +108,14 @@ class Investigation:
                             **({"rows": r["rows"][:MAX_ROWS_TO_MODEL]} if r.get("ok") else {"error": r.get("error")})})
         if not any(r.get("ok") for r in recs):
             h["status"] = "inconclusive"; return {"hypothesis": h, "verdict": "inconclusive", "claims": [], "queries": [r["id"] for r in recs]}
-        a = llm.chat_json("analyst", ANALYST_SYS, f"Question: {self.q}\nHypothesis {h['id']}: {h['statement']}\n\nResults:\n{json.dumps(payload, default=str)}", max_tokens=5000)
+        try:
+          a = llm.chat_json("analyst", ANALYST_SYS, f"Question: {self.q}\nHypothesis {h['id']}: {h['statement']}\n\nResults:\n{json.dumps(payload, default=str)}\n\nShared signal-scan results (also citable):\n{json.dumps(self.scan_payload(), default=str)}", max_tokens=12000)
+        except Exception as e:
+            h["status"] = "inconclusive"; self.log(f"{h['id']} analyst error: {str(e)[:80]}")
+            return {"hypothesis": h, "verdict": "inconclusive", "claims": [], "queries": [r["id"] for r in recs], "error": str(e)[:200]}
         a["hypothesis"] = h; a["queries"] = [r["id"] for r in recs]
         h["status"] = a.get("verdict", "inconclusive")
+        self.log(f"{h['id']} -> {h['status']}: {a.get('summary','')[:120]}", kind="finding", data={"id": h["id"], "verdict": h["status"], "summary": a.get("summary", "")})
         return a
 
     def verify(self, f: dict) -> dict:
@@ -128,8 +156,8 @@ class Investigation:
 
     # ---- main ------------------------------------------------------------------------
     def run(self) -> dict:
-        t0 = time.time(); llm.ROUTING_LOG.clear()
-        self.plan(); self.state.save()
+        t0 = time.time(); llm.ROUTING_LOG.clear(); llm.set_route_hook(lambda r: self.log(f"route {r['lane']} -> {r['model']} ({r['latency_s']}s)", kind="route", data=r))
+        self.signal_scan(); self.plan(); self.state.save()
         with ThreadPoolExecutor(self.workers) as ex:
             findings = list(ex.map(self.test, self.state.hypotheses))
         self.log("verifying claims")
@@ -138,6 +166,7 @@ class Investigation:
         self.state.findings = findings
         report = self.report(findings, time.time() - t0)
         self.remember(report); self.state.report = report; self.state.save()
+        self.log(f"done: {len(report['causes'])} causes, {len(report['rejected'])} rejected", kind="done")
         return report
 
     def report(self, findings, elapsed) -> dict:

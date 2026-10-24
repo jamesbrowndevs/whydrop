@@ -23,6 +23,11 @@ ROUTING_LOG: list[dict] = []
 _lock = threading.Lock()
 _dead: set[str] = set()
 
+def set_route_hook(fn):
+    """Per-thread callback fired on every routed call (used by the UI / logs)."""
+    global _ROUTE_HOOK; _ROUTE_HOOK = fn
+_ROUTE_HOOK = None
+
 def _key() -> str:
     k = os.environ.get("NVIDIA_API_KEY") or (Path(KEY_FILE).read_text().strip() if Path(KEY_FILE).exists() else "")
     if not k:
@@ -50,9 +55,13 @@ def chat(lane: str, system: str, user: str, max_tokens: int = 4000, temperature:
                 last = f"{model}: HTTP {r.status_code} {r.text[:120]}"; break
             j = r.json(); msg = j["choices"][0]["message"]
             text = msg.get("content") or ""
+            rec = {"lane": lane, "model": model, "latency_s": round(time.time() - t0, 1),
+                   "tokens": (j.get("usage") or {}).get("total_tokens"), "fallback_from": [m for m in LANES[lane][:LANES[lane].index(model)]]}
             with _lock:
-                ROUTING_LOG.append({"lane": lane, "model": model, "latency_s": round(time.time() - t0, 1),
-                                    "tokens": (j.get("usage") or {}).get("total_tokens")})
+                ROUTING_LOG.append(rec)
+            if _ROUTE_HOOK:
+                try: _ROUTE_HOOK(rec)
+                except Exception: pass
             if text.strip():
                 return text
             last = f"{model}: empty content"

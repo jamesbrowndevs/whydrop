@@ -24,12 +24,17 @@ def score(rep, need, reject_kw):
     sup = text(rep["causes"]); rej = text(rep["rejected"]); detail = {}
     for c in need: detail[c] = bool(re.search(CAUSE[c], sup))
     if reject_kw:  # pass if email is rejected (flat) and NOT presented as a supported cause
-        email_supported = any(reject_kw in (i["hypothesis"] + i["summary"]).lower() and "flat" not in i["summary"].lower() for i in rep["causes"])
+        # a supported cause "blames" email only if email is its subject and it is not negated (e.g. "not an email failure", "flat")
+        neg = re.compile(r"\b(not|no|unrelated|rather than|flat|did not|didn't)\b")
+        email_supported = any(re.match(r"\W*(the )?email", i["hypothesis"].lower()) and not neg.search((i["hypothesis"] + " " + i["summary"]).lower()) for i in rep["causes"])
         detail["email_rejected"] = (reject_kw in rej) and not email_supported
     return all(detail.values()), detail
 
 def _run(q):
-    return Investigation(q, verbose=False).run()
+    for attempt in range(2):
+        try: return Investigation(q, verbose=False).run()
+        except Exception as e: err = repr(e)
+    return {"question": q, "run_id": "error", "causes": [], "rejected": [], "unverified_or_inconclusive": [], "queries": {}, "routing": [], "memory_backend": "-", "elapsed_s": 0, "error": err}
 
 if __name__ == "__main__":
     from concurrent.futures import ProcessPoolExecutor
