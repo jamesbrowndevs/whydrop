@@ -46,15 +46,27 @@ Requirements: Docker (8 GB), Python 3.10+, Node 20+, an NVIDIA API key (build.nv
    Check: `python3 -m whydrop.zetaris "select count(*) from WHYDROP_FILES.orders o join WHYDROP_PG.refunds r on r.order_id=o.order_id"`.
 4. **Meterless**: `cd meterless && npm install && npm run setup` (vendors the H-MEM reference engine).
 5. **Key**: put your key in `../secrets/nvidia_api_key.txt` (outside the repo) or export `NVIDIA_API_KEY`.
-6. `pip install -r requirements.txt`
+6. `pip install -r requirements.txt` (requests, streamlit, pandas)
 
 ## Usage
 ```bash
-python3 -m whydrop "Why did revenue drop in September 2026?"     # report in reports/*.md + .json
+streamlit run app.py                                            # UI on http://localhost:8501: live steps, SQL + rows, model routing, ranked report
+python3 -m whydrop "Why did revenue drop in September 2026?"     # CLI; report in reports/*.md + .json
 python3 evals/run_evals.py                                      # 5 seeded questions, results in evals/results/
 ```
 Env: `ZETARIS_URL` (default http://localhost:3000), `ZETARIS_ENV` (platform .env with admin creds) or `ZETARIS_EMAIL`/`ZETARIS_PASSWORD`,
 `WHYDROP_MEMORY=local` (skip Node, local JSONL memory), `WHYDROP_MODEL_<LANE>` to pin a model per lane.
+
+## Model routing (visible)
+Each Nemotron call is logged with lane, model, latency, tokens and any fallback. You can see it in three places:
+- streamed live in the UI's routing panel
+- printed in the CLI log (`[whydrop] route sql -> nvidia/... (3.1s)`)
+- summarised at the end of every report (`## Model routing`)
+
+## How it works
+Before planning, a fixed **signal scan** runs 7 generic change-detection queries on Zetaris: revenue by product and month, orders by channel,
+refunds by product and reason (a Postgres × CSV join), refunds by half-month, support tickets, the event log, and the paid funnel. These rows are
+shared with the planner and the analysts and can be cited. Then: plan → SQL → analyse → verify → ranked report → remember.
 
 ## Sponsor tech
 - **Zetaris**: the only data access path. Two federated sources (file store + Postgres JDBC) queried as one SQL layer, cross-source joins
