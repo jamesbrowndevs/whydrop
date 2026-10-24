@@ -52,26 +52,33 @@ if go and q.strip():
     t = threading.Thread(target=worker, daemon=True); t.start()
     left, right = st.columns([1, 1])
     left.subheader("Agent steps (live)"); right.subheader("SQL on Zetaris + evidence")
-    steps, routes = left.container(height=420), left.container(height=220)
-    sqlbox = right.container(height=660)
+    steps_ph, routes_ph = left.empty(), left.empty()
+    latest_ph = right.empty(); sqlbox = right.expander("All queries so far", expanded=False)
+    step_lines, route_lines, nq = [], [], [0]
+    def step(t): step_lines.append(t); steps_ph.container(height=420).markdown("\n\n".join(step_lines[-14:]))
+    def route(t): route_lines.append(t); routes_ph.container(height=230).markdown("**Model routing (live)**\n\n" + "\n\n".join(route_lines[-7:]))
     status = st.status("Investigating… (typically 5–9 minutes)", expanded=False); t0 = time.time()
     while t.is_alive() or not events.empty():
         try: ev = events.get(timeout=0.5)
         except queue.Empty: status.update(label=f"Investigating… {time.time()-t0:.0f}s"); continue
         k, d = ev["kind"], ev["data"]
         if k == "route":
-            routes.markdown(f"{LANE_ICON.get(d['lane'],'•')} **{d['lane']}** → `{d['model']}` · {d['latency_s']}s" + (f" · fell back from {d['fallback_from']}" if d.get("fallback_from") else ""))
+            route(f"{LANE_ICON.get(d['lane'],'•')} **{d['lane']}** → `{d['model']}` · {d['latency_s']}s" + (f" · fell back from {d['fallback_from']}" if d.get("fallback_from") else ""))
         elif k == "query":
-            with sqlbox.expander(f"{d['id']} [{d['hypothesis']}] {'✅' if d.get('ok') else '⚠️'} {d.get('purpose','')[:80]}"):
+            nq[0] += 1
+            with latest_ph.container(height=560):
+                st.markdown(f"**Latest query {d['id']}** [{d['hypothesis']}] {'✅' if d.get('ok') else '⚠️'} {d.get('purpose','')}  \n<small>{nq[0]} queries run on Zetaris so far</small>", unsafe_allow_html=True)
                 st.code(d["sql"], language="sql")
-                if d.get("ok"): st.dataframe(pd.DataFrame(d.get("rows", [])[:50]), width="stretch")
+                if d.get("ok"): st.dataframe(pd.DataFrame(d.get("rows", [])[:50]), width="stretch", height=200)
                 else: st.error(d.get("error"))
-            steps.write(f"🧮 {ev['text']}")
+            with sqlbox:
+                st.markdown(f"- {d['id']} [{d['hypothesis']}] {d.get('purpose','')[:90]}")
+            step(f"🧮 {ev['text']}")
         elif k == "plan":
-            steps.markdown("🧭 **Hypotheses**\n" + "\n".join(f"- {h['id']}: {h['statement']}" for h in d))
+            step("🧭 **Hypotheses**\n" + "\n".join(f"- {h['id']}: {h['statement'][:140]}" for h in d))
         elif k == "finding":
-            icon = {"supported": "🟢", "rejected": "⚪"}.get(d["verdict"], "🟡"); steps.write(f"{icon} {ev['text']}")
-        else: steps.write(f"• {ev['text']}")
+            icon = {"supported": "🟢", "rejected": "⚪"}.get(d["verdict"], "🟡"); step(f"{icon} {ev['text']}")
+        else: step(f"• {ev['text']}")
     status.update(label=f"Done in {time.time()-t0:.0f}s", state="complete" if "rep" in box else "error")
     if "err" in box: st.error(box["err"])
     else: st.session_state["rep"] = box["rep"]
