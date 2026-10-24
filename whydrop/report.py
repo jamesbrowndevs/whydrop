@@ -32,4 +32,7 @@ def to_markdown(rep: dict) -> str:
     agg = {}
     for r in rep["routing"]: agg.setdefault((r["lane"], r["model"]), []).append(r["latency_s"])
     for (lane, m), v in sorted(agg.items()): L.append(f"- {lane}: `{m}` x{len(v)} (avg {sum(v)/len(v):.1f}s)")
+    fb = [r for r in rep["routing"] if r.get("fallback_from")]
+    if fb: L.append(f"- fallbacks: {len(fb)} calls served by a lower-preference model (" + ", ".join(sorted({r['lane'] + '->' + r['model'] for r in fb})) + ")")
+    L.append(f"- total Nemotron calls: {len(rep['routing'])}, tokens: {sum((r.get('tokens') or 0) for r in rep['routing']):,}")
     return "\n".join(L) + "\n"
