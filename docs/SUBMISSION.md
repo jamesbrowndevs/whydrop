@@ -49,8 +49,20 @@ Claims that fail any check are struck out and never reach the answer.
 the agent never sees the ground truth). Scoring only counts verified claims. Latest results: `evals/results/summary.json`: 5/5 on 24 Oct 2026 (earlier runs 3/5 and 4/5; LLM runs vary).
 
 ## Cursor use
-<!-- TODO (Nathan): confirm before submitting, and add screenshots to docs/img/. -->
-Development was done with AI-assisted coding in the Cursor environment during the hackathon window. Screenshots: _to add_.
+All WhyDrop code was written and iterated by an AI coding agent running on Cursor's agent platform, directed by Nathan Melia.
+The agent worked in a Linux workspace where it ran Docker (the Zetaris stack), Python, Node and git. What it did:
+- **Generated the modules:** the seeded dataset generator, the Zetaris federation scripts and `zetaris_sql` tool, the Meterless H-MEM bridge,
+  the Nemotron lane router (`whydrop/llm.py`), and the agent loop (`whydrop/agent.py`).
+- **Built the claim checker:** query re-runs on Zetaris, cell matching, number grounding, and the Nemotron verifier lane.
+- **Eval-driven fixes:** it ran `evals/run_evals.py` repeatedly and fixed what failed.
+  - The refund-spike cause (P003) was being missed, so it added the Zetaris signal-scan stage.
+  - The analyst lane was crashing on truncated JSON, so it added error handling.
+  - Correct evidence was being rejected for off-by-one row citations, so it added row-index repair.
+  - The email scorer was misreading negated answers, so it fixed the scorer.
+  - Scores went 3/5 → 4/5 → 5/5. Each step is a commit in the git history.
+- **Built the Streamlit UI**, including live steps, the routing panel and the report, and tested it headlessly with Streamlit's AppTest.
+- **Wrote the docs, slides and demo video tooling:** the HTML→PDF slide builder, the Playwright recording script, Piper TTS narration,
+  and the ffmpeg assembly (`demo/`).
 
 ## Pre-existing code declaration
 - All WhyDrop code (`whydrop/`, `app.py`, `zetaris/`, `evals/`, `scripts/`, the dataset) was written during the hackathon window (from 23 Oct 2026).
