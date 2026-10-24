@@ -1,0 +1,119 @@
+1
+00:00:00,000 --> 00:00:05,173
+When revenue drops, a small online seller gets a chart, not an answer.
+
+2
+00:00:05,173 --> 00:00:10,420
+WhyDrop is an agent that explains why, and proves every claim it makes.
+
+3
+00:00:11,120 --> 00:00:17,521
+The clues are scattered across order exports, ad spend, web traffic, and a refunds database.
+
+4
+00:00:17,521 --> 00:00:24,966
+Most sellers have no analyst to join them up, and a chatbot that guesses can send them after the wrong fix.
+
+5
+00:00:25,666 --> 00:00:29,378
+Zetaris federates all of it into one SQL layer.
+
+6
+00:00:29,378 --> 00:00:31,905
+Here are the registered sources:
+
+7
+00:00:31,905 --> 00:00:38,145
+four file sources, and a Postgres database holding refunds and support tickets.
+
+8
+00:00:38,145 --> 00:00:40,594
+The agent has exactly one tool:
+
+9
+00:00:40,594 --> 00:00:42,094
+run SQL on Zetaris.
+
+10
+00:00:42,794 --> 00:00:45,602
+In the WhyDrop app, I ask in plain English:
+
+11
+00:00:45,602 --> 00:00:47,822
+why did revenue drop in September?
+
+12
+00:00:48,522 --> 00:00:50,717
+This is a real run, sped up.
+
+13
+00:00:50,717 --> 00:00:54,087
+First, a fixed signal scan runs on Zetaris.
+
+14
+00:00:54,087 --> 00:01:02,710
+Then the Nemotron planner proposes competing hypotheses, using memories of past investigations from Meterless.
+
+15
+00:01:02,710 --> 00:01:11,020
+Each hypothesis is tested with real SQL, including joins between the Postgres refunds and the order files.
+
+16
+00:01:11,020 --> 00:01:15,880
+The routing panel shows which Nemotron model served each step:
+
+17
+00:01:15,880 --> 00:01:21,054
+Super plans and analyses, Nano writes SQL, and Lightning verifies.
+
+18
+00:01:21,754 --> 00:01:24,053
+The answer is ranked by impact.
+
+19
+00:01:24,053 --> 00:01:28,502
+Every claim cites the exact query, row and column behind it.
+
+20
+00:01:28,502 --> 00:01:37,846
+Claims that fail verification are struck out, and hypotheses the data contradicts are listed as rejected, with their evidence.
+
+21
+00:01:38,546 --> 00:01:44,004
+Before any claim is shown, its query is re-run on Zetaris and must reproduce.
+
+22
+00:01:44,004 --> 00:01:52,438
+Each cited cell must match, every number must be grounded in the data, and an independent Nemotron verifier must agree.
+
+23
+00:01:53,138 --> 00:01:59,193
+We tested it on five questions over a seeded dataset with three planted causes:
+
+24
+00:01:59,193 --> 00:02:06,704
+a broken Meta campaign sending clicks to 404 pages, a price rise, and a corrupted product release.
+
+25
+00:02:06,704 --> 00:02:11,762
+On the latest run it found all three, and passed five out of five.
+
+26
+00:02:11,762 --> 00:02:16,591
+Results vary between runs, and every run is logged in the repo.
+
+27
+00:02:17,291 --> 00:02:26,256
+Zetaris for federated data, Meterless for long-term memory, and NVIDIA Nemotron for reasoning, with the routing visible throughout.
+
+28
+00:02:26,256 --> 00:02:27,351
+Built in Cursor.
+
+29
+00:02:28,051 --> 00:02:28,731
+WhyDrop.
+
+30
+00:02:28,731 --> 00:02:33,317
+The code is on GitHub at jamesbrowndevs slash whydrop.

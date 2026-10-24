@@ -15,3 +15,4 @@ meterless/vendor/
 __pycache__/
 *.pyc
 reports/
+demo/*.mp4

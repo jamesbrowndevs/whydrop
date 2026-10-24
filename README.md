@@ -15,6 +15,11 @@ Ask "Why did revenue drop in September?" and WhyDrop:
 5. Returns a **ranked explanation** (impact x confidence), **rejected hypotheses** with their evidence, recommended actions,
    every SQL query with its rows, and the model routing log.
 
+## Demo video
+▶️ **[Watch the 2.5-minute demo (MP4)](https://github.com/jamesbrowndevs/whydrop/releases/download/v1.0/whydrop_demo.mp4)** ([release v1.0](https://github.com/jamesbrowndevs/whydrop/releases/tag/v1.0)).
+The voice-over is computer-generated (Piper TTS). The app footage is a real, unedited run that is sped up 16x while the agent works and labelled on screen.
+The scripts that build it are in `demo/`.
+
 ## Architecture
 ```
 question -> planner (Nemotron 3 Super / Ultra) -> hypothesis queue (TaskState + H-MEM recall)
