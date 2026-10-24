@@ -1,79 +1,65 @@
 {
  "question": "Why did revenue drop in September 2026?",
- "run_id": "20261024-013634-0198",
+ "run_id": "20261024-015442-ce12",
  "causes": [
   {
-   "hypothesis": "Paid social ad spend and clicks held steady in September, but landing_404s spiked and sessions collapsed, breaking the paid_social funnel and causing paid_social orders to fall from 196 (Aug) to 28 (Sep).",
-   "id": "H1",
+   "hypothesis": "Overall website sessions fell across organic, email, and referral in September (end-of-summer demand softening), reducing top-of-funnel orders globally.",
+   "id": "H4",
    "verdict": "supported",
-   "summary": "Paid social spend and clicks stayed roughly flat while landing_404s spiked from 44 to 8,408 and sessions collapsed from 11,326 to 2,666, driving paid_social orders down from 196 to 28 and revenue from $2,866.00 to $432.00.",
-   "impact_usd": 2434.0,
-   "confidence": 0.97,
+   "summary": "Supported \u2014 sessions and orders both fell across organic, email, and referral from August to September 2026 (e.g., organic sessions 16482\u219215467 and orders 379\u2192282), confirming top-of-funnel erosion, though orders-per-session also declined and paid-social/P003 issues were separate concurrent factors.",
+   "impact_usd": 2600.0,
+   "confidence": 0.93,
    "claims": [
     {
-     "text": "Paid social spend and clicks were roughly flat (spend_usd 5001.289999999999 in Aug vs 4630.400000000001 in Sep; clicks 11775 vs 11163), while sessions collapsed 11326 -> 2666 and landing_404s spiked 44 -> 8408.",
+     "text": "Website sessions fell for every named source from August to September 2026: organic 16482\u219215467, email 5669\u21925387, referral 4356\u21924131.",
      "evidence": [
       {
-       "query_id": "Q14",
-       "row": 0,
-       "column": "sessions",
-       "value": 11326,
-       "actual": 11326
-      },
-      {
-       "query_id": "Q14",
-       "row": 0,
-       "column": "landing_404s",
-       "value": 44,
-       "actual": 44
-      },
-      {
-       "query_id": "Q14",
+       "query_id": "Q13",
        "row": 1,
        "column": "sessions",
-       "value": 2666,
-       "actual": 2666
+       "value": 16482,
+       "actual": 16482
       },
       {
-       "query_id": "Q14",
-       "row": 1,
-       "column": "landing_404s",
-       "value": 8408,
-       "actual": 8408
+       "query_id": "Q13",
+       "row": 4,
+       "column": "sessions",
+       "value": 15467,
+       "actual": 15467
       },
       {
-       "query_id": "Q15",
+       "query_id": "Q13",
        "row": 0,
-       "column": "spend_usd",
-       "value": 5001.289999999999,
-       "actual": 5001.289999999999
+       "column": "sessions",
+       "value": 5669,
+       "actual": 5669
       },
       {
-       "query_id": "Q15",
-       "row": 0,
-       "column": "clicks",
-       "value": 11775,
-       "actual": 11775
+       "query_id": "Q13",
+       "row": 3,
+       "column": "sessions",
+       "value": 5387,
+       "actual": 5387
       },
       {
-       "query_id": "Q15",
-       "row": 1,
-       "column": "spend_usd",
-       "value": 4630.400000000001,
-       "actual": 4630.400000000001
+       "query_id": "Q13",
+       "row": 2,
+       "column": "sessions",
+       "value": 4356,
+       "actual": 4356
       },
       {
-       "query_id": "Q15",
-       "row": 1,
-       "column": "clicks",
-       "value": 11163,
-       "actual": 11163
+       "query_id": "Q13",
+       "row": 5,
+       "column": "sessions",
+       "value": 4131,
+       "actual": 4131
       }
      ],
      "confidence": 0.95,
      "llm_check": {
       "supported": true,
-      "reason": "Rows provide the exact August and September values for spend, clicks, sessions, and landing_404s, which match the claim's description of flat spend/clicks and collapsed sessions/spiked 404s."
+      "reason": "All three sources (organic, email, referral) show a decrease in sessions from August to September 2026, matching the claim exactly."
      },
      "verified": true,
      "checks": [
@@ -81,41 +67,55 @@
      ]
     },
     {
-     "text": "Paid social orders fell from 196 (Aug) to 28 (Sep) and revenue fell from 2866.0 to 432.0.",
+     "text": "Orders from those same sources fell in parallel: organic 379\u2192282, email 229\u2192200, referral 134\u219287.",
      "evidence": [
       {
-       "query_id": "Q16",
-       "row": 0,
-       "column": "orders",
-       "value": 196,
-       "actual": 196
-      },
-      {
-       "query_id": "Q16",
-       "row": 0,
-       "column": "revenue",
-       "value": 2866.0,
-       "actual": 2866.0
-      },
-      {
-       "query_id": "Q16",
+       "query_id": "Q14",
        "row": 1,
        "column": "orders",
-       "value": 28,
-       "actual": 28
+       "value": 379,
+       "actual": 379
       },
       {
-       "query_id": "Q16",
-       "row": 1,
-       "column": "revenue",
-       "value": 432.0,
-       "actual": 432.0
+       "query_id": "Q14",
+       "row": 4,
+       "column": "orders",
+       "value": 282,
+       "actual": 282
+      },
+      {
+       "query_id": "Q14",
+       "row": 0,
+       "column": "orders",
+       "value": 229,
+       "actual": 229
+      },
+      {
+       "query_id": "Q14",
+       "row": 3,
+       "column": "orders",
+       "value": 200,
+       "actual": 200
+      },
+      {
+       "query_id": "Q14",
+       "row": 2,
+       "column": "orders",
+       "value": 134,
+       "actual": 134
+      },
+      {
+       "query_id": "Q14",
+       "row": 5,
+       "column": "orders",
+       "value": 87,
+       "actual": 87
       }
      ],
-     "confidence": 0.98,
+     "confidence": 0.95,
      "llm_check": {
       "supported": true,
-      "reason": "The rows directly match the claimed order and revenue values for August and September."
+      "reason": "Data shows the exact same month-over-month decreases for all three sources from August to September 2026."
      },
      "verified": true,
      "checks": [
@@ -123,27 +123,55 @@
      ]
     },
     {
-     "text": "The paid_social revenue decline explained by this funnel break is 2866.0 - 432.0 = 2434.0 USD per month.",
+     "text": "Orders-per-session also declined (organic 0.0229947821866278\u21920.0182323656817741; referral 0.0307621671258035\u21920.0210602759622367; email 0.0403951314164756\u21920.0371264154445888), so orders dropped faster than sessions.",
      "evidence": [
       {
-       "query_id": "Q16",
-       "row": 0,
-       "column": "revenue",
-       "value": 2866.0,
-       "actual": 2866.0
+       "query_id": "Q15",
+       "row": 1,
+       "column": "orders_per_session",
+       "value": 0.0229947821866278,
+       "actual": 0.0229947821866278
       },
       {
-       "query_id": "Q16",
-       "row": 1,
-       "column": "revenue",
-       "value": 432.0,
-       "actual": 432.0
+       "query_id": "Q15",
+       "row": 4,
+       "column": "orders_per_session",
+       "value": 0.0182323656817741,
+       "actual": 0.0182323656817741
+      },
+      {
+       "query_id": "Q15",
+       "row": 2,
+       "column": "orders_per_session",
+       "value": 0.0307621671258035,
+       "actual": 0.0307621671258035
+      },
+      {
+       "query_id": "Q15",
+       "row": 5,
+       "column": "orders_per_session",
+       "value": 0.0210602759622367,
+       "actual": 0.0210602759622367
+      },
+      {
+       "query_id": "Q15",
+       "row": 0,
+       "column": "orders_per_session",
+       "value": 0.0403951314164756,
+       "actual": 0.0403951314164756
+      },
+      {
+       "query_id": "Q15",
+       "row": 3,
+       "column": "orders_per_session",
+       "value": 0.0371264154445888,
+       "actual": 0.0371264154445888
       }
      ],
-     "confidence": 0.97,
+     "confidence": 0.9,
      "llm_check": {
       "supported": true,
-      "reason": "The rows show August 2026 revenue of 2866.0 and September 2026 revenue of 432.0, and the claimed decline of 2866.0 - 432.0 = 2434.0 correctly matches these values."
+      "reason": "All three sources show declining orders-per-session, and actual orders dropped at a faster rate than sessions from August to September 2026."
      },
      "verified": true,
      "checks": [
@@ -152,70 +180,56 @@
     }
    ],
    "queries": [
+    "Q13",
     "Q14",
-    "Q15",
-    "Q16"
+    "Q15"
    ],
-   "action": "Investigate and fix the paid_social landing-page 404 issue (check Meta destination URLs / tracking-template changes made in September), restore the landing page, and verify that paid_social sessions and orders recover."
+   "action": "Address the organic/email/referral demand softening and the concurrent orders-per-session decline, while prioritizing the larger concurrent drivers: the paid-social landing-page 404 collapse (sessions 11326\u21922666, 404s 44\u21928408) and P003 file-corruption refunds (~$390 in September)."
   },
   {
-   "hypothesis": "P001 unit price increased from $19 to $29 on 2026-09-01, suppressing P001 order volume and revenue in September.",
-   "id": "H3",
+   "hypothesis": "Paid social sessions collapsed in September because paid landing pages returned HTTP 404s, so ad spend stopped converting into sessions and orders.",
+   "id": "H1",
    "verdict": "supported",
-   "summary": "P001's price rose from $19 to $29 on 2026-09-01, and orders fell from 269 in August to 115 in September while revenue dropped from $5,111.00 to $3,335.00, consistent with the price increase suppressing volume and revenue.",
-   "impact_usd": 1776.0,
+   "summary": "Paid social sessions collapsed from 11,326 in August to 2,666 in September while landing-page 404s spiked from 44 to 8,408, even though ad spend and clicks stayed flat, and paid social revenue fell from $2,866 to $432.",
+   "impact_usd": 2434.0,
    "confidence": 0.96,
    "claims": [
     {
-     "text": "P001 unit price increased from $19.0 to $29.0 on 2026-09-01.",
+     "text": "Paid social sessions dropped from 11,326 in August 2026 to 2,666 in September 2026, while landing 404 errors surged from 44 to 8,408 over the same period.",
      "evidence": [
       {
-       "query_id": "Q8",
+       "query_id": "Q11",
        "row": 0,
-       "column": "old_price_usd",
-       "value": 19.0,
-       "actual": 19.0
+       "column": "total_sessions",
+       "value": 11326,
+       "actual": 11326
       },
       {
-       "query_id": "Q8",
+       "query_id": "Q11",
        "row": 0,
-       "column": "new_price_usd",
-       "value": 29.0,
-       "actual": 29.0
-      }
-     ],
-     "confidence": 0.98,
-     "llm_check": {
-      "supported": false,
-      "reason": "Row references Q8, not P001; product identifier mismatch."
-     },
-     "verified": false,
-     "checks": [
-      "verifier lane: Row references Q8, not P001; product identifier mismatch."
-     ]
-    },
-    {
-     "text": "P001 order volume fell from 269 orders in August 2026 to 115 orders in September 2026.",
-     "evidence": [
-      {
-       "query_id": "Q9",
-       "row": 0,
-       "column": "orders",
-       "value": 269,
-       "actual": 269
+       "column": "total_404s",
+       "value": 44,
+       "actual": 44
       },
       {
-       "query_id": "Q9",
+       "query_id": "Q11",
        "row": 1,
-       "column": "orders",
-       "value": 115,
-       "actual": 115
+       "column": "total_sessions",
+       "value": 2666,
+       "actual": 2666
+      },
+      {
+       "query_id": "Q11",
+       "row": 1,
+       "column": "total_404s",
+       "value": 8408,
+       "actual": 8408
       }
      ],
      "confidence": 0.97,
      "llm_check": {
       "supported": true,
-      "reason": "The rows directly show 269 orders in August 2026 and 115 in September 2026, matching the claim."
+      "reason": "The rows show exactly 11,326 sessions and 44 404s in August 2026, and 2,666 sessions and 8,408 404s in September 2026, matching the claim precisely."
      },
      "verified": true,
      "checks": [
@@ -223,27 +237,376 @@
      ]
     },
     {
-     "text": "P001 revenue fell from $5,111.00 in August 2026 to $3,335.00 in September 2026 despite the higher unit price.",
+     "text": "Ad spend and clicks were essentially unchanged (spend $5,001.29 to $4,630.40; clicks 11,775 to 11,163), so paid traffic kept flowing but clicks stopped turning into sessions.",
      "evidence": [
       {
-       "query_id": "Q10",
+       "query_id": "Q7",
+       "row": 2,
+       "column": "spend_usd",
+       "value": 5001.29,
+       "actual": 5001.29
+      },
+      {
+       "query_id": "Q7",
+       "row": 2,
+       "column": "clicks",
+       "value": 11775,
+       "actual": 11775
+      },
+      {
+       "query_id": "Q7",
+       "row": 3,
+       "column": "spend_usd",
+       "value": 4630.4,
+       "actual": 4630.4
+      },
+      {
+       "query_id": "Q7",
+       "row": 3,
+       "column": "clicks",
+       "value": 11163,
+       "actual": 11163
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "The cited August\u2013September spend ($5,001.29 to $4,630.40) and clicks (11,775 to 11,163) exactly match the data, and sessions plummeted from 11,326 to 2,666, supporting the conclusion that clicks stopped turning into sessions."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "Paid social orders fell from 196 ($2,866 revenue) in August to 28 ($432 revenue) in September, a $2,434 revenue drop attributable to this channel.",
+     "evidence": [
+      {
+       "query_id": "Q19",
+       "row": 0,
+       "column": "order_count",
+       "value": 196,
+       "actual": 196
+      },
+      {
+       "query_id": "Q19",
        "row": 0,
        "column": "revenue_usd",
+       "value": 2866.0,
+       "actual": 2866.0
+      },
+      {
+       "query_id": "Q19",
+       "row": 1,
+       "column": "order_count",
+       "value": 28,
+       "actual": 28
+      },
+      {
+       "query_id": "Q19",
+       "row": 1,
+       "column": "revenue_usd",
+       "value": 432.0,
+       "actual": 432.0
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "The rows show exact month-over-month revenue drop from $2,866 to $432 (a $2,434 decrease) and order count from 196 to 28, matching the claim."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q11",
+    "Q12",
+    "Q19"
+   ],
+   "action": "Investigate and fix the paid social landing pages returning HTTP 404s (restore URLs/redirects), and pause paid social spend until the landing pages are confirmed working."
+  },
+  {
+   "hypothesis": "The P001 price increase effective 2026-09-01 ($19 to $29) reduced P001 order volume, contributing to the revenue drop.",
+   "id": "H3",
+   "verdict": "supported",
+   "summary": "P001's price rose from $19 to $29 effective 2026-09-01, and P001 orders fell from 269 in August to 115 in September while revenue fell from $5,111 to $3,335\u2014a sharper decline than control products P002\u2013P005\u2014supporting the hypothesis that the price increase reduced P001 order volume and contributed to the revenue drop.",
+   "impact_usd": 1776.0,
+   "confidence": 0.93,
+   "claims": [
+    {
+     "text": "Pricing records confirm P001's price changed from $19 to $29 effective 2026-09-01 (repositioned as premium).",
+     "evidence": [
+      {
+       "query_id": "Q18",
+       "row": 0,
+       "column": "old_price_usd",
+       "value": 19.0,
+       "actual": 19.0
+      },
+      {
+       "query_id": "Q18",
+       "row": 0,
+       "column": "new_price_usd",
+       "value": 29.0,
+       "actual": 29.0
+      },
+      {
+       "query_id": "Q18",
+       "row": 0,
+       "column": "date",
+       "value": "2026-09-01"
+      }
+     ],
+     "confidence": 0.99,
+     "verified": false,
+     "checks": [
+      "Q18 row 0 col date: cell not found"
+     ]
+    },
+    {
+     "text": "P001 order count dropped from 269 in August 2026 to 115 in September 2026 while average unit price rose from 19.0 to 29.0 and revenue fell from 5111.0 to 3335.0.",
+     "evidence": [
+      {
+       "query_id": "Q16",
+       "row": 0,
+       "column": "order_count",
+       "value": 269,
+       "actual": 269
+      },
+      {
+       "query_id": "Q16",
+       "row": 0,
+       "column": "avg_unit_price",
+       "value": 19.0,
+       "actual": 19.0
+      },
+      {
+       "query_id": "Q16",
+       "row": 0,
+       "column": "revenue",
        "value": 5111.0,
        "actual": 5111.0
       },
       {
-       "query_id": "Q10",
+       "query_id": "Q16",
        "row": 1,
-       "column": "revenue_usd",
+       "column": "order_count",
+       "value": 115,
+       "actual": 115
+      },
+      {
+       "query_id": "Q16",
+       "row": 1,
+       "column": "avg_unit_price",
+       "value": 29.0,
+       "actual": 29.0
+      },
+      {
+       "query_id": "Q16",
+       "row": 1,
+       "column": "revenue",
        "value": 3335.0,
        "actual": 3335.0
       }
      ],
-     "confidence": 0.96,
+     "confidence": 0.95,
      "llm_check": {
       "supported": true,
-      "reason": "The rows confirm revenue fell from $5,111.00 to $3,335.00 while revenue per order rose from $19.00 to $29.00, matching the claim's figures and the 'despite higher unit price' condition."
+      "reason": "Rows exactly match the claimed values for P001 August and September 2026."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "The P001 order decline was steeper than control products over the same period: P002 fell from 165 to 127 orders and P003 fell from 254 to 166 orders, indicating a product-specific price effect rather than a general monthly decline.",
+     "evidence": [
+      {
+       "query_id": "Q16",
+       "row": 2,
+       "column": "order_count",
+       "value": 165,
+       "actual": 165
+      },
+      {
+       "query_id": "Q16",
+       "row": 3,
+       "column": "order_count",
+       "value": 127,
+       "actual": 127
+      },
+      {
+       "query_id": "Q16",
+       "row": 4,
+       "column": "order_count",
+       "value": 254,
+       "actual": 254
+      },
+      {
+       "query_id": "Q16",
+       "row": 5,
+       "column": "order_count",
+       "value": 166,
+       "actual": 166
+      }
+     ],
+     "confidence": 0.9,
+     "llm_check": {
+      "supported": true,
+      "reason": "P001 orders dropped from 269 to 115 (~57% decline), steeper than P002 (165\u2192127, ~23%) and P003 (254\u2192166, ~35%). P001 also saw a price increase (19\u219229), while control products had no price change and smaller order drops, supporting a product-specific price effect over a general monthly decline."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q16",
+    "Q17",
+    "Q18"
+   ],
+   "action": "Revert or A/B test the P001 $29 price; the $10 increase coincided with a 154-order volume collapse (269 to 115) and a $1,776 revenue decline for P001 alone, far steeper than controls."
+  },
+  {
+   "hypothesis": "The P003 v2.0 release on 2026-09-15 rebuilt zip files with a new packer, producing corrupted downloads that triggered refunds and suppressed P003 revenue in late September.",
+   "id": "H2",
+   "verdict": "supported",
+   "summary": "The P003 v2.0 release on 2026-09-15, which rebuilt zips with a new packer, is supported as the cause: corrupted-file refunds for P003 appeared only in September (26 refunds, $390.00), spiked after the mid-month release (27 refunds in Sep H2 vs 5 in H1), and coincided with P003 revenue falling from $3810.00 in August to $2490.00 in September.",
+   "impact_usd": 390.0,
+   "confidence": 0.94,
+   "claims": [
+    {
+     "text": "The release log confirms P003 version 2.0 was released on 2026-09-15 with the zip rebuilt using a new packer.",
+     "evidence": [
+      {
+       "query_id": "Q10",
+       "row": 0,
+       "column": "date",
+       "value": "2026-09-15",
+       "actual": "2026-09-15"
+      },
+      {
+       "query_id": "Q10",
+       "row": 0,
+       "column": "product_id",
+       "value": "P003",
+       "actual": "P003"
+      },
+      {
+       "query_id": "Q10",
+       "row": 0,
+       "column": "version",
+       "value": 2.0,
+       "actual": 2.0
+      },
+      {
+       "query_id": "Q10",
+       "row": 0,
+       "column": "note",
+       "value": "new scrapers bundled; zip rebuilt with new packer",
+       "actual": "new scrapers bundled; zip rebuilt with new packer"
+      }
+     ],
+     "confidence": 0.98,
+     "llm_check": {
+      "supported": true,
+      "reason": "The row confirms P003 v2.0 released on 2026-09-15 with the zip rebuilt using a new packer."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "September 2026 had 26 'file corrupted' refunds for P003 totaling $390.00, while the same filter returned no August 2026 rows (zero corrupted refunds before the release).",
+     "evidence": [
+      {
+       "query_id": "Q8",
+       "row": 0,
+       "column": "month",
+       "value": "2026-09",
+       "actual": "2026-09"
+      },
+      {
+       "query_id": "Q8",
+       "row": 0,
+       "column": "refund_count",
+       "value": 26,
+       "actual": 26
+      },
+      {
+       "query_id": "Q8",
+       "row": 0,
+       "column": "total_refund_usd",
+       "value": 390.0,
+       "actual": 390.0
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": false,
+      "reason": "Rows only provide September 2026 numeric data matching the counts, but do not include August 2026 entries or the 'file corrupted'/'P003' labels, so the full claim is unsupported."
+     },
+     "verified": false,
+     "checks": [
+      "verifier lane: Rows only provide September 2026 numeric data matching the counts, but do not include August 2026 entries or the 'file corrupted'/'P003' labels, so the full claim is unsupported."
+     ]
+    },
+    {
+     "text": "The refund surge was concentrated after the mid-month release: P003 had 5 refunds in Sep H1 versus 27 in Sep H2, and P003 revenue fell from $3810.00 in August (254 orders) to $2490.00 in September (166 orders).",
+     "evidence": [
+      {
+       "query_id": "Q4",
+       "row": 11,
+       "column": "refunds",
+       "value": 5,
+       "actual": 5
+      },
+      {
+       "query_id": "Q4",
+       "row": 16,
+       "column": "refunds",
+       "value": 27,
+       "actual": 27
+      },
+      {
+       "query_id": "Q1",
+       "row": 10,
+       "column": "revenue_usd",
+       "value": 3810.0,
+       "actual": 3810.0
+      },
+      {
+       "query_id": "Q1",
+       "row": 10,
+       "column": "orders",
+       "value": 254,
+       "actual": 254
+      },
+      {
+       "query_id": "Q1",
+       "row": 11,
+       "column": "revenue_usd",
+       "value": 2490.0,
+       "actual": 2490.0
+      },
+      {
+       "query_id": "Q1",
+       "row": 11,
+       "column": "orders",
+       "value": 166,
+       "actual": 166
+      }
+     ],
+     "confidence": 0.9,
+     "llm_check": {
+      "supported": true,
+      "reason": "The rows directly contain the exact figures cited: P003 refunds of 5 in Sep H1 and 27 in Sep H2, and P003 revenue dropping from $3810.00 (254 orders) in August to $2490.00 (166 orders) in September. The H1/H2 split also aligns with the claim of a surge concentrated after the mid-month release."
      },
      "verified": true,
      "checks": [
@@ -256,410 +619,82 @@
     "Q9",
     "Q10"
    ],
-   "action": "Revert P001's price to $19 or run a controlled price-elasticity test before further increases."
-  },
-  {
-   "hypothesis": "Organic search traffic declined seasonally in September, reducing organic sessions and orders independently of the paid social issue.",
-   "id": "H4",
-   "verdict": "supported",
-   "summary": "Organic sessions, orders, and revenue all fell from August to September 2026 in a channel separate from paid social, consistent with an independent organic decline contributing to the revenue drop.",
-   "impact_usd": 1139.0,
-   "confidence": 0.94,
-   "claims": [
-    {
-     "text": "Organic sessions declined from 16482 in 2026-08 to 15467 in 2026-09 (a drop of 1015 sessions), and organic product page views fell from 29679 to 28823.",
-     "evidence": [
-      {
-       "query_id": "Q11",
-       "row": 0,
-       "column": "total_sessions",
-       "value": 16482,
-       "actual": 16482
-      },
-      {
-       "query_id": "Q11",
-       "row": 1,
-       "column": "total_sessions",
-       "value": 15467,
-       "actual": 15467
-      },
-      {
-       "query_id": "Q11",
-       "row": 0,
-       "column": "total_product_page_views",
-       "value": 29679,
-       "actual": 29679
-      },
-      {
-       "query_id": "Q11",
-       "row": 1,
-       "column": "total_product_page_views",
-       "value": 28823,
-       "actual": 28823
-      }
-     ],
-     "confidence": 0.97,
-     "llm_check": {
-      "supported": true,
-      "reason": "The row values exactly match the claimed session counts and product page view totals for both months."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "Organic orders fell from 379 to 282 and organic revenue fell from 5604.0 to 4465.0 between 2026-08 and 2026-09, a revenue decline of 1139.0.",
-     "evidence": [
-      {
-       "query_id": "Q12",
-       "row": 0,
-       "column": "total_orders",
-       "value": 379,
-       "actual": 379
-      },
-      {
-       "query_id": "Q12",
-       "row": 1,
-       "column": "total_orders",
-       "value": 282,
-       "actual": 282
-      },
-      {
-       "query_id": "Q12",
-       "row": 0,
-       "column": "total_revenue",
-       "value": 5604.0,
-       "actual": 5604.0
-      },
-      {
-       "query_id": "Q12",
-       "row": 1,
-       "column": "total_revenue",
-       "value": 4465.0,
-       "actual": 4465.0
-      }
-     ],
-     "confidence": 0.97,
-     "llm_check": {
-      "supported": false,
-      "reason": "The rows label the data as 'total_orders' and 'total_revenue', not 'organic' orders/revenue. The claim's 'organic' qualifier is not supported by the given rows."
-     },
-     "verified": false,
-     "checks": [
-      "verifier lane: The rows label the data as 'total_orders' and 'total_revenue', not 'organic' orders/revenue. The claim's 'organic' qualifier is not supported by the given rows."
-     ]
-    },
-    {
-     "text": "The organic weakness is independent of the paid social issue: paid_social orders collapsed from 196 (2026-08) to 28 (2026-09) while organic declined separately from 379 to 282 over the same months.",
-     "evidence": [
-      {
-       "query_id": "Q2",
-       "row": 6,
-       "column": "orders",
-       "value": 379,
-       "actual": 379
-      },
-      {
-       "query_id": "Q2",
-       "row": 7,
-       "column": "orders",
-       "value": 282,
-       "actual": 282
-      },
-      {
-       "query_id": "Q2",
-       "row": 10,
-       "column": "orders",
-       "value": 196,
-       "actual": 196
-      },
-      {
-       "query_id": "Q2",
-       "row": 11,
-       "column": "orders",
-       "value": 28,
-       "actual": 28
-      }
-     ],
-     "confidence": 0.9,
-     "llm_check": {
-      "supported": true,
-      "reason": "The row data confirms the exact order counts cited for paid_social (196\u219228) and organic (379\u2192282) across the same months, showing separate declines in distinct channels, which aligns with the claim of independent weakness."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    }
-   ],
-   "queries": [
-    "Q11",
-    "Q12",
-    "Q13"
-   ],
-   "action": "Accept that organic contributed independently, but note orders fell ~26% while sessions fell only ~6%, so also investigate the organic conversion-rate drop and treat the paid-social landing-page 404 spike as the larger September driver rather than attributing the drop solely to seasonality."
-  },
-  {
-   "hypothesis": "Referral partner traffic dropped in September due to expired links or reduced partner activity, cutting referral orders.",
-   "id": "H6",
-   "verdict": "supported",
-   "summary": "Referral sessions, orders, and revenue all fell from August to September 2026, consistent with partner traffic loss cutting referral orders.",
-   "impact_usd": 575.0,
-   "confidence": 0.9,
-   "claims": [
-    {
-     "text": "Referral sessions declined from 4,356 in August 2026 to 4,131 in September 2026.",
-     "evidence": [
-      {
-       "query_id": "Q23",
-       "row": 0,
-       "column": "total_sessions",
-       "value": 4356,
-       "actual": 4356
-      },
-      {
-       "query_id": "Q23",
-       "row": 1,
-       "column": "total_sessions",
-       "value": 4131,
-       "actual": 4131
-      }
-     ],
-     "confidence": 0.9,
-     "llm_check": {
-      "supported": true,
-      "reason": "The rows show total_sessions declining from 4356 in 2026-08 to 4131 in 2026-09, which exactly matches the claimed values and time period."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "Referral orders fell from 134 in August 2026 to 87 in September 2026.",
-     "evidence": [
-      {
-       "query_id": "Q2",
-       "row": 14,
-       "column": "orders",
-       "value": 134,
-       "actual": 134
-      },
-      {
-       "query_id": "Q2",
-       "row": 15,
-       "column": "orders",
-       "value": 87,
-       "actual": 87
-      }
-     ],
-     "confidence": 0.9,
-     "llm_check": {
-      "supported": true,
-      "reason": "Rows show referral orders of 134 in August 2026 and 87 in September 2026, matching the claim exactly."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "Referral revenue dropped from $1,988.00 in August 2026 to $1,413.00 in September 2026, a $575 decline.",
-     "evidence": [
-      {
-       "query_id": "Q24",
-       "row": 0,
-       "column": "total_revenue",
-       "value": 1988.0,
-       "actual": 1988.0
-      },
-      {
-       "query_id": "Q24",
-       "row": 1,
-       "column": "total_revenue",
-       "value": 1413.0,
-       "actual": 1413.0
-      }
-     ],
-     "confidence": 0.9,
-     "llm_check": {
-      "supported": false,
-      "reason": "Rows report 'total_revenue', not 'Referral revenue'; metric label mismatch."
-     },
-     "verified": false,
-     "checks": [
-      "verifier lane: Rows report 'total_revenue', not 'Referral revenue'; metric label mismatch."
-     ]
-    }
-   ],
-   "queries": [
-    "Q23",
-    "Q24",
-    "Q25"
-   ],
-   "action": "Audit referral partner links for expiration or breakage (notably around the Sept 15 P003 release) and re-engage partners to restore referral traffic."
-  },
-  {
-   "hypothesis": "Email channel engagement declined in September (fewer sends or list fatigue), reducing email-sourced orders.",
-   "id": "H7",
-   "verdict": "supported",
-   "summary": "Email sessions, orders, and revenue all declined from August to September 2026, consistent with reduced email engagement, though the email revenue impact is only about $103.",
-   "impact_usd": 103.0,
-   "confidence": 0.95,
-   "claims": [
-    {
-     "text": "Email web sessions fell from 5,669 in August 2026 to 5,387 in September 2026.",
-     "evidence": [
-      {
-       "query_id": "Q26",
-       "row": 0,
-       "column": "email_sessions",
-       "value": 5669.0,
-       "actual": 5669.0
-      },
-      {
-       "query_id": "Q26",
-       "row": 1,
-       "column": "email_sessions",
-       "value": 5387.0,
-       "actual": 5387.0
-      }
-     ],
-     "confidence": 0.95,
-     "llm_check": {
-      "supported": true,
-      "reason": "Values match and show a decrease."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "Email order count fell from 229 in August 2026 to 200 in September 2026.",
-     "evidence": [
-      {
-       "query_id": "Q28",
-       "row": 0,
-       "column": "email_order_count",
-       "value": 229,
-       "actual": 229
-      },
-      {
-       "query_id": "Q28",
-       "row": 1,
-       "column": "email_order_count",
-       "value": 200,
-       "actual": 200
-      }
-     ],
-     "confidence": 0.95,
-     "llm_check": {
-      "supported": true,
-      "reason": "The rows directly show email_order_count decreasing from 229 in 2026-08 to 200 in 2026-09, matching the claim exactly."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "Email-sourced revenue fell from 3,377 in August 2026 to 3,274 in September 2026.",
-     "evidence": [
-      {
-       "query_id": "Q27",
-       "row": 0,
-       "column": "email_revenue",
-       "value": 3377.0,
-       "actual": 3377.0
-      },
-      {
-       "query_id": "Q27",
-       "row": 1,
-       "column": "email_revenue",
-       "value": 3274.0,
-       "actual": 3274.0
-      }
-     ],
-     "confidence": 0.95,
-     "llm_check": {
-      "supported": true,
-      "reason": "The rows directly show email revenue of 3377 in August 2026 and 3274 in September 2026, confirming the stated decline."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    }
-   ],
-   "queries": [
-    "Q26",
-    "Q27",
-    "Q28"
-   ],
-   "action": "Confirm email send volume and list fatigue as a minor contributor; prioritize larger September drivers such as paid_social landing-page 404s and P003 corrupted-file refunds."
+   "action": "Roll back the P003 v2.0 packer change, restore the previous working zip build, verify download integrity, and proactively refund affected customers."
   }
  ],
  "rejected": [
   {
-   "hypothesis": "The September revenue drop was concentrated in specific countries (e.g., US or GB) due to local seasonality or supply issues rather than a global decline.",
+   "hypothesis": "A spike in refunds (especially 'file corrupted' on P003 and general 'not as described') materially reduced net revenue in September.",
    "id": "H5",
    "verdict": "rejected",
-   "summary": "US and GB together explain 66.8% of the August-to-September revenue decline, but every tracked country fell, so the drop was broad-based across all observed markets rather than confined to specific countries.",
+   "summary": "Rejected: P003 file-corrupted refunds spiked to 390.0 from 0.0, but not-as-described refunds fell from 95.0 to 15.0 and total refunds rose only from 423.0 to 707.0 against a gross revenue decline from 13835.0 to 9584.0, so refunds were not the material driver of the September net revenue drop.",
    "impact_usd": 0.0,
-   "confidence": 0.97,
+   "confidence": 0.92,
    "claims": [
     {
-     "text": "US and GB combined account for 66.8% of the total revenue drop (US -$1,593 at 37.47% plus GB -$1,247 at 29.33% of the $4,251 total decline from $13,835 to $9,584), showing the decline is largest in the two biggest markets.",
+     "text": "September gross revenue was 9584.0 versus 13835.0 in August, while targeted refunds rose from 95.0 to 405.0; file-corrupted P003 refunds were 390.0 in September versus 0.0 in August, but not-as-described refunds fell from 95.0 to 15.0.",
      "evidence": [
       {
-       "query_id": "Q20",
-       "row": 0,
-       "column": "revenue_usd",
-       "value": 13835.0,
-       "actual": 13835.0
-      },
-      {
-       "query_id": "Q20",
+       "query_id": "Q22",
        "row": 1,
-       "column": "revenue_usd",
+       "column": "gross_revenue_usd",
        "value": 9584.0,
        "actual": 9584.0
       },
       {
        "query_id": "Q22",
-       "row": 5,
-       "column": "rev_change_usd",
-       "value": -1593.0,
-       "actual": -1593.0
+       "row": 0,
+       "column": "gross_revenue_usd",
+       "value": 13835.0,
+       "actual": 13835.0
       },
       {
-       "query_id": "Q22",
-       "row": 5,
-       "column": "pct_of_total_drop",
-       "value": 37.47,
-       "actual": 37.47
+       "query_id": "Q24",
+       "row": 1,
+       "column": "targeted_refund_usd",
+       "value": 405.0,
+       "actual": 405.0
       },
       {
-       "query_id": "Q22",
-       "row": 4,
-       "column": "rev_change_usd",
-       "value": -1247.0,
-       "actual": -1247.0
+       "query_id": "Q24",
+       "row": 0,
+       "column": "targeted_refund_usd",
+       "value": 95.0,
+       "actual": 95.0
       },
       {
-       "query_id": "Q22",
-       "row": 4,
-       "column": "pct_of_total_drop",
-       "value": 29.33,
-       "actual": 29.33
+       "query_id": "Q24",
+       "row": 1,
+       "column": "file_corrupted_p003_usd",
+       "value": 390.0,
+       "actual": 390.0
+      },
+      {
+       "query_id": "Q24",
+       "row": 0,
+       "column": "file_corrupted_p003_usd",
+       "value": 0.0,
+       "actual": 0.0
+      },
+      {
+       "query_id": "Q24",
+       "row": 1,
+       "column": "not_as_described_usd",
+       "value": 15.0,
+       "actual": 15.0
+      },
+      {
+       "query_id": "Q24",
+       "row": 0,
+       "column": "not_as_described_usd",
+       "value": 95.0,
+       "actual": 95.0
       }
      ],
      "confidence": 0.97,
      "llm_check": {
       "supported": true,
-      "reason": "The rows confirm US at 37.47% and GB at 29.33%, which sum to exactly 66.8% of the $4,251 total decline from $13,835 to $9,584, matching the claim precisely."
+      "reason": "All claim values (gross revenue, targeted refunds, file-corrupted P003, not-as-described) are directly present and consistent with the row data."
      },
      "verified": true,
      "checks": [
@@ -667,330 +702,556 @@
      ]
     },
     {
-     "text": "All six tracked countries recorded negative revenue changes (US -$1,593, GB -$1,247, IN -$513, AU -$351, CA -$295, DE -$252), so the September decline was global across observed markets rather than isolated to specific countries.",
+     "text": "Net revenue after targeted refunds fell from 13740.0 in August to 9179.0 in September; the targeted-refund share rose from 0.0068666425731839535 to 0.04225792988313856, but the absolute September targeted refund amount was 405.0 against gross revenue of 9584.0.",
      "evidence": [
       {
-       "query_id": "Q22",
-       "row": 5,
-       "column": "rev_change_usd",
-       "value": -1593.0,
-       "actual": -1593.0
+       "query_id": "Q24",
+       "row": 0,
+       "column": "net_revenue_usd",
+       "value": 13740.0,
+       "actual": 13740.0
       },
       {
-       "query_id": "Q22",
-       "row": 4,
-       "column": "rev_change_usd",
-       "value": -1247.0,
-       "actual": -1247.0
-      },
-      {
-       "query_id": "Q22",
-       "row": 3,
-       "column": "rev_change_usd",
-       "value": -513.0,
-       "actual": -513.0
-      },
-      {
-       "query_id": "Q22",
-       "row": 2,
-       "column": "rev_change_usd",
-       "value": -351.0,
-       "actual": -351.0
-      },
-      {
-       "query_id": "Q22",
+       "query_id": "Q24",
        "row": 1,
-       "column": "rev_change_usd",
-       "value": -295.0,
-       "actual": -295.0
+       "column": "net_revenue_usd",
+       "value": 9179.0,
+       "actual": 9179.0
+      },
+      {
+       "query_id": "Q24",
+       "row": 0,
+       "column": "targeted_refund_share",
+       "value": 0.0068666425731839535,
+       "actual": 0.0068666425731839535
+      },
+      {
+       "query_id": "Q24",
+       "row": 1,
+       "column": "targeted_refund_share",
+       "value": 0.04225792988313856,
+       "actual": 0.04225792988313856
+      },
+      {
+       "query_id": "Q24",
+       "row": 1,
+       "column": "targeted_refund_usd",
+       "value": 405.0,
+       "actual": 405.0
+      },
+      {
+       "query_id": "Q24",
+       "row": 1,
+       "column": "gross_revenue_usd",
+       "value": 9584.0,
+       "actual": 9584.0
+      }
+     ],
+     "confidence": 0.9,
+     "llm_check": {
+      "supported": true,
+      "reason": "All claim elements are directly confirmed by the row data: net revenue fell from 13740.0 to 9179.0, targeted-refund share rose from 0.0068666425731839535 to 0.04225792988313856, and September's targeted refund was 405.0 against gross revenue of 9584.0."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "Total refunds also rose only from 423.0 to 707.0, so the refund increase cannot account for the gross revenue decline from 13835.0 to 9584.0; the general not-as-described component did not spike.",
+     "evidence": [
+      {
+       "query_id": "Q23",
+       "row": 0,
+       "column": "total_refund_usd",
+       "value": 423.0,
+       "actual": 423.0
+      },
+      {
+       "query_id": "Q23",
+       "row": 1,
+       "column": "total_refund_usd",
+       "value": 707.0,
+       "actual": 707.0
       },
       {
        "query_id": "Q22",
        "row": 0,
-       "column": "rev_change_usd",
-       "value": -252.0,
-       "actual": -252.0
+       "column": "gross_revenue_usd",
+       "value": 13835.0,
+       "actual": 13835.0
+      },
+      {
+       "query_id": "Q22",
+       "row": 1,
+       "column": "gross_revenue_usd",
+       "value": 9584.0,
+       "actual": 9584.0
+      },
+      {
+       "query_id": "Q24",
+       "row": 1,
+       "column": "not_as_described_usd",
+       "value": 15.0,
+       "actual": 15.0
+      },
+      {
+       "query_id": "Q24",
+       "row": 0,
+       "column": "not_as_described_usd",
+       "value": 95.0,
+       "actual": 95.0
       }
      ],
-     "confidence": 0.97,
-     "verified": false,
+     "confidence": 0.9,
+     "llm_check": {
+      "supported": true,
+      "reason": "Refunds rose from 423.0 to 707.0 (increase of 284) while gross revenue declined from 13835.0 to 9584.0 (decline of 4251), so the refund increase cannot account for the revenue drop; not-as-described component decreased from 95.0 to 15.0, confirming it did not spike."
+     },
+     "verified": true,
      "checks": [
-      "ungrounded numbers in text: [513.0, 295.0]"
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q22",
+    "Q23",
+    "Q24"
+   ],
+   "action": "Do not treat refunds as the primary cause of the September revenue drop; prioritize investigating the broader sales/channel decline while separately fixing the P003 file-corruption/download issue after the 2026-09-15 packer rebuild."
+  },
+  {
+   "hypothesis": "The revenue drop was driven by specific countries (e.g., US or IN) due to local seasonality, while other countries were stable or up.",
+   "id": "H6",
+   "verdict": "rejected",
+   "summary": "The September 2026 revenue drop was broad-based: every country (AU, CA, DE, GB, IN, US) fell month-over-month from August to September, with no market stable or up, so it was not driven by specific countries while others were unaffected.",
+   "impact_usd": 0.0,
+   "confidence": 1.0,
+   "claims": [
+    {
+     "text": "All six countries recorded lower September 2026 revenue than August 2026 revenue: US fell from 4765.0 to 3172.0 (pct_change -0.3343126967471144), IN from 1778.0 to 1265.0 (pct_change -0.28852643419572555), GB from 3755.0 to 2508.0 (pct_change -0.3320905459387483), AU from 1146.0 to 795.0 (pct_change -0.306282722513089), DE from 1089.0 to 837.0 (pct_change -0.23140495867768596), and CA from 1302.0 to 1007.0 (pct_change -0.22657450076804916).",
+     "evidence": [
+      {
+       "query_id": "Q26",
+       "row": 5,
+       "column": "aug_rev",
+       "value": 4765.0,
+       "actual": 4765.0
+      },
+      {
+       "query_id": "Q26",
+       "row": 5,
+       "column": "sep_rev",
+       "value": 3172.0,
+       "actual": 3172.0
+      },
+      {
+       "query_id": "Q26",
+       "row": 5,
+       "column": "pct_change",
+       "value": -0.3343126967471144,
+       "actual": -0.3343126967471144
+      },
+      {
+       "query_id": "Q26",
+       "row": 4,
+       "column": "aug_rev",
+       "value": 1778.0,
+       "actual": 1778.0
+      },
+      {
+       "query_id": "Q26",
+       "row": 4,
+       "column": "sep_rev",
+       "value": 1265.0,
+       "actual": 1265.0
+      },
+      {
+       "query_id": "Q26",
+       "row": 4,
+       "column": "pct_change",
+       "value": -0.28852643419572555,
+       "actual": -0.28852643419572555
+      },
+      {
+       "query_id": "Q26",
+       "row": 3,
+       "column": "aug_rev",
+       "value": 3755.0,
+       "actual": 3755.0
+      },
+      {
+       "query_id": "Q26",
+       "row": 3,
+       "column": "sep_rev",
+       "value": 2508.0,
+       "actual": 2508.0
+      },
+      {
+       "query_id": "Q26",
+       "row": 3,
+       "column": "pct_change",
+       "value": -0.3320905459387483,
+       "actual": -0.3320905459387483
+      },
+      {
+       "query_id": "Q26",
+       "row": 0,
+       "column": "aug_rev",
+       "value": 1146.0,
+       "actual": 1146.0
+      },
+      {
+       "query_id": "Q26",
+       "row": 0,
+       "column": "sep_rev",
+       "value": 795.0,
+       "actual": 795.0
+      },
+      {
+       "query_id": "Q26",
+       "row": 0,
+       "column": "pct_change",
+       "value": -0.306282722513089,
+       "actual": -0.306282722513089
+      },
+      {
+       "query_id": "Q26",
+       "row": 2,
+       "column": "aug_rev",
+       "value": 1089.0,
+       "actual": 1089.0
+      },
+      {
+       "query_id": "Q26",
+       "row": 2,
+       "column": "sep_rev",
+       "value": 837.0,
+       "actual": 837.0
+      },
+      {
+       "query_id": "Q26",
+       "row": 2,
+       "column": "pct_change",
+       "value": -0.23140495867768596,
+       "actual": -0.23140495867768596
+      },
+      {
+       "query_id": "Q26",
+       "row": 1,
+       "column": "aug_rev",
+       "value": 1302.0,
+       "actual": 1302.0
+      },
+      {
+       "query_id": "Q26",
+       "row": 1,
+       "column": "sep_rev",
+       "value": 1007.0,
+       "actual": 1007.0
+      },
+      {
+       "query_id": "Q26",
+       "row": 1,
+       "column": "pct_change",
+       "value": -0.22657450076804916,
+       "actual": -0.22657450076804916
+      }
+     ],
+     "confidence": 1.0,
+     "llm_check": {
+      "supported": true,
+      "reason": "All six countries in the data show September 2026 revenue lower than August 2026 revenue, with negative percentage changes matching the claim exactly."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "No country was stable or up in September versus August; every pct_change value is negative, contradicting the claim that only specific countries (e.g., US or IN) drove the drop while others were stable or up.",
+     "evidence": [
+      {
+       "query_id": "Q26",
+       "row": 0,
+       "column": "pct_change",
+       "value": -0.306282722513089,
+       "actual": -0.306282722513089
+      },
+      {
+       "query_id": "Q26",
+       "row": 1,
+       "column": "pct_change",
+       "value": -0.22657450076804916,
+       "actual": -0.22657450076804916
+      },
+      {
+       "query_id": "Q26",
+       "row": 2,
+       "column": "pct_change",
+       "value": -0.23140495867768596,
+       "actual": -0.23140495867768596
+      },
+      {
+       "query_id": "Q26",
+       "row": 3,
+       "column": "pct_change",
+       "value": -0.3320905459387483,
+       "actual": -0.3320905459387483
+      },
+      {
+       "query_id": "Q26",
+       "row": 4,
+       "column": "pct_change",
+       "value": -0.28852643419572555,
+       "actual": -0.28852643419572555
+      },
+      {
+       "query_id": "Q26",
+       "row": 5,
+       "column": "pct_change",
+       "value": -0.3343126967471144,
+       "actual": -0.3343126967471144
+      }
+     ],
+     "confidence": 1.0,
+     "llm_check": {
+      "supported": true,
+      "reason": "All six countries (AU, CA, DE, GB, IN, US) have negative pct_change values, confirming no country was stable or up in September versus August, and directly contradicting the claim that only specific countries drove the drop while others remained stable or up."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "The largest declines were not unique to US or IN; GB (pct_change -0.3320905459387483) and AU (pct_change -0.306282722513089) declined by similar or greater proportions than IN (pct_change -0.28852643419572555).",
+     "evidence": [
+      {
+       "query_id": "Q26",
+       "row": 3,
+       "column": "pct_change",
+       "value": -0.3320905459387483,
+       "actual": -0.3320905459387483
+      },
+      {
+       "query_id": "Q26",
+       "row": 0,
+       "column": "pct_change",
+       "value": -0.306282722513089,
+       "actual": -0.306282722513089
+      },
+      {
+       "query_id": "Q26",
+       "row": 4,
+       "column": "pct_change",
+       "value": -0.28852643419572555,
+       "actual": -0.28852643419572555
+      }
+     ],
+     "confidence": 1.0,
+     "llm_check": {
+      "supported": true,
+      "reason": "GB (-0.3321) and AU (-0.3063) both have more negative pct_change values than IN (-0.2885), confirming that the largest declines were not unique to US or IN."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q25",
+    "Q26"
+   ],
+   "action": "Investigate platform-wide causes rather than country-specific seasonality, such as the September 1 P001 price increase (19.0 -> 29.0), the September 15 P003 release, or the September spike in landing 404s (8408 vs 44 in August) and collapse in paid_social traffic."
+  },
+  {
+   "hypothesis": "The revenue drop was caused by a product-mix shift toward lower-priced SKUs (e.g., P005) rather than lower overall demand.",
+   "id": "H7",
+   "verdict": "rejected",
+   "summary": "Rejected: average order value rose from 14.749466950959489 in 2026-08 to 16.053601340033502 in 2026-09 while orders and revenue fell across SKUs, so the September drop reflects lower demand rather than a shift to lower-priced P005.",
+   "impact_usd": 0.0,
+   "confidence": 0.94,
+   "claims": [
+    {
+     "text": "Average order value increased from 14.749466950959489 in 2026-08 to 16.053601340033502 in 2026-09, inconsistent with a shift to lower-priced orders driving the revenue drop.",
+     "evidence": [
+      {
+       "query_id": "Q20",
+       "row": 0,
+       "column": "avg_order_value",
+       "value": 14.749466950959489,
+       "actual": 14.749466950959489
+      },
+      {
+       "query_id": "Q20",
+       "row": 1,
+       "column": "avg_order_value",
+       "value": 16.053601340033502,
+       "actual": 16.053601340033502
+      }
+     ],
+     "confidence": 0.96,
+     "llm_check": {
+      "supported": true,
+      "reason": "Rows verify the average order value increase from 14.75 to 16.05, supporting the claim's stated trend."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "Order volume fell broadly: P001 orders dropped from 269 to 115 with revenue from 5111.0 to 3335.0, P003 from 254 to 166 with revenue from 3810.0 to 2490.0, and P005 from 102 to 75 with revenue from 714.0 to 525.0.",
+     "evidence": [
+      {
+       "query_id": "Q1",
+       "row": 2,
+       "column": "orders",
+       "value": 269,
+       "actual": 269
+      },
+      {
+       "query_id": "Q1",
+       "row": 3,
+       "column": "orders",
+       "value": 115,
+       "actual": 115
+      },
+      {
+       "query_id": "Q1",
+       "row": 2,
+       "column": "revenue_usd",
+       "value": 5111.0,
+       "actual": 5111.0
+      },
+      {
+       "query_id": "Q1",
+       "row": 3,
+       "column": "revenue_usd",
+       "value": 3335.0,
+       "actual": 3335.0
+      },
+      {
+       "query_id": "Q1",
+       "row": 10,
+       "column": "orders",
+       "value": 254,
+       "actual": 254
+      },
+      {
+       "query_id": "Q1",
+       "row": 11,
+       "column": "orders",
+       "value": 166,
+       "actual": 166
+      },
+      {
+       "query_id": "Q1",
+       "row": 10,
+       "column": "revenue_usd",
+       "value": 3810.0,
+       "actual": 3810.0
+      },
+      {
+       "query_id": "Q1",
+       "row": 11,
+       "column": "revenue_usd",
+       "value": 2490.0,
+       "actual": 2490.0
+      },
+      {
+       "query_id": "Q1",
+       "row": 18,
+       "column": "orders",
+       "value": 102,
+       "actual": 102
+      },
+      {
+       "query_id": "Q1",
+       "row": 19,
+       "column": "orders",
+       "value": 75,
+       "actual": 75
+      },
+      {
+       "query_id": "Q1",
+       "row": 18,
+       "column": "revenue_usd",
+       "value": 714.0,
+       "actual": 714.0
+      },
+      {
+       "query_id": "Q1",
+       "row": 19,
+       "column": "revenue_usd",
+       "value": 525.0,
+       "actual": 525.0
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "The data rows confirm the order and revenue drops for P001, P003, and P005 from August to September 2026, matching the claim exactly."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "P005's share of orders rose only from 0.1087420042643923 to 0.1256281407035176 while its revenue fell from 714.0 to 525.0, so the slight mix change cannot explain the revenue decline.",
+     "evidence": [
+      {
+       "query_id": "Q21",
+       "row": 4,
+       "column": "share_of_orders",
+       "value": 0.1087420042643923,
+       "actual": 0.1087420042643923
+      },
+      {
+       "query_id": "Q21",
+       "row": 9,
+       "column": "share_of_orders",
+       "value": 0.1256281407035176,
+       "actual": 0.1256281407035176
+      },
+      {
+       "query_id": "Q1",
+       "row": 18,
+       "column": "revenue_usd",
+       "value": 714.0,
+       "actual": 714.0
+      },
+      {
+       "query_id": "Q1",
+       "row": 19,
+       "column": "revenue_usd",
+       "value": 525.0,
+       "actual": 525.0
+      }
+     ],
+     "confidence": 0.9,
+     "llm_check": {
+      "supported": true,
+      "reason": "The rows confirm P005's order share rose from 0.1087 to 0.1256 while revenue fell from 714.0 to 525.0, directly supporting the claim that the slight mix change cannot explain the revenue decline."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
      ]
     }
    ],
    "queries": [
     "Q20",
-    "Q21",
-    "Q22"
+    "Q21"
    ],
-   "action": "Stop looking for country-specific seasonality or supply issues; instead investigate common cross-market drivers such as the September 1 P001 price increase ($19 to $29), the P003 release/download problems, and the sharp paid_social session/404 collapse in September."
+   "action": "Stop attributing the drop to P005/low-priced mix; investigate the broad September order-volume decline, including paid_social/session collapse and 404s, plus P003 download/corrupted-file refunds."
   }
  ],
- "unverified_or_inconclusive": [
-  {
-   "hypothesis": "The P003 v2.0 release on 2026-09-15 rebuilt zip files with a new packer, producing corrupted downloads that drove a spike in 'file corrupted' refunds and 'download' support tickets, reducing P003 net revenue and conversion in September.",
-   "id": "H2",
-   "verdict": "supported",
-   "summary": "Supported: the 2026-09-15 P003 v2.0 packer change coincides with a September spike to 26 'file corrupted' refunds ($390.00) and 26 download tickets for P003 (zero in August), alongside a P003 revenue drop from $3,810.00/254 orders in August to $2,490.00/166 orders in September.",
-   "impact_usd": 390.0,
-   "confidence": 0.0,
-   "claims": [
-    {
-     "text": "P003 released v2.0 on 2026-09-15 with zips rebuilt by a new packer (Q6), and September P003 'file corrupted' refunds spiked to 26 refunds totaling $390.00 while August had none (Q17 returns only the September row; Q3 lists only non-corrupted reasons for P003 in August).",
-     "evidence": [
-      {
-       "query_id": "Q6",
-       "row": 2,
-       "column": "date",
-       "value": "2026-09-15",
-       "actual": "2026-09-15"
-      },
-      {
-       "query_id": "Q6",
-       "row": 2,
-       "column": "detail",
-       "value": "2.0: new scrapers bundled; zip rebuilt with new packer",
-       "actual": "2.0: new scrapers bundled; zip rebuilt with new packer"
-      },
-      {
-       "query_id": "Q17",
-       "row": 0,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
-       "query_id": "Q17",
-       "row": 0,
-       "column": "refund_count",
-       "value": 26,
-       "actual": 26
-      },
-      {
-       "query_id": "Q17",
-       "row": 0,
-       "column": "total_refund_usd",
-       "value": 390.0,
-       "actual": 390.0
-      },
-      {
-       "query_id": "Q3",
-       "row": 23,
-       "column": "product_id",
-       "value": "P003",
-       "actual": "P003"
-      },
-      {
-       "query_id": "Q3",
-       "row": 23,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
-       "query_id": "Q3",
-       "row": 23,
-       "column": "reason",
-       "value": "file corrupted",
-       "actual": "changed mind"
-      },
-      {
-       "query_id": "Q3",
-       "row": 23,
-       "column": "refunds",
-       "value": 26,
-       "actual": 2
-      },
-      {
-       "query_id": "Q3",
-       "row": 23,
-       "column": "refund_usd",
-       "value": 390.0,
-       "actual": 30.0
-      }
-     ],
-     "confidence": 0.95,
-     "verified": false,
-     "checks": [
-      "Q3[23].reason=changed mind != cited file corrupted",
-      "Q3[23].refunds=2 != cited 26",
-      "Q3[23].refund_usd=30.0 != cited 390.0"
-     ]
-    },
-    {
-     "text": "P003 download support tickets rose to 26 in September, matching the 26 corrupted refunds one-for-one, and Q4 shows P003 September refunds concentrated in H2 (27 refunds after the 9/15 release vs 5 in H1).",
-     "evidence": [
-      {
-       "query_id": "Q18",
-       "row": 0,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
-       "query_id": "Q18",
-       "row": 0,
-       "column": "ticket_count",
-       "value": 26,
-       "actual": 26
-      },
-      {
-       "query_id": "Q5",
-       "row": 6,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
-       "query_id": "Q5",
-       "row": 6,
-       "column": "product_id",
-       "value": "P003",
-       "actual": "P003"
-      },
-      {
-       "query_id": "Q5",
-       "row": 6,
-       "column": "category",
-       "value": "download",
-       "actual": "download"
-      },
-      {
-       "query_id": "Q5",
-       "row": 6,
-       "column": "tickets",
-       "value": 26,
-       "actual": 26
-      },
-      {
-       "query_id": "Q4",
-       "row": 11,
-       "column": "half",
-       "value": "H1",
-       "actual": "H1"
-      },
-      {
-       "query_id": "Q4",
-       "row": 11,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
-       "query_id": "Q4",
-       "row": 11,
-       "column": "product_id",
-       "value": "P003",
-       "actual": "P003"
-      },
-      {
-       "query_id": "Q4",
-       "row": 11,
-       "column": "refunds",
-       "value": 5,
-       "actual": 5
-      },
-      {
-       "query_id": "Q4",
-       "row": 16,
-       "column": "half",
-       "value": "H2",
-       "actual": "H2"
-      },
-      {
-       "query_id": "Q4",
-       "row": 16,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
-       "query_id": "Q4",
-       "row": 16,
-       "column": "product_id",
-       "value": "P003",
-       "actual": "P003"
-      },
-      {
-       "query_id": "Q4",
-       "row": 16,
-       "column": "refunds",
-       "value": 27,
-       "actual": 27
-      }
-     ],
-     "confidence": 0.9,
-     "verified": false,
-     "checks": [
-      "ungrounded numbers in text: [15.0]"
-     ]
-    },
-    {
-     "text": "P003 revenue and orders fell from $3,810.00 / 254 orders in August to $2,490.00 / 166 orders in September, consistent with corrupted downloads suppressing net revenue and conversion.",
-     "evidence": [
-      {
-       "query_id": "Q19",
-       "row": 0,
-       "column": "month",
-       "value": "2026-08",
-       "actual": "2026-08"
-      },
-      {
-       "query_id": "Q19",
-       "row": 0,
-       "column": "order_count",
-       "value": 254,
-       "actual": 254
-      },
-      {
-       "query_id": "Q19",
-       "row": 0,
-       "column": "total_revenue_usd",
-       "value": 3810.0,
-       "actual": 3810.0
-      },
-      {
-       "query_id": "Q19",
-       "row": 1,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
-       "query_id": "Q19",
-       "row": 1,
-       "column": "order_count",
-       "value": 166,
-       "actual": 166
-      },
-      {
-       "query_id": "Q19",
-       "row": 1,
-       "column": "total_revenue_usd",
-       "value": 2490.0,
-       "actual": 2490.0
-      }
-     ],
-     "confidence": 0.85,
-     "llm_check": {
-      "supported": false,
-      "reason": "Rows confirm the revenue/order decline but contain no data on corrupted downloads or their causal role."
-     },
-     "verified": false,
-     "checks": [
-      "verifier lane: Rows confirm the revenue/order decline but contain no data on corrupted downloads or their causal role."
-     ]
-    }
-   ],
-   "queries": [
-    "Q17",
-    "Q18",
-    "Q19"
-   ],
-   "action": "Roll back or fix the P003 v2.0 packer, re-deliver working downloads to affected customers, and monitor 'file corrupted' refunds and download tickets returning to the August baseline."
-  }
- ],
+ "unverified_or_inconclusive": [],
  "queries": {
   "Q1": {
    "id": "Q1",
@@ -1121,7 +1382,7 @@
    ],
    "row_count": 20,
    "truncated": false,
-   "elapsed_s": 3.67,
+   "elapsed_s": 0.32,
    "result_hash": "42a2230fbcf4",
    "ok": true
   },
@@ -1214,7 +1475,7 @@
    ],
    "row_count": 16,
    "truncated": false,
-   "elapsed_s": 0.55,
+   "elapsed_s": 0.28,
    "result_hash": "8facf007dca6",
    "ok": true
   },
@@ -1437,7 +1698,7 @@
    ],
    "row_count": 30,
    "truncated": false,
-   "elapsed_s": 1.4,
+   "elapsed_s": 0.32,
    "result_hash": "589e1360a00f",
    "ok": true
   },
@@ -1558,7 +1819,7 @@
    ],
    "row_count": 18,
    "truncated": false,
-   "elapsed_s": 0.62,
+   "elapsed_s": 0.26,
    "result_hash": "7d8c1435db5e",
    "ok": true
   },
@@ -1625,7 +1886,7 @@
    ],
    "row_count": 9,
    "truncated": false,
-   "elapsed_s": 0.56,
+   "elapsed_s": 0.34,
    "result_hash": "0fa545fe74c6",
    "ok": true
   },
@@ -1656,7 +1917,7 @@
    ],
    "row_count": 3,
    "truncated": false,
-   "elapsed_s": 0.44,
+   "elapsed_s": 0.22,
    "result_hash": "c6dec58958ba",
    "ok": true
   },
@@ -1697,225 +1958,15 @@
    ],
    "row_count": 4,
    "truncated": false,
-   "elapsed_s": 0.64,
+   "elapsed_s": 0.29,
    "result_hash": "06520884c3c2",
    "ok": true
   },
   "Q8": {
    "id": "Q8",
-   "hypothesis": "H3",
-   "purpose": "Confirm the price change for product P001 on 2026-09-01",
-   "sql": "SELECT date, old_price_usd, new_price_usd\nFROM WHYDROP_FILES.pricing_changes\nWHERE product_id = 'P001' AND date = '2026-09-01';",
-   "rows": [
-    {
-     "date": "2026-09-01",
-     "old_price_usd": 19.0,
-     "new_price_usd": 29.0
-    }
-   ],
-   "row_count": 1,
-   "truncated": false,
-   "elapsed_s": 0.12,
-   "result_hash": "5873b99e70a2",
-   "ok": true
-  },
-  "Q9": {
-   "id": "Q9",
-   "hypothesis": "H3",
-   "purpose": "Compare order volume, total quantity and average unit price for P001 in August vs September 2026",
-   "sql": "SELECT\n  date_format(to_date(date), 'yyyy-MM') AS month,\n  COUNT(DISTINCT order_id) AS orders,\n  SUM(quantity) AS total_quantity,\n  AVG(CAST(unit_price_usd AS DOUBLE)) AS avg_unit_price_usd\nFROM WHYDROP_FILES.orders\nWHERE product_id = 'P001'\n  AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY date_format(to_date(date), 'yyyy-MM')\nORDER BY month;",
-   "rows": [
-    {
-     "month": "2026-08",
-     "orders": 269,
-     "total_quantity": 269,
-     "avg_unit_price_usd": 19.0
-    },
-    {
-     "month": "2026-09",
-     "orders": 115,
-     "total_quantity": 115,
-     "avg_unit_price_usd": 29.0
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.41,
-   "result_hash": "7eb650dfe3c4",
-   "ok": true
-  },
-  "Q10": {
-   "id": "Q10",
-   "hypothesis": "H3",
-   "purpose": "Compare revenue and revenue per order for P001 in August vs September 2026",
-   "sql": "SELECT\n  date_format(to_date(date), 'yyyy-MM') AS month,\n  SUM(CAST(unit_price_usd AS DOUBLE) * quantity) AS revenue_usd,\n  COUNT(DISTINCT order_id) AS orders,\n  SUM(CAST(unit_price_usd AS DOUBLE) * quantity) / COUNT(DISTINCT order_id) AS revenue_per_order_usd\nFROM WHYDROP_FILES.orders\nWHERE product_id = 'P001'\n  AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY date_format(to_date(date), 'yyyy-MM')\nORDER BY month;",
-   "rows": [
-    {
-     "month": "2026-08",
-     "revenue_usd": 5111.0,
-     "orders": 269,
-     "revenue_per_order_usd": 19.0
-    },
-    {
-     "month": "2026-09",
-     "revenue_usd": 3335.0,
-     "orders": 115,
-     "revenue_per_order_usd": 29.0
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.36,
-   "result_hash": "525c8fa4064b",
-   "ok": true
-  },
-  "Q11": {
-   "id": "Q11",
-   "hypothesis": "H4",
-   "purpose": "Compare organic sessions and product page views between August and September 2026",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(sessions) AS total_sessions,\n       SUM(product_page_views) AS total_product_page_views\nFROM `WHYDROP_FILES`.web_traffic\nWHERE source = 'organic'\n  AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY month\nORDER BY month;",
-   "rows": [
-    {
-     "month": "2026-08",
-     "total_sessions": 16482,
-     "total_product_page_views": 29679
-    },
-    {
-     "month": "2026-09",
-     "total_sessions": 15467,
-     "total_product_page_views": 28823
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.18,
-   "result_hash": "ae6ad68c43c1",
-   "ok": true
-  },
-  "Q12": {
-   "id": "Q12",
-   "hypothesis": "H4",
-   "purpose": "Compare organic orders and revenue between August and September 2026",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(quantity) AS total_orders,\n       SUM(unit_price_usd * quantity) AS total_revenue\nFROM `WHYDROP_FILES`.orders\nWHERE channel = 'organic'\n  AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY month\nORDER BY month;",
-   "rows": [
-    {
-     "month": "2026-08",
-     "total_orders": 379,
-     "total_revenue": 5604.0
-    },
-    {
-     "month": "2026-09",
-     "total_orders": 282,
-     "total_revenue": 4465.0
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.22,
-   "result_hash": "78c263ab33a4",
-   "ok": true
-  },
-  "Q13": {
-   "id": "Q13",
-   "hypothesis": "H4",
-   "purpose": "Assess whether organic traffic decline aligns with organic order decline by comparing sessions to orders and revenue",
-   "sql": "SELECT t.month,\n       t.total_sessions,\n       t.total_product_page_views,\n       o.total_orders,\n       o.total_revenue\nFROM (\n    SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n           SUM(sessions) AS total_sessions,\n           SUM(product_page_views) AS total_product_page_views\n    FROM `WHYDROP_FILES`.web_traffic\n    WHERE source = 'organic'\n      AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\n    GROUP BY month\n) t\nJOIN (\n    SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n           SUM(quantity) AS total_orders,\n           SUM(unit_price_usd * quantity) AS total_revenue\n    FROM `WHYDROP_FILES`.orders\n    WHERE channel = 'organic'\n      AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\n    GROUP BY month\n) o\nON t.month = o.month\nORDER BY t.month;",
-   "rows": [
-    {
-     "total_sessions": 16482,
-     "total_product_page_views": 29679,
-     "total_orders": 379,
-     "month": "2026-08",
-     "total_revenue": 5604.0
-    },
-    {
-     "total_sessions": 15467,
-     "total_product_page_views": 28823,
-     "total_orders": 282,
-     "month": "2026-09",
-     "total_revenue": 4465.0
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.35,
-   "result_hash": "79885d25a8ed",
-   "ok": true
-  },
-  "Q14": {
-   "id": "Q14",
-   "hypothesis": "H1",
-   "purpose": "Compare paid_social sessions and landing_404s in August vs September",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(sessions) AS sessions,\n       SUM(landing_404s) AS landing_404s\nFROM WHYDROP_FILES.web_traffic\nWHERE source = 'paid_social'\n  AND to_date(date) >= '2026-08-01'\n  AND to_date(date) < '2026-10-01'\nGROUP BY month\nORDER BY month",
-   "rows": [
-    {
-     "month": "2026-08",
-     "sessions": 11326,
-     "landing_404s": 44
-    },
-    {
-     "month": "2026-09",
-     "sessions": 2666,
-     "landing_404s": 8408
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.2,
-   "result_hash": "a510f680d3b3",
-   "ok": true
-  },
-  "Q15": {
-   "id": "Q15",
-   "hypothesis": "H1",
-   "purpose": "Verify that ad spend and clicks for paid_social (meta) remained flat between August and September",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(spend_usd) AS spend_usd,\n       SUM(clicks) AS clicks\nFROM WHYDROP_FILES.marketing_spend\nWHERE channel = 'meta'\n  AND to_date(date) >= '2026-08-01'\n  AND to_date(date) < '2026-10-01'\nGROUP BY month\nORDER BY month",
-   "rows": [
-    {
-     "month": "2026-08",
-     "spend_usd": 5001.289999999999,
-     "clicks": 11775
-    },
-    {
-     "month": "2026-09",
-     "spend_usd": 4630.400000000001,
-     "clicks": 11163
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.21,
-   "result_hash": "775ff861b152",
-   "ok": true
-  },
-  "Q16": {
-   "id": "Q16",
-   "hypothesis": "H1",
-   "purpose": "Check that paid_social orders and revenue dropped from August to September",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(quantity) AS orders,\n       SUM(unit_price_usd * quantity) AS revenue\nFROM WHYDROP_FILES.orders\nWHERE channel = 'paid_social'\n  AND to_date(date) >= '2026-08-01'\n  AND to_date(date) < '2026-10-01'\nGROUP BY month\nORDER BY month",
-   "rows": [
-    {
-     "month": "2026-08",
-     "orders": 196,
-     "revenue": 2866.0
-    },
-    {
-     "month": "2026-09",
-     "orders": 28,
-     "revenue": 432.0
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.19,
-   "result_hash": "e341606186f7",
-   "ok": true
-  },
-  "Q17": {
-   "id": "Q17",
    "hypothesis": "H2",
-   "purpose": "Compare monthly 'file corrupted' refund counts and amounts for product P003 in August vs September 2026",
-   "sql": "SELECT date_format(o.date, 'yyyy-MM') AS month,\n       COUNT(*) AS refund_count,\n       SUM(CAST(r.amount_usd AS DOUBLE)) AS total_refund_usd\nFROM WHYDROP_PG.refunds r\nJOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\nWHERE r.reason = 'file corrupted'\n  AND o.product_id = 'P003'\n  AND o.date >= '2026-08-01'\n  AND o.date < '2026-10-01'\nGROUP BY date_format(o.date, 'yyyy-MM')\nHAVING month IN ('2026-08', '2026-09')\nORDER BY month",
+   "purpose": "Refund counts and amounts for P003 file corrupted refunds in Aug vs Sep 2026",
+   "sql": "SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n       COUNT(*) AS refund_count,\n       SUM(CAST(r.amount_usd AS DOUBLE)) AS total_refund_usd\nFROM WHYDROP_PG.refunds r\nJOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\nWHERE r.reason = 'file corrupted'\n  AND o.product_id = 'P003'\n  AND o.date >= '2026-08-01'\n  AND o.date < '2026-10-01'\nGROUP BY month\nORDER BY month",
    "rows": [
     {
      "month": "2026-09",
@@ -1925,15 +1976,15 @@
    ],
    "row_count": 1,
    "truncated": false,
-   "elapsed_s": 0.35,
+   "elapsed_s": 0.19,
    "result_hash": "49876e251d5d",
    "ok": true
   },
-  "Q18": {
-   "id": "Q18",
+  "Q9": {
+   "id": "Q9",
    "hypothesis": "H2",
-   "purpose": "Check monthly count of download support tickets for product P003 in September 2026",
-   "sql": "SELECT date_format(o.date, 'yyyy-MM') AS month,\n       COUNT(*) AS ticket_count\nFROM WHYDROP_PG.support_tickets t\nJOIN WHYDROP_FILES.orders o ON t.order_id = o.order_id\nWHERE t.category = 'download'\n  AND o.product_id = 'P003'\n  AND o.date >= '2026-09-01'\n  AND o.date < '2026-10-01'\nGROUP BY date_format(o.date, 'yyyy-MM')\nHAVING month = '2026-09'\nORDER BY month",
+   "purpose": "Support tickets related to P003 downloads in Aug vs Sep 2026",
+   "sql": "SELECT date_format(to_date(t.date), 'yyyy-MM') AS month,\n       COUNT(*) AS ticket_count\nFROM WHYDROP_PG.support_tickets t\nJOIN WHYDROP_FILES.orders o ON t.order_id = o.order_id\nWHERE t.category = 'download'\n  AND o.product_id = 'P003'\n  AND o.date >= '2026-08-01'\n  AND o.date < '2026-10-01'\nGROUP BY month\nORDER BY month",
    "rows": [
     {
      "month": "2026-09",
@@ -1942,321 +1993,703 @@
    ],
    "row_count": 1,
    "truncated": false,
-   "elapsed_s": 0.33,
+   "elapsed_s": 0.18,
    "result_hash": "5d013ea7dd02",
    "ok": true
   },
-  "Q19": {
-   "id": "Q19",
+  "Q10": {
+   "id": "Q10",
    "hypothesis": "H2",
-   "purpose": "Compare P003 order counts and revenue in August vs September 2026",
-   "sql": "SELECT date_format(o.date, 'yyyy-MM') AS month,\n       COUNT(*) AS order_count,\n       SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) AS total_revenue_usd\nFROM WHYDROP_FILES.orders o\nWHERE o.product_id = 'P003'\n  AND o.date >= '2026-08-01'\n  AND o.date < '2026-10-01'\nGROUP BY date_format(o.date, 'yyyy-MM')\nHAVING month IN ('2026-08', '2026-09')\nORDER BY month",
+   "purpose": "Release log entry for P003 version 2.0 on 2026-09-15",
+   "sql": "SELECT date, product_id, version, note\nFROM WHYDROP_FILES.release_log\nWHERE product_id = 'P003'\n  AND version = '2.0'\n  AND date = '2026-09-15'",
+   "rows": [
+    {
+     "date": "2026-09-15",
+     "product_id": "P003",
+     "version": 2.0,
+     "note": "new scrapers bundled; zip rebuilt with new packer"
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.07,
+   "result_hash": "d62c781d1571",
+   "ok": true
+  },
+  "Q11": {
+   "id": "Q11",
+   "hypothesis": "H1",
+   "purpose": "Compare paid_social web traffic sessions and landing 404 errors between August and September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(sessions) AS total_sessions,\n       SUM(landing_404s) AS total_404s\nFROM WHYDROP_FILES.web_traffic\nWHERE source = 'paid_social'\n  AND date >= '2026-08-01'\n  AND date <= '2026-09-30'\nGROUP BY month\nORDER BY month",
+   "ok": true,
+   "error": "[TABLE_OR_VIEW_NOT_FOUND] The table or view `WHYDROP_FILES.web_traffic` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 4 pos 5;\n'Sort ['month ",
+   "sql_original": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(sessions)      AS total_sessions,\n       SUM(landing_404s)  AS total_404s\nFROM `WHYDROP_FILES.web_traffic`\nWHERE source = 'paid_social'\n  AND date >= '2026-08-01'\n  AND date <= '2026-09-30'\nGROUP BY month\nORDER BY month",
    "rows": [
     {
      "month": "2026-08",
-     "order_count": 254,
-     "total_revenue_usd": 3810.0
+     "total_sessions": 11326,
+     "total_404s": 44
     },
     {
      "month": "2026-09",
-     "order_count": 166,
-     "total_revenue_usd": 2490.0
+     "total_sessions": 2666,
+     "total_404s": 8408
     }
    ],
    "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.22,
-   "result_hash": "1313486069c3",
+   "elapsed_s": 0.15,
+   "result_hash": "5c31e970a3df"
+  },
+  "Q13": {
+   "id": "Q13",
+   "hypothesis": "H4",
+   "purpose": "Compare monthly website sessions for organic, email, and referral sources in August and September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month, source, SUM(sessions) AS sessions FROM WHYDROP_FILES.web_traffic WHERE source IN ('organic','email','referral') AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08','2026-09') GROUP BY month, source ORDER BY month, source;",
+   "rows": [
+    {
+     "month": "2026-08",
+     "source": "email",
+     "sessions": 5669
+    },
+    {
+     "month": "2026-08",
+     "source": "organic",
+     "sessions": 16482
+    },
+    {
+     "month": "2026-08",
+     "source": "referral",
+     "sessions": 4356
+    },
+    {
+     "month": "2026-09",
+     "source": "email",
+     "sessions": 5387
+    },
+    {
+     "month": "2026-09",
+     "source": "organic",
+     "sessions": 15467
+    },
+    {
+     "month": "2026-09",
+     "source": "referral",
+     "sessions": 4131
+    }
+   ],
+   "row_count": 6,
+   "truncated": false,
+   "elapsed_s": 0.16,
+   "result_hash": "f4c5d6e6129e",
    "ok": true
+  },
+  "Q14": {
+   "id": "Q14",
+   "hypothesis": "H4",
+   "purpose": "Compare monthly order counts for organic, email, and referral channels in August and September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month, channel AS source, COUNT(*) AS orders FROM WHYDROP_FILES.orders WHERE channel IN ('organic','email','referral') AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08','2026-09') GROUP BY month, source ORDER BY month, source;",
+   "rows": [
+    {
+     "month": "2026-08",
+     "source": "email",
+     "orders": 229
+    },
+    {
+     "month": "2026-08",
+     "source": "organic",
+     "orders": 379
+    },
+    {
+     "month": "2026-08",
+     "source": "referral",
+     "orders": 134
+    },
+    {
+     "month": "2026-09",
+     "source": "email",
+     "orders": 200
+    },
+    {
+     "month": "2026-09",
+     "source": "organic",
+     "orders": 282
+    },
+    {
+     "month": "2026-09",
+     "source": "referral",
+     "orders": 87
+    }
+   ],
+   "row_count": 6,
+   "truncated": false,
+   "elapsed_s": 0.14,
+   "result_hash": "6cbdda51d345",
+   "ok": true
+  },
+  "Q15": {
+   "id": "Q15",
+   "hypothesis": "H4",
+   "purpose": "Calculate orders\u2011per\u2011session ratio for each source\u2011month to assess proportional decline",
+   "sql": "SELECT s.month, s.source, s.sessions, o.orders, (o.orders * 1.0 / s.sessions) AS orders_per_session FROM (SELECT date_format(to_date(date), 'yyyy-MM') AS month, source, SUM(sessions) AS sessions FROM WHYDROP_FILES.web_traffic WHERE source IN ('organic','email','referral') AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08','2026-09') GROUP BY month, source) s JOIN (SELECT date_format(to_date(date), 'yyyy-MM') AS month, channel AS source, COUNT(*) AS orders FROM WHYDROP_FILES.orders WHERE channel IN ('organic','email','referral') AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08','2026-09') GROUP BY month, source) o ON s.month = o.month AND s.source = o.source ORDER BY s.month, s.source;",
+   "rows": [
+    {
+     "sessions": 5669,
+     "orders": 229,
+     "month": "2026-08",
+     "source": "email",
+     "orders_per_session": 0.0403951314164756
+    },
+    {
+     "sessions": 16482,
+     "orders": 379,
+     "month": "2026-08",
+     "source": "organic",
+     "orders_per_session": 0.0229947821866278
+    },
+    {
+     "sessions": 4356,
+     "orders": 134,
+     "month": "2026-08",
+     "source": "referral",
+     "orders_per_session": 0.0307621671258035
+    },
+    {
+     "sessions": 5387,
+     "orders": 200,
+     "month": "2026-09",
+     "source": "email",
+     "orders_per_session": 0.0371264154445888
+    },
+    {
+     "sessions": 15467,
+     "orders": 282,
+     "month": "2026-09",
+     "source": "organic",
+     "orders_per_session": 0.0182323656817741
+    },
+    {
+     "sessions": 4131,
+     "orders": 87,
+     "month": "2026-09",
+     "source": "referral",
+     "orders_per_session": 0.0210602759622367
+    }
+   ],
+   "row_count": 6,
+   "truncated": false,
+   "elapsed_s": 0.21,
+   "result_hash": "7332eba63c40",
+   "ok": true
+  },
+  "Q16": {
+   "id": "Q16",
+   "hypothesis": "H3",
+   "purpose": "Compare order count, revenue, and average unit price for product P001 and control products P002\u2011P005 by month (August vs September 2026).",
+   "sql": "SELECT \n  product_id,\n  date_format(to_date(date), 'yyyy-MM') AS month,\n  COUNT(*) AS order_count,\n  SUM(unit_price_usd * quantity) AS revenue,\n  AVG(CAST(unit_price_usd AS DOUBLE)) AS avg_unit_price\nFROM WHYDROP_FILES.orders\nWHERE product_id IN ('P001','P002','P003','P004','P005')\n  AND date >= '2026-08-01' AND date < '2026-10-01'\nGROUP BY product_id, month\nORDER BY product_id, month;",
+   "rows": [
+    {
+     "avg_unit_price": 19.0,
+     "order_count": 269,
+     "revenue": 5111.0,
+     "product_id": "P001",
+     "month": "2026-08"
+    },
+    {
+     "avg_unit_price": 29.0,
+     "order_count": 115,
+     "revenue": 3335.0,
+     "product_id": "P001",
+     "month": "2026-09"
+    },
+    {
+     "avg_unit_price": 12.0,
+     "order_count": 165,
+     "revenue": 1980.0,
+     "product_id": "P002",
+     "month": "2026-08"
+    },
+    {
+     "avg_unit_price": 12.0,
+     "order_count": 127,
+     "revenue": 1524.0,
+     "product_id": "P002",
+     "month": "2026-09"
+    },
+    {
+     "avg_unit_price": 15.0,
+     "order_count": 254,
+     "revenue": 3810.0,
+     "product_id": "P003",
+     "month": "2026-08"
+    },
+    {
+     "avg_unit_price": 15.0,
+     "order_count": 166,
+     "revenue": 2490.0,
+     "product_id": "P003",
+     "month": "2026-09"
+    },
+    {
+     "avg_unit_price": 15.0,
+     "order_count": 148,
+     "revenue": 2220.0,
+     "product_id": "P004",
+     "month": "2026-08"
+    },
+    {
+     "avg_unit_price": 15.0,
+     "order_count": 114,
+     "revenue": 1710.0,
+     "product_id": "P004",
+     "month": "2026-09"
+    },
+    {
+     "avg_unit_price": 7.0,
+     "order_count": 102,
+     "revenue": 714.0,
+     "product_id": "P005",
+     "month": "2026-08"
+    },
+    {
+     "avg_unit_price": 7.0,
+     "order_count": 75,
+     "revenue": 525.0,
+     "product_id": "P005",
+     "month": "2026-09"
+    }
+   ],
+   "row_count": 10,
+   "truncated": false,
+   "elapsed_s": 0.19,
+   "result_hash": "a86c9fed3b40",
+   "ok": true
+  },
+  "Q17": {
+   "id": "Q17",
+   "hypothesis": "H3",
+   "purpose": "Calculate August and September revenue, order volume, and average unit price for product P001 to assess the impact of the price change.",
+   "sql": "SELECT \n  'P001' AS product_id,\n  SUM(CASE WHEN date_format(to_date(date), 'yyyy-MM') = '2026-08' THEN unit_price_usd * quantity ELSE 0 END) AS aug_revenue,\n  SUM(CASE WHEN date_format(to_date(date), 'yyyy-MM') = '2026-09' THEN unit_price_usd * quantity ELSE 0 END) AS sep_revenue,\n  SUM(CASE WHEN date_format(to_date(date), 'yyyy-MM') = '2026-08' THEN quantity ELSE 0 END) AS aug_orders,\n  SUM(CASE WHEN date_format(to_date(date), 'yyyy-MM') = '2026-09' THEN quantity ELSE 0 END) AS sep_orders,\n  AVG(CASE WHEN date_format(to_date(date), 'yyyy-MM') = '2026-08' THEN CAST(unit_price_usd AS DOUBLE) END) AS avg_price_aug,\n  AVG(CASE WHEN date_format(to_date(date), 'yyyy-MM') = '2026-09' THEN CAST(unit_price_usd AS DOUBLE) END) AS avg_price_sep\nFROM WHYDROP_FILES.orders\nWHERE product_id = 'P001'\n  AND date >= '2026-08-01' AND date < '2026-10-01';",
+   "rows": [
+    {
+     "sep_orders": 115,
+     "aug_orders": 269,
+     "sep_revenue": 3335.0,
+     "product_id": "P001",
+     "aug_revenue": 5111.0,
+     "avg_price_sep": 29.0,
+     "avg_price_aug": 19.0
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.13,
+   "result_hash": "4d8e6e3ed00f",
+   "ok": true
+  },
+  "Q18": {
+   "id": "Q18",
+   "hypothesis": "H3",
+   "purpose": "Verify the pricing change for product P001 effective 2026\u201109\u201101 from $19 to $29.",
+   "sql": "SELECT \n  product_id,\n  old_price_usd,\n  new_price_usd,\n  note\nFROM WHYDROP_FILES.pricing_changes\nWHERE product_id = 'P001' AND date = '2026-09-01';",
+   "rows": [
+    {
+     "product_id": "P001",
+     "old_price_usd": 19.0,
+     "new_price_usd": 29.0,
+     "note": "repositioned as premium"
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.08,
+   "result_hash": "4fcde6c7892a",
+   "ok": true
+  },
+  "Q12": {
+   "id": "Q12",
+   "hypothesis": "H1",
+   "purpose": "Compare meta marketing spend and clicks between August and September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month, SUM(spend_usd) AS total_spend_usd, SUM(clicks) AS total_clicks FROM `WHYDROP.FILES.marketing_spend` WHERE channel = 'meta' AND date >= '2026-08-01' AND date <= '2026-09-30' GROUP BY month ORDER BY month",
+   "ok": false,
+   "error": "[TABLE_OR_VIEW_NOT_FOUND] The table or view `WHYDROP.FILES.marketing_spend` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 1 pos 123;\n'Sort ['",
+   "sql_original": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(spend_usd)   AS total_spend_usd,\n       SUM(clicks)      AS total_clicks\nFROM `WHYDROP_FILES.marketing_spend`\nWHERE channel = 'meta'\n  AND date >= '2026-08-01'\n  AND date <= '2026-09-30'\nGROUP BY month\nORDER BY month"
+  },
+  "Q19": {
+   "id": "Q19",
+   "hypothesis": "H1",
+   "purpose": "Compare paid_social order counts and revenue between August and September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month, COUNT(*) AS order_count, SUM(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS revenue_usd FROM `WHYDROP_FILES`.`orders` WHERE channel = 'paid_social' AND date >= '2026-08-01' AND date <= '2026-09-30' GROUP BY month ORDER BY month",
+   "ok": true,
+   "error": "[TABLE_OR_VIEW_NOT_FOUND] The table or view `WHYDROP_FILES.orders` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 4 pos 5;\n'Sort ['month ASC N",
+   "sql_original": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       COUNT(*)                     AS order_count,\n       SUM(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS revenue_usd\nFROM `WHYDROP_FILES.orders`\nWHERE channel = 'paid_social'\n  AND date >= '2026-08-01'\n  AND date <= '2026-09-30'\nGROUP BY month\nORDER BY month",
+   "rows": [
+    {
+     "month": "2026-08",
+     "order_count": 196,
+     "revenue_usd": 2866.0
+    },
+    {
+     "month": "2026-09",
+     "order_count": 28,
+     "revenue_usd": 432.0
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.23,
+   "result_hash": "ee3ee3e30dcb"
   },
   "Q20": {
    "id": "Q20",
-   "hypothesis": "H5",
-   "purpose": "Compare total revenue and order count for August and September 2026 to confirm an overall drop.",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(unit_price_usd * quantity) AS revenue_usd,\n       COUNT(*) AS orders\nFROM WHYDROP_FILES.orders\nWHERE date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY month\nORDER BY month;",
+   "hypothesis": "H7",
+   "purpose": "Compare average order value (revenue per order) between August and September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       AVG(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS avg_order_value\nFROM WHYDROP_FILES.orders\nWHERE date >= '2026-08-01' AND date < '2026-10-01'\nGROUP BY month\nORDER BY month;",
    "rows": [
     {
      "month": "2026-08",
-     "revenue_usd": 13835.0,
-     "orders": 938
+     "avg_order_value": 14.749466950959489
     },
     {
      "month": "2026-09",
-     "revenue_usd": 9584.0,
-     "orders": 597
+     "avg_order_value": 16.053601340033502
     }
    ],
    "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.22,
-   "result_hash": "240a83518e62",
+   "elapsed_s": 0.18,
+   "result_hash": "3b050417ae60",
    "ok": true
   },
   "Q21": {
    "id": "Q21",
-   "hypothesis": "H5",
-   "purpose": "Show revenue and order count per country for August vs September 2026.",
-   "sql": "SELECT o.country,\n       date_format(to_date(o.date), 'yyyy-MM') AS month,\n       SUM(o.unit_price_usd * o.quantity) AS revenue_usd,\n       COUNT(*) AS orders\nFROM WHYDROP_FILES.orders o\nWHERE o.country IN ('US','GB','IN','CA','DE','AU')\n  AND date_format(to_date(o.date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY o.country, month\nORDER BY o.country, month;",
+   "hypothesis": "H7",
+   "purpose": "Compare share of orders by product_id (product mix) between August and September 2026",
+   "sql": "SELECT month, product_id, cnt * 1.0 / month_total AS share_of_orders FROM (SELECT date_format(to_date(date), 'yyyy-MM') AS month, product_id, COUNT(*) AS cnt, SUM(COUNT(*)) OVER (PARTITION BY date_format(to_date(date), 'yyyy-MM')) AS month_total FROM WHYDROP_FILES.orders WHERE date >= '2026-08-01' AND date < '2026-10-01' GROUP BY date_format(to_date(date), 'yyyy-MM'), product_id) t ORDER BY month, share_of_orders DESC;",
+   "ok": true,
+   "error": "[UNSUPPORTED_FEATURE.LATERAL_COLUMN_ALIAS_IN_WINDOW] The feature is not supported: Referencing a lateral column alias `month` in window expression \"sum(count(1)) OVER (PARTITION BY lateralAliasReference(month) ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING)\".",
+   "sql_original": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       product_id,\n       COUNT(*) * 1.0 / SUM(COUNT(*)) OVER (PARTITION BY month) AS share_of_orders\nFROM WHYDROP_FILES.orders\nWHERE date >= '2026-08-01' AND date < '2026-10-01'\nGROUP BY month, product_id\nORDER BY month, share_of_orders DESC;",
    "rows": [
     {
-     "country": "AU",
      "month": "2026-08",
-     "revenue_usd": 1146.0,
-     "orders": 78
+     "product_id": "P001",
+     "share_of_orders": 0.2867803837953092
     },
     {
-     "country": "AU",
-     "month": "2026-09",
-     "revenue_usd": 795.0,
-     "orders": 47
-    },
-    {
-     "country": "CA",
      "month": "2026-08",
-     "revenue_usd": 1302.0,
-     "orders": 90
+     "product_id": "P003",
+     "share_of_orders": 0.2707889125799574
     },
     {
-     "country": "CA",
-     "month": "2026-09",
-     "revenue_usd": 1007.0,
-     "orders": 67
-    },
-    {
-     "country": "DE",
      "month": "2026-08",
-     "revenue_usd": 1089.0,
-     "orders": 75
+     "product_id": "P002",
+     "share_of_orders": 0.1759061833688699
     },
     {
-     "country": "DE",
-     "month": "2026-09",
-     "revenue_usd": 837.0,
-     "orders": 52
-    },
-    {
-     "country": "GB",
      "month": "2026-08",
-     "revenue_usd": 3755.0,
-     "orders": 255
+     "product_id": "P004",
+     "share_of_orders": 0.1577825159914712
     },
     {
-     "country": "GB",
-     "month": "2026-09",
-     "revenue_usd": 2508.0,
-     "orders": 158
-    },
-    {
-     "country": "IN",
      "month": "2026-08",
-     "revenue_usd": 1778.0,
-     "orders": 117
+     "product_id": "P005",
+     "share_of_orders": 0.1087420042643923
     },
     {
-     "country": "IN",
      "month": "2026-09",
-     "revenue_usd": 1265.0,
-     "orders": 74
+     "product_id": "P003",
+     "share_of_orders": 0.2780569514237856
     },
     {
-     "country": "US",
-     "month": "2026-08",
-     "revenue_usd": 4765.0,
-     "orders": 323
-    },
-    {
-     "country": "US",
      "month": "2026-09",
-     "revenue_usd": 3172.0,
-     "orders": 199
+     "product_id": "P002",
+     "share_of_orders": 0.2127303182579564
+    },
+    {
+     "month": "2026-09",
+     "product_id": "P001",
+     "share_of_orders": 0.1926298157453936
+    },
+    {
+     "month": "2026-09",
+     "product_id": "P004",
+     "share_of_orders": 0.1909547738693467
+    },
+    {
+     "month": "2026-09",
+     "product_id": "P005",
+     "share_of_orders": 0.1256281407035176
     }
    ],
-   "row_count": 12,
+   "row_count": 10,
    "truncated": false,
-   "elapsed_s": 0.23,
-   "result_hash": "714b1272f8d3",
+   "elapsed_s": 0.25,
+   "result_hash": "2194d97a368e"
+  },
+  "Q22": {
+   "id": "Q22",
+   "hypothesis": "H5",
+   "purpose": "Gross revenue by month (August vs September)",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       sum(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS gross_revenue_usd\nFROM WHYDROP_FILES.orders\nWHERE date >= '2026-08-01' AND date < '2026-10-01'\nGROUP BY month\nORDER BY month",
+   "rows": [
+    {
+     "month": "2026-08",
+     "gross_revenue_usd": 13835.0
+    },
+    {
+     "month": "2026-09",
+     "gross_revenue_usd": 9584.0
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.16,
+   "result_hash": "9909c8c0e0a5",
    "ok": true
   },
   "Q23": {
    "id": "Q23",
-   "hypothesis": "H6",
-   "purpose": "Compare total referral sessions in August vs September",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(sessions) AS total_sessions\nFROM WHYDROP_FILES.web_traffic\nWHERE source = 'referral'\n  AND date >= '2026-08-01' AND date < '2026-10-01'\nGROUP BY month\nORDER BY month;",
+   "hypothesis": "H5",
+   "purpose": "Total refunds by month (August vs September)",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       sum(CAST(amount_usd AS DOUBLE)) AS total_refund_usd\nFROM WHYDROP_PG.refunds\nWHERE date >= '2026-08-01' AND date < '2026-10-01'\nGROUP BY month\nORDER BY month",
    "rows": [
     {
      "month": "2026-08",
-     "total_sessions": 4356
+     "total_refund_usd": 423.0
     },
     {
      "month": "2026-09",
-     "total_sessions": 4131
+     "total_refund_usd": 707.0
     }
    ],
    "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.24,
-   "result_hash": "cf35751d985a",
+   "elapsed_s": 0.13,
+   "result_hash": "b7145fada142",
    "ok": true
   },
   "Q24": {
    "id": "Q24",
-   "hypothesis": "H6",
-   "purpose": "Compare total referral revenue in August vs September",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS total_revenue\nFROM WHYDROP_FILES.orders\nWHERE channel = 'referral'\n  AND date >= '2026-08-01' AND date < '2026-10-01'\nGROUP BY month\nORDER BY month;",
+   "hypothesis": "H5",
+   "purpose": "Refunds for 'file corrupted' (P003) and 'not as described' by month, with net revenue impact",
+   "sql": "WITH gross AS (\n    SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n           sum(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS gross_revenue_usd\n    FROM WHYDROP_FILES.orders\n    WHERE date >= '2026-08-01' AND date < '2026-10-01'\n    GROUP BY month\n),\nrefunds AS (\n    SELECT date_format(to_date(r.date), 'yyyy-MM') AS month,\n           sum(CASE WHEN r.reason = 'file corrupted' AND o.product_id = 'P003' THEN CAST(r.amount_usd AS DOUBLE) ELSE 0 END) AS file_corrupted_p003_usd,\n           sum(CASE WHEN r.reason = 'not as described' THEN CAST(r.amount_usd AS DOUBLE) ELSE 0 END) AS not_as_described_usd,\n           sum(CASE WHEN r.reason IN ('file corrupted','not as described') THEN CAST(r.amount_usd AS DOUBLE) ELSE 0 END) AS targeted_refund_usd\n    FROM WHYDROP_PG.refunds r\n    JOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\n    WHERE r.date >= '2026-08-01' AND r.date < '2026-10-01'\n    GROUP BY month\n)\nSELECT g.month,\n       g.gross_revenue_usd,\n       r.file_corrupted_p003_usd,\n       r.not_as_described_usd,\n       r.targeted_refund_usd,\n       (g.gross_revenue_usd - r.targeted_refund_usd) AS net_revenue_usd,\n       r.targeted_refund_usd / g.gross_revenue_usd AS targeted_refund_share\nFROM gross g\nJOIN refunds r ON g.month = r.month\nORDER BY g.month",
    "rows": [
     {
+     "file_corrupted_p003_usd": 0.0,
+     "not_as_described_usd": 95.0,
+     "gross_revenue_usd": 13835.0,
+     "targeted_refund_share": 0.0068666425731839535,
+     "net_revenue_usd": 13740.0,
      "month": "2026-08",
-     "total_revenue": 1988.0
+     "targeted_refund_usd": 95.0
     },
     {
+     "file_corrupted_p003_usd": 390.0,
+     "not_as_described_usd": 15.0,
+     "gross_revenue_usd": 9584.0,
+     "targeted_refund_share": 0.04225792988313856,
+     "net_revenue_usd": 9179.0,
      "month": "2026-09",
-     "total_revenue": 1413.0
+     "targeted_refund_usd": 405.0
     }
    ],
    "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.2,
-   "result_hash": "60892c84365b",
+   "elapsed_s": 0.27,
+   "result_hash": "9facff2f6e99",
    "ok": true
   },
   "Q25": {
    "id": "Q25",
    "hypothesis": "H6",
-   "purpose": "Check for product releases in September that could affect referral links",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       COUNT(*) AS release_count\nFROM WHYDROP_FILES.release_log\nWHERE to_date(date) >= '2026-09-01' AND to_date(date) < '2026-10-01'\nGROUP BY month\nORDER BY month;",
+   "purpose": "Revenue per country per month (June\u2011Sep 2026) to observe trends",
+   "sql": "SELECT country,\n       date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(unit_price_usd * quantity) AS revenue\nFROM WHYDROP_FILES.orders\nWHERE date >= '2026-06-01' AND date <= '2026-09-30'\nGROUP BY country, month\nORDER BY country, month",
    "rows": [
     {
+     "country": "AU",
+     "month": "2026-06",
+     "revenue": 1182.0
+    },
+    {
+     "country": "AU",
+     "month": "2026-07",
+     "revenue": 778.0
+    },
+    {
+     "country": "AU",
+     "month": "2026-08",
+     "revenue": 1146.0
+    },
+    {
+     "country": "AU",
      "month": "2026-09",
-     "release_count": 1
+     "revenue": 795.0
+    },
+    {
+     "country": "CA",
+     "month": "2026-06",
+     "revenue": 1268.0
+    },
+    {
+     "country": "CA",
+     "month": "2026-07",
+     "revenue": 1364.0
+    },
+    {
+     "country": "CA",
+     "month": "2026-08",
+     "revenue": 1302.0
+    },
+    {
+     "country": "CA",
+     "month": "2026-09",
+     "revenue": 1007.0
+    },
+    {
+     "country": "DE",
+     "month": "2026-06",
+     "revenue": 1400.0
+    },
+    {
+     "country": "DE",
+     "month": "2026-07",
+     "revenue": 1530.0
+    },
+    {
+     "country": "DE",
+     "month": "2026-08",
+     "revenue": 1089.0
+    },
+    {
+     "country": "DE",
+     "month": "2026-09",
+     "revenue": 837.0
+    },
+    {
+     "country": "GB",
+     "month": "2026-06",
+     "revenue": 3926.0
+    },
+    {
+     "country": "GB",
+     "month": "2026-07",
+     "revenue": 3505.0
+    },
+    {
+     "country": "GB",
+     "month": "2026-08",
+     "revenue": 3755.0
+    },
+    {
+     "country": "GB",
+     "month": "2026-09",
+     "revenue": 2508.0
+    },
+    {
+     "country": "IN",
+     "month": "2026-06",
+     "revenue": 1914.0
+    },
+    {
+     "country": "IN",
+     "month": "2026-07",
+     "revenue": 1585.0
+    },
+    {
+     "country": "IN",
+     "month": "2026-08",
+     "revenue": 1778.0
+    },
+    {
+     "country": "IN",
+     "month": "2026-09",
+     "revenue": 1265.0
+    },
+    {
+     "country": "US",
+     "month": "2026-06",
+     "revenue": 4779.0
+    },
+    {
+     "country": "US",
+     "month": "2026-07",
+     "revenue": 4968.0
+    },
+    {
+     "country": "US",
+     "month": "2026-08",
+     "revenue": 4765.0
+    },
+    {
+     "country": "US",
+     "month": "2026-09",
+     "revenue": 3172.0
     }
    ],
-   "row_count": 1,
+   "row_count": 24,
    "truncated": false,
-   "elapsed_s": 0.14,
-   "result_hash": "6bd448879d7e",
+   "elapsed_s": 0.16,
+   "result_hash": "05f51a257733",
    "ok": true
   },
   "Q26": {
    "id": "Q26",
-   "hypothesis": "H7",
-   "purpose": "Compare email web traffic sessions in August vs September",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(CAST(sessions AS DOUBLE)) AS email_sessions\nFROM WHYDROP_FILES.web_traffic\nWHERE source = 'email'\n  AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY month\nORDER BY month",
-   "rows": [
-    {
-     "month": "2026-08",
-     "email_sessions": 5669.0
-    },
-    {
-     "month": "2026-09",
-     "email_sessions": 5387.0
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.2,
-   "result_hash": "9050ebd3dedf",
-   "ok": true
-  },
-  "Q27": {
-   "id": "Q27",
-   "hypothesis": "H7",
-   "purpose": "Compare email-sourced order revenue in August vs September",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS email_revenue\nFROM WHYDROP_FILES.orders\nWHERE channel = 'email'\n  AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY month\nORDER BY month",
-   "rows": [
-    {
-     "month": "2026-08",
-     "email_revenue": 3377.0
-    },
-    {
-     "month": "2026-09",
-     "email_revenue": 3274.0
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.2,
-   "result_hash": "07d89c1776b4",
-   "ok": true
-  },
-  "Q28": {
-   "id": "Q28",
-   "hypothesis": "H7",
-   "purpose": "Compare count of email orders in August vs September",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       COUNT(*) AS email_order_count\nFROM WHYDROP_FILES.orders\nWHERE channel = 'email'\n  AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08', '2026-09')\nGROUP BY month\nORDER BY month",
-   "rows": [
-    {
-     "month": "2026-08",
-     "email_order_count": 229
-    },
-    {
-     "month": "2026-09",
-     "email_order_count": 200
-    }
-   ],
-   "row_count": 2,
-   "truncated": false,
-   "elapsed_s": 0.23,
-   "result_hash": "303ba823bfe0",
-   "ok": true
-  },
-  "Q22": {
-   "id": "Q22",
-   "hypothesis": "H5",
-   "purpose": "Calculate each country's revenue drop in September vs August and its share of the total September\u2011August revenue decline.",
-   "sql": "SELECT country,\n       SUM(CASE WHEN month='2026-09' THEN revenue_usd ELSE 0 END) -\n       SUM(CASE WHEN month='2026-08' THEN revenue_usd ELSE 0 END) AS rev_change_usd,\n       SUM(CASE WHEN month='2026-09' THEN orders ELSE 0 END) -\n       SUM(CASE WHEN month='2026-08' THEN orders ELSE 0 END) AS order_change,\n       ROUND(\n           (SUM(CASE WHEN month='2026-09' THEN revenue_usd ELSE 0 END) -\n            SUM(CASE WHEN month='2026-08' THEN revenue_usd ELSE 0 END)) * 100.0 /\n           NULLIF(\n               (SELECT SUM(CASE WHEN month='2026-09' THEN revenue_usd ELSE 0 END) -\n                      SUM(CASE WHEN month='2026-08' THEN revenue_usd ELSE 0 END)\n               FROM (\n                   SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n                          SUM(unit_price_usd * quantity) AS revenue_usd\n                   FROM WHYDROP_FILES.orders\n                   WHERE country IN ('US','GB','IN','CA','DE','AU')\n                     AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08','2026-09')\n                   GROUP BY month\n               )\n           ), 1),\n           2) AS pct_of_total_drop\nFROM (\n    SELECT o.country,\n           date_format(to_date(o.date), 'yyyy-MM') AS month,\n           SUM(o.unit_price_usd * o.quantity) AS revenue_usd,\n           COUNT(*) AS orders\n    FROM WHYDROP_FILES.orders o\n    WHERE o.country IN ('US','GB','IN','CA','DE','AU')\n      AND date_format(to_date(o.date), 'yyyy-MM') IN ('2026-08','2026-09')\n    GROUP BY o.country, month\n) sub\nGROUP BY country\nORDER BY rev_change_usd DESC;",
+   "hypothesis": "H6",
+   "purpose": "Percent change in revenue per country between August and September 2026 to identify which markets drove the drop",
+   "sql": "SELECT country,\n       SUM(CASE WHEN month = '2026-08' THEN revenue ELSE 0 END) AS aug_rev,\n       SUM(CASE WHEN month = '2026-09' THEN revenue ELSE 0 END) AS sep_rev,\n       CASE WHEN SUM(CASE WHEN month = '2026-08' THEN revenue ELSE 0 END) = 0 THEN NULL\n            ELSE (SUM(CASE WHEN month = '2026-09' THEN revenue ELSE 0 END) - SUM(CASE WHEN month = '2026-08' THEN revenue ELSE 0 END))\n                 / SUM(CASE WHEN month = '2026-08' THEN revenue ELSE 0 END) END AS pct_change\nFROM (\n    SELECT country,\n           date_format(to_date(date), 'yyyy-MM') AS month,\n           SUM(unit_price_usd * quantity) AS revenue\n    FROM WHYDROP_FILES.orders\n    WHERE date >= '2026-06-01' AND date <= '2026-09-30'\n    GROUP BY country, month\n) t\nGROUP BY country\nORDER BY country",
    "ok": true,
-   "error": "[UNSUPPORTED_SUBQUERY_EXPRESSION_CATEGORY.CORRELATED_REFERENCE] Unsupported subquery expression: Expressions referencing the outer query are not supported outside of WHERE/HAVING clauses: \"sum(revenue_usd) AS `sum(outer(sub.revenue_usd))`\".; line 10 pos 16;\nSort [rev_change_usd#4507 DESC NULLS LAST], true\n+- Aggregate [country#4520], [country#4520, (sum(CASE WHEN (month#4504 = 2026-09) THEN revenu",
-   "sql_original": "SELECT country,\n       SUM(CASE WHEN month='2026-09' THEN revenue_usd ELSE 0 END) -\n       SUM(CASE WHEN month='2026-08' THEN revenue_usd ELSE 0 END) AS rev_change_usd,\n       SUM(CASE WHEN month='2026-09' THEN orders ELSE 0 END) -\n       SUM(CASE WHEN month='2026-08' THEN orders ELSE 0 END) AS order_change,\n       ROUND(\n           (SUM(CASE WHEN month='2026-09' THEN revenue_usd ELSE 0 END) -\n            SUM(CASE WHEN month='2026-08' THEN revenue_usd ELSE 0 END)) * 100.0 /\n           NULLIF(\n               (SELECT SUM(revenue_usd) FROM (\n                   SELECT SUM(CASE WHEN month='2026-09' THEN revenue_usd ELSE 0 END) -\n                          SUM(CASE WHEN month='2026-08' THEN revenue_usd ELSE 0 END) AS total_drop\n                   FROM (\n                       SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n                              SUM(unit_price_usd * quantity) AS revenue_usd\n                       FROM WHYDROP_FILES.orders\n                       WHERE country IN ('US','GB','IN','CA','DE','AU')\n                         AND date_format(to_date(date), 'yyyy-MM') IN ('2026-08','2026-09')\n                       GROUP BY month\n                   ) t\n               )) , 1),\n           2) AS pct_of_total_drop\nFROM (\n    SELECT o.country,\n           date_format(to_date(o.date), 'yyyy-MM') AS month,\n           SUM(o.unit_price_usd * o.quantity) AS revenue_usd,\n           COUNT(*) AS orders\n    FROM WHYDROP_FILES.orders o\n    WHERE o.country IN ('US','GB','IN','CA','DE','AU')\n      AND date_format(to_date(o.date), 'yyyy-MM') IN ('2026-08','2026-09')\n    GROUP BY o.country, month\n) sub\nGROUP BY country\nORDER BY rev_change_usd DESC;",
+   "error": "[MISSING_AGGREGATION] The non-aggregating expression \"unit_price_usd\" is based on columns which are not participating in the GROUP BY clause.\nAdd the columns or the expression to the GROUP BY, aggregate the expression, or use \"any_value(unit_price_usd)\" if you do not care which of the values within a group is returned.;\nSort [country#20686 ASC NULLS FIRST], true\n+- Aggregate [country#20686], [coun",
+   "sql_original": "SELECT country,\n       SUM(CASE WHEN month = '2026-08' THEN revenue ELSE 0 END) AS aug_rev,\n       SUM(CASE WHEN month = '2026-09' THEN revenue ELSE 0 END) AS sep_rev,\n       CASE WHEN SUM(CASE WHEN month = '2026-08' THEN revenue ELSE 0 END) = 0 THEN NULL\n            ELSE (SUM(CASE WHEN month = '2026-09' THEN revenue ELSE 0 END) - SUM(CASE WHEN month = '2026-08' THEN revenue ELSE 0 END))\n               / SUM(CASE WHEN month = '2026-08' THEN revenue ELSE 0 END) END AS pct_change\nFROM (\n    SELECT country,\n           date_format(to_date(date), 'yyyy-MM') AS month,\n           unit_price_usd * quantity AS revenue\n    FROM WHYDROP_FILES.orders\n    WHERE date >= '2026-06-01' AND date <= '2026-09-30'\n    GROUP BY country, month\n) t\nGROUP BY country\nORDER BY country",
    "rows": [
     {
-     "country": "DE",
-     "rev_change_usd": -252.0,
-     "order_change": -23,
-     "pct_of_total_drop": 5.93
+     "country": "AU",
+     "aug_rev": 1146.0,
+     "sep_rev": 795.0,
+     "pct_change": -0.306282722513089
     },
     {
      "country": "CA",
-     "rev_change_usd": -295.0,
-     "order_change": -23,
-     "pct_of_total_drop": 6.94
+     "aug_rev": 1302.0,
+     "sep_rev": 1007.0,
+     "pct_change": -0.22657450076804916
     },
     {
-     "country": "AU",
-     "rev_change_usd": -351.0,
-     "order_change": -31,
-     "pct_of_total_drop": 8.26
-    },
-    {
-     "country": "IN",
-     "rev_change_usd": -513.0,
-     "order_change": -43,
-     "pct_of_total_drop": 12.07
+     "country": "DE",
+     "aug_rev": 1089.0,
+     "sep_rev": 837.0,
+     "pct_change": -0.23140495867768596
     },
     {
      "country": "GB",
-     "rev_change_usd": -1247.0,
-     "order_change": -97,
-     "pct_of_total_drop": 29.33
+     "aug_rev": 3755.0,
+     "sep_rev": 2508.0,
+     "pct_change": -0.3320905459387483
+    },
+    {
+     "country": "IN",
+     "aug_rev": 1778.0,
+     "sep_rev": 1265.0,
+     "pct_change": -0.28852643419572555
     },
     {
      "country": "US",
-     "rev_change_usd": -1593.0,
-     "order_change": -124,
-     "pct_of_total_drop": 37.47
+     "aug_rev": 4765.0,
+     "sep_rev": 3172.0,
+     "pct_change": -0.3343126967471144
     }
    ],
    "row_count": 6,
    "truncated": false,
-   "elapsed_s": 0.54,
-   "result_hash": "c275474f33e9"
+   "elapsed_s": 0.23,
+   "result_hash": "cfef48b8b10c"
   }
  },
  "routing": [
   {
    "lane": "planner",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 29.2,
-   "tokens": 10605,
+   "latency_s": 26.1,
+   "tokens": 9524,
    "fallback_from": [
     "nvidia/nemotron-3-super-120b-a12b"
    ]
@@ -2264,22 +2697,36 @@
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 27.7,
-   "tokens": 2209,
+   "latency_s": 32.1,
+   "tokens": 2552,
    "fallback_from": []
   },
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 26.5,
-   "tokens": 2500,
+   "latency_s": 39.2,
+   "tokens": 2150,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 16.5,
+   "tokens": 1674,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 57.5,
+   "tokens": 3281,
    "fallback_from": []
   },
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 9.0,
-   "tokens": 7149,
+   "latency_s": 27.8,
+   "tokens": 9824,
    "fallback_from": [
     "nvidia/nemotron-3-super-120b-a12b"
    ]
@@ -2287,31 +2734,22 @@
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 43.4,
-   "tokens": 2642,
+   "latency_s": 71.8,
+   "tokens": 3741,
    "fallback_from": []
   },
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 49.8,
-   "tokens": 3041,
+   "latency_s": 30.7,
+   "tokens": 2201,
    "fallback_from": []
   },
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 16.6,
-   "tokens": 8292,
-   "fallback_from": [
-    "nvidia/nemotron-3-super-120b-a12b"
-   ]
-  },
-  {
-   "lane": "analyst",
-   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 37.7,
-   "tokens": 10750,
+   "latency_s": 25.2,
+   "tokens": 11013,
    "fallback_from": [
     "nvidia/nemotron-3-super-120b-a12b"
    ]
@@ -2319,38 +2757,15 @@
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 43.9,
-   "tokens": 3829,
+   "latency_s": 23.1,
+   "tokens": 1929,
    "fallback_from": []
   },
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 41.7,
-   "tokens": 12010,
-   "fallback_from": [
-    "nvidia/nemotron-3-super-120b-a12b"
-   ]
-  },
-  {
-   "lane": "sql",
-   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 34.9,
-   "tokens": 2431,
-   "fallback_from": []
-  },
-  {
-   "lane": "sql",
-   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 39.5,
-   "tokens": 2490,
-   "fallback_from": []
-  },
-  {
-   "lane": "analyst",
-   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 14.2,
-   "tokens": 7763,
+   "latency_s": 10.3,
+   "tokens": 7532,
    "fallback_from": [
     "nvidia/nemotron-3-super-120b-a12b"
    ]
@@ -2358,8 +2773,8 @@
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 11.2,
-   "tokens": 7627,
+   "latency_s": 76.1,
+   "tokens": 16541,
    "fallback_from": [
     "nvidia/nemotron-3-super-120b-a12b"
    ]
@@ -2367,15 +2782,70 @@
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 52.8,
-   "tokens": 4587,
+   "latency_s": 21.7,
+   "tokens": 2552,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 32.0,
+   "tokens": 2479,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 119.6,
+   "tokens": 6171,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 71.5,
+   "tokens": 6868,
+   "fallback_from": [
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+   ]
+  },
+  {
+   "lane": "analyst",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 34.2,
+   "tokens": 11962,
+   "fallback_from": [
+    "nvidia/nemotron-3-super-120b-a12b"
+   ]
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 45.4,
+   "tokens": 2602,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 40.9,
+   "tokens": 3131,
    "fallback_from": []
   },
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 13.7,
-   "tokens": 8993,
+   "latency_s": 135.6,
+   "tokens": 15541,
+   "fallback_from": [
+    "nvidia/nemotron-3-super-120b-a12b"
+   ]
+  },
+  {
+   "lane": "analyst",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 115.2,
+   "tokens": 10827,
    "fallback_from": [
     "nvidia/nemotron-3-super-120b-a12b"
    ]
@@ -2383,141 +2853,162 @@
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 6.5,
-   "tokens": 978,
+   "latency_s": 5.6,
+   "tokens": 670,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 10.9,
-   "tokens": 1296,
+   "latency_s": 6.4,
+   "tokens": 678,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 13.5,
-   "tokens": 1844,
+   "latency_s": 6.7,
+   "tokens": 1262,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 3.7,
-   "tokens": 629,
+   "latency_s": 7.4,
+   "tokens": 1076,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 10.2,
-   "tokens": 1122,
+   "latency_s": 12.6,
+   "tokens": 1097,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 17.8,
-   "tokens": 2138,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 6.5,
-   "tokens": 938,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 11.2,
-   "tokens": 1367,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 11.6,
-   "tokens": 1290,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 4.6,
-   "tokens": 1014,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 19.0,
-   "tokens": 749,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 34.6,
-   "tokens": 2555,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 34.4,
-   "tokens": 2138,
+   "latency_s": 15.9,
+   "tokens": 1552,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
    "latency_s": 16.2,
-   "tokens": 2037,
+   "tokens": 2173,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 14.3,
-   "tokens": 1642,
+   "latency_s": 21.7,
+   "tokens": 2369,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 5.3,
-   "tokens": 702,
+   "latency_s": 19.4,
+   "tokens": 1712,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 14.0,
-   "tokens": 1605,
+   "latency_s": 30.3,
+   "tokens": 2570,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 15.8,
-   "tokens": 2168,
+   "latency_s": 23.4,
+   "tokens": 2253,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 6.5,
-   "tokens": 753,
+   "latency_s": 28.3,
+   "tokens": 3327,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 7.5,
-   "tokens": 1004,
+   "latency_s": 12.6,
+   "tokens": 1447,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 12.3,
+   "tokens": 1894,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 14.4,
+   "tokens": 1284,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 21.2,
+   "tokens": 2162,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 8.8,
+   "tokens": 1399,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 17.0,
+   "tokens": 2492,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 13.7,
+   "tokens": 1480,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 10.1,
+   "tokens": 1522,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 10.7,
+   "tokens": 2145,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 33.0,
+   "tokens": 2079,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 23.2,
+   "tokens": 3200,
    "fallback_from": []
   }
  ],
@@ -2525,42 +3016,43 @@
  "memory_recalled": [
   {
    "id": "mem-30",
-   "relevance": 0.3841025867555825,
+   "relevance": 0.38407137189427953,
    "content": "[Why did revenue drop in September 2026?] REJECTED: The September revenue drop was concentrated in specific countries due to local seasonality or supply issues rather than a global decline. - The September revenue drop affected all six observed countries with zero increases, indicating a global decline rather than one concentrated in specific countries.",
    "source": "whydrop:20261024-004304-e166"
   },
   {
    "id": "mem-53",
-   "relevance": 0.37392719376881717,
+   "relevance": 0.3738959484175414,
    "content": "[Why did revenue drop in September 2026?] REJECTED: The September 2026 revenue drop was concentrated in specific countries due to local seasonality or supply issues rather than a global decline. - The September 2026 decline appears across all six tracked countries with similar magnitude (-22.66% to -33.43%), indicating a broad-based drop rather than one concentrated in specific countries.",
    "source": "whydrop:20261024-005804-8320"
   },
   {
    "id": "mem-7",
-   "relevance": 0.36481345360567613,
+   "relevance": 0.3647822605322963,
    "content": "[Why did revenue drop in September 2026?] VERIFIED CAUSE: Total website sessions fell in September 2026 versus August 2026, reducing top-of-funnel demand and causing fewer orders across all channels. - Website sessions, orders, and revenue all declined from August to September 2026, consistent with reduced top-of-funnel demand driving the revenue drop. (conf 0.98, queries Q1,Q2,Q3)",
    "source": "whydrop:20261024-003004-de41"
   },
   {
    "id": "mem-12",
-   "relevance": 0.35670263098821586,
+   "relevance": 0.3566714378857045,
    "content": "[Why did revenue drop in September 2026?] REJECTED: The September revenue drop was concentrated in specific countries due to local seasonality or supply issues rather than a global decline. - All six countries recorded lower revenue in September 2026 than in August 2026, with broadly similar percentage declines, indicating a global drop rather than one concentrated in specific countries.",
    "source": "whydrop:20261024-003004-de41"
   },
   {
    "id": "mem-6",
-   "relevance": 0.3550110772754918,
+   "relevance": 0.3549798933643245,
    "content": "[Why did revenue drop in September 2026?] REJECTED: The revenue drop was concentrated in specific countries due to local seasonality or supply issues, not a global decline. - Revenue fell in every country from August to September 2026, indicating a global decline rather than a drop concentrated in specific markets.",
    "source": "whydrop:20261024-002610-59c6"
   }
  ],
- "elapsed_s": 276.6,
+ "elapsed_s": 541.6,
  "memory_ids": [
-  "mem-79",
-  "mem-80",
-  "mem-81",
-  "mem-82",
-  "mem-83",
-  "mem-84"
+  "mem-115",
+  "mem-116",
+  "mem-117",
+  "mem-118",
+  "mem-119",
+  "mem-120",
+  "mem-121"
  ]
 }

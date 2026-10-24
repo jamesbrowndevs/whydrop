@@ -1,20 +1,20 @@
 {
- "date": "2026-10-24 01:52 BST",
- "questions_passed": 4,
+ "date": "2026-10-24 02:08 BST",
+ "questions_passed": 5,
  "of": 5,
- "q1_planted_causes_found": 2,
+ "q1_planted_causes_found": 3,
  "results": [
   {
    "q": "Why did revenue drop in September 2026?",
-   "pass": false,
+   "pass": true,
    "detail": {
     "broken_meta_campaign": true,
     "p001_price_rise": true,
-    "p003_refund_spike": false
+    "p003_refund_spike": true
    },
-   "causes": 5,
-   "rejected": 1,
-   "elapsed_s": 276.6
+   "causes": 4,
+   "rejected": 3,
+   "elapsed_s": 541.6
   },
   {
    "q": "Is our ad spend still working?",
@@ -23,8 +23,8 @@
     "broken_meta_campaign": true
    },
    "causes": 3,
-   "rejected": 3,
-   "elapsed_s": 559.5
+   "rejected": 2,
+   "elapsed_s": 527.8
   },
   {
    "q": "Why did Notion Freelance OS sales fall even though we raised the price?",
@@ -33,8 +33,8 @@
     "p001_price_rise": true
    },
    "causes": 4,
-   "rejected": 2,
-   "elapsed_s": 419.9
+   "rejected": 3,
+   "elapsed_s": 806.9
   },
   {
    "q": "Why are refunds up in the second half of September?",
@@ -44,7 +44,7 @@
    },
    "causes": 1,
    "rejected": 5,
-   "elapsed_s": 537.7
+   "elapsed_s": 841.7
   },
   {
    "q": "Did email marketing cause the drop?",
@@ -52,9 +52,9 @@
    "detail": {
     "email_rejected": true
    },
-   "causes": 4,
-   "rejected": 3,
-   "elapsed_s": 583.4
+   "causes": 5,
+   "rejected": 2,
+   "elapsed_s": 778.1
   }
  ]
 }

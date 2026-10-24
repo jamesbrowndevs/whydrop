@@ -46,7 +46,7 @@ Claims that fail any check are struck out and never reach the answer.
 
 ## Evaluation
 `evals/run_evals.py` runs 5 seeded questions against a synthetic dataset with 3 planted causes and 2 red herrings (`data/GROUND_TRUTH.md`;
-the agent never sees the ground truth). Scoring only counts verified claims. Latest results: `evals/results/summary.json`.
+the agent never sees the ground truth). Scoring only counts verified claims. Latest results: `evals/results/summary.json`: 5/5 on 24 Oct 2026 (earlier runs 3/5 and 4/5; LLM runs vary).
 
 ## Cursor use
 <!-- TODO (Nathan): confirm before submitting, and add screenshots to docs/img/. -->

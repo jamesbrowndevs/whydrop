@@ -1,65 +1,93 @@
 {
  "question": "Is our ad spend still working?",
- "run_id": "20261024-013634-6710",
+ "run_id": "20261024-015442-5398",
  "causes": [
   {
-   "hypothesis": "Paid social ad clicks in September are not reaching the site because landing pages are returning 404s, so spend is generating clicks but no sessions or orders.",
+   "hypothesis": "Paid social spend is being wasted because clicks are not reaching working landing pages: landing_404s spiked and sessions collapsed while spend and clicks stayed flat.",
    "id": "H1",
    "verdict": "supported",
-   "summary": "Paid social clicks held steady in September (11,163 vs 11,775 in August) but sessions collapsed (2,666 vs 11,326), landing 404s spiked (8,408 vs 44), click-to-session ratio fell from 0.9619 to 0.2388, and paid_social revenue dropped from $2,866.00 to $432.00, matching the hypothesis that spend is generating clicks that hit 404s and never become sessions or orders.",
-   "impact_usd": 2434.0,
-   "confidence": 0.96,
+   "summary": "Paid social spend and clicks held steady from August to September 2026 while landing_404s surged and sessions collapsed, confirming that paid traffic is not reaching working landing pages.",
+   "impact_usd": 2500.0,
+   "confidence": 0.97,
    "claims": [
     {
-     "text": "September paid_social clicks remained high at 11,163 (versus 11,775 in August), while sessions fell to 2,666 (from 11,326) and landing 404s surged to 8,408 (from 44).",
+     "text": "Meta spend and clicks were essentially flat between August and September 2026: spend moved from 5001.289999999999 to 4630.400000000001 and clicks from 11775 to 11163.",
      "evidence": [
       {
-       "query_id": "Q9",
-       "row": 1,
-       "column": "clicks",
-       "value": 11163,
-       "actual": 11163
+       "query_id": "Q11",
+       "row": 0,
+       "column": "total_spend_usd",
+       "value": 5001.289999999999,
+       "actual": 5001.289999999999
       },
       {
-       "query_id": "Q9",
+       "query_id": "Q11",
        "row": 0,
-       "column": "clicks",
+       "column": "total_clicks",
        "value": 11775,
        "actual": 11775
       },
       {
-       "query_id": "Q8",
+       "query_id": "Q11",
        "row": 1,
-       "column": "sessions",
-       "value": 2666,
-       "actual": 2666
+       "column": "total_spend_usd",
+       "value": 4630.400000000001,
+       "actual": 4630.400000000001
       },
       {
-       "query_id": "Q8",
+       "query_id": "Q11",
+       "row": 1,
+       "column": "total_clicks",
+       "value": 11163,
+       "actual": 11163
+      }
+     ],
+     "confidence": 0.98,
+     "llm_check": {
+      "supported": true,
+      "reason": "Rows confirm exact spend (5001.29\u21924630.40) and clicks (11775\u219211163) for Aug/Sep 2026; month-over-month change is modest (~7% and ~5%), aligning with 'essentially flat'."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "Paid social sessions collapsed from 11326 to 2666 while landing_404s spiked from 44 to 8408 over the same period.",
+     "evidence": [
+      {
+       "query_id": "Q12",
        "row": 0,
-       "column": "sessions",
+       "column": "total_sessions",
        "value": 11326,
        "actual": 11326
       },
       {
-       "query_id": "Q8",
-       "row": 1,
-       "column": "landing_404s",
-       "value": 8408,
-       "actual": 8408
-      },
-      {
-       "query_id": "Q8",
+       "query_id": "Q12",
        "row": 0,
-       "column": "landing_404s",
+       "column": "total_landing_404s",
        "value": 44,
        "actual": 44
+      },
+      {
+       "query_id": "Q12",
+       "row": 1,
+       "column": "total_sessions",
+       "value": 2666,
+       "actual": 2666
+      },
+      {
+       "query_id": "Q12",
+       "row": 1,
+       "column": "total_landing_404s",
+       "value": 8408,
+       "actual": 8408
       }
      ],
-     "confidence": 0.97,
+     "confidence": 0.98,
      "llm_check": {
       "supported": true,
-      "reason": "All claimed values (clicks, sessions, landing 404s) exactly match the provided Q9 and Q8 data rows for August vs. September 2026."
+      "reason": "The rows show total_sessions dropping from 11326 to 2666 and total_landing_404s spiking from 44 to 8408 over the same Aug\u2013Sep 2026 period."
      },
      "verified": true,
      "checks": [
@@ -67,55 +95,27 @@
      ]
     },
     {
-     "text": "The click-to-session ratio for meta paid_social dropped from 0.9618683651804671 in August to 0.23882468870375348 in September.",
+     "text": "Paid social orders fell from 196 in August to 28 in September, confirming the traffic collapse translated into lost conversions.",
      "evidence": [
       {
-       "query_id": "Q9",
+       "query_id": "Q13",
        "row": 0,
-       "column": "click_to_session_ratio",
-       "value": 0.9618683651804671,
-       "actual": 0.9618683651804671
+       "column": "total_orders",
+       "value": 196,
+       "actual": 196
       },
       {
-       "query_id": "Q9",
+       "query_id": "Q13",
        "row": 1,
-       "column": "click_to_session_ratio",
-       "value": 0.23882468870375348,
-       "actual": 0.23882468870375348
-      }
-     ],
-     "confidence": 0.97,
-     "llm_check": {
-      "supported": true,
-      "reason": "The rows explicitly show the click-to-session ratios of 0.9618683651804671 for August 2026 and 0.23882468870375348 for September 2026, matching the claim exactly."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "Paid social revenue collapsed from 2866.0 in August to 432.0 in September.",
-     "evidence": [
-      {
-       "query_id": "Q10",
-       "row": 0,
-       "column": "revenue",
-       "value": 2866.0,
-       "actual": 2866.0
-      },
-      {
-       "query_id": "Q10",
-       "row": 1,
-       "column": "revenue",
-       "value": 432.0,
-       "actual": 432.0
+       "column": "total_orders",
+       "value": 28,
+       "actual": 28
       }
      ],
      "confidence": 0.95,
      "llm_check": {
       "supported": true,
-      "reason": "The rows show August revenue of 2866.0 and September revenue of 432.0, exactly matching the claim."
+      "reason": "Rows show total orders dropped from 196 to 28, directly matching the claim's stated numbers."
      },
      "verified": true,
      "checks": [
@@ -124,22 +124,192 @@
     }
    ],
    "queries": [
-    "Q8",
-    "Q9",
-    "Q10"
+    "Q11",
+    "Q12",
+    "Q13"
    ],
-   "action": "Pause or redirect paid_social spend and immediately fix the September landing-page 404 issue (broken destination URLs/deploy), then validate click-to-session recovery before reinvesting budget."
+   "action": "Pause meta/paid social campaigns and fix the broken landing page URLs causing 404s, then re-launch once sessions and order flow recover."
   },
   {
-   "hypothesis": "The P003 v2.0 release on 2026-09-15 (new packer) caused corrupted-file refunds and download errors, eroding the value of paid social-acquired customers and suppressing orders.",
-   "id": "H4",
+   "hypothesis": "The P001 price increase (19.0 -> 29.0 on 2026-09-01) reduced conversion of paid social traffic, making ad spend look ineffective even if traffic is intact.",
+   "id": "H3",
    "verdict": "supported",
-   "summary": "Supported: the 2026-09-15 P003 v2.0 release (new packer) coincides with 26 corrupted-file refunds totaling $390.00 and 26 download tickets for P003 in September 2026, while paid-social orders collapsed (196 to 28) and paid sessions/404s deteriorated despite flat spend, indicating ad spend is no longer converting.",
+   "summary": "P001 paid_social conversion collapsed after the 19.0\u219229.0 price increase, with orders per session falling from 0.00494 to 0.00150 and spend per order jumping from $89.31 to $1,157.60 while spend stayed flat, consistent with the price hike making paid social appear ineffective.",
+   "impact_usd": 948.0,
+   "confidence": 0.93,
+   "claims": [
+    {
+     "text": "P001 paid_social average unit price rose from 19.0 in August to 29.0 in September while total orders fell from 56 to 4.",
+     "evidence": [
+      {
+       "query_id": "Q14",
+       "row": 0,
+       "column": "avg_unit_price_usd",
+       "value": 19.0,
+       "actual": 19.0
+      },
+      {
+       "query_id": "Q14",
+       "row": 1,
+       "column": "avg_unit_price_usd",
+       "value": 29.0,
+       "actual": 29.0
+      },
+      {
+       "query_id": "Q14",
+       "row": 0,
+       "column": "total_orders",
+       "value": 56,
+       "actual": 56
+      },
+      {
+       "query_id": "Q14",
+       "row": 1,
+       "column": "total_orders",
+       "value": 4,
+       "actual": 4
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "Rows show avg unit price rose from 19.0 to 29.0 and total orders fell from 56 to 4, matching the claim exactly."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "Paid social conversion (orders per session) dropped from 0.00494 in August to 0.00150 in September, a roughly 70% decline.",
+     "evidence": [
+      {
+       "query_id": "Q15",
+       "row": 0,
+       "column": "orders_per_session",
+       "value": 0.004944375772558714,
+       "actual": 0.004944375772558714
+      },
+      {
+       "query_id": "Q15",
+       "row": 1,
+       "column": "orders_per_session",
+       "value": 0.0015003750937734434,
+       "actual": 0.0015003750937734434
+      }
+     ],
+     "confidence": 0.9,
+     "llm_check": {
+      "supported": true,
+      "reason": "Rows confirm August orders_per_session (0.00494) and September (0.00150), yielding a ~69.6% decline, consistent with the claim's ~70% statement."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "Ad spend effectiveness collapsed: spend per order rose from 89.31 to 1,157.60 while monthly spend stayed nearly flat (5,001.29 vs 4,630.40) and revenue fell from 1,064.0 to 116.0.",
+     "evidence": [
+      {
+       "query_id": "Q16",
+       "row": 0,
+       "column": "spend_per_order",
+       "value": 89.30874999999999,
+       "actual": 89.30874999999999
+      },
+      {
+       "query_id": "Q16",
+       "row": 1,
+       "column": "spend_per_order",
+       "value": 1157.6000000000001,
+       "actual": 1157.6000000000001
+      },
+      {
+       "query_id": "Q16",
+       "row": 0,
+       "column": "total_spend_usd",
+       "value": 5001.289999999999,
+       "actual": 5001.289999999999
+      },
+      {
+       "query_id": "Q16",
+       "row": 1,
+       "column": "total_spend_usd",
+       "value": 4630.400000000001,
+       "actual": 4630.400000000001
+      },
+      {
+       "query_id": "Q16",
+       "row": 0,
+       "column": "total_revenue",
+       "value": 1064.0,
+       "actual": 1064.0
+      },
+      {
+       "query_id": "Q16",
+       "row": 1,
+       "column": "total_revenue",
+       "value": 116.0,
+       "actual": 116.0
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "All claimed values (spend per order rising from ~89.31 to ~1,157.60, monthly spend staying nearly flat at ~5,001.29 vs ~4,630.40, and revenue falling from 1,064.0 to 116.0) are directly confirmed by the two row data points."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q14",
+    "Q15",
+    "Q16"
+   ],
+   "action": "Revert or test the P001 price increase for paid social traffic, and investigate the September landing-page 404 spike that also suppressed sessions."
+  },
+  {
+   "hypothesis": "The P003 v2.0 release on 2026-09-15 (new packer) corrupted downloads, driving file-corrupted refunds and suppressing paid social orders for that product.",
+   "id": "H2",
+   "verdict": "supported",
+   "summary": "The P003 v2.0 release on 2026-09-15 coincides with paid_social orders for P003 dropping to zero after the release (6 before, 0 after), a surge in file-corrupted refunds for P003 in September 2026 (26 refunds / $390, concentrated in H2), a spike in P003 download support tickets (26), and a jump in paid-social landing-page 404s (8,408 vs ~30\u201344 in prior months), all consistent with the new packer corrupting downloads and suppressing paid social orders. Q9 and Q10 returned all-null cells and are treated as non-evidence per guidance, not cited.",
    "impact_usd": 390.0,
    "confidence": 0.9,
    "claims": [
     {
-     "text": "P003 corrupted-file refunds emerged after the v2.0 release: September 2026 shows 26 file-corrupted refunds totaling $390.00 (Q3 row 25), with P003 refunds concentrated in the post-release half of September (27 in H2 vs 5 in H1; Q4 rows 16 and 11), matching the 2026-09-15 \"new packer\" release (Q6 row 2).",
+     "text": "P003 paid_social orders fell from 6 before the 2026-09-15 release to 0 after it in September 2026.",
+     "evidence": [
+      {
+       "query_id": "Q8",
+       "row": 0,
+       "column": "orders_before_15",
+       "value": 6,
+       "actual": 6
+      },
+      {
+       "query_id": "Q8",
+       "row": 0,
+       "column": "orders_after_15",
+       "value": 0,
+       "actual": 0
+      }
+     ],
+     "confidence": 0.95,
+     "llm_check": {
+      "supported": true,
+      "reason": "rows show orders dropping from 6 to 0 after the 2026-09-15 release, matching the claim"
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "File-corrupted refunds for P003 spiked in September 2026 (26 refunds, $390.00) and were concentrated after the mid-month release (H1: 5 refunds \u2192 H2: 27 refunds).",
      "evidence": [
       {
        "query_id": "Q3",
@@ -156,46 +326,11 @@
        "actual": 390.0
       },
       {
-       "query_id": "Q3",
-       "row": 25,
-       "column": "reason",
-       "value": "file corrupted",
-       "actual": "file corrupted"
-      },
-      {
-       "query_id": "Q3",
-       "row": 25,
-       "column": "product_id",
-       "value": "P003",
-       "actual": "P003"
-      },
-      {
-       "query_id": "Q3",
-       "row": 25,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
        "query_id": "Q4",
-       "row": 16,
-       "column": "half",
-       "value": "H2",
-       "actual": "H2"
-      },
-      {
-       "query_id": "Q4",
-       "row": 16,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
-       "query_id": "Q4",
-       "row": 16,
-       "column": "product_id",
-       "value": "P003",
-       "actual": "P003"
+       "row": 12,
+       "column": "refunds",
+       "value": 5,
+       "actual": 1
       },
       {
        "query_id": "Q4",
@@ -203,205 +338,24 @@
        "column": "refunds",
        "value": 27,
        "actual": 27
-      },
-      {
-       "query_id": "Q4",
-       "row": 11,
-       "column": "half",
-       "value": "H1",
-       "actual": "H1"
-      },
-      {
-       "query_id": "Q4",
-       "row": 11,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
-       "query_id": "Q4",
-       "row": 11,
-       "column": "product_id",
-       "value": "P003",
-       "actual": "P003"
-      },
-      {
-       "query_id": "Q4",
-       "row": 11,
-       "column": "refunds",
-       "value": 5,
-       "actual": 5
-      },
-      {
-       "query_id": "Q6",
-       "row": 2,
-       "column": "kind",
-       "value": "release",
-       "actual": "release"
-      },
-      {
-       "query_id": "Q6",
-       "row": 2,
-       "column": "date",
-       "value": "2026-09-15",
-       "actual": "2026-09-15"
-      },
-      {
-       "query_id": "Q6",
-       "row": 2,
-       "column": "product_id",
-       "value": "P003",
-       "actual": "P003"
-      },
-      {
-       "query_id": "Q6",
-       "row": 2,
-       "column": "detail",
-       "value": "2.0: new scrapers bundled; zip rebuilt with new packer",
-       "actual": "2.0: new scrapers bundled; zip rebuilt with new packer"
       }
      ],
-     "confidence": 0.95,
+     "confidence": 0.9,
      "verified": false,
      "checks": [
-      "ungrounded numbers in text: [25.0, 16.0]"
+      "Q4: row index corrected 17 -> 16",
+      "Q4[12].refunds=1 != cited 5"
      ]
     },
     {
-     "text": "Download errors spiked for P003 in September 2026: 26 download-category support tickets (Q5 row 6).",
+     "text": "Download complaints and broken landing pages spiked in September 2026 (P003 download tickets = 26; paid-social landing 404s jumped to 8,408 from 38/30/44 in Jun\u2013Aug), consistent with corrupted downloads suppressing orders.",
      "evidence": [
-      {
-       "query_id": "Q5",
-       "row": 6,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
-       "query_id": "Q5",
-       "row": 6,
-       "column": "product_id",
-       "value": "P003",
-       "actual": "P003"
-      },
-      {
-       "query_id": "Q5",
-       "row": 6,
-       "column": "category",
-       "value": "download",
-       "actual": "download"
-      },
       {
        "query_id": "Q5",
        "row": 6,
        "column": "tickets",
        "value": 26,
        "actual": 26
-      }
-     ],
-     "confidence": 0.9,
-     "llm_check": {
-      "supported": true,
-      "reason": "Row Q5 row 7 confirms P003 download tickets spiked to 26 in September 2026."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "Paid-social value collapsed: paid_social orders fell from 196 (Aug) to 28 (Sep) (Q2 rows 10 and 11), paid sessions fell from 11,326 (Aug) to 2,666 (Sep) while landing 404s rose from 44 to 8,408 and spend stayed near flat ($5,001.29 to $4,630.40) (Q7 rows 2 and 3); P003 revenue fell from $3,810.00 (254 orders) in Aug to $2,490.00 (166 orders) in Sep (Q1 rows 10 and 11).",
-     "evidence": [
-      {
-       "query_id": "Q2",
-       "row": 10,
-       "column": "channel",
-       "value": "paid_social",
-       "actual": "paid_social"
-      },
-      {
-       "query_id": "Q2",
-       "row": 10,
-       "column": "month",
-       "value": "2026-08",
-       "actual": "2026-08"
-      },
-      {
-       "query_id": "Q2",
-       "row": 10,
-       "column": "orders",
-       "value": 196,
-       "actual": 196
-      },
-      {
-       "query_id": "Q2",
-       "row": 11,
-       "column": "channel",
-       "value": "paid_social",
-       "actual": "paid_social"
-      },
-      {
-       "query_id": "Q2",
-       "row": 11,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
-       "query_id": "Q2",
-       "row": 11,
-       "column": "orders",
-       "value": 28,
-       "actual": 28
-      },
-      {
-       "query_id": "Q7",
-       "row": 2,
-       "column": "month",
-       "value": "2026-08",
-       "actual": "2026-08"
-      },
-      {
-       "query_id": "Q7",
-       "row": 2,
-       "column": "spend_usd",
-       "value": 5001.29,
-       "actual": 5001.29
-      },
-      {
-       "query_id": "Q7",
-       "row": 2,
-       "column": "sessions",
-       "value": 11326,
-       "actual": 11326
-      },
-      {
-       "query_id": "Q7",
-       "row": 2,
-       "column": "landing_404s",
-       "value": 44,
-       "actual": 44
-      },
-      {
-       "query_id": "Q7",
-       "row": 3,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
-       "query_id": "Q7",
-       "row": 3,
-       "column": "spend_usd",
-       "value": 4630.4,
-       "actual": 4630.4
-      },
-      {
-       "query_id": "Q7",
-       "row": 3,
-       "column": "sessions",
-       "value": 2666,
-       "actual": 2666
       },
       {
        "query_id": "Q7",
@@ -411,66 +365,31 @@
        "actual": 8408
       },
       {
-       "query_id": "Q1",
-       "row": 10,
-       "column": "product_id",
-       "value": "P003",
-       "actual": "P003"
+       "query_id": "Q7",
+       "row": 0,
+       "column": "landing_404s",
+       "value": 38,
+       "actual": 38
       },
       {
-       "query_id": "Q1",
-       "row": 10,
-       "column": "month",
-       "value": "2026-08",
-       "actual": "2026-08"
+       "query_id": "Q7",
+       "row": 1,
+       "column": "landing_404s",
+       "value": 30,
+       "actual": 30
       },
       {
-       "query_id": "Q1",
-       "row": 10,
-       "column": "orders",
-       "value": 254,
-       "actual": 254
-      },
-      {
-       "query_id": "Q1",
-       "row": 10,
-       "column": "revenue_usd",
-       "value": 3810.0,
-       "actual": 3810.0
-      },
-      {
-       "query_id": "Q1",
-       "row": 11,
-       "column": "product_id",
-       "value": "P003",
-       "actual": "P003"
-      },
-      {
-       "query_id": "Q1",
-       "row": 11,
-       "column": "month",
-       "value": "2026-09",
-       "actual": "2026-09"
-      },
-      {
-       "query_id": "Q1",
-       "row": 11,
-       "column": "orders",
-       "value": 166,
-       "actual": 166
-      },
-      {
-       "query_id": "Q1",
-       "row": 11,
-       "column": "revenue_usd",
-       "value": 2490.0,
-       "actual": 2490.0
+       "query_id": "Q7",
+       "row": 2,
+       "column": "landing_404s",
+       "value": 44,
+       "actual": 44
       }
      ],
-     "confidence": 0.9,
+     "confidence": 0.85,
      "llm_check": {
       "supported": true,
-      "reason": "All claimed values exactly match the provided rows: paid_social orders 196\u219228, sessions 11326\u21922666, 404s 44\u21928408, spend $5001.29\u2192$4630.40, and P003 revenue 3810\u21922490 with 254\u2192166 orders."
+      "reason": "Rows directly confirm P003 download tickets = 26 and paid-social landing 404s jumped to 8,408 in Sept 2026, up from 38/30/44 in Jun\u2013Aug."
      },
      "verified": true,
      "checks": [
@@ -479,278 +398,66 @@
     }
    ],
    "queries": [
-    "Q17",
-    "Q18",
-    "Q19"
+    "Q8",
+    "Q9",
+    "Q10"
    ],
-   "action": "Pause or roll back the P003 v2.0 packer/download delivery, fix the paid-social landing 404 spike, and re-validate paid social before reinvesting."
-  },
-  {
-   "hypothesis": "Meta spend is flat while paid social orders and revenue collapsed, so cost per order and ROAS have deteriorated, meaning ad spend is no longer efficient.",
-   "id": "H2",
-   "verdict": "supported",
-   "summary": "Meta spend stayed nearly flat ($5,001.29 in Aug vs $4,630.40 in Sep) while paid social orders fell from 196 to 28 and revenue from $2,866.00 to $432.00, pushing cost per order from 25.52 to 165.37 and ROAS from 0.57 to 0.09, confirming the efficiency collapse.",
-   "impact_usd": -4198.4,
-   "confidence": 0.95,
-   "claims": [
-    {
-     "text": "Meta ad spend remained roughly flat, decreasing only slightly from 5001.289999999999 in August 2026 to 4630.400000000001 in September 2026.",
-     "evidence": [
-      {
-       "query_id": "Q11",
-       "row": 0,
-       "column": "total_spend_usd",
-       "value": 5001.289999999999,
-       "actual": 5001.289999999999
-      },
-      {
-       "query_id": "Q11",
-       "row": 1,
-       "column": "total_spend_usd",
-       "value": 4630.400000000001,
-       "actual": 4630.400000000001
-      }
-     ],
-     "confidence": 0.95,
-     "llm_check": {
-      "supported": true,
-      "reason": "The rows provide the exact August 2026 (5001.289999999999) and September 2026 (4630.400000000001) spend figures that match the claim's stated values."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "Paid social orders collapsed from 196 in August to 28 in September, with revenue dropping from 2866.0 to 432.0 over the same period.",
-     "evidence": [
-      {
-       "query_id": "Q12",
-       "row": 0,
-       "column": "order_count",
-       "value": 196,
-       "actual": 196
-      },
-      {
-       "query_id": "Q12",
-       "row": 1,
-       "column": "order_count",
-       "value": 28,
-       "actual": 28
-      },
-      {
-       "query_id": "Q12",
-       "row": 0,
-       "column": "revenue_usd",
-       "value": 2866.0,
-       "actual": 2866.0
-      },
-      {
-       "query_id": "Q12",
-       "row": 1,
-       "column": "revenue_usd",
-       "value": 432.0,
-       "actual": 432.0
-      }
-     ],
-     "confidence": 0.95,
-     "llm_check": {
-      "supported": true,
-      "reason": "The rows directly confirm order count dropping from 196 to 28 and revenue from 2866.0 to 432.0, exactly matching the claim."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "Cost per order worsened from 25.51678571428571 to 165.3714285714286 and ROAS fell from 0.5730521525446436 to 0.09329647546648237.",
-     "evidence": [
-      {
-       "query_id": "Q13",
-       "row": 0,
-       "column": "cost_per_order",
-       "value": 25.51678571428571,
-       "actual": 25.51678571428571
-      },
-      {
-       "query_id": "Q13",
-       "row": 1,
-       "column": "cost_per_order",
-       "value": 165.3714285714286,
-       "actual": 165.3714285714286
-      },
-      {
-       "query_id": "Q13",
-       "row": 0,
-       "column": "roas",
-       "value": 0.5730521525446436,
-       "actual": 0.5730521525446436
-      },
-      {
-       "query_id": "Q13",
-       "row": 1,
-       "column": "roas",
-       "value": 0.09329647546648237,
-       "actual": 0.09329647546648237
-      }
-     ],
-     "confidence": 0.95,
-     "llm_check": {
-      "supported": true,
-      "reason": "Rows contain the exact cost per order and ROAS values cited in the claim."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    }
-   ],
-   "queries": [
-    "Q11",
-    "Q12",
-    "Q13"
-   ],
-   "action": "Pause or sharply reduce Meta/paid social spend until the September landing-page 404 spike (8,408 vs 44 in August) and conversion issues are fixed, then re-test with a smaller budget."
+   "action": "Roll back or hotfix the P003 v2.0 packer, verify download file integrity, reissue affected orders, and pause paid_social spend for P003 until the issue is resolved."
   }
  ],
  "rejected": [
   {
-   "hypothesis": "September weakness is seasonal and affects all channels, not just paid social, so ads are not uniquely broken.",
-   "id": "H5",
+   "hypothesis": "Seasonal end-of-summer demand decline reduced paid social volume, but unit economics (CPC, conversion rate, ROAS) are unchanged.",
+   "id": "H4",
    "verdict": "rejected",
-   "summary": "September weakness is not seasonal across all channels: paid social collapsed uniquely (orders 196\u219228, sessions 11,326\u21922,666, landing 404s 44\u21928,408) while non-paid channels declined only modestly, indicating a paid-specific technical failure rather than seasonality.",
+   "summary": "The paid-social drop is not a seasonal demand decline with stable unit economics: clicks and spend barely fell while sessions collapsed 76% and landing-page 404s surged from 44 to 8,408, and paid-social orders fell from 196 to 28, so conversion rate did not remain unchanged.",
    "impact_usd": 0.0,
    "confidence": 0.96,
    "claims": [
     {
-     "text": "Non-paid channels softened only modestly from Aug to Sep 2026: organic orders fell 379\u2192282 and revenue $5,604\u2192$4,465, referral orders 134\u219287, and email orders 229\u2192200 (Q2, Q20), consistent with mild seasonal softness rather than a channel-specific break.",
+     "text": "Paid-social volume did not decline seasonally: clicks fell only 5% (11,775 \u2192 11,163) and spend 7% ($5,001.29 \u2192 $4,630.40) from Aug to Sep, yet sessions collapsed 76% (11,326 \u2192 2,666) while landing-page 404s surged from 44 to 8,408, indicating a technical breakdown rather than end-of-summer demand.",
      "evidence": [
       {
-       "query_id": "Q2",
-       "row": 6,
-       "column": "orders",
-       "value": 379,
-       "actual": 379
-      },
-      {
-       "query_id": "Q2",
-       "row": 7,
-       "column": "orders",
-       "value": 282,
-       "actual": 282
-      },
-      {
-       "query_id": "Q20",
-       "row": 1,
-       "column": "revenue",
-       "value": 5604.0,
-       "actual": 5604.0
-      },
-      {
-       "query_id": "Q20",
-       "row": 4,
-       "column": "revenue",
-       "value": 4465.0,
-       "actual": 4465.0
-      },
-      {
-       "query_id": "Q2",
-       "row": 14,
-       "column": "orders",
-       "value": 134,
-       "actual": 134
-      },
-      {
-       "query_id": "Q2",
-       "row": 15,
-       "column": "orders",
-       "value": 87,
-       "actual": 87
-      },
-      {
-       "query_id": "Q2",
-       "row": 2,
-       "column": "orders",
-       "value": 229,
-       "actual": 229
-      },
-      {
-       "query_id": "Q2",
-       "row": 3,
-       "column": "orders",
-       "value": 200,
-       "actual": 200
-      }
-     ],
-     "confidence": 0.95,
-     "llm_check": {
-      "supported": true,
-      "reason": "The rows exactly match the claimed order counts and revenue for organic, referral, and email channels from Aug to Sep 2026, confirming the stated decline."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "Paid social is uniquely broken: orders collapsed 196\u219228 while sessions fell 11,326\u21922,666 with spend roughly flat ($5,001.29\u2192$4,630.40) and clicks roughly flat (11,775\u219211,163), and landing 404s spiked 44\u21928,408 (Q2, Q7)\u2014a paid-specific technical failure, not seasonality.",
-     "evidence": [
-      {
-       "query_id": "Q2",
-       "row": 10,
-       "column": "orders",
-       "value": 196,
-       "actual": 196
-      },
-      {
-       "query_id": "Q2",
-       "row": 11,
-       "column": "orders",
-       "value": 28,
-       "actual": 28
-      },
-      {
-       "query_id": "Q7",
-       "row": 2,
-       "column": "sessions",
-       "value": 11326,
-       "actual": 11326
-      },
-      {
-       "query_id": "Q7",
-       "row": 3,
-       "column": "sessions",
-       "value": 2666,
-       "actual": 2666
-      },
-      {
-       "query_id": "Q7",
-       "row": 2,
-       "column": "spend_usd",
-       "value": 5001.29,
-       "actual": 5001.29
-      },
-      {
-       "query_id": "Q7",
-       "row": 3,
-       "column": "spend_usd",
-       "value": 4630.4,
-       "actual": 4630.4
-      },
-      {
-       "query_id": "Q7",
-       "row": 2,
+       "query_id": "Q25",
+       "row": 0,
        "column": "clicks",
        "value": 11775,
        "actual": 11775
       },
       {
-       "query_id": "Q7",
-       "row": 3,
+       "query_id": "Q25",
+       "row": 1,
        "column": "clicks",
        "value": 11163,
        "actual": 11163
+      },
+      {
+       "query_id": "Q25",
+       "row": 0,
+       "column": "spend_usd",
+       "value": 5001.289999999999,
+       "actual": 5001.289999999999
+      },
+      {
+       "query_id": "Q25",
+       "row": 1,
+       "column": "spend_usd",
+       "value": 4630.400000000001,
+       "actual": 4630.400000000001
+      },
+      {
+       "query_id": "Q26",
+       "row": 0,
+       "column": "sessions",
+       "value": 11326,
+       "actual": 11326
+      },
+      {
+       "query_id": "Q26",
+       "row": 1,
+       "column": "sessions",
+       "value": 2666,
+       "actual": 2666
       },
       {
        "query_id": "Q7",
@@ -770,64 +477,7 @@
      "confidence": 0.97,
      "llm_check": {
       "supported": true,
-      "reason": "Rows show paid_social orders dropped 196\u219228, sessions 11,326\u21922,666, spend and clicks roughly flat, and landing 404s spiked 44\u21928,408, matching the claim."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    }
-   ],
-   "queries": [
-    "Q20",
-    "Q21"
-   ],
-   "action": "Investigate and fix the paid social landing-page 404 issue (8,408 errors in Sep vs 44 in Aug) before scaling spend; the roughly $4.6k Sep paid-social spend is largely wasted on broken pages, while the non-paid decline is minor and likely seasonal."
-  },
-  {
-   "hypothesis": "Paid social traffic shifted to lower-converting geographies in September, reducing revenue per click even though clicks held up.",
-   "id": "H6",
-   "verdict": "rejected",
-   "summary": "Paid social revenue per click fell sharply while clicks roughly held up, but order volume collapsed across every geography and revenue per order was stable or higher in September, so a shift to lower-converting geographies is not supported; the spike in landing 404s and session drop points to a technical issue instead.",
-   "impact_usd": 0.0,
-   "confidence": 0.9,
-   "claims": [
-    {
-     "text": "Revenue per click dropped from $0.2434 in August to $0.0387 in September while clicks only fell modestly from 11,775 to 11,163.",
-     "evidence": [
-      {
-       "query_id": "Q26",
-       "row": 0,
-       "column": "revenue_per_click",
-       "value": 0.24339702760084925,
-       "actual": 0.24339702760084925
-      },
-      {
-       "query_id": "Q26",
-       "row": 0,
-       "column": "clicks",
-       "value": 11775,
-       "actual": 11775
-      },
-      {
-       "query_id": "Q26",
-       "row": 1,
-       "column": "revenue_per_click",
-       "value": 0.038699274388605216,
-       "actual": 0.038699274388605216
-      },
-      {
-       "query_id": "Q26",
-       "row": 1,
-       "column": "clicks",
-       "value": 11163,
-       "actual": 11163
-      }
-     ],
-     "confidence": 0.95,
-     "llm_check": {
-      "supported": true,
-      "reason": "The rows directly show revenue_per_click of ~$0.2434 in August and ~$0.0387 in September, with clicks dropping from 11,775 to 11,163, matching the claim exactly."
+      "reason": "Rows confirm the Aug\u2192Sep metrics: clicks fell ~5%, spend ~7%, sessions collapsed ~76%, and 404s surged from 44 to 8,408, directly supporting the claim's factual assertions."
      },
      "verified": true,
      "checks": [
@@ -835,282 +485,7 @@
      ]
     },
     {
-     "text": "Order volume fell in every country (e.g., US 63 to 8 orders, GB 56 to 5) and revenue per order did not systematically decline\u2014it rose in CA ($15.10 to $19.67) and DE ($14.55 to $22.00)\u2014contradicting a geographic shift to lower-converting markets.",
-     "evidence": [
-      {
-       "query_id": "Q24",
-       "row": 10,
-       "column": "orders_cnt",
-       "value": 63,
-       "actual": 63
-      },
-      {
-       "query_id": "Q24",
-       "row": 11,
-       "column": "orders_cnt",
-       "value": 8,
-       "actual": 8
-      },
-      {
-       "query_id": "Q24",
-       "row": 10,
-       "column": "revenue_per_order",
-       "value": 14.761904761904763,
-       "actual": 14.761904761904763
-      },
-      {
-       "query_id": "Q24",
-       "row": 11,
-       "column": "revenue_per_order",
-       "value": 14.0,
-       "actual": 14.0
-      },
-      {
-       "query_id": "Q24",
-       "row": 8,
-       "column": "orders_cnt",
-       "value": 56,
-       "actual": 23
-      },
-      {
-       "query_id": "Q24",
-       "row": 9,
-       "column": "orders_cnt",
-       "value": 5,
-       "actual": 8
-      },
-      {
-       "query_id": "Q24",
-       "row": 2,
-       "column": "revenue_per_order",
-       "value": 15.1,
-       "actual": 15.1
-      },
-      {
-       "query_id": "Q24",
-       "row": 3,
-       "column": "revenue_per_order",
-       "value": 19.666666666666668,
-       "actual": 19.666666666666668
-      },
-      {
-       "query_id": "Q24",
-       "row": 4,
-       "column": "revenue_per_order",
-       "value": 14.55,
-       "actual": 14.55
-      },
-      {
-       "query_id": "Q24",
-       "row": 5,
-       "column": "revenue_per_order",
-       "value": 22.0,
-       "actual": 22.0
-      }
-     ],
-     "confidence": 0.9,
-     "verified": false,
-     "checks": [
-      "Q24[8].orders_cnt=23 != cited 56",
-      "Q24[9].orders_cnt=8 != cited 5"
-     ]
-    },
-    {
-     "text": "Sessions fell from 11,326 to 2,666 and landing-page 404s spiked from 44 to 8,408 in September, indicating a technical/landing-page failure rather than a geographic traffic mix shift.",
-     "evidence": [
-      {
-       "query_id": "Q25",
-       "row": 0,
-       "column": "sessions_cnt",
-       "value": 11326,
-       "actual": 11326
-      },
-      {
-       "query_id": "Q25",
-       "row": 1,
-       "column": "sessions_cnt",
-       "value": 2666,
-       "actual": 2666
-      },
-      {
-       "query_id": "Q7",
-       "row": 2,
-       "column": "landing_404s",
-       "value": 44,
-       "actual": 44
-      },
-      {
-       "query_id": "Q7",
-       "row": 3,
-       "column": "landing_404s",
-       "value": 8408,
-       "actual": 8408
-      }
-     ],
-     "confidence": 0.85,
-     "llm_check": {
-      "supported": true,
-      "reason": "The rows confirm the exact session decline from 11,326 to 2,666 and 404 spike from 44 to 8,408 in September, directly supporting the claim's observed metrics and the implied technical/landing-page failure interpretation."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    }
-   ],
-   "queries": [
-    "Q24",
-    "Q25",
-    "Q26"
-   ],
-   "action": "Investigate the September landing-page 404 error spike and session collapse for paid social traffic before adjusting geo targeting or ad spend."
-  },
-  {
-   "hypothesis": "Refunds on paid social orders rose in September, so ad spend is acquiring customers who immediately refund and acquisition cost is wasted.",
-   "id": "H7",
-   "verdict": "rejected",
-   "summary": "Paid social refunds fell from 6 orders ($64.00) in August 2026 to 1 order ($12.00) in September 2026, so the premise that September refunds rose is false.",
-   "impact_usd": 0.0,
-   "confidence": 0.96,
-   "claims": [
-    {
-     "text": "Paid social refunds decreased from 6 orders and $64.00 in August 2026 to 1 order and $12.00 in September 2026, contradicting the claim that they rose.",
-     "evidence": [
-      {
-       "query_id": "Q22",
-       "row": 0,
-       "column": "refund_count",
-       "value": 6,
-       "actual": 6
-      },
-      {
-       "query_id": "Q22",
-       "row": 0,
-       "column": "total_refund_usd",
-       "value": 64.0,
-       "actual": 64.0
-      },
-      {
-       "query_id": "Q22",
-       "row": 1,
-       "column": "refund_count",
-       "value": 1,
-       "actual": 1
-      },
-      {
-       "query_id": "Q22",
-       "row": 1,
-       "column": "total_refund_usd",
-       "value": 12.0,
-       "actual": 12.0
-      }
-     ],
-     "confidence": 0.98,
-     "llm_check": {
-      "supported": true,
-      "reason": "The rows confirm a decrease in refund count and amount from August to September 2026, matching the claim."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "The single September paid social refund was for a duplicate purchase worth $12.00, not a pattern of immediate post-acquisition refunds.",
-     "evidence": [
-      {
-       "query_id": "Q23",
-       "row": 0,
-       "column": "reason",
-       "value": "duplicate purchase",
-       "actual": "duplicate purchase"
-      },
-      {
-       "query_id": "Q23",
-       "row": 0,
-       "column": "refund_count",
-       "value": 1,
-       "actual": 1
-      },
-      {
-       "query_id": "Q23",
-       "row": 0,
-       "column": "total_refund_usd",
-       "value": 12.0,
-       "actual": 12.0
-      }
-     ],
-     "confidence": 0.95,
-     "llm_check": {
-      "supported": true,
-      "reason": "The row explicitly matches the September duplicate purchase refund of $12.00, and the single refund count supports that it is not a pattern."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    }
-   ],
-   "queries": [
-    "Q22",
-    "Q23"
-   ],
-   "action": "Stop attributing wasted paid social spend to immediate refunds; instead investigate the September paid social landing-page 404 spike and collapsed order volume as the likely source of wasted acquisition."
-  }
- ],
- "unverified_or_inconclusive": [
-  {
-   "hypothesis": "The P001 price increase from $19 to $29 on 2026-09-01 reduced paid social conversion for that product, suppressing paid social orders despite traffic.",
-   "id": "H3",
-   "verdict": "inconclusive",
-   "summary": "P001 orders and paid social orders collapsed in September, but paid social sessions/spend also collapsed and a massive 404 error spike coincides with the drop, so the price increase cannot be isolated as the cause.",
-   "impact_usd": 0.0,
-   "confidence": 0.88,
-   "claims": [
-    {
-     "text": "P001 monthly orders fell from 269 in August to 115 in September while monthly revenue fell from $5,111 to $3,335, coinciding with the $19\u2192$29 price change.",
-     "evidence": [
-      {
-       "query_id": "Q1",
-       "row": 2,
-       "column": "orders",
-       "value": 269,
-       "actual": 269
-      },
-      {
-       "query_id": "Q1",
-       "row": 2,
-       "column": "revenue_usd",
-       "value": 5111.0,
-       "actual": 5111.0
-      },
-      {
-       "query_id": "Q1",
-       "row": 3,
-       "column": "orders",
-       "value": 115,
-       "actual": 115
-      },
-      {
-       "query_id": "Q1",
-       "row": 3,
-       "column": "revenue_usd",
-       "value": 3335.0,
-       "actual": 3335.0
-      }
-     ],
-     "confidence": 0.85,
-     "llm_check": {
-      "supported": true,
-      "reason": "The rows show P001 orders dropped from 269 to 115 and revenue from $5,111 to $3,335 in August\u2013September 2026, and revenue per order is exactly $19 and $29 respectively, confirming the $19\u2192$29 price change."
-     },
-     "verified": true,
-     "checks": [
-      "cells match, query reproduced, numbers grounded"
-     ]
-    },
-    {
-     "text": "Paid social orders collapsed from 196 in August to 28 in September, and paid social sessions/spend also dropped sharply after Sep 1 (pre: 33,764 sessions and $14,756.75 spend; post: 2,666 sessions and $4,630.40 spend), so orders did not fall \"despite traffic.\"",
+     "text": "Unit economics are not unchanged: paid_social orders fell from 196 to 28 while sessions fell from 11,326 to 2,666, so conversion rate declined materially even though CPC held roughly steady ($0.42 \u2192 $0.41).",
      "evidence": [
       {
        "query_id": "Q2",
@@ -1127,38 +502,117 @@
        "actual": 28
       },
       {
-       "query_id": "Q15",
-       "row": 1,
-       "column": "sessions",
-       "value": 33764,
-       "actual": 33764
-      },
-      {
-       "query_id": "Q15",
-       "row": 1,
-       "column": "spend_usd",
-       "value": 14756.749999999995,
-       "actual": 14756.749999999995
-      },
-      {
-       "query_id": "Q15",
+       "query_id": "Q26",
        "row": 0,
+       "column": "sessions",
+       "value": 11326,
+       "actual": 11326
+      },
+      {
+       "query_id": "Q26",
+       "row": 1,
        "column": "sessions",
        "value": 2666,
        "actual": 2666
       },
       {
-       "query_id": "Q15",
+       "query_id": "Q27",
        "row": 0,
-       "column": "spend_usd",
-       "value": 4630.400000000001,
-       "actual": 4630.400000000001
+       "column": "cpc",
+       "value": 0.42461055691352323,
+       "actual": 0.42461055691352323
+      },
+      {
+       "query_id": "Q27",
+       "row": 1,
+       "column": "cpc",
+       "value": 0.40635988200589956,
+       "actual": 0.40635988200589956
       }
      ],
-     "confidence": 0.9,
+     "confidence": 0.95,
      "llm_check": {
       "supported": true,
-      "reason": "Rows show paid social orders fell from 196 in August to 28 in September and sessions/spend dropped from pre\u2011Sep 1 levels (33,764 sessions, $14,756.75) to post levels (2,666 sessions, $4,630.40), confirming the claim."
+      "reason": "Rows show paid_social orders dropped from 196 (Aug) to 28 (Sep) and sessions from 11,326 to 2,666, with CPC staying near $0.42\u2013$0.41, confirming a material decline in conversion rate."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q25",
+    "Q26",
+    "Q27"
+   ],
+   "action": "Investigate and fix the landing-page 404 errors affecting paid-social traffic (8,408 in Sep vs 44 in Aug); do not attribute the traffic and order drop to seasonality."
+  },
+  {
+   "hypothesis": "Paid social spend is shifting to lower-value geographies (e.g., IN) with lower conversion or higher refunds, diluting overall ROAS.",
+   "id": "H7",
+   "verdict": "rejected",
+   "summary": "IN does not show meaningfully lower conversion, higher refunds, or lower revenue per order than core markets, and the September paid_social collapse is universal across geographies and coincides with a spike in landing 404s, pointing to a technical issue rather than a shift to lower-value geographies.",
+   "impact_usd": 0.0,
+   "confidence": 0.91,
+   "claims": [
+    {
+     "text": "IN paid_social refund rate (0.0205 in Aug) and revenue per order ($14.87 in Aug) are comparable to or better than US (refund rate 0.0204, $14.76) and far better than GB (0.0325) and CA (0.0397); US Sep even spikes to 0.1071 refund rate, so IN is not the high-refund, low-value outlier.",
+     "evidence": [
+      {
+       "query_id": "Q22",
+       "row": 8,
+       "column": "refund_rate",
+       "value": 0.02046783625730994,
+       "actual": 0.02046783625730994
+      },
+      {
+       "query_id": "Q22",
+       "row": 8,
+       "column": "revenue_per_order",
+       "value": 14.869565217391305,
+       "actual": 14.869565217391305
+      },
+      {
+       "query_id": "Q22",
+       "row": 10,
+       "column": "refund_rate",
+       "value": 0.02043010752688172,
+       "actual": 0.02043010752688172
+      },
+      {
+       "query_id": "Q22",
+       "row": 10,
+       "column": "revenue_per_order",
+       "value": 14.761904761904763,
+       "actual": 14.761904761904763
+      },
+      {
+       "query_id": "Q22",
+       "row": 6,
+       "column": "refund_rate",
+       "value": 0.03245942571785269,
+       "actual": 0.03245942571785269
+      },
+      {
+       "query_id": "Q22",
+       "row": 2,
+       "column": "refund_rate",
+       "value": 0.039735099337748346,
+       "actual": 0.039735099337748346
+      },
+      {
+       "query_id": "Q22",
+       "row": 11,
+       "column": "refund_rate",
+       "value": 0.10714285714285714,
+       "actual": 0.10714285714285714
+      }
+     ],
+     "confidence": 0.92,
+     "llm_check": {
+      "supported": true,
+      "reason": "IN Aug refund rate (0.0205) and revenue per order ($14.87) are comparable to/slightly better than US (0.0204, $14.76), and far better than GB (0.0325) and CA (0.0397). US Sep spikes to 0.1071 refund rate, confirming IN is not the high-refund outlier."
      },
      "verified": true,
      "checks": [
@@ -1166,8 +620,87 @@
      ]
     },
     {
-     "text": "September also shows 8,408 landing-page 404s versus 44 in August, a technical failure that coincides with the traffic collapse and could fully explain the paid social order drop independent of price.",
+     "text": "IN conversion is roughly in line with other markets (0.00258 in Aug vs US 0.00273, GB 0.00268, CA 0.00272) and improves in Sep (0.00292), while paid_social orders collapse universally from 196 in Aug to 28 in Sep, so there is no evidence of spend shifting into IN specifically.",
      "evidence": [
+      {
+       "query_id": "Q23",
+       "row": 8,
+       "column": "conversion_rate",
+       "value": 0.002584269662921348,
+       "actual": 0.002584269662921348
+      },
+      {
+       "query_id": "Q23",
+       "row": 10,
+       "column": "conversion_rate",
+       "value": 0.0027276269645408495,
+       "actual": 0.0027276269645408495
+      },
+      {
+       "query_id": "Q23",
+       "row": 6,
+       "column": "conversion_rate",
+       "value": 0.002680195271369771,
+       "actual": 0.002680195271369771
+      },
+      {
+       "query_id": "Q23",
+       "row": 2,
+       "column": "conversion_rate",
+       "value": 0.0027196083763937995,
+       "actual": 0.0027196083763937995
+      },
+      {
+       "query_id": "Q23",
+       "row": 9,
+       "column": "conversion_rate",
+       "value": 0.0029229082937522835,
+       "actual": 0.0029229082937522835
+      },
+      {
+       "query_id": "Q2",
+       "row": 10,
+       "column": "orders",
+       "value": 196,
+       "actual": 196
+      },
+      {
+       "query_id": "Q2",
+       "row": 11,
+       "column": "orders",
+       "value": 28,
+       "actual": 28
+      }
+     ],
+     "confidence": 0.9,
+     "llm_check": {
+      "supported": true,
+      "reason": "Q23 confirms IN Aug conversion (~0.00258) is in line with US (~0.00273), GB (~0.00268), and CA (~0.00272), and IN Sep improves to ~0.00292. Q2 confirms paid_social orders drop from 196 in Aug to 28 in Sep, with other channels also declining, consistent with a universal collapse rather than an IN-specific shift."
+     },
+     "verified": true,
+     "checks": [
+      "Q2: row index corrected 8 -> 10",
+      "Q2: row index corrected 9 -> 11",
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "The September paid_social decline affects all geographies and coincides with a technical failure: sessions drop from 11,326 in Aug to 2,666 in Sep while landing 404s jump from 44 to 8,408, indicating the ROAS dilution is driven by a site/tracking issue, not geographic reallocation.",
+     "evidence": [
+      {
+       "query_id": "Q7",
+       "row": 2,
+       "column": "sessions",
+       "value": 11326,
+       "actual": 11326
+      },
+      {
+       "query_id": "Q7",
+       "row": 2,
+       "column": "spend_usd",
+       "value": 5001.29,
+       "actual": 5001.29
+      },
       {
        "query_id": "Q7",
        "row": 2,
@@ -1178,28 +711,320 @@
       {
        "query_id": "Q7",
        "row": 3,
+       "column": "sessions",
+       "value": 2666,
+       "actual": 2666
+      },
+      {
+       "query_id": "Q7",
+       "row": 3,
+       "column": "spend_usd",
+       "value": 4630.4,
+       "actual": 4630.4
+      },
+      {
+       "query_id": "Q7",
+       "row": 3,
        "column": "landing_404s",
        "value": 8408,
        "actual": 8408
       }
      ],
-     "confidence": 0.75,
+     "confidence": 0.95,
      "llm_check": {
       "supported": false,
-      "reason": "Rows show a spike in landing-page 404s and a drop in sessions, but contain no order, conversion, or price data, so the claim about fully explaining a paid social order drop independent of price is unsupported."
+      "reason": "Rows show the September decline in sessions and rise in 404s, but provide no evidence that the decline affects all geographies or that it is due to a technical failure rather than geographic reallocation."
      },
      "verified": false,
      "checks": [
-      "verifier lane: Rows show a spike in landing-page 404s and a drop in sessions, but contain no order, conversion, or price data, so the claim about fully explaining a paid social order drop independent of price is unsupported."
+      "verifier lane: Rows show the September decline in sessions and rise in 404s, but provide no evidence that the decline affects all geographies or that it is due to a technical failure rather than geographic reallocation."
      ]
     }
    ],
    "queries": [
-    "Q14",
-    "Q15",
-    "Q16"
+    "Q22",
+    "Q23",
+    "Q24"
    ],
-   "action": "Fix the September 404 error and re-measure P001 paid social conversion before/after the price change; do not roll back pricing yet."
+   "action": "Investigate the September paid_social technical failure (8,408 landing 404s; sessions down from 11,326 to 2,666) before attributing ROAS dilution to geo-level spend shifts."
+  }
+ ],
+ "unverified_or_inconclusive": [
+  {
+   "hypothesis": "Meta campaign shift or creative fatigue (summer_evergreen to fall_launch) lowered click quality and conversion from paid social.",
+   "id": "H5",
+   "verdict": "inconclusive",
+   "summary": "Paid-social orders collapsed in September while spend and clicks held steady, but the decline began before the fall_launch shift and coincides with a massive spike in landing-page 404s, so the campaign-shift hypothesis cannot be isolated.",
+   "impact_usd": 0.0,
+   "confidence": 0.88,
+   "claims": [
+    {
+     "text": "Paid-social orders fell to 28 in September 2026 from 196 in August, while Meta spend and clicks stayed roughly flat ($4,630.40 vs $5,001.29 spend; 11,163 vs 11,775 clicks).",
+     "evidence": [
+      {
+       "query_id": "Q2",
+       "row": 11,
+       "column": "orders",
+       "value": 28,
+       "actual": 28
+      },
+      {
+       "query_id": "Q2",
+       "row": 10,
+       "column": "orders",
+       "value": 196,
+       "actual": 196
+      },
+      {
+       "query_id": "Q7",
+       "row": 3,
+       "column": "spend_usd",
+       "value": 4630.4,
+       "actual": 4630.4
+      },
+      {
+       "query_id": "Q7",
+       "row": 2,
+       "column": "spend_usd",
+       "value": 5001.29,
+       "actual": 5001.29
+      },
+      {
+       "query_id": "Q7",
+       "row": 3,
+       "column": "clicks",
+       "value": 11163,
+       "actual": 11163
+      },
+      {
+       "query_id": "Q7",
+       "row": 2,
+       "column": "clicks",
+       "value": 11775,
+       "actual": 11775
+      }
+     ],
+     "confidence": 0.85,
+     "llm_check": {
+      "supported": true,
+      "reason": "Rows confirm paid-social orders dropped from 196 in August to 28 in September 2026, and Q7 spend/clicks match the claimed figures exactly."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    },
+    {
+     "text": "The pre-shift summer_evergreen segment in September converted at only 0.00275 orders per click (28 orders from 10,170 clicks), and daily paid-social orders stopped after September 14, before the fall_launch period began.",
+     "evidence": [
+      {
+       "query_id": "Q19",
+       "row": 0,
+       "column": "orders_per_click",
+       "value": 0.0027531956735496557,
+       "actual": 0.0027531956735496557
+      },
+      {
+       "query_id": "Q19",
+       "row": 0,
+       "column": "total_orders",
+       "value": 28,
+       "actual": 28
+      },
+      {
+       "query_id": "Q19",
+       "row": 0,
+       "column": "total_clicks",
+       "value": 10170,
+       "actual": 10170
+      },
+      {
+       "query_id": "Q18",
+       "row": 7,
+       "column": "date",
+       "value": "2026-09-14",
+       "actual": "2026-09-14"
+      }
+     ],
+     "confidence": 0.8,
+     "llm_check": {
+      "supported": false,
+      "reason": "The Q19 data confirms the 0.00275 orders/click and 28/10,170 figures for summer_evergreen, but the rows contain no mention of paid-social campaigns, a fall_launch period, or order activity beyond September 14, so the claim's second part is unsupported."
+     },
+     "verified": false,
+     "checks": [
+      "verifier lane: The Q19 data confirms the 0.00275 orders/click and 28/10,170 figures for summer_evergreen, but the rows contain no mention of paid-social campaigns, a fall_launch period, or order activity beyond September 14, so the claim's second part is unsupported."
+     ]
+    },
+    {
+     "text": "September also saw a spike to 8,408 landing-page 404s (vs 38\u201344 in June\u2013August) with sessions dropping to 2,666, offering an alternative explanation for the conversion collapse.",
+     "evidence": [
+      {
+       "query_id": "Q7",
+       "row": 3,
+       "column": "landing_404s",
+       "value": 8408,
+       "actual": 8408
+      },
+      {
+       "query_id": "Q7",
+       "row": 0,
+       "column": "landing_404s",
+       "value": 38,
+       "actual": 38
+      },
+      {
+       "query_id": "Q7",
+       "row": 1,
+       "column": "landing_404s",
+       "value": 30,
+       "actual": 30
+      },
+      {
+       "query_id": "Q7",
+       "row": 2,
+       "column": "landing_404s",
+       "value": 44,
+       "actual": 44
+      },
+      {
+       "query_id": "Q7",
+       "row": 3,
+       "column": "sessions",
+       "value": 2666,
+       "actual": 2666
+      }
+     ],
+     "confidence": 0.9,
+     "llm_check": {
+      "supported": true,
+      "reason": "The rows confirm September's 8,408 landing-page 404s and 2,666 sessions, with June\u2013August showing low 404 counts (30\u201344)."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q17",
+    "Q18",
+    "Q19"
+   ],
+   "action": "Pause or audit fall_launch Meta spend and fix the landing-page 404 error spike before reallocating budget."
+  },
+  {
+   "hypothesis": "Paid social orders are being refunded at a higher rate in Sep, so ad spend acquires customers who immediately refund and wastes acquisition cost.",
+   "id": "H6",
+   "verdict": "inconclusive",
+   "summary": "Paid-social refund rate is marginally higher in Sep but rests on a single refund, and total refund USD dropped, so the hypothesis that ad spend is wasted on immediate refunds is not substantiated.",
+   "impact_usd": 0.0,
+   "confidence": 0.9,
+   "claims": [
+    {
+     "text": "Paid-social refund count rose from 6 refunds across 196 orders in Aug to 1 refund across 28 orders in Sep, a slight rate increase but based on a single September case.",
+     "evidence": [
+      {
+       "query_id": "Q20",
+       "row": 0,
+       "column": "refund_count",
+       "value": 1,
+       "actual": 1
+      },
+      {
+       "query_id": "Q20",
+       "row": 1,
+       "column": "refund_count",
+       "value": 1,
+       "actual": 1
+      },
+      {
+       "query_id": "Q20",
+       "row": 2,
+       "column": "refund_count",
+       "value": 4,
+       "actual": 4
+      },
+      {
+       "query_id": "Q2",
+       "row": 10,
+       "column": "orders",
+       "value": 196,
+       "actual": 196
+      },
+      {
+       "query_id": "Q21",
+       "row": 0,
+       "column": "refund_count",
+       "value": 1,
+       "actual": 1
+      },
+      {
+       "query_id": "Q2",
+       "row": 11,
+       "column": "orders",
+       "value": 28,
+       "actual": 28
+      }
+     ],
+     "confidence": 0.7,
+     "llm_check": {
+      "supported": false,
+      "reason": "The rows provide paid-social order counts (196 in Aug, 28 in Sep) but do not include refund counts by channel/month, so the claim's assertion about refund numbers (6\u21921) is unsupported."
+     },
+     "verified": false,
+     "checks": [
+      "verifier lane: The rows provide paid-social order counts (196 in Aug, 28 in Sep) but do not include refund counts by channel/month, so the claim's assertion about refund numbers (6\u21921) is unsupported."
+     ]
+    },
+    {
+     "text": "Paid-social refund USD fell from $7, $7, and $50 in Aug to $12 in Sep, indicating refunds are not a growing cost driver.",
+     "evidence": [
+      {
+       "query_id": "Q20",
+       "row": 0,
+       "column": "refund_usd_total",
+       "value": 7.0,
+       "actual": 7.0
+      },
+      {
+       "query_id": "Q20",
+       "row": 1,
+       "column": "refund_usd_total",
+       "value": 7.0,
+       "actual": 7.0
+      },
+      {
+       "query_id": "Q20",
+       "row": 2,
+       "column": "refund_usd_total",
+       "value": 50.0,
+       "actual": 50.0
+      },
+      {
+       "query_id": "Q21",
+       "row": 0,
+       "column": "refund_usd_total",
+       "value": 12.0,
+       "actual": 12.0
+      }
+     ],
+     "confidence": 0.9,
+     "llm_check": {
+      "supported": true,
+      "reason": "The rows Q20 and Q21 list refund USD totals of $7, $7, $50 in Q20 and $12 in Q21, directly matching the claim's described decrease from August to September, which supports the conclusion that refunds are not a growing cost driver."
+     },
+     "verified": true,
+     "checks": [
+      "cells match, query reproduced, numbers grounded"
+     ]
+    }
+   ],
+   "queries": [
+    "Q20",
+    "Q21"
+   ],
+   "action": "Investigate the September paid-social landing-page 404 spike (8408 vs 44 in Aug) and order decline (196 to 28) as the likely cause of wasted ad spend, not refunds."
   }
  ],
  "queries": {
@@ -1332,7 +1157,7 @@
    ],
    "row_count": 20,
    "truncated": false,
-   "elapsed_s": 3.71,
+   "elapsed_s": 0.32,
    "result_hash": "42a2230fbcf4",
    "ok": true
   },
@@ -1425,7 +1250,7 @@
    ],
    "row_count": 16,
    "truncated": false,
-   "elapsed_s": 0.53,
+   "elapsed_s": 0.28,
    "result_hash": "8facf007dca6",
    "ok": true
   },
@@ -1648,7 +1473,7 @@
    ],
    "row_count": 30,
    "truncated": false,
-   "elapsed_s": 1.41,
+   "elapsed_s": 0.34,
    "result_hash": "589e1360a00f",
    "ok": true
   },
@@ -1769,7 +1594,7 @@
    ],
    "row_count": 18,
    "truncated": false,
-   "elapsed_s": 0.62,
+   "elapsed_s": 0.23,
    "result_hash": "7d8c1435db5e",
    "ok": true
   },
@@ -1836,7 +1661,7 @@
    ],
    "row_count": 9,
    "truncated": false,
-   "elapsed_s": 0.57,
+   "elapsed_s": 0.38,
    "result_hash": "0fa545fe74c6",
    "ok": true
   },
@@ -1867,7 +1692,7 @@
    ],
    "row_count": 3,
    "truncated": false,
-   "elapsed_s": 0.48,
+   "elapsed_s": 0.19,
    "result_hash": "c6dec58958ba",
    "ok": true
   },
@@ -1908,550 +1733,752 @@
    ],
    "row_count": 4,
    "truncated": false,
-   "elapsed_s": 0.59,
+   "elapsed_s": 0.28,
    "result_hash": "06520884c3c2",
    "ok": true
   },
   "Q8": {
    "id": "Q8",
-   "hypothesis": "H1",
-   "purpose": "Compare paid_social sessions and landing 404s in August vs September 2026",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       source,\n       SUM(sessions) AS sessions,\n       SUM(landing_404s) AS landing_404s\nFROM WHYDROP_FILES.web_traffic\nWHERE source = 'paid_social'\n  AND date BETWEEN '2026-08-01' AND '2026-09-30'\nGROUP BY month, source\nORDER BY month;",
+   "hypothesis": "H2",
+   "purpose": "Count paid_social orders for product P003 in September 2026 before and after the 2026-09-15 release",
+   "sql": "SELECT\n    SUM(CASE WHEN to_date(o.date) < '2026-09-15' THEN 1 ELSE 0 END) AS orders_before_15,\n    SUM(CASE WHEN to_date(o.date) >= '2026-09-15' THEN 1 ELSE 0 END) AS orders_after_15\nFROM WHYDROP_FILES.orders o\nWHERE o.product_id = 'P003'\n  AND o.channel = 'paid_social'\n  AND to_date(o.date) BETWEEN '2026-09-01' AND '2026-09-30';",
    "rows": [
     {
-     "month": "2026-08",
-     "source": "paid_social",
-     "sessions": 11326,
-     "landing_404s": 44
-    },
-    {
-     "month": "2026-09",
-     "source": "paid_social",
-     "sessions": 2666,
-     "landing_404s": 8408
+     "orders_before_15": 6,
+     "orders_after_15": 0
     }
    ],
-   "row_count": 2,
+   "row_count": 1,
    "truncated": false,
-   "elapsed_s": 0.28,
-   "result_hash": "63d13e86b513",
+   "elapsed_s": 0.11,
+   "result_hash": "21d29e893ed0",
    "ok": true
   },
   "Q9": {
    "id": "Q9",
-   "hypothesis": "H1",
-   "purpose": "Compute click-to-session drop-off for meta paid_social in August vs September 2026",
-   "sql": "SELECT date_format(to_date(ms.date), 'yyyy-MM') AS month,\n       SUM(ms.clicks) AS clicks,\n       SUM(wt.sessions) AS sessions,\n       SUM(wt.sessions) / NULLIF(SUM(ms.clicks), 0) AS click_to_session_ratio\nFROM WHYDROP_FILES.marketing_spend ms\nJOIN WHYDROP_FILES.web_traffic wt\n  ON ms.date = wt.date\n AND ms.channel = 'meta'\n AND wt.source = 'paid_social'\nWHERE ms.date BETWEEN '2026-08-01' AND '2026-09-30'\n  AND ms.channel = 'meta'\nGROUP BY month\nORDER BY month;",
+   "hypothesis": "H2",
+   "purpose": "Count file-corrupted refunds for P003 paid_social orders in September 2026 before and after 2026-09-15",
+   "sql": "SELECT\n    SUM(CASE WHEN to_date(r.date) < '2026-09-15' THEN 1 ELSE 0 END) AS refunds_before_15,\n    SUM(CASE WHEN to_date(r.date) >= '2026-09-15' THEN 1 ELSE 0 END) AS refunds_after_15\nFROM WHYDROP_PG.refunds r\nJOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\nWHERE o.product_id = 'P003'\n  AND o.channel = 'paid_social'\n  AND r.reason = 'file corrupted'\n  AND to_date(o.date) BETWEEN '2026-09-01' AND '2026-09-30'\n  AND to_date(r.date) BETWEEN '2026-09-01' AND '2026-09-30';",
    "rows": [
     {
-     "month": "2026-08",
-     "clicks": 11775,
-     "sessions": 11326,
-     "click_to_session_ratio": 0.9618683651804671
-    },
-    {
-     "month": "2026-09",
-     "clicks": 11163,
-     "sessions": 2666,
-     "click_to_session_ratio": 0.23882468870375348
+     "refunds_before_15": null,
+     "refunds_after_15": null
     }
    ],
-   "row_count": 2,
+   "row_count": 1,
    "truncated": false,
-   "elapsed_s": 0.36,
-   "result_hash": "2ffad9721791",
+   "elapsed_s": 0.14,
+   "result_hash": "e8f487e2a88d",
    "ok": true
   },
   "Q10": {
    "id": "Q10",
-   "hypothesis": "H1",
-   "purpose": "Check order collapse for paid_social in August vs September 2026",
-   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(quantity) AS total_quantity,\n       SUM(unit_price_usd * quantity) AS revenue\nFROM WHYDROP_FILES.orders\nWHERE channel = 'paid_social'\n  AND date BETWEEN '2026-08-01' AND '2026-09-30'\nGROUP BY month\nORDER BY month;",
+   "hypothesis": "H2",
+   "purpose": "Count support tickets categorized as 'download' for P003 paid_social orders before and after 2026-09-15",
+   "sql": "SELECT\n    SUM(CASE WHEN to_date(t.date) < '2026-09-15' THEN 1 ELSE 0 END) AS tickets_before_15,\n    SUM(CASE WHEN to_date(t.date) >= '2026-09-15' THEN 1 ELSE 0 END) AS tickets_after_15\nFROM WHYDROP_PG.support_tickets t\nJOIN WHYDROP_FILES.orders o ON t.order_id = o.order_id\nWHERE o.product_id = 'P003'\n  AND o.channel = 'paid_social'\n  AND t.category = 'download'\n  AND to_date(o.date) BETWEEN '2026-09-01' AND '2026-09-30'\n  AND to_date(t.date) BETWEEN '2026-09-01' AND '2026-09-30';",
    "rows": [
     {
-     "month": "2026-08",
-     "total_quantity": 196,
-     "revenue": 2866.0
-    },
-    {
-     "month": "2026-09",
-     "total_quantity": 28,
-     "revenue": 432.0
+     "tickets_before_15": null,
+     "tickets_after_15": null
     }
    ],
-   "row_count": 2,
+   "row_count": 1,
    "truncated": false,
-   "elapsed_s": 0.25,
-   "result_hash": "a37bb399343d",
+   "elapsed_s": 0.13,
+   "result_hash": "add7fca35815",
    "ok": true
   },
   "Q11": {
    "id": "Q11",
-   "hypothesis": "H2",
-   "purpose": "Verify meta ad spend remained flat (similar total_usd) in Aug vs Sep 2026",
-   "sql": "SELECT date_format(to_date(date),'yyyy-MM') AS month, CAST(SUM(CAST(spend_usd AS DOUBLE)) AS DOUBLE) AS total_spend_usd FROM WHYDROP_FILES.marketing_spend WHERE channel='meta' AND to_date(date) >= '2026-08-01' AND to_date(date) < '2026-10-01' GROUP BY date_format(to_date(date),'yyyy-MM') ORDER BY month",
+   "hypothesis": "H1",
+   "purpose": "Compare paid social ad spend and clicks between August 2026 and September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(spend_usd) AS total_spend_usd,\n       SUM(clicks) AS total_clicks\nFROM WHYDROP_FILES.marketing_spend\nWHERE channel = 'meta'\n  AND to_date(date) >= to_date('2026-08-01')\n  AND to_date(date) <= to_date('2026-09-30')\nGROUP BY month\nORDER BY month",
    "rows": [
     {
      "month": "2026-08",
-     "total_spend_usd": 5001.289999999999
+     "total_spend_usd": 5001.289999999999,
+     "total_clicks": 11775
     },
     {
      "month": "2026-09",
-     "total_spend_usd": 4630.400000000001
+     "total_spend_usd": 4630.400000000001,
+     "total_clicks": 11163
     }
    ],
    "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.21,
-   "result_hash": "e3f771f4dc01",
+   "elapsed_s": 0.16,
+   "result_hash": "16282a97adc8",
    "ok": true
   },
   "Q12": {
    "id": "Q12",
-   "hypothesis": "H2",
-   "purpose": "Check if paid social orders and revenue collapsed in Aug vs Sep 2026",
-   "sql": "SELECT date_format(to_date(date),'yyyy-MM') AS month, COUNT(DISTINCT order_id) AS order_count, CAST(SUM(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS DOUBLE) AS revenue_usd FROM WHYDROP_FILES.orders WHERE channel='paid_social' AND to_date(date) >= '2026-08-01' AND to_date(date) < '2026-10-01' GROUP BY date_format(to_date(date),'yyyy-MM') ORDER BY month",
+   "hypothesis": "H1",
+   "purpose": "Compare sessions and landing_404s for paid_social source between August 2026 and September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       SUM(sessions) AS total_sessions,\n       SUM(landing_404s) AS total_landing_404s\nFROM WHYDROP_FILES.web_traffic\nWHERE source = 'paid_social'\n  AND to_date(date) >= to_date('2026-08-01')\n  AND to_date(date) <= to_date('2026-09-30')\nGROUP BY month\nORDER BY month",
    "rows": [
     {
      "month": "2026-08",
-     "order_count": 196,
-     "revenue_usd": 2866.0
+     "total_sessions": 11326,
+     "total_landing_404s": 44
     },
     {
      "month": "2026-09",
-     "order_count": 28,
-     "revenue_usd": 432.0
+     "total_sessions": 2666,
+     "total_landing_404s": 8408
     }
    ],
    "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.3,
-   "result_hash": "ee3ee3e30dcb",
+   "elapsed_s": 0.13,
+   "result_hash": "7cfcff68d2c0",
    "ok": true
   },
   "Q13": {
    "id": "Q13",
-   "hypothesis": "H2",
-   "purpose": "Compute cost-per-order and ROAS for Aug vs Sep 2026 to confirm ad spend efficiency deterioration",
-   "sql": "SELECT m.month, m.total_spend_usd, o.order_count, o.revenue_usd, CASE WHEN o.order_count > 0 THEN m.total_spend_usd / o.order_count ELSE NULL END AS cost_per_order, CASE WHEN m.total_spend_usd > 0 THEN o.revenue_usd / m.total_spend_usd ELSE NULL END AS roas FROM (SELECT date_format(to_date(date),'yyyy-MM') AS month, CAST(SUM(CAST(spend_usd AS DOUBLE)) AS DOUBLE) AS total_spend_usd FROM WHYDROP_FILES.marketing_spend WHERE channel='meta' AND to_date(date) >= '2026-08-01' AND to_date(date) < '2026-10-01' GROUP BY date_format(to_date(date),'yyyy-MM')) m JOIN (SELECT date_format(to_date(date),'yyyy-MM') AS month, COUNT(DISTINCT order_id) AS order_count, CAST(SUM(CAST(unit_price_usd AS DOUBLE) * CAST(quantity AS DOUBLE)) AS DOUBLE) AS revenue_usd FROM WHYDROP_FILES.orders WHERE channel='paid_social' AND to_date(date) >= '2026-08-01' AND to_date(date) < '2026-10-01' GROUP BY date_format(to_date(date),'yyyy-MM')) o ON m.month = o.month ORDER BY m.month",
+   "hypothesis": "H1",
+   "purpose": "Check paid_social order volume (count of orders) between August 2026 and September 2026",
+   "sql": "SELECT date_format(to_date(date), 'yyyy-MM') AS month,\n       COUNT(*) AS total_orders\nFROM WHYDROP_FILES.orders\nWHERE channel = 'paid_social'\n  AND to_date(date) >= to_date('2026-08-01')\n  AND to_date(date) <= to_date('2026-09-30')\nGROUP BY month\nORDER BY month",
    "rows": [
     {
-     "roas": 0.5730521525446436,
-     "cost_per_order": 25.51678571428571,
-     "order_count": 196,
-     "total_spend_usd": 5001.289999999999,
-     "revenue_usd": 2866.0,
-     "month": "2026-08"
+     "month": "2026-08",
+     "total_orders": 196
     },
     {
-     "roas": 0.09329647546648237,
-     "cost_per_order": 165.3714285714286,
-     "order_count": 28,
-     "total_spend_usd": 4630.400000000001,
-     "revenue_usd": 432.0,
-     "month": "2026-09"
+     "month": "2026-09",
+     "total_orders": 28
     }
    ],
    "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.37,
-   "result_hash": "cda93fc23079",
+   "elapsed_s": 0.13,
+   "result_hash": "787f193556af",
    "ok": true
   },
   "Q14": {
    "id": "Q14",
    "hypothesis": "H3",
-   "purpose": "Paid social orders and revenue for product P001 before vs after the price change on 2026-09-01",
-   "sql": "SELECT\n  CASE WHEN o.date < '2026-09-01' THEN 'pre' ELSE 'post' END AS period,\n  SUM(o.quantity * o.unit_price_usd) AS revenue_usd,\n  COUNT(DISTINCT o.order_id) AS orders_cnt\nFROM WHYDROP_FILES.orders o\nJOIN WHYDROP_FILES.pricing_changes pc\n  ON o.product_id = pc.product_id\n AND o.date = pc.date\nWHERE o.product_id = 'P001'\n  AND o.channel = 'paid_social'\n  AND o.date BETWEEN '2026-06-01' AND '2026-09-30'\nGROUP BY period\nORDER BY period;",
+   "purpose": "Monthly orders, revenue and average price for P001 paid_social in Aug vs Sep 2026",
+   "sql": "SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n       COUNT(*) AS total_orders,\n       SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) AS total_revenue,\n       AVG(CAST(o.unit_price_usd AS DOUBLE)) AS avg_unit_price_usd\nFROM WHYDROP_FILES.orders o\nWHERE o.product_id = 'P001'\n  AND o.channel = 'paid_social'\n  AND o.date >= '2026-08-01'\n  AND o.date < '2026-10-01'\nGROUP BY date_format(to_date(o.date), 'yyyy-MM')\nORDER BY month",
    "rows": [
     {
-     "period": "post",
-     "revenue_usd": 58.0,
-     "orders_cnt": 2
+     "month": "2026-08",
+     "total_orders": 56,
+     "total_revenue": 1064.0,
+     "avg_unit_price_usd": 19.0
+    },
+    {
+     "month": "2026-09",
+     "total_orders": 4,
+     "total_revenue": 116.0,
+     "avg_unit_price_usd": 29.0
     }
    ],
-   "row_count": 1,
+   "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.37,
-   "result_hash": "6e9f9016abc1",
+   "elapsed_s": 0.19,
+   "result_hash": "185840671b2c",
    "ok": true
   },
   "Q15": {
    "id": "Q15",
    "hypothesis": "H3",
-   "purpose": "Paid social sessions and marketing spend (ad traffic) before vs after the price change",
-   "sql": "SELECT\n  CASE WHEN t.date < '2026-09-01' THEN 'pre' ELSE 'post' END AS period,\n  SUM(t.sessions) AS sessions,\n  SUM(m.spend_usd) AS spend_usd,\n  SUM(m.clicks) AS clicks\nFROM WHYDROP_FILES.web_traffic t\nJOIN WHYDROP_FILES.marketing_spend m\n  ON t.date = m.date\nWHERE t.source = 'paid_social'\n  AND m.channel = 'meta'\n  AND t.date BETWEEN '2026-06-01' AND '2026-09-30'\nGROUP BY period\nORDER BY period;",
+   "purpose": "Conversion rate (orders per session) for paid_social traffic by month",
+   "sql": "WITH orders_month AS (\n    SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n           COUNT(*) AS total_orders\n    FROM WHYDROP_FILES.orders o\n    WHERE o.product_id = 'P001'\n      AND o.channel = 'paid_social'\n      AND o.date >= '2026-08-01'\n      AND o.date < '2026-10-01'\n    GROUP BY date_format(to_date(o.date), 'yyyy-MM')\n),\ntraffic_month AS (\n    SELECT date_format(to_date(w.date), 'yyyy-MM') AS month,\n           SUM(CAST(w.sessions AS DOUBLE)) AS total_sessions\n    FROM WHYDROP_FILES.web_traffic w\n    WHERE w.source = 'paid_social'\n      AND w.date >= '2026-08-01'\n      AND w.date < '2026-10-01'\n    GROUP BY date_format(to_date(w.date), 'yyyy-MM')\n)\nSELECT o.month,\n       o.total_orders,\n       t.total_sessions,\n       CASE WHEN t.total_sessions = 0 THEN 0 ELSE o.total_orders / t.total_sessions END AS orders_per_session\nFROM orders_month o\nJOIN traffic_month t USING (month)\nORDER BY o.month",
    "rows": [
     {
-     "period": "post",
-     "sessions": 2666,
-     "spend_usd": 4630.400000000001,
-     "clicks": 11163
+     "month": "2026-08",
+     "total_orders": 56,
+     "total_sessions": 11326.0,
+     "orders_per_session": 0.004944375772558714
     },
     {
-     "period": "pre",
-     "sessions": 33764,
-     "spend_usd": 14756.749999999995,
-     "clicks": 35151
+     "month": "2026-09",
+     "total_orders": 4,
+     "total_sessions": 2666.0,
+     "orders_per_session": 0.0015003750937734434
     }
    ],
    "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.28,
-   "result_hash": "ebdde0523df3",
+   "elapsed_s": 0.25,
+   "result_hash": "ca64cfd988a3",
    "ok": true
   },
   "Q16": {
    "id": "Q16",
    "hypothesis": "H3",
-   "purpose": "Conversion metrics (orders per session) and revenue per session for P001 paid social before vs after the price change",
-   "sql": "SELECT\n  CASE WHEN o.date < '2026-09-01' THEN 'pre' ELSE 'post' END AS period,\n  SUM(o.quantity * o.unit_price_usd) AS revenue_usd,\n  COUNT(DISTINCT o.order_id) AS orders_cnt,\n  SUM(t.sessions) AS sessions,\n  SUM(o.quantity * o.unit_price_usd) / NULLIF(SUM(t.sessions),0) AS revenue_per_session_usd,\n  COUNT(DISTINCT o.order_id) / NULLIF(SUM(t.sessions),0) AS orders_per_session\nFROM WHYDROP_FILES.orders o\nJOIN WHYDROP_FILES.pricing_changes pc\n  ON o.product_id = pc.product_id\n AND o.date = pc.date\nJOIN WHYDROP_FILES.web_traffic t\n  ON o.date = t.date\nWHERE o.product_id = 'P001'\n  AND o.channel = 'paid_social'\n  AND o.date BETWEEN '2026-06-01' AND '2026-09-30'\n  AND t.source = 'paid_social'\nGROUP BY period\nORDER BY period;",
+   "purpose": "Ad spend versus revenue for P001 paid_social to assess spend effectiveness",
+   "sql": "WITH orders_month AS (\n    SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n           SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) AS total_revenue,\n           COUNT(*) AS total_orders,\n           AVG(CAST(o.unit_price_usd AS DOUBLE)) AS avg_unit_price_usd\n    FROM WHYDROP_FILES.orders o\n    WHERE o.product_id = 'P001'\n      AND o.channel = 'paid_social'\n      AND o.date >= '2026-08-01'\n      AND o.date < '2026-10-01'\n    GROUP BY date_format(to_date(o.date), 'yyyy-MM')\n),\nspend_month AS (\n    SELECT date_format(to_date(ms.date), 'yyyy-MM') AS month,\n           SUM(CAST(ms.spend_usd AS DOUBLE)) AS total_spend_usd\n    FROM WHYDROP_FILES.marketing_spend ms\n    WHERE ms.channel = 'meta'\n      AND ms.date >= '2026-08-01'\n      AND ms.date < '2026-10-01'\n    GROUP BY date_format(to_date(ms.date), 'yyyy-MM')\n)\nSELECT o.month,\n       o.total_revenue,\n       o.total_orders,\n       o.avg_unit_price_usd,\n       s.total_spend_usd,\n       CASE WHEN o.total_orders = 0 THEN 0 ELSE s.total_spend_usd / o.total_orders END AS spend_per_order\nFROM orders_month o\nJOIN spend_month s USING (month)\nORDER BY o.month",
+   "ok": true,
+   "error": "[UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `o`.`total_spend_usd` cannot be resolved. Did you mean one of the following? [`s`.`total_spend_usd`, `o`.`total_orders`, `o`.`total_revenue`, `o`.`month`, `o`.`avg_unit_price_usd`].; line 27 pos 48;\n'WithCTE\n:- CTERelationDef 26, false\n:  +- SubqueryAlias orders_month\n:     +- Aggregate [date_format(cast(to_date(date#1841",
+   "sql_original": "WITH orders_month AS (\n    SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n           SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) AS total_revenue,\n           COUNT(*) AS total_orders,\n           AVG(CAST(o.unit_price_usd AS DOUBLE)) AS avg_unit_price_usd\n    FROM WHYDROP_FILES.orders o\n    WHERE o.product_id = 'P001'\n      AND o.channel = 'paid_social'\n      AND o.date >= '2026-08-01'\n      AND o.date < '2026-10-01'\n    GROUP BY date_format(to_date(o.date), 'yyyy-MM')\n),\nspend_month AS (\n    SELECT date_format(to_date(ms.date), 'yyyy-MM') AS month,\n           SUM(CAST(ms.spend_usd AS DOUBLE)) AS total_spend_usd\n    FROM WHYDROP_FILES.marketing_spend ms\n    WHERE ms.channel = 'meta'\n      AND ms.date >= '2026-08-01'\n      AND ms.date < '2026-10-01'\n    GROUP BY date_format(to_date(ms.date), 'yyyy-MM')\n)\nSELECT o.month,\n       o.total_revenue,\n       o.total_orders,\n       o.avg_unit_price_usd,\n       s.total_spend_usd,\n       CASE WHEN o.total_orders = 0 THEN 0 ELSE o.total_spend_usd / o.total_orders END AS spend_per_order\nFROM orders_month o\nJOIN spend_month s USING (month)\nORDER BY o.month",
    "rows": [
     {
-     "sessions": 776,
-     "revenue_per_session_usd": 0.07474226804123711,
-     "revenue_usd": 58.0,
-     "period": "post",
-     "orders_cnt": 2,
-     "orders_per_session": 0.002577319587628866
-    }
-   ],
-   "row_count": 1,
-   "truncated": false,
-   "elapsed_s": 0.35,
-   "result_hash": "a7c53d06293e",
-   "ok": true
-  },
-  "Q17": {
-   "id": "Q17",
-   "hypothesis": "H4",
-   "purpose": "Count corrupted\u2011file refunds and total refund amount for P003 paid\u2011social orders, by month (August vs September 2026).",
-   "sql": "SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n       COUNT(DISTINCT r.refund_id) AS refund_cnt,\n       SUM(CAST(r.amount_usd AS DOUBLE)) AS refund_amt_usd\nFROM WHYDROP_FILES.orders o\nJOIN WHYDROP_PG.refunds r ON o.order_id = r.order_id\nWHERE o.product_id = 'P003'\n  AND o.channel = 'paid_social'\n  AND r.reason = 'file corrupted'\n  AND to_date(o.date) BETWEEN '2026-08-01' AND '2026-09-30'\nGROUP BY month\nORDER BY month;",
-   "rows": [],
-   "row_count": 0,
-   "truncated": false,
-   "elapsed_s": 0.4,
-   "result_hash": "97d170e1550e",
-   "ok": true
-  },
-  "Q18": {
-   "id": "Q18",
-   "hypothesis": "H4",
-   "purpose": "Count download\u2011related support tickets for P003 paid\u2011social orders, by month (August vs September 2026).",
-   "sql": "SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n       COUNT(DISTINCT t.ticket_id) AS download_ticket_cnt\nFROM WHYDROP_FILES.orders o\nJOIN WHYDROP_PG.support_tickets t ON o.order_id = t.order_id\nWHERE o.product_id = 'P003'\n  AND o.channel = 'paid_social'\n  AND t.category = 'download'\n  AND to_date(o.date) BETWEEN '2026-08-01' AND '2026-09-30'\nGROUP BY month\nORDER BY month;",
-   "rows": [],
-   "row_count": 0,
-   "truncated": false,
-   "elapsed_s": 0.27,
-   "result_hash": "97d170e1550e",
-   "ok": true
-  },
-  "Q19": {
-   "id": "Q19",
-   "hypothesis": "H4",
-   "purpose": "Monthly revenue from P003 paid\u2011social orders, split into pre\u2011release (before 2026\u201109\u201115) and post\u2011release (on/after 2026\u201109\u201115) periods.",
-   "sql": "SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n       SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) AS revenue_usd,\n       CASE WHEN to_date(o.date) < '2026-09-15' THEN 'pre' ELSE 'post' END AS period\nFROM WHYDROP_FILES.orders o\nWHERE o.product_id = 'P003'\n  AND o.channel = 'paid_social'\n  AND to_date(o.date) BETWEEN '2026-08-01' AND '2026-09-30'\nGROUP BY month, period\nORDER BY month, period;",
-   "rows": [
-    {
+     "avg_unit_price_usd": 19.0,
+     "total_spend_usd": 5001.289999999999,
+     "spend_per_order": 89.30874999999999,
+     "total_orders": 56,
      "month": "2026-08",
-     "revenue_usd": 735.0,
-     "period": "pre"
+     "total_revenue": 1064.0
     },
     {
+     "avg_unit_price_usd": 29.0,
+     "total_spend_usd": 4630.400000000001,
+     "spend_per_order": 1157.6000000000001,
+     "total_orders": 4,
      "month": "2026-09",
-     "revenue_usd": 90.0,
-     "period": "pre"
+     "total_revenue": 116.0
     }
    ],
    "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.26,
-   "result_hash": "e6a60a780614",
+   "elapsed_s": 0.34,
+   "result_hash": "ffa1177b4b2e"
+  },
+  "Q17": {
+   "id": "Q17",
+   "hypothesis": "H5",
+   "purpose": "Compare ad spend, clicks, and CPC by campaign in September 2026",
+   "sql": "SELECT campaign,\n       SUM(spend_usd) AS total_spend_usd,\n       SUM(clicks) AS total_clicks,\n       SUM(spend_usd) / NULLIF(SUM(clicks), 0) AS cpc_usd_per_click\nFROM WHYDROP_FILES.marketing_spend\nWHERE channel = 'meta'\n  AND date >= '2026-09-01'\n  AND date <= '2026-09-30'\nGROUP BY campaign",
+   "rows": [
+    {
+     "campaign": "fall_launch",
+     "total_spend_usd": 4630.400000000001,
+     "total_clicks": 11163,
+     "cpc_usd_per_click": 0.41479888918749447
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.14,
+   "result_hash": "2cd5b1ee4f12",
+   "ok": true
+  },
+  "Q18": {
+   "id": "Q18",
+   "hypothesis": "H5",
+   "purpose": "Daily paid_social orders in September 2026",
+   "sql": "SELECT date,\n       SUM(quantity) AS total_quantity,\n       SUM(unit_price_usd * quantity) AS total_revenue_usd\nFROM WHYDROP_FILES.orders\nWHERE channel = 'paid_social'\n  AND date >= '2026-09-01'\n  AND date <= '2026-09-30'\nGROUP BY date\nORDER BY date",
+   "rows": [
+    {
+     "date": "2026-09-01",
+     "total_quantity": 5,
+     "total_revenue_usd": 84.0
+    },
+    {
+     "date": "2026-09-02",
+     "total_quantity": 1,
+     "total_revenue_usd": 15.0
+    },
+    {
+     "date": "2026-09-03",
+     "total_quantity": 3,
+     "total_revenue_usd": 56.0
+    },
+    {
+     "date": "2026-09-04",
+     "total_quantity": 3,
+     "total_revenue_usd": 45.0
+    },
+    {
+     "date": "2026-09-05",
+     "total_quantity": 4,
+     "total_revenue_usd": 60.0
+    },
+    {
+     "date": "2026-09-06",
+     "total_quantity": 6,
+     "total_revenue_usd": 74.0
+    },
+    {
+     "date": "2026-09-07",
+     "total_quantity": 5,
+     "total_revenue_usd": 83.0
+    },
+    {
+     "date": "2026-09-14",
+     "total_quantity": 1,
+     "total_revenue_usd": 15.0
+    }
+   ],
+   "row_count": 8,
+   "truncated": false,
+   "elapsed_s": 0.18,
+   "result_hash": "f3029d537e31",
+   "ok": true
+  },
+  "Q19": {
+   "id": "Q19",
+   "hypothesis": "H5",
+   "purpose": "Orders per click by campaign (pre vs post fall_launch)",
+   "sql": "WITH daily_metrics AS (\n  SELECT o.date,\n         SUM(o.quantity) AS total_orders,\n         SUM(o.unit_price_usd * o.quantity) AS total_revenue,\n         SUM(m.clicks) AS total_clicks\n  FROM WHYDROP_FILES.orders o\n  JOIN WHYDROP_FILES.marketing_spend m\n    ON o.date = m.date\n   AND o.channel = 'paid_social'\n   AND m.channel = 'meta'\n   AND o.date BETWEEN '2026-09-01' AND '2026-09-30'\n  GROUP BY o.date\n),\ncampaign_daily AS (\n  SELECT date,\n         total_orders,\n         total_clicks,\n         CASE WHEN date < '2026-09-16' THEN 'summer_evergreen' ELSE 'fall_launch' END AS campaign\n  FROM daily_metrics\n)\nSELECT campaign,\n       SUM(total_orders) AS total_orders,\n       SUM(total_clicks) AS total_clicks,\n       SUM(total_orders) / NULLIF(SUM(total_clicks), 0) AS orders_per_click\nFROM campaign_daily\nGROUP BY campaign",
+   "rows": [
+    {
+     "campaign": "summer_evergreen",
+     "total_orders": 28,
+     "total_clicks": 10170,
+     "orders_per_click": 0.0027531956735496557
+    }
+   ],
+   "row_count": 1,
+   "truncated": false,
+   "elapsed_s": 0.28,
+   "result_hash": "7b9560f2ad41",
    "ok": true
   },
   "Q20": {
    "id": "Q20",
-   "hypothesis": "H5",
-   "purpose": "Aggregate orders by non-paid channel for Aug/Sep 2026 to compare revenue/order volume across organic, email, referral",
-   "sql": "SELECT date_format(to_date(date),'yyyy-MM') AS month, channel, SUM(CAST(unit_price_usd AS DOUBLE)*CAST(quantity AS DOUBLE)) AS revenue, COUNT(*) AS order_count FROM WHYDROP_FILES.orders WHERE channel IN ('organic','email','referral') AND to_date(date) >= '2026-08-01' AND to_date(date) <= '2026-09-30' GROUP BY date_format(to_date(date),'yyyy-MM'), channel ORDER BY month, channel",
+   "hypothesis": "H6",
+   "purpose": "Refund count, total refund USD, and total paid order count for paid_social orders in Aug 2026, grouped by refund reason to establish baseline.",
+   "sql": "SELECT \n  r.reason,\n  COUNT(DISTINCT r.refund_id) AS refund_count,\n  SUM(CAST(r.amount_usd AS DOUBLE)) AS refund_usd_total,\n  COUNT(DISTINCT o.order_id) AS total_paid_orders\nFROM WHYDROP_PG.refunds r\nJOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\nWHERE o.channel = 'paid_social'\n  AND date_format(to_date(o.date), 'yyyy-MM') = '2026-08'\nGROUP BY r.reason",
    "rows": [
     {
-     "month": "2026-08",
-     "channel": "email",
-     "revenue": 3377.0,
-     "order_count": 229
+     "reason": "duplicate purchase",
+     "refund_count": 1,
+     "refund_usd_total": 7.0,
+     "total_paid_orders": 1
     },
     {
-     "month": "2026-08",
-     "channel": "organic",
-     "revenue": 5604.0,
-     "order_count": 379
+     "reason": "bought by mistake",
+     "refund_count": 1,
+     "refund_usd_total": 7.0,
+     "total_paid_orders": 1
     },
     {
-     "month": "2026-08",
-     "channel": "referral",
-     "revenue": 1988.0,
-     "order_count": 134
-    },
-    {
-     "month": "2026-09",
-     "channel": "email",
-     "revenue": 3274.0,
-     "order_count": 200
-    },
-    {
-     "month": "2026-09",
-     "channel": "organic",
-     "revenue": 4465.0,
-     "order_count": 282
-    },
-    {
-     "month": "2026-09",
-     "channel": "referral",
-     "revenue": 1413.0,
-     "order_count": 87
+     "reason": "not as described",
+     "refund_count": 4,
+     "refund_usd_total": 50.0,
+     "total_paid_orders": 4
     }
    ],
-   "row_count": 6,
+   "row_count": 3,
    "truncated": false,
-   "elapsed_s": 0.26,
-   "result_hash": "71d8585feb46",
+   "elapsed_s": 0.27,
+   "result_hash": "867f2148a5cd",
    "ok": true
   },
   "Q21": {
    "id": "Q21",
-   "hypothesis": "H5",
-   "purpose": "Aggregate web_traffic sessions by non-paid source for Aug/Sep 2026 to compare session volume across organic, email, referral",
-   "sql": "SELECT date_format(to_date(date),'yyyy-MM') AS month, source, SUM(CAST(sessions AS DOUBLE)) AS sessions FROM WHYDROP_FILES.web_traffic WHERE source IN ('organic','email','referral') AND to_date(date) >= '2026-08-01' AND to_date(date) <= '2026-09-30' GROUP BY date_format(to_date(date),'yyyy-MM'), source ORDER BY month, source",
+   "hypothesis": "H6",
+   "purpose": "Refund count, total refund USD, and total paid order count for paid_social orders in Sep 2026, grouped by refund reason to compare against August.",
+   "sql": "SELECT \n  r.reason,\n  COUNT(DISTINCT r.refund_id) AS refund_count,\n  SUM(CAST(r.amount_usd AS DOUBLE)) AS refund_usd_total,\n  COUNT(DISTINCT o.order_id) AS total_paid_orders\nFROM WHYDROP_PG.refunds r\nJOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\nWHERE o.channel = 'paid_social'\n  AND date_format(to_date(o.date), 'yyyy-MM') = '2026-09'\nGROUP BY r.reason",
    "rows": [
     {
-     "month": "2026-08",
-     "source": "email",
-     "sessions": 5669.0
-    },
-    {
-     "month": "2026-08",
-     "source": "organic",
-     "sessions": 16482.0
-    },
-    {
-     "month": "2026-08",
-     "source": "referral",
-     "sessions": 4356.0
-    },
-    {
-     "month": "2026-09",
-     "source": "email",
-     "sessions": 5387.0
-    },
-    {
-     "month": "2026-09",
-     "source": "organic",
-     "sessions": 15467.0
-    },
-    {
-     "month": "2026-09",
-     "source": "referral",
-     "sessions": 4131.0
+     "reason": "duplicate purchase",
+     "refund_count": 1,
+     "refund_usd_total": 12.0,
+     "total_paid_orders": 1
     }
    ],
-   "row_count": 6,
+   "row_count": 1,
    "truncated": false,
-   "elapsed_s": 0.18,
-   "result_hash": "e95ce78ae838",
+   "elapsed_s": 0.17,
+   "result_hash": "4f3c11c66f68",
    "ok": true
   },
   "Q22": {
    "id": "Q22",
    "hypothesis": "H7",
-   "purpose": "Compare total refund count and amount for paid_social orders in August vs September 2026",
-   "sql": "SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n       COUNT(*) AS refund_count,\n       SUM(r.amount_usd) AS total_refund_usd\nFROM WHYDROP_PG.refunds r\nJOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\nWHERE o.channel = 'paid_social'\n  AND date_format(to_date(o.date), 'yyyy-MM') IN ('2026-08','2026-09')\nGROUP BY month\nORDER BY month;",
+   "purpose": "Compare paid_social orders volume, revenue, revenue per order, and refund metrics by country for Aug\u2011Sep 2026.",
+   "sql": "SELECT o.country, date_format(to_date(o.date), 'yyyy-MM') AS month, COUNT(*) AS total_orders, SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) AS total_revenue, AVG(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) AS revenue_per_order, SUM(CAST(r.amount_usd AS DOUBLE)) AS total_refund_amount, SUM(CAST(r.amount_usd AS DOUBLE)) / SUM(CAST(o.unit_price_usd AS DOUBLE) * CAST(o.quantity AS DOUBLE)) AS refund_rate FROM WHYDROP_FILES.orders o LEFT JOIN WHYDROP_PG.refunds r ON o.order_id = r.order_id WHERE o.channel = 'paid_social' AND o.country IN ('US','GB','IN','CA','DE','AU') AND o.date >= '2026-08-01' AND o.date <= '2026-09-30' GROUP BY o.country, date_format(to_date(o.date), 'yyyy-MM') ORDER BY o.country, month;",
    "rows": [
     {
+     "country": "AU",
+     "total_refund_amount": null,
+     "refund_rate": null,
+     "revenue_per_order": 14.285714285714286,
+     "total_orders": 14,
      "month": "2026-08",
-     "refund_count": 6,
-     "total_refund_usd": 64.0
+     "total_revenue": 200.0
     },
     {
+     "country": "AU",
+     "total_refund_amount": null,
+     "refund_rate": null,
+     "revenue_per_order": 15.0,
+     "total_orders": 2,
      "month": "2026-09",
-     "refund_count": 1,
-     "total_refund_usd": 12.0
+     "total_revenue": 30.0
+    },
+    {
+     "country": "CA",
+     "total_refund_amount": 12.0,
+     "refund_rate": 0.039735099337748346,
+     "revenue_per_order": 15.1,
+     "total_orders": 20,
+     "month": "2026-08",
+     "total_revenue": 302.0
+    },
+    {
+     "country": "CA",
+     "total_refund_amount": null,
+     "refund_rate": null,
+     "revenue_per_order": 19.666666666666668,
+     "total_orders": 3,
+     "month": "2026-09",
+     "total_revenue": 59.0
+    },
+    {
+     "country": "DE",
+     "total_refund_amount": null,
+     "refund_rate": null,
+     "revenue_per_order": 14.55,
+     "total_orders": 20,
+     "month": "2026-08",
+     "total_revenue": 291.0
+    },
+    {
+     "country": "DE",
+     "total_refund_amount": null,
+     "refund_rate": null,
+     "revenue_per_order": 22.0,
+     "total_orders": 2,
+     "month": "2026-09",
+     "total_revenue": 44.0
+    },
+    {
+     "country": "GB",
+     "total_refund_amount": 26.0,
+     "refund_rate": 0.03245942571785269,
+     "revenue_per_order": 14.303571428571429,
+     "total_orders": 56,
+     "month": "2026-08",
+     "total_revenue": 801.0
+    },
+    {
+     "country": "GB",
+     "total_refund_amount": null,
+     "refund_rate": null,
+     "revenue_per_order": 14.0,
+     "total_orders": 5,
+     "month": "2026-09",
+     "total_revenue": 70.0
+    },
+    {
+     "country": "IN",
+     "total_refund_amount": 7.0,
+     "refund_rate": 0.02046783625730994,
+     "revenue_per_order": 14.869565217391305,
+     "total_orders": 23,
+     "month": "2026-08",
+     "total_revenue": 342.0
+    },
+    {
+     "country": "IN",
+     "total_refund_amount": null,
+     "refund_rate": null,
+     "revenue_per_order": 14.625,
+     "total_orders": 8,
+     "month": "2026-09",
+     "total_revenue": 117.0
+    },
+    {
+     "country": "US",
+     "total_refund_amount": 19.0,
+     "refund_rate": 0.02043010752688172,
+     "revenue_per_order": 14.761904761904763,
+     "total_orders": 63,
+     "month": "2026-08",
+     "total_revenue": 930.0
+    },
+    {
+     "country": "US",
+     "total_refund_amount": 12.0,
+     "refund_rate": 0.10714285714285714,
+     "revenue_per_order": 14.0,
+     "total_orders": 8,
+     "month": "2026-09",
+     "total_revenue": 112.0
     }
    ],
-   "row_count": 2,
+   "row_count": 12,
    "truncated": false,
-   "elapsed_s": 0.29,
-   "result_hash": "018de3cf68f5",
+   "elapsed_s": 0.26,
+   "result_hash": "1d20ff089c86",
    "ok": true
   },
   "Q23": {
    "id": "Q23",
    "hypothesis": "H7",
-   "purpose": "Breakdown of refund reasons for paid_social orders in September 2026",
-   "sql": "SELECT date_format(to_date(o.date), 'yyyy-MM') AS month,\n       r.reason,\n       COUNT(*) AS refund_count,\n       SUM(r.amount_usd) AS total_refund_usd\nFROM WHYDROP_PG.refunds r\nJOIN WHYDROP_FILES.orders o ON r.order_id = o.order_id\nWHERE o.channel = 'paid_social'\n  AND date_format(to_date(o.date), 'yyyy-MM') = '2026-09'\nGROUP BY month, r.reason\nORDER BY r.reason;",
+   "purpose": "Calculate conversion rate (orders per session) for paid_social by country and month.",
+   "sql": "WITH sessions_month AS (\n  SELECT date_format(to_date(wt.date), 'yyyy-MM') AS month,\n         o.country,\n         SUM(wt.sessions) AS total_sessions\n  FROM WHYDROP_FILES.web_traffic wt\n  JOIN WHYDROP_FILES.orders o\n    ON wt.date = o.date\n   AND o.channel = 'paid_social'\n   AND o.country IN ('US','GB','IN','CA','DE','AU')\n  WHERE wt.source = 'paid_social'\n    AND wt.date >= '2026-08-01'\n    AND wt.date <= '2026-09-30'\n  GROUP BY date_format(to_date(wt.date), 'yyyy-MM'), o.country\n),\norders_month AS (\n  SELECT o.country,\n         date_format(to_date(o.date), 'yyyy-MM') AS month,\n         COUNT(*) AS total_orders\n  FROM WHYDROP_FILES.orders o\n  WHERE o.channel = 'paid_social'\n    AND o.country IN ('US','GB','IN','CA','DE','AU')\n    AND o.date >= '2026-08-01'\n    AND o.date <= '2026-09-30'\n  GROUP BY o.country, date_format(to_date(o.date), 'yyyy-MM')\n)\nSELECT o.country,\n       o.month,\n       o.total_orders,\n       s.total_sessions,\n       CAST(o.total_orders AS DOUBLE) / s.total_sessions AS conversion_rate\nFROM orders_month o\nJOIN sessions_month s\n  ON o.country = s.country\n AND o.month = s.month\nORDER BY o.country, o.month;",
+   "ok": true,
+   "error": "[UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `country` cannot be resolved. Did you mean one of the following? [`date`, `source`, `sessions`, `landing_404s`, `product_page_views`].; line 1 pos 245;\n'WithCTE\n:- 'CTERelationDef 37, false\n:  +- 'SubqueryAlias sessions_month\n:     +- 'Aggregate ['date_format('to_date('date), yyyy-MM), 'source, 'country], ['date_format('t",
+   "sql_original": "WITH sessions_month AS (SELECT date_format(to_date(date), 'yyyy-MM') AS month, source, country, SUM(sessions) AS total_sessions FROM WHYDROP_FILES.web_traffic wt WHERE source = 'paid_social' AND date >= '2026-08-01' AND date <= '2026-09-30' AND country IN ('US','GB','IN','CA','DE','AU') GROUP BY date_format(to_date(date), 'yyyy-MM'), source, country), orders_month AS (SELECT o.country, date_format(to_date(o.date), 'yyyy-MM') AS month, COUNT(*) AS total_orders FROM WHYDROP_FILES.orders o WHERE o.channel = 'paid_social' AND o.country IN ('US','GB','IN','CA','DE','AU') AND o.date >= '2026-08-01' AND o.date <= '2026-09-30' GROUP BY o.country, date_format(to_date(o.date), 'yyyy-MM')) SELECT o.country, s.month, o.total_orders, s.total_sessions, CAST(o.total_orders AS DOUBLE) / s.total_sessions AS conversion_rate FROM orders_month o JOIN sessions_month s ON o.country = s.country AND o.month = s.month ORDER BY o.country, s.month;",
    "rows": [
     {
-     "month": "2026-09",
-     "reason": "duplicate purchase",
-     "refund_count": 1,
-     "total_refund_usd": 12.0
-    }
-   ],
-   "row_count": 1,
-   "truncated": false,
-   "elapsed_s": 0.24,
-   "result_hash": "471a78df185f",
-   "ok": true
-  },
-  "Q24": {
-   "id": "Q24",
-   "hypothesis": "H6",
-   "purpose": "Compare revenue per order and order volume by country for paid_social in Aug vs Sep 2026",
-   "sql": "SELECT\n  o.country,\n  o.month,\n  o.revenue,\n  o.orders_cnt,\n  o.revenue / o.orders_cnt AS revenue_per_order\nFROM (\n  SELECT\n    country,\n    date_format(to_date(date), 'yyyy-MM') AS month,\n    SUM(unit_price_usd * quantity) AS revenue,\n    COUNT(*) AS orders_cnt\n  FROM WHYDROP_FILES.orders\n  WHERE channel = 'paid_social'\n    AND date >= '2026-08-01'\n    AND date < '2026-10-01'\n  GROUP BY country, month\n) o\nWHERE o.month IN ('2026-08', '2026-09')\nORDER BY o.country, o.month",
-   "rows": [
-    {
-     "orders_cnt": 14,
      "country": "AU",
-     "revenue": 200.0,
-     "revenue_per_order": 14.285714285714286,
+     "total_sessions": 4940,
+     "conversion_rate": 0.002834008097165992,
+     "total_orders": 14,
      "month": "2026-08"
     },
     {
-     "orders_cnt": 2,
      "country": "AU",
-     "revenue": 30.0,
-     "revenue_per_order": 15.0,
+     "total_sessions": 696,
+     "conversion_rate": 0.0028735632183908046,
+     "total_orders": 2,
      "month": "2026-09"
     },
     {
-     "orders_cnt": 20,
      "country": "CA",
-     "revenue": 302.0,
-     "revenue_per_order": 15.1,
+     "total_sessions": 7354,
+     "conversion_rate": 0.0027196083763937995,
+     "total_orders": 20,
      "month": "2026-08"
     },
     {
-     "orders_cnt": 3,
      "country": "CA",
-     "revenue": 59.0,
-     "revenue_per_order": 19.666666666666668,
+     "total_sessions": 1006,
+     "conversion_rate": 0.002982107355864811,
+     "total_orders": 3,
      "month": "2026-09"
     },
     {
-     "orders_cnt": 20,
      "country": "DE",
-     "revenue": 291.0,
-     "revenue_per_order": 14.55,
+     "total_sessions": 7630,
+     "conversion_rate": 0.002621231979030144,
+     "total_orders": 20,
      "month": "2026-08"
     },
     {
-     "orders_cnt": 2,
      "country": "DE",
-     "revenue": 44.0,
-     "revenue_per_order": 22.0,
+     "total_sessions": 696,
+     "conversion_rate": 0.0028735632183908046,
+     "total_orders": 2,
      "month": "2026-09"
     },
     {
-     "orders_cnt": 56,
      "country": "GB",
-     "revenue": 801.0,
-     "revenue_per_order": 14.303571428571429,
+     "total_sessions": 20894,
+     "conversion_rate": 0.002680195271369771,
+     "total_orders": 56,
      "month": "2026-08"
     },
     {
-     "orders_cnt": 5,
      "country": "GB",
-     "revenue": 70.0,
-     "revenue_per_order": 14.0,
+     "total_sessions": 1924,
+     "conversion_rate": 0.002598752598752599,
+     "total_orders": 5,
      "month": "2026-09"
     },
     {
-     "orders_cnt": 23,
      "country": "IN",
-     "revenue": 342.0,
-     "revenue_per_order": 14.869565217391305,
+     "total_sessions": 8900,
+     "conversion_rate": 0.002584269662921348,
+     "total_orders": 23,
      "month": "2026-08"
     },
     {
-     "orders_cnt": 8,
      "country": "IN",
-     "revenue": 117.0,
-     "revenue_per_order": 14.625,
+     "total_sessions": 2737,
+     "conversion_rate": 0.0029229082937522835,
+     "total_orders": 8,
      "month": "2026-09"
     },
     {
-     "orders_cnt": 63,
      "country": "US",
-     "revenue": 930.0,
-     "revenue_per_order": 14.761904761904763,
+     "total_sessions": 23097,
+     "conversion_rate": 0.0027276269645408495,
+     "total_orders": 63,
      "month": "2026-08"
     },
     {
-     "orders_cnt": 8,
      "country": "US",
-     "revenue": 112.0,
-     "revenue_per_order": 14.0,
+     "total_sessions": 2325,
+     "conversion_rate": 0.0034408602150537634,
+     "total_orders": 8,
      "month": "2026-09"
     }
    ],
    "row_count": 12,
    "truncated": false,
-   "elapsed_s": 0.23,
-   "result_hash": "317b79164d45",
+   "elapsed_s": 0.36,
+   "result_hash": "85bb538f0fea"
+  },
+  "Q24": {
+   "id": "Q24",
+   "hypothesis": "H7",
+   "purpose": "Analyze refund frequency and amount by country and month for paid_social.",
+   "sql": "SELECT o.country, date_format(to_date(o.date), 'yyyy-MM') AS month, COUNT(*) AS total_orders, SUM(CAST(r.amount_usd AS DOUBLE)) AS total_refund_amount, COUNT(r.refund_id) AS refund_count, CASE WHEN COUNT(r.refund_id) = 0 THEN 0 ELSE SUM(CAST(r.amount_usd AS DOUBLE)) / COUNT(r.refund_id) END AS avg_refund_amount FROM WHYDROP_FILES.orders o LEFT JOIN WHYDROP_PG.refunds r ON o.order_id = r.order_id WHERE o.channel = 'paid_social' AND o.country IN ('US','GB','IN','CA','DE','AU') AND o.date >= '2026-08-01' AND o.date <= '2026-09-30' GROUP BY o.country, date_format(to_date(o.date), 'yyyy-MM') ORDER BY o.country, month;",
+   "rows": [
+    {
+     "refund_count": 0,
+     "country": "AU",
+     "total_refund_amount": null,
+     "avg_refund_amount": 0.0,
+     "total_orders": 14,
+     "month": "2026-08"
+    },
+    {
+     "refund_count": 0,
+     "country": "AU",
+     "total_refund_amount": null,
+     "avg_refund_amount": 0.0,
+     "total_orders": 2,
+     "month": "2026-09"
+    },
+    {
+     "refund_count": 1,
+     "country": "CA",
+     "total_refund_amount": 12.0,
+     "avg_refund_amount": 12.0,
+     "total_orders": 20,
+     "month": "2026-08"
+    },
+    {
+     "refund_count": 0,
+     "country": "CA",
+     "total_refund_amount": null,
+     "avg_refund_amount": 0.0,
+     "total_orders": 3,
+     "month": "2026-09"
+    },
+    {
+     "refund_count": 0,
+     "country": "DE",
+     "total_refund_amount": null,
+     "avg_refund_amount": 0.0,
+     "total_orders": 20,
+     "month": "2026-08"
+    },
+    {
+     "refund_count": 0,
+     "country": "DE",
+     "total_refund_amount": null,
+     "avg_refund_amount": 0.0,
+     "total_orders": 2,
+     "month": "2026-09"
+    },
+    {
+     "refund_count": 3,
+     "country": "GB",
+     "total_refund_amount": 26.0,
+     "avg_refund_amount": 8.666666666666666,
+     "total_orders": 56,
+     "month": "2026-08"
+    },
+    {
+     "refund_count": 0,
+     "country": "GB",
+     "total_refund_amount": null,
+     "avg_refund_amount": 0.0,
+     "total_orders": 5,
+     "month": "2026-09"
+    },
+    {
+     "refund_count": 1,
+     "country": "IN",
+     "total_refund_amount": 7.0,
+     "avg_refund_amount": 7.0,
+     "total_orders": 23,
+     "month": "2026-08"
+    },
+    {
+     "refund_count": 0,
+     "country": "IN",
+     "total_refund_amount": null,
+     "avg_refund_amount": 0.0,
+     "total_orders": 8,
+     "month": "2026-09"
+    },
+    {
+     "refund_count": 1,
+     "country": "US",
+     "total_refund_amount": 19.0,
+     "avg_refund_amount": 19.0,
+     "total_orders": 63,
+     "month": "2026-08"
+    },
+    {
+     "refund_count": 1,
+     "country": "US",
+     "total_refund_amount": 12.0,
+     "avg_refund_amount": 12.0,
+     "total_orders": 8,
+     "month": "2026-09"
+    }
+   ],
+   "row_count": 12,
+   "truncated": false,
+   "elapsed_s": 0.34,
+   "result_hash": "675c92c03a22",
    "ok": true
   },
   "Q25": {
    "id": "Q25",
-   "hypothesis": "H6",
-   "purpose": "Compare total orders vs sessions (traffic volume) per month to see if clicks held up",
-   "sql": "WITH orders_by_month AS (\n  SELECT\n    date_format(to_date(date), 'yyyy-MM') AS month,\n    COUNT(*) AS orders_cnt\n  FROM WHYDROP_FILES.orders\n  WHERE channel = 'paid_social'\n    AND date >= '2026-08-01'\n    AND date < '2026-10-01'\n  GROUP BY month\n),\nsessions_by_month AS (\n  SELECT\n    date_format(to_date(date), 'yyyy-MM') AS month,\n    SUM(sessions) AS sessions_cnt\n  FROM WHYDROP_FILES.web_traffic\n  WHERE source = 'paid_social'\n    AND date >= '2026-08-01'\n    AND date < '2026-10-01'\n  GROUP BY month\n)\nSELECT\n  o.month,\n  o.orders_cnt,\n  s.sessions_cnt,\n  o.orders_cnt / s.sessions_cnt AS orders_per_session\nFROM orders_by_month o\nJOIN sessions_by_month s\n  ON o.month = s.month\nWHERE o.month IN ('2026-08', '2026-09')\nORDER BY o.month",
+   "hypothesis": "H4",
+   "purpose": "Compare paid_social ad volume (clicks and spend) month\u2011over\u2011month in Aug vs Sep 2026",
+   "sql": "SELECT date_format(to_date(ms.date), 'yyyy-MM') AS month,\n       SUM(ms.clicks) AS clicks,\n       SUM(ms.spend_usd) AS spend_usd\nFROM WHYDROP_FILES.marketing_spend ms\nWHERE ms.channel = 'meta'\n  AND ms.date BETWEEN '2026-08-01' AND '2026-09-30'\nGROUP BY month\nORDER BY month;",
    "rows": [
     {
      "month": "2026-08",
-     "orders_cnt": 196,
-     "sessions_cnt": 11326,
-     "orders_per_session": 0.0173053152039555
+     "clicks": 11775,
+     "spend_usd": 5001.289999999999
     },
     {
      "month": "2026-09",
-     "orders_cnt": 28,
-     "sessions_cnt": 2666,
-     "orders_per_session": 0.010502625656414103
+     "clicks": 11163,
+     "spend_usd": 4630.400000000001
     }
    ],
    "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.28,
-   "result_hash": "55d49a6b9e9e",
+   "elapsed_s": 0.25,
+   "result_hash": "775ff861b152",
    "ok": true
   },
   "Q26": {
    "id": "Q26",
-   "hypothesis": "H6",
-   "purpose": "Compare revenue per click (revenue divided by ad clicks) for Aug vs Sep",
-   "sql": "WITH revenue_by_month AS (\n  SELECT\n    date_format(to_date(date), 'yyyy-MM') AS month,\n    SUM(unit_price_usd * quantity) AS total_revenue\n  FROM WHYDROP_FILES.orders\n  WHERE channel = 'paid_social'\n    AND date >= '2026-08-01'\n    AND date < '2026-10-01'\n  GROUP BY month\n),\nad_spend_by_month AS (\n  SELECT\n    date_format(to_date(date), 'yyyy-MM') AS month,\n    SUM(clicks) AS clicks,\n    SUM(spend_usd) AS spend\n  FROM WHYDROP_FILES.marketing_spend\n  WHERE channel = 'meta'\n    AND date >= '2026-08-01'\n    AND date < '2026-10-01'\n  GROUP BY month\n)\nSELECT\n  r.month,\n  r.total_revenue,\n  a.clicks,\n  a.spend,\n  r.total_revenue / a.clicks AS revenue_per_click,\n  r.total_revenue / a.spend AS revenue_per_spend\nFROM revenue_by_month r\nJOIN ad_spend_by_month a\n  ON r.month = a.month\nWHERE r.month IN ('2026-08', '2026-09')\nORDER BY r.month",
+   "hypothesis": "H4",
+   "purpose": "Compare paid_social site traffic (sessions) month\u2011over\u2011month in Aug vs Sep 2026",
+   "sql": "SELECT date_format(to_date(wt.date), 'yyyy-MM') AS month,\n       SUM(wt.sessions) AS sessions\nFROM WHYDROP_FILES.web_traffic wt\nWHERE wt.source = 'paid_social'\n  AND wt.date BETWEEN '2026-08-01' AND '2026-09-30'\nGROUP BY month\nORDER BY month;",
    "rows": [
     {
-     "revenue_per_spend": 0.5730521525446436,
-     "spend": 5001.289999999999,
-     "clicks": 11775,
-     "revenue_per_click": 0.24339702760084925,
      "month": "2026-08",
-     "total_revenue": 2866.0
+     "sessions": 11326
     },
     {
-     "revenue_per_spend": 0.09329647546648237,
-     "spend": 4630.400000000001,
-     "clicks": 11163,
-     "revenue_per_click": 0.038699274388605216,
      "month": "2026-09",
-     "total_revenue": 432.0
+     "sessions": 2666
     }
    ],
    "row_count": 2,
    "truncated": false,
-   "elapsed_s": 0.28,
-   "result_hash": "705ae7160290",
+   "elapsed_s": 0.15,
+   "result_hash": "e5916f4890b4",
+   "ok": true
+  },
+  "Q27": {
+   "id": "Q27",
+   "hypothesis": "H4",
+   "purpose": "Check unit economics (CPC and CVR) remain stable across Aug and Sep 2026",
+   "sql": "SELECT date_format(to_date(ms.date), 'yyyy-MM') AS month,\n       SUM(ms.spend_usd) AS spend_usd,\n       SUM(ms.clicks) AS clicks,\n       SUM(wt.sessions) AS sessions,\n       SUM(o.order_id) AS orders,\n       CASE WHEN SUM(ms.clicks) = 0 THEN 0\n            ELSE SUM(ms.spend_usd) / SUM(ms.clicks) END AS cpc,\n       CASE WHEN SUM(wt.sessions) = 0 THEN 0\n            ELSE SUM(o.order_id) / SUM(wt.sessions) END AS cvr\nFROM WHYDROP_FILES.marketing_spend ms\nJOIN WHYDROP_FILES.web_traffic wt\n  ON to_date(ms.date) = to_date(wt.date) AND ms.date = wt.date\nJOIN WHYDROP_FILES.orders o\n  ON to_date(o.date) = to_date(ms.date) AND o.channel = 'paid_social' AND ms.date = o.date\nWHERE ms.channel = 'meta'\n  AND ms.date BETWEEN '2026-08-01' AND '2026-09-30'\n  AND wt.source = 'paid_social'\nGROUP BY month\nORDER BY month;",
+   "rows": [
+    {
+     "sessions": 72815,
+     "cpc": 0.42461055691352323,
+     "clicks": 75685,
+     "orders": null,
+     "month": "2026-08",
+     "spend_usd": 32136.650000000005,
+     "cvr": null
+    },
+    {
+     "sessions": 9384,
+     "cpc": 0.40635988200589956,
+     "clicks": 10170,
+     "orders": null,
+     "month": "2026-09",
+     "spend_usd": 4132.6799999999985,
+     "cvr": null
+    }
+   ],
+   "row_count": 2,
+   "truncated": false,
+   "elapsed_s": 0.35,
+   "result_hash": "4943e3db9973",
    "ok": true
   }
  },
@@ -2459,8 +2486,8 @@
   {
    "lane": "planner",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 23.0,
-   "tokens": 9977,
+   "latency_s": 33.9,
+   "tokens": 8619,
    "fallback_from": [
     "nvidia/nemotron-3-super-120b-a12b"
    ]
@@ -2468,40 +2495,70 @@
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 33.4,
-   "tokens": 2484,
+   "latency_s": 36.8,
+   "tokens": 4167,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 42.2,
+   "tokens": 2723,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 60.2,
+   "tokens": 3357,
    "fallback_from": []
   },
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 12.7,
-   "tokens": 7878,
+   "latency_s": 35.0,
+   "tokens": 11537,
    "fallback_from": [
     "nvidia/nemotron-3-super-120b-a12b"
    ]
   },
   {
    "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 20.1,
+   "tokens": 2238,
+   "fallback_from": []
+  },
+  {
+   "lane": "analyst",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 47.2,
+   "tokens": 11453,
+   "fallback_from": [
+    "nvidia/nemotron-3-super-120b-a12b"
+   ]
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 59.0,
+   "tokens": 3563,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 47.6,
-   "tokens": 6733,
+   "latency_s": 38.7,
+   "tokens": 4389,
    "fallback_from": [
     "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
    ]
   },
   {
-   "lane": "sql",
-   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 64.1,
-   "tokens": 4017,
-   "fallback_from": []
-  },
-  {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 34.0,
-   "tokens": 8923,
+   "latency_s": 67.0,
+   "tokens": 13718,
    "fallback_from": [
     "nvidia/nemotron-3-super-120b-a12b"
    ]
@@ -2509,49 +2566,8 @@
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 39.1,
-   "tokens": 10127,
-   "fallback_from": [
-    "nvidia/nemotron-3-super-120b-a12b"
-   ]
-  },
-  {
-   "lane": "sql",
-   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 109.0,
-   "tokens": 4858,
-   "fallback_from": []
-  },
-  {
-   "lane": "sql",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 54.3,
-   "tokens": 6865,
-   "fallback_from": [
-    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
-   ]
-  },
-  {
-   "lane": "sql",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 24.9,
-   "tokens": 3601,
-   "fallback_from": [
-    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
-   ]
-  },
-  {
-   "lane": "sql",
-   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 40.9,
-   "tokens": 2666,
-   "fallback_from": []
-  },
-  {
-   "lane": "analyst",
-   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 7.8,
-   "tokens": 6544,
+   "latency_s": 26.0,
+   "tokens": 9093,
    "fallback_from": [
     "nvidia/nemotron-3-super-120b-a12b"
    ]
@@ -2559,8 +2575,8 @@
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 15.2,
-   "tokens": 8623,
+   "latency_s": 68.0,
+   "tokens": 13122,
    "fallback_from": [
     "nvidia/nemotron-3-super-120b-a12b"
    ]
@@ -2568,15 +2584,29 @@
   {
    "lane": "sql",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 95.7,
-   "tokens": 4995,
+   "latency_s": 93.9,
+   "tokens": 5118,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 40.1,
+   "tokens": 3365,
+   "fallback_from": []
+  },
+  {
+   "lane": "sql",
+   "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+   "latency_s": 49.6,
+   "tokens": 3363,
    "fallback_from": []
   },
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 84.7,
-   "tokens": 17441,
+   "latency_s": 30.2,
+   "tokens": 12953,
    "fallback_from": [
     "nvidia/nemotron-3-super-120b-a12b"
    ]
@@ -2584,168 +2614,157 @@
   {
    "lane": "analyst",
    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 18.3,
-   "tokens": 10064,
+   "latency_s": 33.8,
+   "tokens": 10908,
    "fallback_from": [
     "nvidia/nemotron-3-super-120b-a12b"
    ]
-  },
-  {
-   "lane": "analyst",
-   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 106.9,
-   "tokens": 17441,
-   "fallback_from": [
-    "nvidia/nemotron-3-super-120b-a12b"
-   ]
-  },
-  {
-   "lane": "analyst",
-   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-   "latency_s": 68.5,
-   "tokens": 17214,
-   "fallback_from": [
-    "nvidia/nemotron-3-super-120b-a12b"
-   ]
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 6.2,
-   "tokens": 1207,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 7.5,
-   "tokens": 1787,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 7.6,
-   "tokens": 1224,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 10.5,
-   "tokens": 1064,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 4.8,
-   "tokens": 717,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 7.9,
-   "tokens": 877,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 5.0,
-   "tokens": 643,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 15.0,
-   "tokens": 2693,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 16.1,
-   "tokens": 3791,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 7.6,
-   "tokens": 1114,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 5.0,
-   "tokens": 1014,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 10.4,
-   "tokens": 2924,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 15.7,
-   "tokens": 2356,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 19.1,
-   "tokens": 2693,
-   "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
    "latency_s": 8.2,
-   "tokens": 864,
+   "tokens": 806,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 17.3,
-   "tokens": 2059,
+   "latency_s": 17.7,
+   "tokens": 1980,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 19.9,
+   "tokens": 1844,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
    "latency_s": 16.3,
-   "tokens": 2693,
+   "tokens": 1169,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 17.0,
-   "tokens": 2138,
+   "latency_s": 26.4,
+   "tokens": 1689,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 23.3,
-   "tokens": 2852,
+   "latency_s": 13.5,
+   "tokens": 1398,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 12.7,
+   "tokens": 1343,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 16.3,
+   "tokens": 2314,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 26.2,
+   "tokens": 2807,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 20.7,
+   "tokens": 1853,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 22.9,
+   "tokens": 2812,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 17.8,
+   "tokens": 1962,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 23.5,
+   "tokens": 2807,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 16.1,
+   "tokens": 2502,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 13.1,
+   "tokens": 1906,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 24.0,
+   "tokens": 2260,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 22.4,
+   "tokens": 3364,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 20.7,
+   "tokens": 1911,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 27.1,
+   "tokens": 2807,
+   "fallback_from": []
+  },
+  {
+   "lane": "verifier",
+   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+   "latency_s": 16.9,
+   "tokens": 1846,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 5.8,
-   "tokens": 992,
+   "latency_s": 10.5,
+   "tokens": 1357,
    "fallback_from": [
     "nvidia/nemotron-3.5-lightning-30b-a3b"
    ]
@@ -2753,57 +2772,32 @@
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 18.4,
-   "tokens": 2006,
+   "latency_s": 14.5,
+   "tokens": 1482,
    "fallback_from": []
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 18.1,
-   "tokens": 2852,
+   "latency_s": 25.8,
+   "tokens": 3364,
    "fallback_from": []
   },
   {
    "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 18.6,
-   "tokens": 2355,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 14.3,
-   "tokens": 2026,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 20.7,
-   "tokens": 2861,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 20.3,
-   "tokens": 2861,
-   "fallback_from": []
-  },
-  {
-   "lane": "verifier",
-   "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "latency_s": 17.1,
-   "tokens": 2861,
-   "fallback_from": []
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "latency_s": 5.6,
+   "tokens": 2468,
+   "fallback_from": [
+    "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+   ]
   },
   {
    "lane": "verifier",
    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-   "latency_s": 16.3,
-   "tokens": 1333,
+   "latency_s": 11.2,
+   "tokens": 827,
    "fallback_from": [
     "nvidia/nemotron-3.5-lightning-30b-a3b"
    ]
@@ -2813,42 +2807,41 @@
  "memory_recalled": [
   {
    "id": "mem-15",
-   "relevance": 0.25122730653964437,
+   "relevance": 0.25119609358827416,
    "content": "[Is our ad spend still working?] REJECTED: Paid social (meta) spend is no longer efficient: cost per click and cost per order have risen while return on ad spend has fallen. - ROAS and cost per order deteriorated sharply, but CPC actually fell slightly, so the specific claim that cost per click rose is contradicted by the data.",
    "source": "whydrop:20261024-004304-1349"
   },
   {
+   "id": "mem-92",
+   "relevance": 0.24916620535671521,
+   "content": "[Is our ad spend still working?] VERIFIED CAUSE: The P003 v2.0 release on 2026-09-15 (new packer) caused corrupted-file refunds and download errors, eroding the value of paid social-acquired customers and suppressing orders. - Supported: the 2026-09-15 P003 v2.0 release (new packer) coincides with 26 corrupted-file refunds totaling $390.00 and 26 download tickets for P003 in September 2026, while paid-social orders collapsed (196 to 28) and paid sessions/404s deteriorated despite flat spend, indicating ad spend is no longer converting. (conf 0.9, queries Q17,Q18,Q19)",
+   "source": "whydrop:20261024-013634-6710"
+  },
+  {
    "id": "mem-14",
-   "relevance": 0.24719142003707392,
+   "relevance": 0.24716020708572953,
    "content": "[Is our ad spend still working?] VERIFIED CAUSE: Paid social clicks are not reaching the site because landing_404s spiked, so ad spend is wasted on broken landing pages. - Paid social landing 404 errors spiked while orders and revenue collapsed, indicating broken landing pages are wasting spend. (conf 0.93, queries Q1,Q2,Q3)",
    "source": "whydrop:20261024-004304-1349"
   },
   {
    "id": "mem-16",
-   "relevance": 0.24366711715012324,
+   "relevance": 0.24363590419875306,
    "content": "[Is our ad spend still working?] REJECTED: A recent price increase or product release reduced conversion of paid social traffic, making ad spend look ineffective even though traffic is intact. - Paid social sessions collapsed from August to September while conversion rate slightly increased, so the issue is traffic loss rather than conversion suppression.",
    "source": "whydrop:20261024-004304-1349"
   },
   {
-   "id": "mem-18",
-   "relevance": 0.23428002754892913,
-   "content": "[Is our ad spend still working?] REJECTED: Paid social is shifting toward lower-converting geographies or lower-priced products, reducing revenue per click even if clicks and sessions hold up. - Paid social revenue per order and average unit price both rose from August to September while order volume collapsed, so the revenue drop is not explained by a shift to lower-priced products or lower-converting geographies.",
-   "source": "whydrop:20261024-004304-1349"
-  },
-  {
-   "id": "mem-17",
-   "relevance": 0.22894645301045624,
-   "content": "[Is our ad spend still working?] REJECTED: Refunds and quality complaints on paid social orders are rising, so customers acquired by ads are not retaining value and spend is effectively wasted. - Paid social refunds fell from $64.00 in August to $12.00 in September and quality-related tickets stayed at zero, so the claim that rising refunds/quality complaints are wasting ad spend is not supported by the data.",
-   "source": "whydrop:20261024-004304-1349"
+   "id": "mem-96",
+   "relevance": 0.23982351677167174,
+   "content": "[Is our ad spend still working?] REJECTED: Refunds on paid social orders rose in September, so ad spend is acquiring customers who immediately refund and acquisition cost is wasted. - Paid social refunds fell from 6 orders ($64.00) in August 2026 to 1 order ($12.00) in September 2026, so the premise that September refunds rose is false.",
+   "source": "whydrop:20261024-013634-6710"
   }
  ],
- "elapsed_s": 559.5,
+ "elapsed_s": 527.8,
  "memory_ids": [
-  "mem-91",
-  "mem-92",
-  "mem-93",
-  "mem-94",
-  "mem-95",
-  "mem-96"
+  "mem-110",
+  "mem-111",
+  "mem-112",
+  "mem-113",
+  "mem-114"
  ]
 }
