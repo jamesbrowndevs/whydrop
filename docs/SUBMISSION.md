@@ -34,7 +34,7 @@ All reasoning runs on Nemotron via NVIDIA's OpenAI-compatible API (`whydrop/llm.
 | analyst | nemotron-3-super-120b-a12b | verdict + claims citing exact cells |
 | verifier | nemotron-3.5-lightning-30b-a3b | independent check of each claim against its rows |
 
-Every call is logged (lane, model, latency, tokens, fallbacks). The routing is streamed live in the UI and printed in each report.
+In practice the API often serves planner and analyst calls from the fallback, Nemotron 3.5 Super VL, when 3 Super errors or is busy. Every call is logged (lane, model, latency, tokens, fallbacks). The routing is streamed live in the UI and printed in each report.
 
 ## How the claims are kept honest
 1. The cited query is re-run on Zetaris, and the result must reproduce.

@@ -128,6 +128,7 @@ class Investigation:
             checks = []; ok = True; cited = []
             ev = c.get("evidence") or []
             if not ev: ok = False; checks.append("no evidence cited")
+            self._repair_rows(ev, checks)
             for e in ev:
                 q = self.state.queries.get(str(e.get("query_id")))
                 if not q or not q.get("ok"): ok = False; checks.append(f"{e.get('query_id')}: unknown/failed query"); continue
@@ -151,8 +152,26 @@ class Investigation:
                     if v.get("supported") is False: ok = False; checks.append(f"verifier lane: {v.get('reason','')}")
                 except Exception as ex:
                     c["llm_check"] = {"error": str(ex)[:100]}
-            c["verified"] = ok; c["checks"] = checks or ["cells match, query reproduced, numbers grounded"]
+            c["verified"] = ok; c["checks"] = checks if (checks and not ok) else checks + ["cells match, query reproduced, numbers grounded"]
         return f
+
+    def _repair_rows(self, ev, checks):
+        """Models sometimes cite the right values with an off-by-one row index. If every cell cited for (query,row)
+        matches exactly one other row of the same query, re-point the citation there (logged, still fully checked)."""
+        groups = {}
+        for e in ev: groups.setdefault((str(e.get("query_id")), e.get("row")), []).append(e)
+        for (qid, row), es in groups.items():
+            q = self.state.queries.get(qid)
+            if not q or not q.get("ok"): continue
+            rows = q.get("rows", [])
+            def fits(r): return all(e.get("column") in r and _same(r[e["column"]], e.get("value")) for e in es)
+            try:
+                if fits(rows[int(row)]): continue
+            except (IndexError, ValueError, TypeError): pass
+            cand = [i for i, r in enumerate(rows) if fits(r)]
+            if len(cand) == 1:
+                for e in es: e["row"] = cand[0]
+                checks.append(f"{qid}: row index corrected {row} -> {cand[0]}")
 
     # ---- main ------------------------------------------------------------------------
     def run(self) -> dict:
@@ -205,6 +224,8 @@ _NUM = re.compile(r"(?<![\w.])\$?(-?\d[\d,]*\.?\d*)%?")
 def _numbers(text):
     out = []
     text = re.sub(r"\d{4}-\d{2}(-\d{2})?", " ", text)  # ISO dates / months
+    text = re.sub(r"\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.? \d{1,2}(st|nd|rd|th)?\b", " ", text)  # "Sept 15"
+    text = re.sub(r"\b\d{1,2}(st|nd|rd|th)? (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\b", " ", text)
     text = re.sub(r"\b(404s?|H1|H2|Q\d+|v\d+(\.\d+)*)\b", " ", text)  # labels, not quantities
     for m in _NUM.finditer(text):
         s = m.group(1).replace(",", "").rstrip(".")
